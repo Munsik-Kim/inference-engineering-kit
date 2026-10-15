@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "backend": "vllm",
+  "model": {
+    "model_id": "REPLACE_MODEL_ID",
+    "revision": "0000000000000000000000000000000000000000",
+    "architecture": "llama"
+  },
+  "method": {
+    "name": "bf16",
+    "format": "native",
+    "activation_dtype": "bfloat16",
+    "kv_dtype": "bfloat16"
+  },
+  "profile": {
+    "context": 2048,
+    "max_num_seqs": 1,
+    "max_num_batched_tokens": 2048,
+    "kv_tokens": 4096,
+    "output_tokens": 128,
+    "concurrency": 1,
+    "shutdown_timeout": 10,
+    "cleanup_grace": 25,
+    "chunked_prefill": true,
+    "eager": true,
+    "prefix_caching": false,
+    "async_scheduling": false,
+    "seed": 909220
+  },
+  "paths": {
+    "artifact": "${ARTIFACT_ROOT}/model",
+    "artifact_receipt": "${ARTIFACT_ROOT}/artifact-receipt.json",
+    "tokenizer": "${ARTIFACT_ROOT}/tokenizer",
+    "workload": "${DATA_ROOT}/workload.json",
+    "output": "${RUNS_ROOT}/attempt1"
+  },
+  "budget": {
+    "wall_seconds": 120,
+    "cleanup_reserve_seconds": 60,
+    "automatic_retries": 0
+  }
+}

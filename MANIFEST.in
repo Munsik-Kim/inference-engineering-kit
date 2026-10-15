@@ -1,0 +1,10 @@
+include README.md LICENSE THIRD_PARTY_NOTICES.md AGENTS.md
+recursive-include src/inference_kit *.py *.json LICENSE
+prune tests
+prune evidence
+prune cases
+prune configs
+prune docs
+prune examples
+prune tools
+global-exclude *.pyc *.safetensors *.zip

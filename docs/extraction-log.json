@@ -1,0 +1,37 @@
+[
+  {
+    "source": "tools/inference_suite/step02_eval.py",
+    "target": "src/inference_kit/core/quality.py",
+    "change": "import/path boundaries; numerical definitions preserved"
+  },
+  {
+    "source": "tools/inference_suite/step03_metrics.py",
+    "target": "src/inference_kit/core/metrics.py",
+    "change": "import/path boundaries; numerical definitions preserved"
+  },
+  {
+    "source": "tools/inference_suite/step03_selector.py",
+    "target": "src/inference_kit/core/assess_multi.py",
+    "change": "import/path boundaries; numerical definitions preserved"
+  },
+  {
+    "source": "packages/diova-compare/src/diova_compare/core.py",
+    "target": "src/inference_kit/_vendor/diova_compare/core.py",
+    "change": "import/path boundaries; numerical definitions preserved"
+  },
+  {
+    "source": "tools/inference_suite/lifecycle.py",
+    "target": "src/inference_kit/adapters/lifecycle_evidence.py",
+    "change": "import/path boundaries; numerical definitions preserved"
+  },
+  {
+    "source": "labs/serving-engine-smoke/serving_lab/adapters.py",
+    "target": "src/inference_kit/adapters/protocol.py",
+    "change": "import/path boundaries; numerical definitions preserved"
+  },
+  {
+    "source": "tools/inference_suite/step04_analysis.py",
+    "target": "src/inference_kit/experiments/step04.py",
+    "change": "import/path boundaries; numerical definitions preserved"
+  }
+]

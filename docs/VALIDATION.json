@@ -1,0 +1,391 @@
+{
+  "schema_version": 1,
+  "local_cpu": "PASS",
+  "new_unique_tests": 81,
+  "test_invocations": 348,
+  "manual_repeated_test_invocations": 267,
+  "skip_invocations": 24,
+  "current_tensor_contracts": "6 passed in explicitly existing build runtime, CUDA_VISIBLE_DEVICES empty; no model/forward",
+  "latest_gates": [
+    {
+      "receipt": "tests-final-v1.json",
+      "successful": true
+    },
+    {
+      "receipt": "tests-boundary-coverage.json",
+      "successful": true
+    },
+    {
+      "receipt": "tests-tensor-v1.json",
+      "successful": true
+    }
+  ],
+  "initial_failures_preserved": {
+    "tests-v1": "loopback sandbox denial and strict float/type parity correction",
+    "tests-v2": "mock HTTP Content-Type correction for readiness",
+    "full-step02-v1/full-step04-v1": "missing import in extraction corrected before parity pass",
+    "wheel-parity/step03-verify": "new archival reference coverage finding, documented and explicit in later receipt"
+  },
+  "full_parity": {
+    "status": "INSTALLED_WHEEL_FULL_PARITY_PASS",
+    "cases": {
+      "step02": {
+        "replay": {
+          "status": "CPU_REPLAY_PARITY_PASS",
+          "case": "step02",
+          "historical_quality_documents": 1280,
+          "selected_performance_requests": 222,
+          "selected_server_rounds": 3,
+          "quality_pairings": 5,
+          "assessment_statuses": {
+            "qwen3_4b-missing_scope": "INSUFFICIENT_EVIDENCE",
+            "qwen3_4b-none": "NO_FEASIBLE_CANDIDATE",
+            "qwen3_4b-point": "FEASIBLE_WITH_REQUIRED_EVIDENCE",
+            "qwen3_4b-relative_only": "INSUFFICIENT_EVIDENCE",
+            "qwen3_4b-screen": "INSUFFICIENT_EVIDENCE",
+            "qwen3_4b-strict": "INSUFFICIENT_EVIDENCE",
+            "smollm2_live-missing_scope": "INSUFFICIENT_EVIDENCE",
+            "smollm2_live-none": "NO_FEASIBLE_CANDIDATE",
+            "smollm2_live-point": "FEASIBLE_WITH_REQUIRED_EVIDENCE",
+            "smollm2_live-relative_only": "FEASIBLE_WITH_REQUIRED_EVIDENCE",
+            "smollm2_live-screen": "INSUFFICIENT_EVIDENCE",
+            "smollm2_live-strict": "INSUFFICIENT_EVIDENCE"
+          },
+          "preserved_previous_status": {
+            "measurement_status": "PARTIAL_UNCERTIFIED",
+            "memory_comparison_status": "SHARED_GPU_INTERFERENCE",
+            "memory_max_mib": 14370.0
+          },
+          "new_gpu_runs": 0,
+          "quality_metrics": {
+            "qwen3_4b--bf16": {
+              "acc": 0.41796875,
+              "acc_norm": 0.44921875
+            },
+            "qwen3_4b--gptq_w4": {
+              "acc": 0.40234375,
+              "acc_norm": 0.43359375
+            },
+            "smollm2_live--bf16": {
+              "acc": 0.41015625,
+              "acc_norm": 0.41796875
+            },
+            "smollm2_live--gptq_w4": {
+              "acc": 0.33984375,
+              "acc_norm": 0.39453125
+            },
+            "smollm2_live--rtn_w4": {
+              "acc": 0.34765625,
+              "acc_norm": 0.421875
+            }
+          },
+          "analysis_kind": "historical_cpu_reanalysis",
+          "new_model_downloads": 0,
+          "input_archive_sha256": "be4c6e7650f4ba127f90aea7c9ca45b948bedb33b9f81b426f0fe256150b7696",
+          "manifest_verification": {
+            "status": "INVENTORY_ONLY_NO_RECOGNIZED_MANIFEST",
+            "verified_members": 0,
+            "manifests": [],
+            "python_executed": false,
+            "authenticity": "Hashes require a trusted expected archive SHA; self-consistent metadata alone is not authenticity"
+          },
+          "sanitized_export_identity": {
+            "status": "NO_SANITIZATION_RECEIPT_IN_INPUT"
+          },
+          "float_tolerance": {
+            "abs": 1e-10,
+            "rel": 1e-09,
+            "integers_booleans_status": "exact"
+          },
+          "gpu_support": "HISTORICAL_GPU_EVIDENCE; maintained GPU path NOT_RERUN"
+        },
+        "verify": {
+          "status": "INVENTORY_ONLY_NO_RECOGNIZED_MANIFEST",
+          "verified_members": 0,
+          "manifests": [],
+          "python_executed": false,
+          "authenticity": "Hashes require a trusted expected archive SHA; self-consistent metadata alone is not authenticity",
+          "indexes_verified": 3,
+          "index_references_verified": 555,
+          "reference_coverage": "ALL_DECLARED_INDEX_REFERENCES_VERIFIED",
+          "archival_reference_issues": [],
+          "archive_byte_identity": "MATCHED_EXPECTED_SHA256",
+          "archive_sha256": "be4c6e7650f4ba127f90aea7c9ca45b948bedb33b9f81b426f0fe256150b7696",
+          "sanitized_export_identity": {
+            "status": "NO_SANITIZATION_RECEIPT_IN_INPUT"
+          },
+          "numeric_recalculation": "NOT_RUN_USE_REPLAY",
+          "new_gpu_runs": 0,
+          "downloads": 0
+        },
+        "wall_seconds": 6.7227608489993145
+      },
+      "step03": {
+        "replay": {
+          "status": "CPU_REPLAY_PARITY_PASS",
+          "case": "step03",
+          "historical_server_rounds": 12,
+          "historical_performance_requests": 480,
+          "historical_assessment_statuses": {
+            "point": "CONDITIONAL_OBSERVED_CANDIDATE",
+            "interval": "INSUFFICIENT_EVIDENCE",
+            "exact-profile": "INSUFFICIENT_EVIDENCE",
+            "no-retained": "INSUFFICIENT_EVIDENCE"
+          },
+          "analysis_kind": "historical_cpu_reanalysis",
+          "new_gpu_runs": 0,
+          "new_model_downloads": 0,
+          "input_archive_sha256": "e3586718fec72a1792be797c87e8c6d1226450edc3830e10eb1753d32bb2592a",
+          "manifest_verification": {
+            "status": "MANIFEST_CONTENT_VERIFIED",
+            "verified_members": 428,
+            "manifests": [
+              "BUNDLE_MANIFEST.json"
+            ],
+            "python_executed": false,
+            "authenticity": "Hashes require a trusted expected archive SHA; self-consistent metadata alone is not authenticity"
+          },
+          "sanitized_export_identity": {
+            "status": "SANITIZED_EXPORT_DECLARED",
+            "original_archive_sha256": "d110310610e8e30a22fba71a3b9a51f169c8655cad5b1f7bfff3235dc0f2e0f3",
+            "removed_files": [
+              "evidence/step03_weight_kv_20261014_140020/baseline/configs/inference_suite/local.json",
+              "source/configs/inference_suite/local.json"
+            ],
+            "numeric_raw_changed": false,
+            "limitation": "Receipt is covered by the export manifest; original archive byte equivalence is not claimed"
+          },
+          "float_tolerance": {
+            "abs": 1e-10,
+            "rel": 1e-09,
+            "integers_booleans_status": "exact"
+          },
+          "gpu_support": "HISTORICAL_GPU_EVIDENCE; maintained GPU path NOT_RERUN"
+        },
+        "verify": {
+          "status": "MANIFEST_CONTENT_VERIFIED",
+          "verified_members": 428,
+          "manifests": [
+            "BUNDLE_MANIFEST.json"
+          ],
+          "python_executed": false,
+          "authenticity": "Hashes require a trusted expected archive SHA; self-consistent metadata alone is not authenticity",
+          "indexes_verified": 1,
+          "index_references_verified": 244,
+          "reference_coverage": "PRIMARY_VERIFIED_ARCHIVAL_PARTIAL",
+          "archival_reference_issues": [
+            {
+              "index": "evidence/step02_qwen_w4_repeat_20261014_075254/results-index.json",
+              "status": "ARCHIVAL_REFERENCES_NOT_FULLY_VERIFIED",
+              "reason": "Missing/unsafe bound index reference step02_20261013_150033/CONFIG_FREEZE.json"
+            }
+          ],
+          "archive_byte_identity": "MATCHED_EXPECTED_SHA256",
+          "archive_sha256": "e3586718fec72a1792be797c87e8c6d1226450edc3830e10eb1753d32bb2592a",
+          "sanitized_export_identity": {
+            "status": "SANITIZED_EXPORT_DECLARED",
+            "original_archive_sha256": "d110310610e8e30a22fba71a3b9a51f169c8655cad5b1f7bfff3235dc0f2e0f3",
+            "removed_files": [
+              "evidence/step03_weight_kv_20261014_140020/baseline/configs/inference_suite/local.json",
+              "source/configs/inference_suite/local.json"
+            ],
+            "numeric_raw_changed": false,
+            "limitation": "Receipt is covered by the export manifest; original archive byte equivalence is not claimed"
+          },
+          "numeric_recalculation": "NOT_RUN_USE_REPLAY",
+          "new_gpu_runs": 0,
+          "downloads": 0
+        },
+        "wall_seconds": 2.696922209999684
+      },
+      "step04": {
+        "replay": {
+          "status": "CPU_REPLAY_PARITY_PASS",
+          "case": "step04",
+          "historical_quality_documents_per_arm": 256,
+          "historical_main_http": 6144,
+          "historical_sentinel_http": 192,
+          "historical_research_decision": "HOLD_CLIPPING_VARIANT",
+          "independent_holdout_sources": 32,
+          "analysis_kind": "historical_cpu_reanalysis",
+          "new_gpu_runs": 0,
+          "new_model_downloads": 0,
+          "input_archive_sha256": "05357a060b87d70f7227332e1536dc106eb553c61cd1e7b721c95517a7c553f6",
+          "manifest_verification": {
+            "status": "MANIFEST_CONTENT_VERIFIED",
+            "verified_members": 246,
+            "manifests": [
+              "archive-manifest.json"
+            ],
+            "python_executed": false,
+            "authenticity": "Hashes require a trusted expected archive SHA; self-consistent metadata alone is not authenticity"
+          },
+          "sanitized_export_identity": {
+            "status": "NO_SANITIZATION_RECEIPT_IN_INPUT"
+          },
+          "float_tolerance": {
+            "abs": 1e-10,
+            "rel": 1e-09,
+            "integers_booleans_status": "exact"
+          },
+          "gpu_support": "HISTORICAL_GPU_EVIDENCE; maintained GPU path NOT_RERUN"
+        },
+        "verify": {
+          "status": "MANIFEST_CONTENT_VERIFIED",
+          "verified_members": 246,
+          "manifests": [
+            "archive-manifest.json"
+          ],
+          "python_executed": false,
+          "authenticity": "Hashes require a trusted expected archive SHA; self-consistent metadata alone is not authenticity",
+          "indexes_verified": 0,
+          "index_references_verified": 0,
+          "reference_coverage": "NO_RESULT_INDEX_IN_INPUT",
+          "archival_reference_issues": [],
+          "archive_byte_identity": "MATCHED_EXPECTED_SHA256",
+          "archive_sha256": "05357a060b87d70f7227332e1536dc106eb553c61cd1e7b721c95517a7c553f6",
+          "sanitized_export_identity": {
+            "status": "NO_SANITIZATION_RECEIPT_IN_INPUT"
+          },
+          "numeric_recalculation": "NOT_RUN_USE_REPLAY",
+          "new_gpu_runs": 0,
+          "downloads": 0
+        },
+        "wall_seconds": 19.565033705999667
+      }
+    },
+    "source_tree_reads": "DENIED",
+    "new_gpu_runs": 0,
+    "downloads": 0
+  },
+  "reviewed_legacy_verifiers": [
+    {
+      "case": "step02",
+      "returncode": 0,
+      "wall_seconds": 0.35571870300009323,
+      "reviewed_verifier_sha256": "b5a2f0c212203a6526d71f6f11ecf990430e7e0c95f922d0a653cbd924a5619b",
+      "input_asset": "STEP02_QWEN_W4_UPDATED_20261014.zip",
+      "execution_scope": "Explicitly reviewed legacy verifier only, fresh temporary extraction; no original directory write"
+    },
+    {
+      "case": "step03",
+      "returncode": 0,
+      "wall_seconds": 1.5542562989994622,
+      "reviewed_verifier_sha256": "456b5c519f59bbb2ed9afe284f00aabdab2bba5b8159c1de561ab3c90ea76e8b",
+      "input_asset": "STEP03_SANITIZED_EVIDENCE_20261015.zip",
+      "execution_scope": "Explicitly reviewed legacy verifier only, fresh temporary extraction; no original directory write"
+    },
+    {
+      "case": "step04",
+      "returncode": 0,
+      "wall_seconds": 18.557712916999662,
+      "reviewed_verifier_sha256": "ccfc6c171f70a09a724804a91848c5c2599d1f8e07329e4160ea9571780525d4",
+      "input_asset": "STEP04_SMOL_CLIPPING_ABLATION_20261015.zip",
+      "execution_scope": "Explicitly reviewed legacy verifier only, fresh temporary extraction; no original directory write"
+    }
+  ],
+  "wheel_consumer": {
+    "status": "INDEPENDENT_WHEEL_CONSUMER_PASS",
+    "package_version": "0.1.0",
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "commands": [
+      {
+        "argv": [
+          "inference-kit",
+          "--help"
+        ],
+        "returncode": 0
+      },
+      {
+        "argv": [
+          "inference-kit",
+          "demo",
+          "--output",
+          "demo"
+        ],
+        "returncode": 0
+      },
+      {
+        "argv": [
+          "inference-kit",
+          "compare",
+          "--baseline",
+          "demo/baseline.json",
+          "--candidate",
+          "demo/candidate.json",
+          "--output",
+          "compare"
+        ],
+        "returncode": 0
+      },
+      {
+        "argv": [
+          "inference-kit",
+          "assess",
+          "--index",
+          "demo/index.json",
+          "--requirements",
+          "demo/requirements.json",
+          "--output",
+          "assess"
+        ],
+        "returncode": 0
+      },
+      {
+        "argv": [
+          "inference-kit",
+          "verify",
+          "--bundle",
+          "recorded",
+          "--output",
+          "verify"
+        ],
+        "returncode": 0
+      },
+      {
+        "argv": [
+          "inference-kit",
+          "replay",
+          "--case",
+          "step04",
+          "--bundle",
+          "recorded",
+          "--output",
+          "replay"
+        ],
+        "returncode": 0
+      },
+      {
+        "argv": [
+          "inference-kit",
+          "plan",
+          "--spec",
+          "own-spec.json"
+        ],
+        "returncode": 0
+      },
+      {
+        "argv": [
+          "inference-kit",
+          "demo",
+          "--output",
+          "demo"
+        ],
+        "returncode": 2
+      }
+    ],
+    "console_entrypoint": "PASS",
+    "editable": false,
+    "original_checkout_reads": "DENIED_BY_AUDIT_HOOK",
+    "explicit_fixture": "2-document recorded slice copied before deny gate",
+    "engine_sdk_imports": [],
+    "core_modified_for_custom_workload": false,
+    "new_gpu_runs": 0,
+    "model_downloads": 0
+  },
+  "new_gpu_runs": 0,
+  "model_downloads": 0,
+  "remote_ci": "CI_NOT_RUN",
+  "historical_test_count_not_added": 111,
+  "security": "Heuristic paths/extensions/token patterns/all archive content review. No complete security certification. No gitleaks installed."
+}

@@ -1,0 +1,356 @@
+{
+  "baseline": [
+    {
+      "schema_version": 1,
+      "sample_id": "demo-0",
+      "task": "synthetic-demo",
+      "task_version": "1",
+      "prompt_hash": "114be30f7970a84add7a720f55a9ef0bbdf760ad7a933d775d4290063f439c22",
+      "gold": [
+        "A"
+      ],
+      "gold_definition": "Own synthetic correct choice A",
+      "model_id": "synthetic/example",
+      "artifact_id": "synthetic/baseline",
+      "output_type": "choice",
+      "answer": "A",
+      "correct": true,
+      "evidence_kind": "synthetic_test"
+    },
+    {
+      "schema_version": 1,
+      "sample_id": "demo-1",
+      "task": "synthetic-demo",
+      "task_version": "1",
+      "prompt_hash": "fd351fc94a4a74abde3ac470855e4ad5c3c7621a35e432acd86c5fff69eeac75",
+      "gold": [
+        "A"
+      ],
+      "gold_definition": "Own synthetic correct choice A",
+      "model_id": "synthetic/example",
+      "artifact_id": "synthetic/baseline",
+      "output_type": "choice",
+      "answer": "A",
+      "correct": true,
+      "evidence_kind": "synthetic_test"
+    },
+    {
+      "schema_version": 1,
+      "sample_id": "demo-2",
+      "task": "synthetic-demo",
+      "task_version": "1",
+      "prompt_hash": "932a4cc04a6d4e03c57b2f737f63e79b4ea097aff504be3b07225a0e1e265572",
+      "gold": [
+        "A"
+      ],
+      "gold_definition": "Own synthetic correct choice A",
+      "model_id": "synthetic/example",
+      "artifact_id": "synthetic/baseline",
+      "output_type": "choice",
+      "answer": "A",
+      "correct": true,
+      "evidence_kind": "synthetic_test"
+    },
+    {
+      "schema_version": 1,
+      "sample_id": "demo-3",
+      "task": "synthetic-demo",
+      "task_version": "1",
+      "prompt_hash": "cb1121127c3c03dae9be4ad7d8308bdb745eacfe0f781d9f61ecda5422770e35",
+      "gold": [
+        "A"
+      ],
+      "gold_definition": "Own synthetic correct choice A",
+      "model_id": "synthetic/example",
+      "artifact_id": "synthetic/baseline",
+      "output_type": "choice",
+      "answer": "A",
+      "correct": true,
+      "evidence_kind": "synthetic_test"
+    },
+    {
+      "schema_version": 1,
+      "sample_id": "demo-4",
+      "task": "synthetic-demo",
+      "task_version": "1",
+      "prompt_hash": "bc2b070b4c76e9d82a865d46e97984593335a546dad6d15db97ee0efad59c897",
+      "gold": [
+        "A"
+      ],
+      "gold_definition": "Own synthetic correct choice A",
+      "model_id": "synthetic/example",
+      "artifact_id": "synthetic/baseline",
+      "output_type": "choice",
+      "answer": "B",
+      "correct": false,
+      "evidence_kind": "synthetic_test"
+    },
+    {
+      "schema_version": 1,
+      "sample_id": "demo-5",
+      "task": "synthetic-demo",
+      "task_version": "1",
+      "prompt_hash": "8d9bd1297d00d8cfd806e750321c5c081b6d154da360273f58c2f967c4069e9d",
+      "gold": [
+        "A"
+      ],
+      "gold_definition": "Own synthetic correct choice A",
+      "model_id": "synthetic/example",
+      "artifact_id": "synthetic/baseline",
+      "output_type": "choice",
+      "answer": "B",
+      "correct": false,
+      "evidence_kind": "synthetic_test"
+    },
+    {
+      "schema_version": 1,
+      "sample_id": "demo-6",
+      "task": "synthetic-demo",
+      "task_version": "1",
+      "prompt_hash": "44448714dffb496619211837b53a8043a9f368ac0e37eb7095e4d22e75db0711",
+      "gold": [
+        "A"
+      ],
+      "gold_definition": "Own synthetic correct choice A",
+      "model_id": "synthetic/example",
+      "artifact_id": "synthetic/baseline",
+      "output_type": "choice",
+      "answer": "B",
+      "correct": false,
+      "evidence_kind": "synthetic_test"
+    },
+    {
+      "schema_version": 1,
+      "sample_id": "demo-7",
+      "task": "synthetic-demo",
+      "task_version": "1",
+      "prompt_hash": "7d7bd2627dff4fcc7435c5ecfa43438c8ef118d45ec1ae9b5d3b7002f79df987",
+      "gold": [
+        "A"
+      ],
+      "gold_definition": "Own synthetic correct choice A",
+      "model_id": "synthetic/example",
+      "artifact_id": "synthetic/baseline",
+      "output_type": "choice",
+      "answer": "B",
+      "correct": false,
+      "evidence_kind": "synthetic_test"
+    }
+  ],
+  "candidate": [
+    {
+      "schema_version": 1,
+      "sample_id": "demo-0",
+      "task": "synthetic-demo",
+      "task_version": "1",
+      "prompt_hash": "114be30f7970a84add7a720f55a9ef0bbdf760ad7a933d775d4290063f439c22",
+      "gold": [
+        "A"
+      ],
+      "gold_definition": "Own synthetic correct choice A",
+      "model_id": "synthetic/example",
+      "artifact_id": "synthetic/candidate",
+      "output_type": "choice",
+      "answer": "A",
+      "correct": true,
+      "evidence_kind": "synthetic_test"
+    },
+    {
+      "schema_version": 1,
+      "sample_id": "demo-1",
+      "task": "synthetic-demo",
+      "task_version": "1",
+      "prompt_hash": "fd351fc94a4a74abde3ac470855e4ad5c3c7621a35e432acd86c5fff69eeac75",
+      "gold": [
+        "A"
+      ],
+      "gold_definition": "Own synthetic correct choice A",
+      "model_id": "synthetic/example",
+      "artifact_id": "synthetic/candidate",
+      "output_type": "choice",
+      "answer": "A",
+      "correct": true,
+      "evidence_kind": "synthetic_test"
+    },
+    {
+      "schema_version": 1,
+      "sample_id": "demo-2",
+      "task": "synthetic-demo",
+      "task_version": "1",
+      "prompt_hash": "932a4cc04a6d4e03c57b2f737f63e79b4ea097aff504be3b07225a0e1e265572",
+      "gold": [
+        "A"
+      ],
+      "gold_definition": "Own synthetic correct choice A",
+      "model_id": "synthetic/example",
+      "artifact_id": "synthetic/candidate",
+      "output_type": "choice",
+      "answer": "A",
+      "correct": true,
+      "evidence_kind": "synthetic_test"
+    },
+    {
+      "schema_version": 1,
+      "sample_id": "demo-3",
+      "task": "synthetic-demo",
+      "task_version": "1",
+      "prompt_hash": "cb1121127c3c03dae9be4ad7d8308bdb745eacfe0f781d9f61ecda5422770e35",
+      "gold": [
+        "A"
+      ],
+      "gold_definition": "Own synthetic correct choice A",
+      "model_id": "synthetic/example",
+      "artifact_id": "synthetic/candidate",
+      "output_type": "choice",
+      "answer": "A",
+      "correct": true,
+      "evidence_kind": "synthetic_test"
+    },
+    {
+      "schema_version": 1,
+      "sample_id": "demo-4",
+      "task": "synthetic-demo",
+      "task_version": "1",
+      "prompt_hash": "bc2b070b4c76e9d82a865d46e97984593335a546dad6d15db97ee0efad59c897",
+      "gold": [
+        "A"
+      ],
+      "gold_definition": "Own synthetic correct choice A",
+      "model_id": "synthetic/example",
+      "artifact_id": "synthetic/candidate",
+      "output_type": "choice",
+      "answer": "A",
+      "correct": true,
+      "evidence_kind": "synthetic_test"
+    },
+    {
+      "schema_version": 1,
+      "sample_id": "demo-5",
+      "task": "synthetic-demo",
+      "task_version": "1",
+      "prompt_hash": "8d9bd1297d00d8cfd806e750321c5c081b6d154da360273f58c2f967c4069e9d",
+      "gold": [
+        "A"
+      ],
+      "gold_definition": "Own synthetic correct choice A",
+      "model_id": "synthetic/example",
+      "artifact_id": "synthetic/candidate",
+      "output_type": "choice",
+      "answer": "B",
+      "correct": false,
+      "evidence_kind": "synthetic_test"
+    },
+    {
+      "schema_version": 1,
+      "sample_id": "demo-6",
+      "task": "synthetic-demo",
+      "task_version": "1",
+      "prompt_hash": "44448714dffb496619211837b53a8043a9f368ac0e37eb7095e4d22e75db0711",
+      "gold": [
+        "A"
+      ],
+      "gold_definition": "Own synthetic correct choice A",
+      "model_id": "synthetic/example",
+      "artifact_id": "synthetic/candidate",
+      "output_type": "choice",
+      "answer": "B",
+      "correct": false,
+      "evidence_kind": "synthetic_test"
+    },
+    {
+      "schema_version": 1,
+      "sample_id": "demo-7",
+      "task": "synthetic-demo",
+      "task_version": "1",
+      "prompt_hash": "7d7bd2627dff4fcc7435c5ecfa43438c8ef118d45ec1ae9b5d3b7002f79df987",
+      "gold": [
+        "A"
+      ],
+      "gold_definition": "Own synthetic correct choice A",
+      "model_id": "synthetic/example",
+      "artifact_id": "synthetic/candidate",
+      "output_type": "choice",
+      "answer": "B",
+      "correct": false,
+      "evidence_kind": "synthetic_test"
+    }
+  ],
+  "index": {
+    "schema_version": 2,
+    "kind": "verified_result_index",
+    "evidence_kind": "synthetic_test",
+    "results": [
+      {
+        "configuration_id": "synthetic/fixture",
+        "model_id": "synthetic/example",
+        "model_revision": "fixture-v1",
+        "kind": "synthetic_test",
+        "measurement_status": "SYNTHETIC_NOT_MEASURED",
+        "identity": {
+          "gpu_uuid": "synthetic/gpu_uuid",
+          "runtime_identity": "synthetic/runtime_identity",
+          "profile_identity": "synthetic/profile_identity",
+          "workload_identity": "synthetic/workload_identity",
+          "quality_task_identity": "synthetic/quality_task_identity",
+          "quality_split_identity": "synthetic/quality_split_identity",
+          "tokenizer_identity": "synthetic/tokenizer_identity"
+        },
+        "validity": {},
+        "memory": {
+          "scope": "whole_device_mib",
+          "max_mib": 64
+        },
+        "quality": {
+          "acc_norm": 0.5,
+          "delta": 0,
+          "delta_ci95": [
+            -0.1,
+            0.1
+          ]
+        },
+        "performance": {
+          "cells": [
+            {
+              "input_length": 8,
+              "concurrency": 1,
+              "ttft_seconds": {
+                "p95": 0.01
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "results_identity": "7bd990adef07b924dc01c7da0f7fefdbb0aa6fc1508878816ece220b6b809ed4"
+  },
+  "requirements": {
+    "schema_version": 2,
+    "policy": "DEMO",
+    "model_id": "synthetic/example",
+    "model_revision": "fixture-v1",
+    "identity": {
+      "gpu_uuid": "synthetic/gpu_uuid",
+      "runtime_identity": "synthetic/runtime_identity",
+      "profile_identity": "synthetic/profile_identity",
+      "workload_identity": "synthetic/workload_identity",
+      "quality_task_identity": "synthetic/quality_task_identity",
+      "quality_split_identity": "synthetic/quality_split_identity",
+      "tokenizer_identity": "synthetic/tokenizer_identity"
+    },
+    "memory": {
+      "scope": "whole_device_mib",
+      "max_mib": 128
+    },
+    "quality": {
+      "delta_floor": -0.02
+    },
+    "latency": {
+      "metric": "ttft_seconds",
+      "statistic": "p95",
+      "max_seconds": 0.1,
+      "input_length": 8,
+      "concurrency": 1
+    },
+    "evidence_level": "screen_with_interval"
+  }
+}

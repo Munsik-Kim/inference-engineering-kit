@@ -1,0 +1,12 @@
+{
+  "roots": {
+    "PROJECT_ROOT": ".",
+    "ARTIFACT_ROOT": "artifacts",
+    "DATA_ROOT": "data",
+    "RUNS_ROOT": "runs"
+  },
+  "server_python": "${PROJECT_ROOT}/runtime/bin/python",
+  "gpu": 0,
+  "gpu_uuid": "REPLACE_WITH_OBSERVED_UUID",
+  "port": 18160
+}

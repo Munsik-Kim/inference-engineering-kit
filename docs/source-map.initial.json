@@ -1,0 +1,1755 @@
+{
+  "schema_version": 1,
+  "phase": "dependency inventory before extraction",
+  "source_head": "7b3422aca3abc80c2d0286566ee8d998e7b41752",
+  "entries": [
+    {
+      "original_path": "cases/009-q-serving-quality/scripts/analyze_serving.py",
+      "original_functions": [
+        "quantile",
+        "aggregate_cell",
+        "round_ratio",
+        "counter",
+        "analyze",
+        "main"
+      ],
+      "new_api_proposed": "core/io.py or provenance only",
+      "disposition": "minimal extract / retained history",
+      "original_sha256": "185ccdffcfd1240b4437b9d61f67dcba50b6729e5cc1ec860a09f4b005ae78a1",
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "math",
+        "pathlib",
+        "random",
+        "re",
+        "statistics"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "cases/009-q-serving-quality/scripts/quality.py",
+      "original_functions": [
+        "digest",
+        "main"
+      ],
+      "new_api_proposed": "core/io.py or provenance only",
+      "disposition": "minimal extract / retained history",
+      "original_sha256": "31fe5772051f7fbde1cc985c2b5072ab661890e8c0f850eefce4ab27e293fc71",
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "lm_eval",
+        "lm_eval.models.vllm_causallms",
+        "lm_eval.tasks",
+        "os",
+        "pathlib",
+        "sys"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/serving_lab/__init__.py",
+      "original_functions": [],
+      "new_api_proposed": "adapters/http.py, owned.py, protocol.py",
+      "disposition": "copy / imports and paths only",
+      "original_sha256": "52c614c60c9578d51a164d8ce2cbb80cf51c0521e00f77f6c09a29c41b966229",
+      "imports": [],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/serving_lab/__main__.py",
+      "original_functions": [
+        "main"
+      ],
+      "new_api_proposed": "adapters/http.py, owned.py, protocol.py",
+      "disposition": "copy / imports and paths only",
+      "original_sha256": "69b491ecdba7e51640bc709fdba1133b21103ec9210b42328a87816a0be4169a",
+      "imports": [
+        ".experiment",
+        ".mock",
+        ".server",
+        ".workload",
+        "argparse",
+        "asyncio",
+        "json",
+        "pathlib"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/serving_lab/adapters.py",
+      "original_functions": [
+        "Adapter"
+      ],
+      "new_api_proposed": "adapters/http.py, owned.py, protocol.py",
+      "disposition": "copy / imports and paths only",
+      "original_sha256": "4aa80375356026ec595a4a4922b2dba1524a6fbe206ab52f7c3560f0d536211c",
+      "imports": [
+        "dataclasses"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/serving_lab/client.py",
+      "original_functions": [
+        "sse_events",
+        "_ids",
+        "request",
+        "quantile",
+        "summary",
+        "block"
+      ],
+      "new_api_proposed": "adapters/http.py, owned.py, protocol.py",
+      "disposition": "copy / imports and paths only",
+      "original_sha256": "ee147a7f3d099d006aa78cc0ea297e1b97c620a31cfc126f125cef5741a9ca60",
+      "imports": [
+        ".workload",
+        "aiohttp",
+        "asyncio",
+        "json",
+        "math",
+        "time"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/serving_lab/experiment.py",
+      "original_functions": [
+        "exercise",
+        "compare",
+        "gpu_smoke"
+      ],
+      "new_api_proposed": "adapters/http.py, owned.py, protocol.py",
+      "disposition": "copy / imports and paths only",
+      "original_sha256": "070a864aa98d9c92497467a79978fad2ab500216ca013e63b1a8987326abb6ee",
+      "imports": [
+        ".",
+        ".adapters",
+        ".client",
+        ".workload",
+        "asyncio",
+        "json",
+        "pathlib"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/serving_lab/mock.py",
+      "original_functions": [
+        "fixture",
+        "MockServer",
+        "demo"
+      ],
+      "new_api_proposed": "adapters/http.py, owned.py, protocol.py",
+      "disposition": "copy / imports and paths only",
+      "original_sha256": "5badcf9db274186f8c713ef782fd9188f20b4005522f49a5e00e5c41b179c889",
+      "imports": [
+        ".",
+        ".experiment",
+        ".workload",
+        "aiohttp",
+        "asyncio",
+        "json"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/serving_lab/server.py",
+      "original_functions": [
+        "model_identity",
+        "plan",
+        "runtime_snapshot",
+        "ensure_port_free",
+        "start",
+        "ready",
+        "group_members",
+        "stop",
+        "telemetry"
+      ],
+      "new_api_proposed": "adapters/http.py, owned.py, protocol.py",
+      "disposition": "copy / imports and paths only",
+      "original_sha256": "75745c28e69bc825fe19a6ec0187bd76a42ecc6f9975f7c9cbbc675efc8f6b24",
+      "imports": [
+        ".workload",
+        "aiohttp",
+        "asyncio",
+        "json",
+        "os",
+        "pathlib",
+        "signal",
+        "subprocess",
+        "time",
+        "urllib.parse"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/serving_lab/workload.py",
+      "original_functions": [
+        "sha",
+        "file_sha",
+        "write_new",
+        "validate",
+        "prepare"
+      ],
+      "new_api_proposed": "adapters/http.py, owned.py, protocol.py",
+      "disposition": "copy / imports and paths only",
+      "original_sha256": "a867a469ec2df991e0b07d4fd4319f6b6c3fbde4b6c93e46e46e5c48ed0aafb2",
+      "imports": [
+        ".",
+        "hashlib",
+        "json",
+        "pathlib",
+        "transformers"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/tests/test_client.py",
+      "original_functions": [
+        "BytesContent",
+        "SSETests",
+        "ClientTests",
+        "ExerciseTests",
+        "ContractTests"
+      ],
+      "new_api_proposed": "core/io.py or provenance only",
+      "disposition": "minimal extract / retained history",
+      "original_sha256": "672ee2737440e13888010890193a871315b243aaae85284a3f68c2d87221bcfe",
+      "imports": [
+        "asyncio",
+        "copy",
+        "serving_lab.adapters",
+        "serving_lab.client",
+        "serving_lab.experiment",
+        "serving_lab.mock",
+        "serving_lab.workload",
+        "unittest"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/tests/test_local.py",
+      "original_functions": [
+        "LocalTests",
+        "LifecycleTests"
+      ],
+      "new_api_proposed": "core/io.py or provenance only",
+      "disposition": "minimal extract / retained history",
+      "original_sha256": "e93adbeda629ef7d1269699319640a8634cf9d363d797af2735216009671e4e6",
+      "imports": [
+        "asyncio",
+        "json",
+        "os",
+        "pathlib",
+        "serving_lab",
+        "serving_lab.mock",
+        "serving_lab.workload",
+        "sys",
+        "tempfile",
+        "time",
+        "types",
+        "unittest",
+        "unittest.mock"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "packages/diova-compare/src/diova_compare/__init__.py",
+      "original_functions": [],
+      "new_api_proposed": "_vendor/diova_compare/",
+      "disposition": "vendor with original license/hash",
+      "original_sha256": "55ae18d3174f20cfa88b09c097d30e34d0dd653e8e4c6ad7718975dd17741ab6",
+      "imports": [],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "packages/diova-compare/src/diova_compare/adapters.py",
+      "original_functions": [
+        "harness_sample"
+      ],
+      "new_api_proposed": "_vendor/diova_compare/",
+      "disposition": "vendor with original license/hash",
+      "original_sha256": "1dfb68bfa586e1f0eb04cd8de86d5d277777eb5139cd76ba897456bf34f76d59",
+      "imports": [
+        ".core",
+        "hashlib",
+        "json",
+        "math"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "packages/diova-compare/src/diova_compare/cli.py",
+      "original_functions": [
+        "main"
+      ],
+      "new_api_proposed": "_vendor/diova_compare/",
+      "disposition": "vendor with original license/hash",
+      "original_sha256": "7ac23178793310cec65aca6e50e1d43c25690f3c721877ec53032336fff19440",
+      "imports": [
+        ".core",
+        "argparse",
+        "csv",
+        "json",
+        "pathlib"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "packages/diova-compare/src/diova_compare/core.py",
+      "original_functions": [
+        "require",
+        "finite_number",
+        "validate",
+        "load",
+        "probability_scores",
+        "kl",
+        "check_task_metrics",
+        "compare"
+      ],
+      "new_api_proposed": "_vendor/diova_compare/",
+      "disposition": "vendor with original license/hash",
+      "original_sha256": "a0cbf427dcde7449cf0da400f2880cd1b77e8bb44c60ae8df52aa5a9816d07e7",
+      "imports": [
+        "collections",
+        "hashlib",
+        "json",
+        "math",
+        "random"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "packages/diova-compare/tests/test_compare.py",
+      "original_functions": [
+        "row",
+        "dist",
+        "Contract"
+      ],
+      "new_api_proposed": "core/io.py or provenance only",
+      "disposition": "minimal extract / retained history",
+      "original_sha256": "8d59d7d5765bf21f7803d4dc43dbc5702ef29c2f7383a38f96ea5bff961c2972",
+      "imports": [
+        "copy",
+        "diova_compare.adapters",
+        "diova_compare.core",
+        "json",
+        "math",
+        "pathlib",
+        "tempfile",
+        "unittest"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "packages/diova-compare/tests/test_review_edges.py",
+      "original_functions": [
+        "ReviewEdges"
+      ],
+      "new_api_proposed": "core/io.py or provenance only",
+      "disposition": "minimal extract / retained history",
+      "original_sha256": "43c20d24fb95479a26beab7ef34a1821d9ce4e33e744140492b87b289ac2f2e5",
+      "imports": [
+        "copy",
+        "diova_compare.core",
+        "itertools",
+        "json",
+        "math",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "tempfile",
+        "test_compare",
+        "unittest"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tests/inference_suite/test_clipping_cpu.py",
+      "original_functions": [
+        "ClippingAblationTests"
+      ],
+      "new_api_proposed": "core/io.py or provenance only",
+      "disposition": "minimal extract / retained history",
+      "original_sha256": "4aeef8c706739e430d308c3cbdd24e603572f2f9b9e4b4a295457b1f5a6b09e1",
+      "imports": [
+        "compressed_tensors.quantization",
+        "compressed_tensors.quantization.lifecycle.forward",
+        "llmcompressor.observers.min_max",
+        "tools.inference_suite.clipping",
+        "torch",
+        "unittest"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tests/inference_suite/test_step02.py",
+      "original_functions": [
+        "LifecycleEvidenceTests",
+        "QualityContracts",
+        "SelectorContracts",
+        "Step02ExecutionContracts"
+      ],
+      "new_api_proposed": "core/io.py or provenance only",
+      "disposition": "minimal extract / retained history",
+      "original_sha256": "27f46e80a75d55d5fe89a3c14e39b4df3df3a4e55447452792175869e8ccd60b",
+      "imports": [
+        "copy",
+        "json",
+        "pathlib",
+        "tempfile",
+        "tools.inference_suite.lifecycle",
+        "tools.inference_suite.registry",
+        "tools.inference_suite.result_index",
+        "tools.inference_suite.schema",
+        "tools.inference_suite.selector",
+        "tools.inference_suite.step02",
+        "tools.inference_suite.step02_eval",
+        "unittest",
+        "unittest.mock"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tests/inference_suite/test_step03.py",
+      "original_functions": [
+        "ConfigurationTests",
+        "MetricsTests",
+        "SelectorTests",
+        "StateAndBudgetTests",
+        "ClientExtensionTests"
+      ],
+      "new_api_proposed": "core/io.py or provenance only",
+      "disposition": "minimal extract / retained history",
+      "original_sha256": "29ffe293bd80a094f8552930b9bcf9f4a4c91e5982981fb888609d2a6b8618ec",
+      "imports": [
+        "asyncio",
+        "copy",
+        "json",
+        "pathlib",
+        "sys",
+        "tempfile",
+        "tools.inference_suite.protocol",
+        "tools.inference_suite.schema",
+        "tools.inference_suite.step03",
+        "tools.inference_suite.step03_analysis",
+        "tools.inference_suite.step03_contract",
+        "tools.inference_suite.step03_metrics",
+        "tools.inference_suite.step03_runtime",
+        "tools.inference_suite.step03_selector",
+        "unittest",
+        "unittest.mock"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tests/inference_suite/test_step04.py",
+      "original_functions": [
+        "Step04Contracts",
+        "Step04TensorFixtures"
+      ],
+      "new_api_proposed": "core/io.py or provenance only",
+      "disposition": "minimal extract / retained history",
+      "original_sha256": "b4fea4822a1a44d6abba5816af131c7e8b0a3f74e1865bdbd0b453c798a3bdb6",
+      "imports": [
+        "compressed_tensors.compressors.pack_quantized",
+        "contextlib",
+        "copy",
+        "json",
+        "os",
+        "pathlib",
+        "safetensors.torch",
+        "tempfile",
+        "tools.inference_suite.clipping",
+        "tools.inference_suite.schema",
+        "tools.inference_suite.step02_eval",
+        "tools.inference_suite.step04",
+        "tools.inference_suite.step04_analysis",
+        "tools.inference_suite.step04_artifacts",
+        "tools.inference_suite.step04_contract",
+        "tools.inference_suite.step04_data",
+        "tools.inference_suite.step04_run",
+        "torch",
+        "unittest",
+        "unittest.mock"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tests/inference_suite/test_suite.py",
+      "original_functions": [
+        "spec",
+        "RegistryTests",
+        "MetadataTests",
+        "HistoryTests",
+        "ProtocolTests",
+        "RuntimeTests",
+        "ReplayTests"
+      ],
+      "new_api_proposed": "core/io.py or provenance only",
+      "disposition": "minimal extract / retained history",
+      "original_sha256": "b2f3dd6c452e48f7716c26a186d96ecf656803e49d610218003aebf6e21c685d",
+      "imports": [
+        "asyncio",
+        "copy",
+        "importlib.abc",
+        "json",
+        "pathlib",
+        "serving_lab.experiment",
+        "serving_lab.mock",
+        "subprocess",
+        "sys",
+        "tempfile",
+        "tools.inference_suite",
+        "tools.inference_suite.adapters.case009",
+        "tools.inference_suite.history",
+        "tools.inference_suite.plan",
+        "tools.inference_suite.runner",
+        "types",
+        "unittest",
+        "unittest.mock"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/__init__.py",
+      "original_functions": [],
+      "new_api_proposed": "core/ + adapters/",
+      "disposition": "extract actual shared functions",
+      "original_sha256": "d752e96ad6bb3c1d010e9d9098573fa11cc3d2c9ec141648954aa9d5408d668f",
+      "imports": [],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/__main__.py",
+      "original_functions": [
+        "main"
+      ],
+      "new_api_proposed": "core/ + adapters/",
+      "disposition": "extract actual shared functions",
+      "original_sha256": "c0f3a32d6d68cb8c79f4e886dc12648ca5e42a6ca611f8b6e329af3d5e9f73ce",
+      "imports": [
+        ".",
+        ".adapters.case009",
+        ".history",
+        ".plan",
+        ".report",
+        ".runner",
+        ".selector",
+        ".step02",
+        ".step03",
+        ".step03_analysis",
+        ".step03_contract",
+        ".step04",
+        ".step04_analysis",
+        ".step04_contract",
+        "argparse",
+        "json",
+        "pathlib",
+        "sys"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/adapters/__init__.py",
+      "original_functions": [],
+      "new_api_proposed": "core/ + adapters/",
+      "disposition": "extract actual shared functions",
+      "original_sha256": "8cf02dc5417adeef24ce643b92e127936e06b49ffdddb3a3572a8467bb010ae1",
+      "imports": [],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/adapters/case009.py",
+      "original_functions": [
+        "source_file",
+        "wiki",
+        "serving",
+        "replay"
+      ],
+      "new_api_proposed": "core/ + adapters/",
+      "disposition": "extract actual shared functions",
+      "original_sha256": "2aa281355744adf769f0a7403678e28c27d37494c763e608f2b49d6f7f569d11",
+      "imports": [
+        "..protocol",
+        "..schema",
+        "collections",
+        "json",
+        "math",
+        "pathlib",
+        "subprocess",
+        "sys"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/budget.py",
+      "original_functions": [
+        "GPUBudget"
+      ],
+      "new_api_proposed": "core/ + adapters/",
+      "disposition": "extract actual shared functions",
+      "original_sha256": "dac697e563c03aad9e0db9d2c336bc93e34b7295cea5d1f4095479a9c439e0ce",
+      "imports": [
+        ".protocol",
+        ".schema",
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "shutil",
+        "signal",
+        "subprocess",
+        "time"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/clipping.py",
+      "original_functions": [
+        "clipped_weight",
+        "rtn_qdq",
+        "choose_ratio",
+        "fit_clipping"
+      ],
+      "new_api_proposed": "core/ + adapters/",
+      "disposition": "extract actual shared functions",
+      "original_sha256": "426510fbfad3c35b2b5d28cf4b62911c7f5151d5720ad6c6b40a6e0065ca4cde",
+      "imports": [
+        "compressed_tensors.quantization",
+        "compressed_tensors.quantization.lifecycle.forward",
+        "compressed_tensors.quantization.utils",
+        "torch",
+        "torch.nn.functional"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/engines/__init__.py",
+      "original_functions": [],
+      "new_api_proposed": "core/ + adapters/",
+      "disposition": "extract actual shared functions",
+      "original_sha256": "9ebca69e8de63c99dec6dc10a5c9ab3012109615d45ec9bee977c87d132efaac",
+      "imports": [],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/engines/vllm.py",
+      "original_functions": [
+        "launch"
+      ],
+      "new_api_proposed": "core/ + adapters/",
+      "disposition": "extract actual shared functions",
+      "original_sha256": "1d6d01c133ea3b0c398774b25d7ab0094c4b45eef8b51017dba93c208cb960a1",
+      "imports": [
+        "..schema",
+        "os",
+        "pathlib"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/history.py",
+      "original_functions": [
+        "output_path",
+        "inventory",
+        "verify",
+        "Attempt"
+      ],
+      "new_api_proposed": "core/ + adapters/",
+      "disposition": "extract actual shared functions",
+      "original_sha256": "863f572eadf67b5332ccb09133bd275bf29d3d8af404d8a2a0a1f02decc709a9",
+      "imports": [
+        ".schema",
+        "datetime",
+        "os",
+        "pathlib",
+        "uuid"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/lifecycle.py",
+      "original_functions": [
+        "observed_shutdown"
+      ],
+      "new_api_proposed": "core/ + adapters/",
+      "disposition": "extract actual shared functions",
+      "original_sha256": "2139346fa9068a54aca5bb5e165e993d1dc8d97e8980469c8ebf5498640165eb",
+      "imports": [],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/metadata.py",
+      "original_functions": [
+        "config_contract",
+        "inspect"
+      ],
+      "new_api_proposed": "core/ + adapters/",
+      "disposition": "extract actual shared functions",
+      "original_sha256": "4ffda6078a6010607241ad174a911f24b78d2f8d3e59b85f5f34e84f44a7f91a",
+      "imports": [
+        ".registry",
+        ".schema",
+        "pathlib"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/plan.py",
+      "original_functions": [
+        "build"
+      ],
+      "new_api_proposed": "core/ + adapters/",
+      "disposition": "extract actual shared functions",
+      "original_sha256": "5cb0ed4e9e28b41f1d0b6d159b1a6551bb58e37082b03d9d885ba135309ac774",
+      "imports": [
+        ".engines.vllm",
+        ".metadata",
+        ".registry",
+        ".schema"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/protocol.py",
+      "original_functions": [
+        "lab",
+        "compare_core",
+        "serving_analyzer",
+        "validate_inputs"
+      ],
+      "new_api_proposed": "core/ + adapters/",
+      "disposition": "extract actual shared functions",
+      "original_sha256": "b31e5b3d24959476fd0ceb61f6d937118f6d11af01c7b967eab0fdd39c688039",
+      "imports": [
+        ".schema",
+        "importlib",
+        "importlib.util",
+        "pathlib",
+        "sys"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/registry.py",
+      "original_functions": [
+        "kv_payload",
+        "load",
+        "select",
+        "select_model_method_v2"
+      ],
+      "new_api_proposed": "core/ + adapters/",
+      "disposition": "extract actual shared functions",
+      "original_sha256": "02af6ac48016d1bc62cb9ef7fa4a1fdd40175d096c755b8adb630bccf2a67f12",
+      "imports": [
+        ".schema"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/report.py",
+      "original_functions": [
+        "emit"
+      ],
+      "new_api_proposed": "core/ + adapters/",
+      "disposition": "extract actual shared functions",
+      "original_sha256": "626db5a04db5026720b3b4e62bcb3482ee57c2cd91e668997f07032fbdf24893",
+      "imports": [
+        ".schema",
+        "json"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/result_index.py",
+      "original_functions": [
+        "memory_summary",
+        "absolute_subset_interval",
+        "build_index"
+      ],
+      "new_api_proposed": "core/ + adapters/",
+      "disposition": "extract actual shared functions",
+      "original_sha256": "01b9af5de52a7beee63d2b0b51f21c2d514241fee4ada3d9b64fa1dc0f393c2a",
+      "imports": [
+        ".protocol",
+        ".schema",
+        ".step02_eval",
+        ".step02_run",
+        "json",
+        "pathlib",
+        "random",
+        "re",
+        "statistics"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/runner.py",
+      "original_functions": [
+        "runtime_snapshot",
+        "runtime_gate",
+        "tokenizer_check",
+        "smoke",
+        "run"
+      ],
+      "new_api_proposed": "core/ + adapters/",
+      "disposition": "extract actual shared functions",
+      "original_sha256": "73ce5bb0445b740b0775f5c3ed45e3d1f284ce1d2c79cceb9b6bee2716bab0ba",
+      "imports": [
+        ".lifecycle",
+        ".protocol",
+        ".schema",
+        "asyncio",
+        "json",
+        "os",
+        "pathlib",
+        "serving_lab.experiment",
+        "subprocess",
+        "time"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/schema.py",
+      "original_functions": [
+        "fields",
+        "version",
+        "revision",
+        "relative",
+        "spec",
+        "local",
+        "sources",
+        "freeze"
+      ],
+      "new_api_proposed": "core/ + adapters/",
+      "disposition": "extract actual shared functions",
+      "original_sha256": "574e5651c4fc86d7dd26300625bd15d9c37ae98cdb2586ffa9bb8271de793c7a",
+      "imports": [
+        ".step02",
+        ".step03_contract",
+        ".step04_contract",
+        "pathlib",
+        "re",
+        "tools.modelpack.common"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/selector.py",
+      "original_functions": [
+        "requirements",
+        "constraint",
+        "assess_candidate",
+        "assess",
+        "load_verified_index"
+      ],
+      "new_api_proposed": "core/ + adapters/",
+      "disposition": "extract actual shared functions",
+      "original_sha256": "e1c39bc6766df4929c732af0f455511c4dda2dc6a3a43acbd5abc1c258ad0ef9",
+      "imports": [
+        ".schema",
+        ".step03_selector",
+        "argparse",
+        "math",
+        "pathlib"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step02.py",
+      "original_functions": [
+        "validate_spec",
+        "plan",
+        "safe_resource_gate",
+        "execute_phase",
+        "initialize",
+        "cpu_and_lifecycle",
+        "custom_phase"
+      ],
+      "new_api_proposed": "experiments/step02.py + core/quality.py",
+      "disposition": "small modification / acquisition and conversion not ported",
+      "original_sha256": "7129944750c61d34f72d742595a773ae31e5cce2d8f917d87d3f9b82a7d77ed3",
+      "imports": [
+        ".budget",
+        ".result_index",
+        ".runner",
+        ".schema",
+        ".selector",
+        ".step02_report",
+        ".step02_run",
+        "argparse",
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "random",
+        "shutil",
+        "subprocess"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step02_data.py",
+      "original_functions": [
+        "metadata",
+        "acquire",
+        "normalize",
+        "document_requests",
+        "prepare",
+        "main"
+      ],
+      "new_api_proposed": "experiments/step02.py + core/quality.py",
+      "disposition": "small modification / acquisition and conversion not ported",
+      "original_sha256": "47006c78ce4b9a7496dcd806fbdec38efc3e1bc822cfa4d52780a9e5b82fae7b",
+      "imports": [
+        ".schema",
+        "argparse",
+        "datasets",
+        "datetime",
+        "hashlib",
+        "huggingface_hub",
+        "json",
+        "lm_eval.api.model",
+        "lm_eval.tasks",
+        "os",
+        "pathlib",
+        "random",
+        "sys",
+        "transformers",
+        "types"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step02_eval.py",
+      "original_functions": [
+        "score_document",
+        "likelihood_from_response",
+        "live_quality",
+        "paired_quality"
+      ],
+      "new_api_proposed": "experiments/step02.py + core/quality.py",
+      "disposition": "small modification / acquisition and conversion not ported",
+      "original_sha256": "5786b2418064c7154edf2c63dd3e87b5dbda2c755a8bb5fca3116b37e37d91e9",
+      "imports": [
+        ".protocol",
+        ".schema",
+        "aiohttp",
+        "asyncio",
+        "json",
+        "math",
+        "pathlib",
+        "random",
+        "statistics",
+        "time"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step02_quantize.py",
+      "original_functions": [
+        "inspect_packed",
+        "convert",
+        "main"
+      ],
+      "new_api_proposed": "experiments/step02.py + core/quality.py",
+      "disposition": "small modification / acquisition and conversion not ported",
+      "original_sha256": "ce12a405c66b330049756ae64f59384f2b86bec10ff31f6ab04e5eb225bedfbd",
+      "imports": [
+        ".clipping",
+        ".schema",
+        "argparse",
+        "compressed_tensors.quantization",
+        "importlib.metadata",
+        "json",
+        "llmcompressor",
+        "llmcompressor.modifiers.quantization",
+        "pathlib",
+        "time",
+        "tools.modelpack.quantized",
+        "torch",
+        "torch.utils.data",
+        "transformers"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step02_report.py",
+      "original_functions": [
+        "test_inventory",
+        "write_text_once",
+        "finalize"
+      ],
+      "new_api_proposed": "experiments/step02.py + core/quality.py",
+      "disposition": "small modification / acquisition and conversion not ported",
+      "original_sha256": "25b38024b9129a07db8becaf044c6f00a36be08109ad52793395906912c2f6cf",
+      "imports": [
+        ".schema",
+        ".selector",
+        "csv",
+        "datetime",
+        "json",
+        "pathlib",
+        "re"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step02_review.py",
+      "original_functions": [
+        "review_shared_gpu"
+      ],
+      "new_api_proposed": "experiments/step02.py + core/quality.py",
+      "disposition": "small modification / acquisition and conversion not ported",
+      "original_sha256": "8c8cbb10ebff8ab25e735f648a4bd7762e7d199bcced45efacc7ea64f565f766",
+      "imports": [
+        ".schema",
+        ".selector",
+        ".step02_report",
+        "copy",
+        "pathlib"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step02_run.py",
+      "original_functions": [
+        "configurations",
+        "launch_config",
+        "TokenPromptTextTimingAdapter",
+        "add_e2e",
+        "measured",
+        "main"
+      ],
+      "new_api_proposed": "experiments/step02.py + core/quality.py",
+      "disposition": "small modification / acquisition and conversion not ported",
+      "original_sha256": "339dca84ff3f388719015edc83562d9c86b2a8ecef615a210abcc085d28736ce",
+      "imports": [
+        ".engines.vllm",
+        ".lifecycle",
+        ".protocol",
+        ".registry",
+        ".runner",
+        ".schema",
+        ".step02_eval",
+        "argparse",
+        "asyncio",
+        "datetime",
+        "json",
+        "pathlib",
+        "re",
+        "time"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step03.py",
+      "original_functions": [
+        "cumulative",
+        "retained",
+        "initialize",
+        "OwnedBudget",
+        "run"
+      ],
+      "new_api_proposed": "experiments/step03.py + core/metrics.py + core/assess_multi.py",
+      "disposition": "small modification / GPU campaign recipe frozen",
+      "original_sha256": "ea8919efc94e61e5196bc7f23553c4629902938abd2e1191cc04b78894d6ddc8",
+      "imports": [
+        ".budget",
+        ".protocol",
+        ".runner",
+        ".schema",
+        ".step03_analysis",
+        ".step03_contract",
+        ".step03_runtime",
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "shutil",
+        "signal",
+        "subprocess",
+        "time"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step03_analysis.py",
+      "original_functions": [
+        "quantile",
+        "immutable",
+        "memory",
+        "cell_summary",
+        "sanity_pair",
+        "contrasts",
+        "analyze"
+      ],
+      "new_api_proposed": "experiments/step03.py + core/metrics.py + core/assess_multi.py",
+      "disposition": "small modification / GPU campaign recipe frozen",
+      "original_sha256": "f9d22101248342ff17338831b5b8ddfc4df4b2bcb64bd80cf110f80bafea5491",
+      "imports": [
+        ".schema",
+        ".selector",
+        ".step02_eval",
+        ".step03_metrics",
+        ".step03_report",
+        "copy",
+        "json",
+        "math",
+        "pathlib",
+        "statistics"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step03_contract.py",
+      "original_functions": [
+        "validate_spec",
+        "profile",
+        "arms",
+        "artifacts",
+        "launch_config",
+        "validate_argv",
+        "effective_cache",
+        "plan"
+      ],
+      "new_api_proposed": "experiments/step03.py + core/metrics.py + core/assess_multi.py",
+      "disposition": "small modification / GPU campaign recipe frozen",
+      "original_sha256": "9e9757e4d0673761f65e801f69e19a35a99df8acd25efb54e7674ff325435746",
+      "imports": [
+        ".engines.vllm",
+        ".schema",
+        ".step02_run",
+        "copy",
+        "pathlib",
+        "random",
+        "re"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step03_metrics.py",
+      "original_functions": [
+        "parse",
+        "value",
+        "counter_delta",
+        "gauge_area",
+        "summarize"
+      ],
+      "new_api_proposed": "experiments/step03.py + core/metrics.py + core/assess_multi.py",
+      "disposition": "small modification / GPU campaign recipe frozen",
+      "original_sha256": "888479a374dfe9df5ce114ea8a6be1d2418c7be5e837ae46769f40acd034c861",
+      "imports": [
+        ".schema",
+        "json",
+        "math",
+        "re"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step03_report.py",
+      "original_functions": [
+        "report"
+      ],
+      "new_api_proposed": "experiments/step03.py + core/metrics.py + core/assess_multi.py",
+      "disposition": "small modification / GPU campaign recipe frozen",
+      "original_sha256": "322fcd57673d4474a4fe5bd829eeaa89c9ec836a65deb9593d6e2f8a9b5ba2b0",
+      "imports": [
+        ".schema",
+        ".step03_analysis",
+        "csv",
+        "io",
+        "statistics"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step03_run.py",
+      "original_functions": [
+        "measured",
+        "main"
+      ],
+      "new_api_proposed": "experiments/step03.py + core/metrics.py + core/assess_multi.py",
+      "disposition": "small modification / GPU campaign recipe frozen",
+      "original_sha256": "ba113aff8c8ef66d11e833cb44c20ccfa8267bfffd1716be4ab02a26b7c0ad13",
+      "imports": [
+        ".lifecycle",
+        ".protocol",
+        ".runner",
+        ".schema",
+        ".step02_eval",
+        ".step02_run",
+        ".step03_contract",
+        ".step03_metrics",
+        ".step03_runtime",
+        "aiohttp",
+        "argparse",
+        "asyncio",
+        "json",
+        "pathlib",
+        "time"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step03_runtime.py",
+      "original_functions": [
+        "atomic",
+        "proc_identity",
+        "owned",
+        "gpu_query",
+        "gpu_monitor",
+        "capture",
+        "metrics_monitor",
+        "drain",
+        "guarded"
+      ],
+      "new_api_proposed": "experiments/step03.py + core/metrics.py + core/assess_multi.py",
+      "disposition": "small modification / GPU campaign recipe frozen",
+      "original_sha256": "8af98a52715cfd2769f9ec412320ec9862942b899d975a0d617a07a926356ff1",
+      "imports": [
+        ".schema",
+        ".step03_metrics",
+        "asyncio",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "time"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step03_selector.py",
+      "original_functions": [
+        "requirements",
+        "combined",
+        "candidate",
+        "assess"
+      ],
+      "new_api_proposed": "experiments/step03.py + core/metrics.py + core/assess_multi.py",
+      "disposition": "small modification / GPU campaign recipe frozen",
+      "original_sha256": "890a8aa05664479de30af8f84f22e1f36f194f2c360359b4bd66eccecf7d9007",
+      "imports": [
+        ".schema",
+        ".selector",
+        "math"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step04.py",
+      "original_functions": [
+        "cpu_step",
+        "initialize",
+        "validate_completed",
+        "run"
+      ],
+      "new_api_proposed": "experiments/step04.py + adapters/tensors.py",
+      "disposition": "small modification / frozen observer not ported",
+      "original_sha256": "5284a795c2a107bab8c611d51178a564dab27152b7c0674ed563d76bdbcc12a1",
+      "imports": [
+        ".runner",
+        ".schema",
+        ".step03",
+        ".step03_runtime",
+        ".step04_analysis",
+        ".step04_contract",
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "shutil",
+        "subprocess"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step04_analysis.py",
+      "original_functions": [
+        "jsonl",
+        "retain",
+        "margin",
+        "paired_contrast",
+        "screen",
+        "replay_scores",
+        "local_summary",
+        "memory",
+        "analyze",
+        "quantiles"
+      ],
+      "new_api_proposed": "experiments/step04.py + adapters/tensors.py",
+      "disposition": "small modification / frozen observer not ported",
+      "original_sha256": "7a291b872e1f404412a5e8a232e0603f36f5d65ce4deb77359ff25ddf3972166",
+      "imports": [
+        ".schema",
+        ".step02_eval",
+        ".step04_contract",
+        "csv",
+        "io",
+        "json",
+        "math",
+        "pathlib",
+        "random",
+        "statistics"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step04_artifacts.py",
+      "original_functions": [
+        "module_for_key",
+        "choose_source",
+        "check_scheme",
+        "tensor_hash",
+        "PackedReader",
+        "compose"
+      ],
+      "new_api_proposed": "experiments/step04.py + adapters/tensors.py",
+      "disposition": "small modification / frozen observer not ported",
+      "original_sha256": "c0960ce94e72defe564f1d469afed8512ff75e8a80faca32fbbd0a70a574f858",
+      "imports": [
+        ".schema",
+        ".step04_contract",
+        "argparse",
+        "compressed_tensors.compressors.pack_quantized",
+        "compressed_tensors.quantization",
+        "contextlib",
+        "hashlib",
+        "pathlib",
+        "safetensors",
+        "safetensors.torch",
+        "shutil",
+        "time",
+        "torch"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step04_contract.py",
+      "original_functions": [
+        "validate_spec",
+        "references",
+        "kv_bytes",
+        "validate_rows",
+        "set_option",
+        "launch_config",
+        "plan"
+      ],
+      "new_api_proposed": "experiments/step04.py + adapters/tensors.py",
+      "disposition": "small modification / frozen observer not ported",
+      "original_sha256": "403583852c9bbeea0dacb86b2fdd60310752d5767ef7b3ef9995a10b6db545a1",
+      "imports": [
+        ".engines.vllm",
+        ".schema",
+        ".step03",
+        "pathlib",
+        "random"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step04_data.py",
+      "original_functions": [
+        "article_ids",
+        "prepare"
+      ],
+      "new_api_proposed": "experiments/step04.py + adapters/tensors.py",
+      "disposition": "small modification / frozen observer not ported",
+      "original_sha256": "96b905f187ab545eac2d7ebaae1ea5f9b92cfc65f9602b3e0aebe06766cf951c",
+      "imports": [
+        ".schema",
+        ".step02_data",
+        ".step04_contract",
+        "argparse",
+        "lm_eval.api.task",
+        "lm_eval.tasks._yaml_loader",
+        "os",
+        "pathlib",
+        "pyarrow.parquet",
+        "random",
+        "re",
+        "transformers"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step04_local.py",
+      "original_functions": [
+        "observe"
+      ],
+      "new_api_proposed": "experiments/step04.py + adapters/tensors.py",
+      "disposition": "small modification / frozen observer not ported",
+      "original_sha256": "21772a760512f191d207e73ac1607914b193244d6f264e66753d1fba0bfeec94",
+      "imports": [
+        ".schema",
+        ".step04_artifacts",
+        ".step04_contract",
+        "compressed_tensors.compressors.pack_quantized",
+        "compressed_tensors.quantization",
+        "contextlib",
+        "json",
+        "pathlib",
+        "time",
+        "torch",
+        "torch.nn.functional",
+        "transformers"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step04_run.py",
+      "original_functions": [
+        "post_gpu_observation",
+        "job"
+      ],
+      "new_api_proposed": "experiments/step04.py + adapters/tensors.py",
+      "disposition": "small modification / frozen observer not ported",
+      "original_sha256": "6c4b6b3b1ae8c2e945dd9d1e405a835f3ae2f21ece7524090de5f763dd806ca3",
+      "imports": [
+        ".lifecycle",
+        ".protocol",
+        ".runner",
+        ".schema",
+        ".step02_eval",
+        ".step03_runtime",
+        ".step04_contract",
+        ".step04_local",
+        "aiohttp",
+        "argparse",
+        "asyncio",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "time"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/modelpack/common.py",
+      "original_functions": [
+        "require",
+        "digest",
+        "sha",
+        "read",
+        "write",
+        "new_external",
+        "safe_name",
+        "inventory",
+        "checksums",
+        "verify_checksums"
+      ],
+      "new_api_proposed": "core/io.py or provenance only",
+      "disposition": "minimal extract / retained history",
+      "original_sha256": "1cb5897555cb6dc14e74cf90ac58086cf0a89c4a1b47330235d63eebd78ab787",
+      "imports": [
+        "__future__",
+        "hashlib",
+        "json",
+        "pathlib",
+        "typing"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    },
+    {
+      "original_path": "tools/modelpack/quantized.py",
+      "original_functions": [
+        "inspect_quantized",
+        "build"
+      ],
+      "new_api_proposed": "core/io.py or provenance only",
+      "disposition": "minimal extract / retained history",
+      "original_sha256": "3b7ef4f4b5536d1c43e2ad1dff0237df4c62aa834e8352a168a71c7ef38b61d6",
+      "imports": [
+        ".artifact",
+        ".common",
+        ".runtime",
+        "compressed_tensors.quantization",
+        "llmcompressor",
+        "llmcompressor.modifiers.quantization",
+        "pathlib",
+        "safetensors",
+        "shutil",
+        "time",
+        "torch",
+        "torch.utils.data",
+        "transformers"
+      ],
+      "test_plan": [
+        "unit/contract",
+        "portable replay parity",
+        "wheel consumer"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "backend": "recorded",
+  "model": {
+    "model_id": "synthetic/example",
+    "revision": "418424524bf9445bfdccb2c9ed06c1e86ed4958f",
+    "architecture": "synthetic",
+    "revision_kind": "synthetic_fixture_identity_not_Hub_revision"
+  },
+  "method": {
+    "name": "synthetic",
+    "format": "native",
+    "activation_dtype": "bfloat16",
+    "kv_dtype": "bfloat16"
+  },
+  "profile": {
+    "context": 256,
+    "max_num_seqs": 1,
+    "max_num_batched_tokens": 256,
+    "kv_tokens": 512,
+    "output_tokens": 8,
+    "concurrency": 1,
+    "shutdown_timeout": 10,
+    "cleanup_grace": 25,
+    "chunked_prefill": true,
+    "eager": true,
+    "prefix_caching": false,
+    "async_scheduling": false,
+    "seed": 909220
+  },
+  "paths": {
+    "workload": "${DATA_ROOT}/workload.json",
+    "output": "${RUNS_ROOT}/demo"
+  },
+  "budget": {
+    "wall_seconds": 120,
+    "cleanup_reserve_seconds": 60,
+    "automatic_retries": 0
+  }
+}

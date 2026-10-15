@@ -1,0 +1,50 @@
+{
+  "historical_quality_documents": 1280,
+  "quality_metrics": {
+    "qwen3_4b--bf16": {
+      "acc": 0.41796875,
+      "acc_norm": 0.44921875
+    },
+    "qwen3_4b--gptq_w4": {
+      "acc": 0.40234375,
+      "acc_norm": 0.43359375
+    },
+    "smollm2_live--bf16": {
+      "acc": 0.41015625,
+      "acc_norm": 0.41796875
+    },
+    "smollm2_live--gptq_w4": {
+      "acc": 0.33984375,
+      "acc_norm": 0.39453125
+    },
+    "smollm2_live--rtn_w4": {
+      "acc": 0.34765625,
+      "acc_norm": 0.421875
+    }
+  },
+  "selected_performance_requests": 222,
+  "selected_server_rounds": 3,
+  "assessment_statuses": {
+    "qwen3_4b-missing_scope": "INSUFFICIENT_EVIDENCE",
+    "qwen3_4b-none": "NO_FEASIBLE_CANDIDATE",
+    "qwen3_4b-point": "FEASIBLE_WITH_REQUIRED_EVIDENCE",
+    "qwen3_4b-relative_only": "INSUFFICIENT_EVIDENCE",
+    "qwen3_4b-screen": "INSUFFICIENT_EVIDENCE",
+    "qwen3_4b-strict": "INSUFFICIENT_EVIDENCE",
+    "smollm2_live-missing_scope": "INSUFFICIENT_EVIDENCE",
+    "smollm2_live-none": "NO_FEASIBLE_CANDIDATE",
+    "smollm2_live-point": "FEASIBLE_WITH_REQUIRED_EVIDENCE",
+    "smollm2_live-relative_only": "FEASIBLE_WITH_REQUIRED_EVIDENCE",
+    "smollm2_live-screen": "INSUFFICIENT_EVIDENCE",
+    "smollm2_live-strict": "INSUFFICIENT_EVIDENCE"
+  },
+  "preserved_previous_status": {
+    "measurement_status": "PARTIAL_UNCERTIFIED",
+    "memory_comparison_status": "SHARED_GPU_INTERFERENCE",
+    "memory_max_mib": 14370.0
+  },
+  "input_archive_sha256": "be4c6e7650f4ba127f90aea7c9ca45b948bedb33b9f81b426f0fe256150b7696",
+  "evidence_scope": "historical_arc_test256_each_configuration",
+  "qwen_w4_quality": "INCONCLUSIVE at loss floor -0.02; not a preservation certification",
+  "new_gpu_runs": 0
+}

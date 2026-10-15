@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "repo": "Munsik-Kim/inference-engineering-kit",
+  "access": "PRIVATE; authenticated manual download, no automatic fetch",
+  "publication": "Review complete; upload/readback recorded separately in external PUBLISH_RECEIPT",
+  "assets": [
+    {
+      "asset_name": "STEP02_QWEN_W4_UPDATED_20261014.zip",
+      "bytes": 26709253,
+      "sha256": "be4c6e7650f4ba127f90aea7c9ca45b948bedb33b9f81b426f0fe256150b7696",
+      "original_archive_sha256": "be4c6e7650f4ba127f90aea7c9ca45b948bedb33b9f81b426f0fe256150b7696",
+      "derived": false,
+      "excluded_files": {},
+      "original_source_modified": false,
+      "numerical_raw_changed": false,
+      "archive_identity": "BYTE_IDENTICAL_ORIGINAL",
+      "historical_gpu_relabelled": false,
+      "case": "step02",
+      "location": "private draft release v0.1.0-internal",
+      "contains": "historical raw/config/source/failure/correction; no weights/environment",
+      "source_identity_role": "Historical execution and later replay/correction source kept separate",
+      "review": {
+        "status": "HEURISTIC_REVIEW_CLEAR",
+        "files_reviewed": 649
+      },
+      "source_archive": "reports/step02_qwen_w4_repeat_20261014_075254/STEP02_QWEN_W4_UPDATED_20261014.zip"
+    },
+    {
+      "asset_name": "STEP03_SANITIZED_EVIDENCE_20261015.zip",
+      "bytes": 23782333,
+      "sha256": "e3586718fec72a1792be797c87e8c6d1226450edc3830e10eb1753d32bb2592a",
+      "original_archive_sha256": "d110310610e8e30a22fba71a3b9a51f169c8655cad5b1f7bfff3235dc0f2e0f3",
+      "derived": true,
+      "excluded_files": {
+        "evidence/step03_weight_kv_20261014_140020/baseline/configs/inference_suite/local.json": {
+          "sha256": "1e610e380fd4327a00a5d760af13c656768034037701fe15c5ca0d66c9d2f147",
+          "bytes": 544,
+          "reason": "Personal local runtime configuration excluded"
+        },
+        "source/configs/inference_suite/local.json": {
+          "sha256": "1e610e380fd4327a00a5d760af13c656768034037701fe15c5ca0d66c9d2f147",
+          "bytes": 544,
+          "reason": "Personal local runtime configuration excluded"
+        }
+      },
+      "original_source_modified": false,
+      "numerical_raw_changed": false,
+      "archive_identity": "SANITIZED_EXPORT",
+      "historical_gpu_relabelled": false,
+      "case": "step03",
+      "location": "private draft release v0.1.0-internal",
+      "contains": "historical raw/config/source/failure/correction; no weights/environment",
+      "source_identity_role": "Historical execution and later replay/correction source kept separate",
+      "review": {
+        "status": "HEURISTIC_REVIEW_CLEAR",
+        "files_reviewed": 429
+      },
+      "source_archive": "reports/step03_weight_kv_20261014_140020/STEP03_RTX5080_WEIGHT_KV_20261014_FULL.zip"
+    },
+    {
+      "asset_name": "STEP04_SMOL_CLIPPING_ABLATION_20261015.zip",
+      "bytes": 11670876,
+      "sha256": "05357a060b87d70f7227332e1536dc106eb553c61cd1e7b721c95517a7c553f6",
+      "original_archive_sha256": "05357a060b87d70f7227332e1536dc106eb553c61cd1e7b721c95517a7c553f6",
+      "derived": false,
+      "excluded_files": {},
+      "original_source_modified": false,
+      "numerical_raw_changed": false,
+      "archive_identity": "BYTE_IDENTICAL_ORIGINAL",
+      "historical_gpu_relabelled": false,
+      "case": "step04",
+      "location": "private draft release v0.1.0-internal",
+      "contains": "historical raw/config/source/failure/correction; no weights/environment",
+      "source_identity_role": "Historical execution and later replay/correction source kept separate",
+      "review": {
+        "status": "HEURISTIC_REVIEW_CLEAR",
+        "files_reviewed": 247
+      },
+      "source_archive": "reports/step04_clipping_ablation_20261015_092728/STEP04_SMOL_CLIPPING_ABLATION_20261015.zip"
+    }
+  ],
+  "git_fixture": {
+    "path": "tests/fixtures/recorded-step04",
+    "scope": "2 documents x R00/R11,16 HTTP responses; historical slice only",
+    "dataset_license": "CC-BY-SA-4.0; see THIRD_PARTY_NOTICES.md"
+  },
+  "package_resource": "Self-owned synthetic demo only",
+  "new_gpu_runs": 0,
+  "model_downloads": 0,
+  "distributions": [
+    {
+      "asset_name": "inference_engineering_kit-0.1.0-py3-none-any.whl",
+      "bytes": 83043,
+      "sha256": "8789b0b7ea957112ede5d8289164cd63fd8193511d7b15400bc21bd84a63e6a2",
+      "type": "wheel",
+      "raw_included": false,
+      "base_dependencies": [],
+      "location": "private draft release v0.1.0-internal"
+    }
+  ]
+}

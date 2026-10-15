@@ -1,0 +1,291 @@
+{
+  "historical_scope": "RTX5080,3 independent time blocks,4arms; homogeneous C4 cells measured separately",
+  "arms": [
+    {
+      "arm": "A",
+      "kv_tokens": 4096,
+      "method": "bf16",
+      "whole_device_performance_with_startup_max_mib": 10877.0,
+      "cells": [
+        {
+          "input_length": 128,
+          "ttft_p95_worst_round": 0.06511396099995181,
+          "tpot_p95_worst_round": 0.02722328314567268,
+          "throughput_tokens_s_by_round": [
+            217.34609383166466,
+            221.43047722425257,
+            200.10173529821316
+          ]
+        },
+        {
+          "input_length": 1024,
+          "ttft_p95_worst_round": 3.2223026829988157,
+          "tpot_p95_worst_round": 0.028320355234277162,
+          "throughput_tokens_s_by_round": [
+            123.39342067536059,
+            147.2609529020456,
+            124.48203973746845
+          ]
+        }
+      ],
+      "retained_quality": {
+        "absolute_acc_norm_ci95": [
+          0.38671875,
+          0.5078125
+        ],
+        "acc": 0.41796875,
+        "acc_norm": 0.44921875,
+        "backend": "Same live vLLM artifact/loader and kernel policy as performance",
+        "delta": 0.0,
+        "delta_ci95": [
+          0.0,
+          0.0
+        ],
+        "evidence": [
+          "step02_20261013_150033/comparisons/qwen3_4b--bf16-test.json",
+          "step02_20261013_150033/test/qwen3_4b--bf16/quality/scores.json",
+          "step02_20261013_150033/test/qwen3_4b--bf16/quality/http-responses.jsonl",
+          "step02_20261013_150033/data/qwen3_4b-test.json"
+        ],
+        "full_benchmark": false,
+        "n_documents": 256,
+        "paired_correct_to_wrong": 0,
+        "paired_wrong_to_correct": 0,
+        "screen": "PASS"
+      },
+      "cache_sanity_status": "COMPLETE",
+      "exact_profile_quality": "NOT_VERIFIED"
+    },
+    {
+      "arm": "B",
+      "kv_tokens": 8192,
+      "method": "bf16",
+      "whole_device_performance_with_startup_max_mib": 11377.0,
+      "cells": [
+        {
+          "input_length": 128,
+          "ttft_p95_worst_round": 0.07385724800133175,
+          "tpot_p95_worst_round": 0.02587792545668568,
+          "throughput_tokens_s_by_round": [
+            207.34170908111008,
+            203.59811120093548,
+            187.44535389602262
+          ]
+        },
+        {
+          "input_length": 1024,
+          "ttft_p95_worst_round": 0.3212341580019711,
+          "tpot_p95_worst_round": 0.0302363318936927,
+          "throughput_tokens_s_by_round": [
+            155.16673816054578,
+            191.74965033821636,
+            163.1490645859588
+          ]
+        }
+      ],
+      "retained_quality": {
+        "absolute_acc_norm_ci95": [
+          0.38671875,
+          0.5078125
+        ],
+        "acc": 0.41796875,
+        "acc_norm": 0.44921875,
+        "backend": "Same live vLLM artifact/loader and kernel policy as performance",
+        "delta": 0.0,
+        "delta_ci95": [
+          0.0,
+          0.0
+        ],
+        "evidence": [
+          "step02_20261013_150033/comparisons/qwen3_4b--bf16-test.json",
+          "step02_20261013_150033/test/qwen3_4b--bf16/quality/scores.json",
+          "step02_20261013_150033/test/qwen3_4b--bf16/quality/http-responses.jsonl",
+          "step02_20261013_150033/data/qwen3_4b-test.json"
+        ],
+        "full_benchmark": false,
+        "n_documents": 256,
+        "paired_correct_to_wrong": 0,
+        "paired_wrong_to_correct": 0,
+        "screen": "PASS"
+      },
+      "cache_sanity_status": "COMPLETE",
+      "exact_profile_quality": "NOT_VERIFIED"
+    },
+    {
+      "arm": "C",
+      "kv_tokens": 4096,
+      "method": "gptq_w4",
+      "whole_device_performance_with_startup_max_mib": 5773.0,
+      "cells": [
+        {
+          "input_length": 128,
+          "ttft_p95_worst_round": 0.07265006074976554,
+          "tpot_p95_worst_round": 0.02377736195078288,
+          "throughput_tokens_s_by_round": [
+            223.46575861266473,
+            223.20710324518825,
+            221.9628088010932
+          ]
+        },
+        {
+          "input_length": 1024,
+          "ttft_p95_worst_round": 2.542301356002099,
+          "tpot_p95_worst_round": 0.024417392084636613,
+          "throughput_tokens_s_by_round": [
+            144.79326200895738,
+            146.27594308409687,
+            142.10103952147568
+          ]
+        }
+      ],
+      "retained_quality": {
+        "absolute_acc_norm_ci95": [
+          0.37109375,
+          0.4921875
+        ],
+        "acc": 0.40234375,
+        "acc_norm": 0.43359375,
+        "backend": "Same live vLLM artifact/loader and kernel policy as performance",
+        "delta": -0.015625,
+        "delta_ci95": [
+          -0.0546875,
+          0.0234375
+        ],
+        "evidence": [
+          "step02_20261013_150033/comparisons/qwen3_4b--gptq_w4-test.json",
+          "step02_20261013_150033/test/qwen3_4b--gptq_w4/quality/scores.json",
+          "step02_20261013_150033/test/qwen3_4b--gptq_w4/quality/http-responses.jsonl",
+          "step02_20261013_150033/data/qwen3_4b-test.json"
+        ],
+        "full_benchmark": false,
+        "n_documents": 256,
+        "paired_correct_to_wrong": 14,
+        "paired_wrong_to_correct": 10,
+        "screen": "INCONCLUSIVE"
+      },
+      "cache_sanity_status": "COMPLETE",
+      "exact_profile_quality": "NOT_VERIFIED"
+    },
+    {
+      "arm": "D",
+      "kv_tokens": 8192,
+      "method": "gptq_w4",
+      "whole_device_performance_with_startup_max_mib": 6285.0,
+      "cells": [
+        {
+          "input_length": 128,
+          "ttft_p95_worst_round": 0.07635294174906448,
+          "tpot_p95_worst_round": 0.02841377111417387,
+          "throughput_tokens_s_by_round": [
+            193.53421252640885,
+            177.1236828493288,
+            221.6050163754567
+          ]
+        },
+        {
+          "input_length": 1024,
+          "ttft_p95_worst_round": 0.3253640337516117,
+          "tpot_p95_worst_round": 0.030883988763775065,
+          "throughput_tokens_s_by_round": [
+            176.67829747548416,
+            187.98302281883082,
+            205.3262743403686
+          ]
+        }
+      ],
+      "retained_quality": {
+        "absolute_acc_norm_ci95": [
+          0.37109375,
+          0.4921875
+        ],
+        "acc": 0.40234375,
+        "acc_norm": 0.43359375,
+        "backend": "Same live vLLM artifact/loader and kernel policy as performance",
+        "delta": -0.015625,
+        "delta_ci95": [
+          -0.0546875,
+          0.0234375
+        ],
+        "evidence": [
+          "step02_20261013_150033/comparisons/qwen3_4b--gptq_w4-test.json",
+          "step02_20261013_150033/test/qwen3_4b--gptq_w4/quality/scores.json",
+          "step02_20261013_150033/test/qwen3_4b--gptq_w4/quality/http-responses.jsonl",
+          "step02_20261013_150033/data/qwen3_4b-test.json"
+        ],
+        "full_benchmark": false,
+        "n_documents": 256,
+        "paired_correct_to_wrong": 14,
+        "paired_wrong_to_correct": 10,
+        "screen": "INCONCLUSIVE"
+      },
+      "cache_sanity_status": "COMPLETE",
+      "exact_profile_quality": "NOT_VERIFIED"
+    }
+  ],
+  "stages": {
+    "cache_sanity": {
+      "bf16": "COMPLETE",
+      "gptq_w4": "COMPLETE"
+    },
+    "customer_validation": "NOT_VALIDATED",
+    "engineering": "CPU_CONTRACTS_AND_EXECUTION_PATH_IMPLEMENTED",
+    "exact_profile_quality": "NOT_VERIFIED",
+    "experimental_validity": "TWELVE_COMPLETE_SERVER_PROFILES",
+    "mechanism": {
+      "bf16": {
+        "capacity_effect_observed": true,
+        "queue_histogram_direction_supported": true,
+        "scope": "Directions within three blocks of this fixed scheduler/kernel profile; not population significance or novel algorithm",
+        "status": "MECHANISM_SUPPORTED_WITHIN_PROFILE",
+        "three_block_ttft_p95_deltas_seconds": [
+          -2.9010685249968446,
+          -2.0326376062466807,
+          -2.8887371957480354
+        ],
+        "waiting_direction_supported": true
+      },
+      "gptq_w4": {
+        "capacity_effect_observed": true,
+        "queue_histogram_direction_supported": true,
+        "scope": "Directions within three blocks of this fixed scheduler/kernel profile; not population significance or novel algorithm",
+        "status": "MECHANISM_SUPPORTED_WITHIN_PROFILE",
+        "three_block_ttft_p95_deltas_seconds": [
+          -2.1364697845010596,
+          -2.2169373222504873,
+          -2.1626224002529852
+        ],
+        "waiting_direction_supported": true
+      }
+    },
+    "novelty": "STANDARD_KV_CAPACITY_INTERVENTION_NOT_NEW_QUANTIZATION",
+    "product_demo": {
+      "exact-profile": "INSUFFICIENT_EVIDENCE",
+      "interval": "INSUFFICIENT_EVIDENCE",
+      "no-retained": "INSUFFICIENT_EVIDENCE",
+      "point": "CONDITIONAL_OBSERVED_CANDIDATE"
+    },
+    "retained_quality": "QW4_INCONCLUSIVE; no new ARC TEST"
+  },
+  "historical_resource": {
+    "automatic_retries": 0,
+    "campaign_cap_seconds": 7200,
+    "campaign_remaining_seconds": 3339.962719044004,
+    "campaign_used_seconds": 3860.037280955996,
+    "gpu_job_failures": 0,
+    "new_gpu_job_wall_seconds": 725.946178056005,
+    "performance_output_tokens": 61440,
+    "performance_requests": 480,
+    "previous_gpu_job_wall_seconds": 3134.091102899991,
+    "sanity_requests": 256,
+    "sanity_transport_tokens": 256,
+    "server_launches": 12,
+    "step03_cap_seconds": 3600,
+    "step03_remaining_seconds": 2874.053821943995,
+    "timed_requests": 384,
+    "total_http_requests": 736,
+    "unique_performance_inputs": 32,
+    "warmup_requests": 96
+  },
+  "new_gpu_runs": 0,
+  "source_asset_sha256": "e3586718fec72a1792be797c87e8c6d1226450edc3830e10eb1753d32bb2592a"
+}

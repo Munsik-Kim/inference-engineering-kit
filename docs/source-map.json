@@ -1,0 +1,2309 @@
+{
+  "schema_version": 1,
+  "source_head": "7b3422aca3abc80c2d0286566ee8d998e7b41752",
+  "source_working_tree_sha_required": true,
+  "new_source_identity_role": "Maintained implementation, not historical GPU execution source",
+  "entries": [
+    {
+      "original_path": "cases/009-q-serving-quality/scripts/analyze_serving.py",
+      "original_sha256": "185ccdffcfd1240b4437b9d61f67dcba50b6729e5cc1ec860a09f4b005ae78a1",
+      "original_functions": [
+        "quantile",
+        "aggregate_cell",
+        "round_ratio",
+        "counter",
+        "analyze",
+        "main"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "quantile": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "aggregate_cell": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "round_ratio": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "counter": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "analyze": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "main": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "cases/009-q-serving-quality/scripts/quality.py",
+      "original_sha256": "31fe5772051f7fbde1cc985c2b5072ab661890e8c0f850eefce4ab27e293fc71",
+      "original_functions": [
+        "digest",
+        "main"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "digest": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "main": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/serving_lab/__init__.py",
+      "original_sha256": "52c614c60c9578d51a164d8ce2cbb80cf51c0521e00f77f6c09a29c41b966229",
+      "original_functions": [],
+      "maintained_files": [],
+      "function_mapping": {},
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/serving_lab/__main__.py",
+      "original_sha256": "69b491ecdba7e51640bc709fdba1133b21103ec9210b42328a87816a0be4169a",
+      "original_functions": [
+        "main"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "main": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/serving_lab/adapters.py",
+      "original_sha256": "4aa80375356026ec595a4a4922b2dba1524a6fbe206ab52f7c3560f0d536211c",
+      "original_functions": [
+        "Adapter"
+      ],
+      "maintained_files": [
+        {
+          "path": "src/inference_kit/adapters/protocol.py",
+          "sha256": "3aa7efa9d4545d0a65a0209e64a06fd5d35ba9cc43dd1a80e8149f9d06d119ad",
+          "apis": [
+            "Adapter"
+          ]
+        }
+      ],
+      "function_mapping": {
+        "Adapter": [
+          {
+            "file": "adapters/protocol.py",
+            "api": "Adapter"
+          }
+        ]
+      },
+      "disposition": "copy and small import/path/boundary changes; numerical parity checked",
+      "verification": [
+        "tests/test_core.py",
+        "tests/test_boundaries.py",
+        "full STEP02/03/04 CPU parity",
+        "tests/test_http.py",
+        "tests/test_owned.py"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/serving_lab/client.py",
+      "original_sha256": "ee147a7f3d099d006aa78cc0ea297e1b97c620a31cfc126f125cef5741a9ca60",
+      "original_functions": [
+        "sse_events",
+        "_ids",
+        "request",
+        "quantile",
+        "summary",
+        "block"
+      ],
+      "maintained_files": [
+        {
+          "path": "src/inference_kit/adapters/http.py",
+          "sha256": "2ca0113c131fbf82b21cb62717bd912456653fc629c6c927b4238eb464155d02",
+          "apis": [
+            "sha",
+            "sse_events",
+            "_ids",
+            "request",
+            "quantile",
+            "summary",
+            "block"
+          ]
+        }
+      ],
+      "function_mapping": {
+        "sse_events": [
+          {
+            "file": "adapters/http.py",
+            "api": "sse_events"
+          }
+        ],
+        "_ids": [
+          {
+            "file": "adapters/http.py",
+            "api": "_ids"
+          }
+        ],
+        "request": [
+          {
+            "file": "adapters/http.py",
+            "api": "request"
+          }
+        ],
+        "quantile": [
+          {
+            "file": "adapters/http.py",
+            "api": "quantile"
+          }
+        ],
+        "summary": [
+          {
+            "file": "adapters/http.py",
+            "api": "summary"
+          }
+        ],
+        "block": [
+          {
+            "file": "adapters/http.py",
+            "api": "block"
+          }
+        ]
+      },
+      "disposition": "copy and small import/path/boundary changes; numerical parity checked",
+      "verification": [
+        "tests/test_core.py",
+        "tests/test_boundaries.py",
+        "full STEP02/03/04 CPU parity",
+        "tests/test_http.py",
+        "tests/test_owned.py"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/serving_lab/experiment.py",
+      "original_sha256": "070a864aa98d9c92497467a79978fad2ab500216ca013e63b1a8987326abb6ee",
+      "original_functions": [
+        "exercise",
+        "compare",
+        "gpu_smoke"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "exercise": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "compare": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "gpu_smoke": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/serving_lab/mock.py",
+      "original_sha256": "5badcf9db274186f8c713ef782fd9188f20b4005522f49a5e00e5c41b179c889",
+      "original_functions": [
+        "fixture",
+        "MockServer",
+        "demo"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "fixture": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "MockServer": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "demo": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/serving_lab/server.py",
+      "original_sha256": "75745c28e69bc825fe19a6ec0187bd76a42ecc6f9975f7c9cbbc675efc8f6b24",
+      "original_functions": [
+        "model_identity",
+        "plan",
+        "runtime_snapshot",
+        "ensure_port_free",
+        "start",
+        "ready",
+        "group_members",
+        "stop",
+        "telemetry"
+      ],
+      "maintained_files": [
+        {
+          "path": "src/inference_kit/adapters/owned.py",
+          "sha256": "a35861f8df98c13bb36d82b14f13d23878e8e980bb649e03c81cb893432ee551",
+          "apis": [
+            "ensure_port_free",
+            "start",
+            "ready",
+            "group_members",
+            "stop"
+          ]
+        },
+        {
+          "path": "src/inference_kit/adapters/nvml.py",
+          "sha256": "b16acc5a325082012883254826cb70735cfe0295417a55cc5433494ccad3c32d",
+          "apis": [
+            "proc_identity",
+            "owned",
+            "gpu_query",
+            "gpu_monitor"
+          ]
+        }
+      ],
+      "function_mapping": {
+        "model_identity": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "plan": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "runtime_snapshot": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "ensure_port_free": [
+          {
+            "file": "adapters/owned.py",
+            "api": "ensure_port_free"
+          }
+        ],
+        "start": [
+          {
+            "file": "adapters/owned.py",
+            "api": "start"
+          }
+        ],
+        "ready": [
+          {
+            "file": "adapters/owned.py",
+            "api": "ready"
+          }
+        ],
+        "group_members": [
+          {
+            "file": "adapters/owned.py",
+            "api": "group_members"
+          }
+        ],
+        "stop": [
+          {
+            "file": "adapters/owned.py",
+            "api": "stop"
+          }
+        ],
+        "telemetry": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "copy and small import/path/boundary changes; numerical parity checked",
+      "verification": [
+        "tests/test_core.py",
+        "tests/test_boundaries.py",
+        "full STEP02/03/04 CPU parity",
+        "tests/test_http.py",
+        "tests/test_owned.py"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/serving_lab/workload.py",
+      "original_sha256": "a867a469ec2df991e0b07d4fd4319f6b6c3fbde4b6c93e46e46e5c48ed0aafb2",
+      "original_functions": [
+        "sha",
+        "file_sha",
+        "write_new",
+        "validate",
+        "prepare"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "sha": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "file_sha": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "write_new": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "validate": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "prepare": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/tests/test_client.py",
+      "original_sha256": "672ee2737440e13888010890193a871315b243aaae85284a3f68c2d87221bcfe",
+      "original_functions": [
+        "BytesContent",
+        "SSETests",
+        "ClientTests",
+        "ExerciseTests",
+        "ContractTests"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "BytesContent": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "SSETests": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "ClientTests": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "ExerciseTests": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "ContractTests": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "labs/serving-engine-smoke/tests/test_local.py",
+      "original_sha256": "e93adbeda629ef7d1269699319640a8634cf9d363d797af2735216009671e4e6",
+      "original_functions": [
+        "LocalTests",
+        "LifecycleTests"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "LocalTests": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "LifecycleTests": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "packages/diova-compare/src/diova_compare/__init__.py",
+      "original_sha256": "55ae18d3174f20cfa88b09c097d30e34d0dd653e8e4c6ad7718975dd17741ab6",
+      "original_functions": [],
+      "maintained_files": [],
+      "function_mapping": {},
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "packages/diova-compare/src/diova_compare/adapters.py",
+      "original_sha256": "1dfb68bfa586e1f0eb04cd8de86d5d277777eb5139cd76ba897456bf34f76d59",
+      "original_functions": [
+        "harness_sample"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "harness_sample": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "packages/diova-compare/src/diova_compare/cli.py",
+      "original_sha256": "7ac23178793310cec65aca6e50e1d43c25690f3c721877ec53032336fff19440",
+      "original_functions": [
+        "main"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "main": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "packages/diova-compare/src/diova_compare/core.py",
+      "original_sha256": "a0cbf427dcde7449cf0da400f2880cd1b77e8bb44c60ae8df52aa5a9816d07e7",
+      "original_functions": [
+        "require",
+        "finite_number",
+        "validate",
+        "load",
+        "probability_scores",
+        "kl",
+        "check_task_metrics",
+        "compare"
+      ],
+      "maintained_files": [
+        {
+          "path": "src/inference_kit/_vendor/diova_compare/core.py",
+          "sha256": "624bee4c4b4b57275e9c6f54eee340b6efe491bc2e500f2fecd67fbc0cb18df3",
+          "apis": [
+            "require",
+            "finite_number",
+            "validate",
+            "load",
+            "probability_scores",
+            "kl",
+            "check_task_metrics",
+            "compare"
+          ]
+        }
+      ],
+      "function_mapping": {
+        "require": [
+          {
+            "file": "_vendor/diova_compare/core.py",
+            "api": "require"
+          }
+        ],
+        "finite_number": [
+          {
+            "file": "_vendor/diova_compare/core.py",
+            "api": "finite_number"
+          }
+        ],
+        "validate": [
+          {
+            "file": "_vendor/diova_compare/core.py",
+            "api": "validate"
+          }
+        ],
+        "load": [
+          {
+            "file": "_vendor/diova_compare/core.py",
+            "api": "load"
+          }
+        ],
+        "probability_scores": [
+          {
+            "file": "_vendor/diova_compare/core.py",
+            "api": "probability_scores"
+          }
+        ],
+        "kl": [
+          {
+            "file": "_vendor/diova_compare/core.py",
+            "api": "kl"
+          }
+        ],
+        "check_task_metrics": [
+          {
+            "file": "_vendor/diova_compare/core.py",
+            "api": "check_task_metrics"
+          }
+        ],
+        "compare": [
+          {
+            "file": "_vendor/diova_compare/core.py",
+            "api": "compare"
+          }
+        ]
+      },
+      "disposition": "copy and small import/path/boundary changes; numerical parity checked",
+      "verification": [
+        "tests/test_core.py",
+        "tests/test_boundaries.py",
+        "full STEP02/03/04 CPU parity"
+      ]
+    },
+    {
+      "original_path": "packages/diova-compare/tests/test_compare.py",
+      "original_sha256": "8d59d7d5765bf21f7803d4dc43dbc5702ef29c2f7383a38f96ea5bff961c2972",
+      "original_functions": [
+        "row",
+        "dist",
+        "Contract"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "row": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "dist": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "Contract": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "packages/diova-compare/tests/test_review_edges.py",
+      "original_sha256": "43c20d24fb95479a26beab7ef34a1821d9ce4e33e744140492b87b289ac2f2e5",
+      "original_functions": [
+        "ReviewEdges"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "ReviewEdges": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tests/inference_suite/test_clipping_cpu.py",
+      "original_sha256": "4aeef8c706739e430d308c3cbdd24e603572f2f9b9e4b4a295457b1f5a6b09e1",
+      "original_functions": [
+        "ClippingAblationTests"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "ClippingAblationTests": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tests/inference_suite/test_step02.py",
+      "original_sha256": "27f46e80a75d55d5fe89a3c14e39b4df3df3a4e55447452792175869e8ccd60b",
+      "original_functions": [
+        "LifecycleEvidenceTests",
+        "QualityContracts",
+        "SelectorContracts",
+        "Step02ExecutionContracts"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "LifecycleEvidenceTests": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "QualityContracts": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "SelectorContracts": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "Step02ExecutionContracts": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tests/inference_suite/test_step03.py",
+      "original_sha256": "29ffe293bd80a094f8552930b9bcf9f4a4c91e5982981fb888609d2a6b8618ec",
+      "original_functions": [
+        "ConfigurationTests",
+        "MetricsTests",
+        "SelectorTests",
+        "StateAndBudgetTests",
+        "ClientExtensionTests"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "ConfigurationTests": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "MetricsTests": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "SelectorTests": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "StateAndBudgetTests": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "ClientExtensionTests": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tests/inference_suite/test_step04.py",
+      "original_sha256": "b4fea4822a1a44d6abba5816af131c7e8b0a3f74e1865bdbd0b453c798a3bdb6",
+      "original_functions": [
+        "Step04Contracts",
+        "Step04TensorFixtures"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "Step04Contracts": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "Step04TensorFixtures": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tests/inference_suite/test_suite.py",
+      "original_sha256": "b2f3dd6c452e48f7716c26a186d96ecf656803e49d610218003aebf6e21c685d",
+      "original_functions": [
+        "spec",
+        "RegistryTests",
+        "MetadataTests",
+        "HistoryTests",
+        "ProtocolTests",
+        "RuntimeTests",
+        "ReplayTests"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "spec": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "RegistryTests": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "MetadataTests": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "HistoryTests": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "ProtocolTests": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "RuntimeTests": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "ReplayTests": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/__init__.py",
+      "original_sha256": "d752e96ad6bb3c1d010e9d9098573fa11cc3d2c9ec141648954aa9d5408d668f",
+      "original_functions": [],
+      "maintained_files": [],
+      "function_mapping": {},
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/__main__.py",
+      "original_sha256": "c0f3a32d6d68cb8c79f4e886dc12648ca5e42a6ca611f8b6e329af3d5e9f73ce",
+      "original_functions": [
+        "main"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "main": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/adapters/__init__.py",
+      "original_sha256": "8cf02dc5417adeef24ce643b92e127936e06b49ffdddb3a3572a8467bb010ae1",
+      "original_functions": [],
+      "maintained_files": [],
+      "function_mapping": {},
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/adapters/case009.py",
+      "original_sha256": "2aa281355744adf769f0a7403678e28c27d37494c763e608f2b49d6f7f569d11",
+      "original_functions": [
+        "source_file",
+        "wiki",
+        "serving",
+        "replay"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "source_file": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "wiki": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "serving": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "replay": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/budget.py",
+      "original_sha256": "dac697e563c03aad9e0db9d2c336bc93e34b7295cea5d1f4095479a9c439e0ce",
+      "original_functions": [
+        "GPUBudget"
+      ],
+      "maintained_files": [
+        {
+          "path": "src/inference_kit/core/state.py",
+          "sha256": "c538a2b0ff3e13a0c4b2df566e6c8ab2cba4b77f3132e38e73c91737c6869872",
+          "apis": [
+            "new_output",
+            "derived_output",
+            "preserve_failure",
+            "atomic",
+            "Attempt",
+            "cumulative",
+            "Budget"
+          ]
+        }
+      ],
+      "function_mapping": {
+        "GPUBudget": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "copy and small import/path/boundary changes; numerical parity checked",
+      "verification": [
+        "tests/test_core.py",
+        "tests/test_boundaries.py",
+        "full STEP02/03/04 CPU parity"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/clipping.py",
+      "original_sha256": "426510fbfad3c35b2b5d28cf4b62911c7f5151d5720ad6c6b40a6e0065ca4cde",
+      "original_functions": [
+        "clipped_weight",
+        "rtn_qdq",
+        "choose_ratio",
+        "fit_clipping"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "clipped_weight": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "rtn_qdq": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "choose_ratio": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "fit_clipping": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/engines/__init__.py",
+      "original_sha256": "9ebca69e8de63c99dec6dc10a5c9ab3012109615d45ec9bee977c87d132efaac",
+      "original_functions": [],
+      "maintained_files": [],
+      "function_mapping": {},
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/engines/vllm.py",
+      "original_sha256": "1d6d01c133ea3b0c398774b25d7ab0094c4b45eef8b51017dba93c208cb960a1",
+      "original_functions": [
+        "launch"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "launch": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/history.py",
+      "original_sha256": "863f572eadf67b5332ccb09133bd275bf29d3d8af404d8a2a0a1f02decc709a9",
+      "original_functions": [
+        "output_path",
+        "inventory",
+        "verify",
+        "Attempt"
+      ],
+      "maintained_files": [
+        {
+          "path": "src/inference_kit/core/state.py",
+          "sha256": "c538a2b0ff3e13a0c4b2df566e6c8ab2cba4b77f3132e38e73c91737c6869872",
+          "apis": [
+            "new_output",
+            "derived_output",
+            "preserve_failure",
+            "atomic",
+            "Attempt",
+            "cumulative",
+            "Budget"
+          ]
+        }
+      ],
+      "function_mapping": {
+        "output_path": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "inventory": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "verify": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "Attempt": [
+          {
+            "file": "core/state.py",
+            "api": "Attempt"
+          }
+        ]
+      },
+      "disposition": "copy and small import/path/boundary changes; numerical parity checked",
+      "verification": [
+        "tests/test_core.py",
+        "tests/test_boundaries.py",
+        "full STEP02/03/04 CPU parity"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/lifecycle.py",
+      "original_sha256": "2139346fa9068a54aca5bb5e165e993d1dc8d97e8980469c8ebf5498640165eb",
+      "original_functions": [
+        "observed_shutdown"
+      ],
+      "maintained_files": [
+        {
+          "path": "src/inference_kit/adapters/lifecycle_evidence.py",
+          "sha256": "86fbffa7d85449fdf7e3ebb54bbb5bac2fa26305f42441cb9ce15494911fd953",
+          "apis": [
+            "observed_shutdown"
+          ]
+        }
+      ],
+      "function_mapping": {
+        "observed_shutdown": [
+          {
+            "file": "adapters/lifecycle_evidence.py",
+            "api": "observed_shutdown"
+          }
+        ]
+      },
+      "disposition": "copy and small import/path/boundary changes; numerical parity checked",
+      "verification": [
+        "tests/test_core.py",
+        "tests/test_boundaries.py",
+        "full STEP02/03/04 CPU parity"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/metadata.py",
+      "original_sha256": "4ffda6078a6010607241ad174a911f24b78d2f8d3e59b85f5f34e84f44a7f91a",
+      "original_functions": [
+        "config_contract",
+        "inspect"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "config_contract": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "inspect": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/plan.py",
+      "original_sha256": "5cb0ed4e9e28b41f1d0b6d159b1a6551bb58e37082b03d9d885ba135309ac774",
+      "original_functions": [
+        "build"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "build": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/protocol.py",
+      "original_sha256": "b31e5b3d24959476fd0ceb61f6d937118f6d11af01c7b967eab0fdd39c688039",
+      "original_functions": [
+        "lab",
+        "compare_core",
+        "serving_analyzer",
+        "validate_inputs"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "lab": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "compare_core": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "serving_analyzer": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "validate_inputs": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/registry.py",
+      "original_sha256": "02af6ac48016d1bc62cb9ef7fa4a1fdd40175d096c755b8adb630bccf2a67f12",
+      "original_functions": [
+        "kv_payload",
+        "load",
+        "select",
+        "select_model_method_v2"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "kv_payload": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "load": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "select": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "select_model_method_v2": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/report.py",
+      "original_sha256": "626db5a04db5026720b3b4e62bcb3482ee57c2cd91e668997f07032fbdf24893",
+      "original_functions": [
+        "emit"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "emit": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/result_index.py",
+      "original_sha256": "01b9af5de52a7beee63d2b0b51f21c2d514241fee4ada3d9b64fa1dc0f393c2a",
+      "original_functions": [
+        "memory_summary",
+        "absolute_subset_interval",
+        "build_index"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "memory_summary": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "absolute_subset_interval": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "build_index": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/runner.py",
+      "original_sha256": "73ce5bb0445b740b0775f5c3ed45e3d1f284ce1d2c79cceb9b6bee2716bab0ba",
+      "original_functions": [
+        "runtime_snapshot",
+        "runtime_gate",
+        "tokenizer_check",
+        "smoke",
+        "run"
+      ],
+      "maintained_files": [
+        {
+          "path": "src/inference_kit/adapters/vllm.py",
+          "sha256": "9625ae87ee9463cefeef8fe12e105a92987135d6b63b13c083df8a31f86e4a9a",
+          "apis": [
+            "launch",
+            "runtime_snapshot",
+            "runtime_gate"
+          ]
+        },
+        {
+          "path": "src/inference_kit/adapters/run.py",
+          "sha256": "38058ce5d9d6ad9620b34525f3101f51e5ab25650be2a69cadf852154378a519",
+          "apis": [
+            "guarded",
+            "managed",
+            "run"
+          ]
+        }
+      ],
+      "function_mapping": {
+        "runtime_snapshot": [
+          {
+            "file": "adapters/vllm.py",
+            "api": "runtime_snapshot"
+          }
+        ],
+        "runtime_gate": [
+          {
+            "file": "adapters/vllm.py",
+            "api": "runtime_gate"
+          }
+        ],
+        "tokenizer_check": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "smoke": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "run": [
+          {
+            "file": "adapters/run.py",
+            "api": "run"
+          }
+        ]
+      },
+      "disposition": "copy and small import/path/boundary changes; numerical parity checked",
+      "verification": [
+        "tests/test_core.py",
+        "tests/test_boundaries.py",
+        "full STEP02/03/04 CPU parity"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/schema.py",
+      "original_sha256": "574e5651c4fc86d7dd26300625bd15d9c37ae98cdb2586ffa9bb8271de793c7a",
+      "original_functions": [
+        "fields",
+        "version",
+        "revision",
+        "relative",
+        "spec",
+        "local",
+        "sources",
+        "freeze"
+      ],
+      "maintained_files": [
+        {
+          "path": "src/inference_kit/core/io.py",
+          "sha256": "15c69b651138f5519986818b0f66b17cb8c2c4cde0d315c8274c7aca9e05fa46",
+          "apis": [
+            "require",
+            "digest",
+            "sha",
+            "loads",
+            "read",
+            "write",
+            "safe_name",
+            "fields"
+          ]
+        },
+        {
+          "path": "src/inference_kit/core/config.py",
+          "sha256": "9cb909780fed4cb5a6454aee818d10bb47ef5d85e2b0b958fba1d89ed0d311d7",
+          "apis": [
+            "make_plan"
+          ]
+        }
+      ],
+      "function_mapping": {
+        "fields": [
+          {
+            "file": "core/io.py",
+            "api": "fields"
+          }
+        ],
+        "version": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "revision": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "relative": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "spec": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "local": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "sources": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "freeze": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "copy and small import/path/boundary changes; numerical parity checked",
+      "verification": [
+        "tests/test_core.py",
+        "tests/test_boundaries.py",
+        "full STEP02/03/04 CPU parity"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/selector.py",
+      "original_sha256": "e1c39bc6766df4929c732af0f455511c4dda2dc6a3a43acbd5abc1c258ad0ef9",
+      "original_functions": [
+        "requirements",
+        "constraint",
+        "assess_candidate",
+        "assess",
+        "load_verified_index"
+      ],
+      "maintained_files": [
+        {
+          "path": "src/inference_kit/core/assess.py",
+          "sha256": "008e62f260816dfd9b258db0dbd4b2f2748870be556afecc661dfdee38200cbc",
+          "apis": [
+            "requirements",
+            "constraint",
+            "assess_candidate",
+            "assess"
+          ]
+        }
+      ],
+      "function_mapping": {
+        "requirements": [
+          {
+            "file": "core/assess.py",
+            "api": "requirements"
+          }
+        ],
+        "constraint": [
+          {
+            "file": "core/assess.py",
+            "api": "constraint"
+          }
+        ],
+        "assess_candidate": [
+          {
+            "file": "core/assess.py",
+            "api": "assess_candidate"
+          }
+        ],
+        "assess": [
+          {
+            "file": "core/assess.py",
+            "api": "assess"
+          }
+        ],
+        "load_verified_index": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "copy and small import/path/boundary changes; numerical parity checked",
+      "verification": [
+        "tests/test_core.py",
+        "tests/test_boundaries.py",
+        "full STEP02/03/04 CPU parity"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step02.py",
+      "original_sha256": "7129944750c61d34f72d742595a773ae31e5cce2d8f917d87d3f9b82a7d77ed3",
+      "original_functions": [
+        "validate_spec",
+        "plan",
+        "safe_resource_gate",
+        "execute_phase",
+        "initialize",
+        "cpu_and_lifecycle",
+        "custom_phase"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "validate_spec": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "plan": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "safe_resource_gate": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "execute_phase": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "initialize": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "cpu_and_lifecycle": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "custom_phase": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step02_data.py",
+      "original_sha256": "47006c78ce4b9a7496dcd806fbdec38efc3e1bc822cfa4d52780a9e5b82fae7b",
+      "original_functions": [
+        "metadata",
+        "acquire",
+        "normalize",
+        "document_requests",
+        "prepare",
+        "main"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "metadata": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "acquire": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "normalize": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "document_requests": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "prepare": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "main": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step02_eval.py",
+      "original_sha256": "5786b2418064c7154edf2c63dd3e87b5dbda2c755a8bb5fca3116b37e37d91e9",
+      "original_functions": [
+        "score_document",
+        "likelihood_from_response",
+        "live_quality",
+        "paired_quality"
+      ],
+      "maintained_files": [
+        {
+          "path": "src/inference_kit/core/quality.py",
+          "sha256": "3b14c093a530ff6ceb6c0ab5e38a4650bae3271a34cbc9d0b195af377723c4b5",
+          "apis": [
+            "score_document",
+            "likelihood_from_response",
+            "live_quality",
+            "paired_quality",
+            "jsonl",
+            "replay_scores"
+          ]
+        }
+      ],
+      "function_mapping": {
+        "score_document": [
+          {
+            "file": "core/quality.py",
+            "api": "score_document"
+          }
+        ],
+        "likelihood_from_response": [
+          {
+            "file": "core/quality.py",
+            "api": "likelihood_from_response"
+          }
+        ],
+        "live_quality": [
+          {
+            "file": "core/quality.py",
+            "api": "live_quality"
+          }
+        ],
+        "paired_quality": [
+          {
+            "file": "core/quality.py",
+            "api": "paired_quality"
+          }
+        ]
+      },
+      "disposition": "copy and small import/path/boundary changes; numerical parity checked",
+      "verification": [
+        "tests/test_core.py",
+        "tests/test_boundaries.py",
+        "full STEP02/03/04 CPU parity"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step02_quantize.py",
+      "original_sha256": "ce12a405c66b330049756ae64f59384f2b86bec10ff31f6ab04e5eb225bedfbd",
+      "original_functions": [
+        "inspect_packed",
+        "convert",
+        "main"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "inspect_packed": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "convert": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "main": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step02_report.py",
+      "original_sha256": "25b38024b9129a07db8becaf044c6f00a36be08109ad52793395906912c2f6cf",
+      "original_functions": [
+        "test_inventory",
+        "write_text_once",
+        "finalize"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "test_inventory": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "write_text_once": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "finalize": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step02_review.py",
+      "original_sha256": "8c8cbb10ebff8ab25e735f648a4bd7762e7d199bcced45efacc7ea64f565f766",
+      "original_functions": [
+        "review_shared_gpu"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "review_shared_gpu": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step02_run.py",
+      "original_sha256": "339dca84ff3f388719015edc83562d9c86b2a8ecef615a210abcc085d28736ce",
+      "original_functions": [
+        "configurations",
+        "launch_config",
+        "TokenPromptTextTimingAdapter",
+        "add_e2e",
+        "measured",
+        "main"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "configurations": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "launch_config": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "TokenPromptTextTimingAdapter": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "add_e2e": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "measured": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "main": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step03.py",
+      "original_sha256": "ea8919efc94e61e5196bc7f23553c4629902938abd2e1191cc04b78894d6ddc8",
+      "original_functions": [
+        "cumulative",
+        "retained",
+        "initialize",
+        "OwnedBudget",
+        "run"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "cumulative": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "retained": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "initialize": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "OwnedBudget": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "run": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step03_analysis.py",
+      "original_sha256": "f9d22101248342ff17338831b5b8ddfc4df4b2bcb64bd80cf110f80bafea5491",
+      "original_functions": [
+        "quantile",
+        "immutable",
+        "memory",
+        "cell_summary",
+        "sanity_pair",
+        "contrasts",
+        "analyze"
+      ],
+      "maintained_files": [
+        {
+          "path": "src/inference_kit/experiments/step03.py",
+          "sha256": "5803cc37bd98812eab3b85625f9dc43125a04b3fda0c6240065f6c1ef7eb4b61",
+          "apis": [
+            "quantile",
+            "immutable",
+            "memory",
+            "cell_summary",
+            "sanity_pair",
+            "contrasts",
+            "analyze"
+          ]
+        }
+      ],
+      "function_mapping": {
+        "quantile": [
+          {
+            "file": "experiments/step03.py",
+            "api": "quantile"
+          }
+        ],
+        "immutable": [
+          {
+            "file": "experiments/step03.py",
+            "api": "immutable"
+          }
+        ],
+        "memory": [
+          {
+            "file": "experiments/step03.py",
+            "api": "memory"
+          }
+        ],
+        "cell_summary": [
+          {
+            "file": "experiments/step03.py",
+            "api": "cell_summary"
+          }
+        ],
+        "sanity_pair": [
+          {
+            "file": "experiments/step03.py",
+            "api": "sanity_pair"
+          }
+        ],
+        "contrasts": [
+          {
+            "file": "experiments/step03.py",
+            "api": "contrasts"
+          }
+        ],
+        "analyze": [
+          {
+            "file": "experiments/step03.py",
+            "api": "analyze"
+          }
+        ]
+      },
+      "disposition": "copy and small import/path/boundary changes; numerical parity checked",
+      "verification": [
+        "tests/test_core.py",
+        "tests/test_boundaries.py",
+        "full STEP02/03/04 CPU parity"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step03_contract.py",
+      "original_sha256": "9e9757e4d0673761f65e801f69e19a35a99df8acd25efb54e7674ff325435746",
+      "original_functions": [
+        "validate_spec",
+        "profile",
+        "arms",
+        "artifacts",
+        "launch_config",
+        "validate_argv",
+        "effective_cache",
+        "plan"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "validate_spec": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "profile": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "arms": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "artifacts": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "launch_config": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "validate_argv": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "effective_cache": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "plan": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step03_metrics.py",
+      "original_sha256": "888479a374dfe9df5ce114ea8a6be1d2418c7be5e837ae46769f40acd034c861",
+      "original_functions": [
+        "parse",
+        "value",
+        "counter_delta",
+        "gauge_area",
+        "summarize"
+      ],
+      "maintained_files": [
+        {
+          "path": "src/inference_kit/core/metrics.py",
+          "sha256": "1adb416ab159c5c2f0050a105e31a2f54fb15583464e55d5206f91b8d64aa17c",
+          "apis": [
+            "parse",
+            "value",
+            "counter_delta",
+            "gauge_area",
+            "summarize"
+          ]
+        }
+      ],
+      "function_mapping": {
+        "parse": [
+          {
+            "file": "core/metrics.py",
+            "api": "parse"
+          }
+        ],
+        "value": [
+          {
+            "file": "core/metrics.py",
+            "api": "value"
+          }
+        ],
+        "counter_delta": [
+          {
+            "file": "core/metrics.py",
+            "api": "counter_delta"
+          }
+        ],
+        "gauge_area": [
+          {
+            "file": "core/metrics.py",
+            "api": "gauge_area"
+          }
+        ],
+        "summarize": [
+          {
+            "file": "core/metrics.py",
+            "api": "summarize"
+          }
+        ]
+      },
+      "disposition": "copy and small import/path/boundary changes; numerical parity checked",
+      "verification": [
+        "tests/test_core.py",
+        "tests/test_boundaries.py",
+        "full STEP02/03/04 CPU parity"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step03_report.py",
+      "original_sha256": "322fcd57673d4474a4fe5bd829eeaa89c9ec836a65deb9593d6e2f8a9b5ba2b0",
+      "original_functions": [
+        "report"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "report": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step03_run.py",
+      "original_sha256": "ba113aff8c8ef66d11e833cb44c20ccfa8267bfffd1716be4ab02a26b7c0ad13",
+      "original_functions": [
+        "measured",
+        "main"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "measured": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "main": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step03_runtime.py",
+      "original_sha256": "8af98a52715cfd2769f9ec412320ec9862942b899d975a0d617a07a926356ff1",
+      "original_functions": [
+        "atomic",
+        "proc_identity",
+        "owned",
+        "gpu_query",
+        "gpu_monitor",
+        "capture",
+        "metrics_monitor",
+        "drain",
+        "guarded"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "atomic": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "proc_identity": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "owned": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "gpu_query": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "gpu_monitor": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "capture": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "metrics_monitor": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "drain": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "guarded": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step03_selector.py",
+      "original_sha256": "890a8aa05664479de30af8f84f22e1f36f194f2c360359b4bd66eccecf7d9007",
+      "original_functions": [
+        "requirements",
+        "combined",
+        "candidate",
+        "assess"
+      ],
+      "maintained_files": [
+        {
+          "path": "src/inference_kit/core/assess_multi.py",
+          "sha256": "a61ef221124a0de508c4a64843db149e4164f0914941b0fd65802e27194168e0",
+          "apis": [
+            "requirements",
+            "combined",
+            "candidate",
+            "assess"
+          ]
+        }
+      ],
+      "function_mapping": {
+        "requirements": [
+          {
+            "file": "core/assess_multi.py",
+            "api": "requirements"
+          }
+        ],
+        "combined": [
+          {
+            "file": "core/assess_multi.py",
+            "api": "combined"
+          }
+        ],
+        "candidate": [
+          {
+            "file": "core/assess_multi.py",
+            "api": "candidate"
+          }
+        ],
+        "assess": [
+          {
+            "file": "core/assess_multi.py",
+            "api": "assess"
+          }
+        ]
+      },
+      "disposition": "copy and small import/path/boundary changes; numerical parity checked",
+      "verification": [
+        "tests/test_core.py",
+        "tests/test_boundaries.py",
+        "full STEP02/03/04 CPU parity"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step04.py",
+      "original_sha256": "5284a795c2a107bab8c611d51178a564dab27152b7c0674ed563d76bdbcc12a1",
+      "original_functions": [
+        "cpu_step",
+        "initialize",
+        "validate_completed",
+        "run"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "cpu_step": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "initialize": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "validate_completed": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "run": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step04_analysis.py",
+      "original_sha256": "7a291b872e1f404412a5e8a232e0603f36f5d65ce4deb77359ff25ddf3972166",
+      "original_functions": [
+        "jsonl",
+        "retain",
+        "margin",
+        "paired_contrast",
+        "screen",
+        "replay_scores",
+        "local_summary",
+        "memory",
+        "analyze",
+        "quantiles"
+      ],
+      "maintained_files": [
+        {
+          "path": "src/inference_kit/experiments/step04.py",
+          "sha256": "201f9b924eafb077ada8773486ec9a98d72b82065ea70542a12158c9ec3bc1de",
+          "apis": [
+            "jsonl",
+            "retain",
+            "margin",
+            "paired_contrast",
+            "screen",
+            "local_summary",
+            "memory",
+            "analyze",
+            "quantiles"
+          ]
+        }
+      ],
+      "function_mapping": {
+        "jsonl": [
+          {
+            "file": "experiments/step04.py",
+            "api": "jsonl"
+          }
+        ],
+        "retain": [
+          {
+            "file": "experiments/step04.py",
+            "api": "retain"
+          }
+        ],
+        "margin": [
+          {
+            "file": "experiments/step04.py",
+            "api": "margin"
+          }
+        ],
+        "paired_contrast": [
+          {
+            "file": "experiments/step04.py",
+            "api": "paired_contrast"
+          }
+        ],
+        "screen": [
+          {
+            "file": "experiments/step04.py",
+            "api": "screen"
+          }
+        ],
+        "replay_scores": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "local_summary": [
+          {
+            "file": "experiments/step04.py",
+            "api": "local_summary"
+          }
+        ],
+        "memory": [
+          {
+            "file": "experiments/step04.py",
+            "api": "memory"
+          }
+        ],
+        "analyze": [
+          {
+            "file": "experiments/step04.py",
+            "api": "analyze"
+          }
+        ],
+        "quantiles": [
+          {
+            "file": "experiments/step04.py",
+            "api": "quantiles"
+          }
+        ]
+      },
+      "disposition": "copy and small import/path/boundary changes; numerical parity checked",
+      "verification": [
+        "tests/test_core.py",
+        "tests/test_boundaries.py",
+        "full STEP02/03/04 CPU parity"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step04_artifacts.py",
+      "original_sha256": "c0960ce94e72defe564f1d469afed8512ff75e8a80faca32fbbd0a70a574f858",
+      "original_functions": [
+        "module_for_key",
+        "choose_source",
+        "check_scheme",
+        "tensor_hash",
+        "PackedReader",
+        "compose"
+      ],
+      "maintained_files": [
+        {
+          "path": "src/inference_kit/adapters/tensors.py",
+          "sha256": "35d9f229cf2acaf866c6f6d4b7d86ec2e3158cf531dc4ddb31d24dcb0f6a5df6",
+          "apis": [
+            "module_for_key",
+            "choose_keys",
+            "check_scheme",
+            "Reader",
+            "compose"
+          ]
+        }
+      ],
+      "function_mapping": {
+        "module_for_key": [
+          {
+            "file": "adapters/tensors.py",
+            "api": "module_for_key"
+          }
+        ],
+        "choose_source": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "check_scheme": [
+          {
+            "file": "adapters/tensors.py",
+            "api": "check_scheme"
+          }
+        ],
+        "tensor_hash": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "PackedReader": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "compose": [
+          {
+            "file": "adapters/tensors.py",
+            "api": "compose"
+          }
+        ]
+      },
+      "disposition": "copy and small import/path/boundary changes; numerical parity checked",
+      "verification": [
+        "tests/test_core.py",
+        "tests/test_boundaries.py",
+        "full STEP02/03/04 CPU parity",
+        "tests/test_tensor_optional.py"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step04_contract.py",
+      "original_sha256": "403583852c9bbeea0dacb86b2fdd60310752d5767ef7b3ef9995a10b6db545a1",
+      "original_functions": [
+        "validate_spec",
+        "references",
+        "kv_bytes",
+        "validate_rows",
+        "set_option",
+        "launch_config",
+        "plan"
+      ],
+      "maintained_files": [
+        {
+          "path": "src/inference_kit/experiments/step04_recipe.py",
+          "sha256": "7410fa93d849e98df8a113c57089bd6b133a24c295cbbb758866932989b358c6",
+          "apis": []
+        }
+      ],
+      "function_mapping": {
+        "validate_spec": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "references": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "kv_bytes": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "validate_rows": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "set_option": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "launch_config": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "plan": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "copy and small import/path/boundary changes; numerical parity checked",
+      "verification": [
+        "tests/test_core.py",
+        "tests/test_boundaries.py",
+        "full STEP02/03/04 CPU parity"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step04_data.py",
+      "original_sha256": "96b905f187ab545eac2d7ebaae1ea5f9b92cfc65f9602b3e0aebe06766cf951c",
+      "original_functions": [
+        "article_ids",
+        "prepare"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "article_ids": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "prepare": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step04_local.py",
+      "original_sha256": "21772a760512f191d207e73ac1607914b193244d6f264e66753d1fba0bfeec94",
+      "original_functions": [
+        "observe"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "observe": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/inference_suite/step04_run.py",
+      "original_sha256": "6c4b6b3b1ae8c2e945dd9d1e405a835f3ae2f21ece7524090de5f763dd806ca3",
+      "original_functions": [
+        "post_gpu_observation",
+        "job"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "post_gpu_observation": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "job": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    },
+    {
+      "original_path": "tools/modelpack/common.py",
+      "original_sha256": "1cb5897555cb6dc14e74cf90ac58086cf0a89c4a1b47330235d63eebd78ab787",
+      "original_functions": [
+        "require",
+        "digest",
+        "sha",
+        "read",
+        "write",
+        "new_external",
+        "safe_name",
+        "inventory",
+        "checksums",
+        "verify_checksums"
+      ],
+      "maintained_files": [
+        {
+          "path": "src/inference_kit/core/io.py",
+          "sha256": "15c69b651138f5519986818b0f66b17cb8c2c4cde0d315c8274c7aca9e05fa46",
+          "apis": [
+            "require",
+            "digest",
+            "sha",
+            "loads",
+            "read",
+            "write",
+            "safe_name",
+            "fields"
+          ]
+        }
+      ],
+      "function_mapping": {
+        "require": [
+          {
+            "file": "core/io.py",
+            "api": "require"
+          }
+        ],
+        "digest": [
+          {
+            "file": "core/io.py",
+            "api": "digest"
+          }
+        ],
+        "sha": [
+          {
+            "file": "core/io.py",
+            "api": "sha"
+          }
+        ],
+        "read": [
+          {
+            "file": "core/io.py",
+            "api": "read"
+          }
+        ],
+        "write": [
+          {
+            "file": "core/io.py",
+            "api": "write"
+          }
+        ],
+        "new_external": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "safe_name": [
+          {
+            "file": "core/io.py",
+            "api": "safe_name"
+          }
+        ],
+        "inventory": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "checksums": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "verify_checksums": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "copy and small import/path/boundary changes; numerical parity checked",
+      "verification": [
+        "tests/test_core.py",
+        "tests/test_boundaries.py",
+        "full STEP02/03/04 CPU parity"
+      ]
+    },
+    {
+      "original_path": "tools/modelpack/quantized.py",
+      "original_sha256": "3b7ef4f4b5536d1c43e2ad1dff0237df4c62aa834e8352a168a71c7ef38b61d6",
+      "original_functions": [
+        "inspect_quantized",
+        "build"
+      ],
+      "maintained_files": [],
+      "function_mapping": {
+        "inspect_quantized": [
+          "not directly ported; kept in frozen source/recipe"
+        ],
+        "build": [
+          "not directly ported; kept in frozen source/recipe"
+        ]
+      },
+      "disposition": "archival recipe/provenance only; no claim of ported API",
+      "verification": [
+        "archive manifest/index provenance, not a new execution"
+      ]
+    }
+  ]
+}

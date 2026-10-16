@@ -33,14 +33,14 @@ def loads(blob: str) -> Any:
 
 
 def read(path: Path) -> Any:
-    return loads(path.read_text())
+    return loads(path.read_text(encoding="utf-8"))
 
 
 def write(path: Path, value: Any) -> None:
     require(not path.exists(), "Refusing to overwrite " + path.name)
     path.parent.mkdir(parents=True, exist_ok=True)
     blob = json.dumps(value, indent=2, sort_keys=True, ensure_ascii=False, allow_nan=False) + "\n"
-    with path.open("x") as stream:
+    with path.open("x", encoding="utf-8") as stream:
         stream.write(blob)
 
 

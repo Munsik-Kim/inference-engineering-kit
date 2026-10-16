@@ -1,0 +1,12 @@
+{
+  "roots":{"PROJECT_ROOT":"../..","ARTIFACT_ROOT":"../../../prepared-research-assets","DATA_ROOT":"../../runs/bench05a-prepared","RUNS_ROOT":"../../runs"},
+  "artifact_receipt":"${ARTIFACT_ROOT}/artifact-receipt.json",
+  "prepared_samples":"${DATA_ROOT}/prepared-samples.json",
+  "runtime_metadata":"${DATA_ROOT}/runtime.json",
+  "runtime_python":"${PROJECT_ROOT}/prepared-diagnostic-runtime/bin/python",
+  "server_python":"${PROJECT_ROOT}/prepared-serving-runtime/bin/python",
+  "package_site":"${PROJECT_ROOT}/runs/bench05a-installed-package",
+  "prior_ledger":"${ARTIFACT_ROOT}/gpu_budget.json",
+  "campaign_root":"${ARTIFACT_ROOT}",
+  "gpu":0,"gpu_uuid":"REPLACE_FROM_DEVICE_QUERY","port":18186
+}

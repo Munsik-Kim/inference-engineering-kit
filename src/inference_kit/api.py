@@ -19,7 +19,7 @@ def _record(path_or_value):
     if isinstance(path_or_value,(str,Path)):
         path=Path(path_or_value)
         if path.suffix=='.jsonl':
-            return [loads(line) for line in path.read_text().splitlines() if line.strip()]
+            return [loads(line) for line in path.read_text(encoding='utf-8').splitlines() if line.strip()]
         return read(path)
     return path_or_value
 
@@ -150,7 +150,7 @@ def replay(case,bundle,output,expected_sha256=None):
 
 
 def demo(output):
-    out=new_output(output);fixture=json.loads(files('inference_kit.resources').joinpath('demo.json').read_text())
+    out=new_output(output);fixture=json.loads(files('inference_kit.resources').joinpath('demo.json').read_text(encoding='utf-8'))
     write(out/'baseline.json',fixture['baseline']);write(out/'candidate.json',fixture['candidate'])
     write(out/'index.json',fixture['index']);write(out/'requirements.json',fixture['requirements'])
     comp=compare(fixture['baseline'],fixture['candidate'],out/'comparison',replicates=200)
@@ -158,3 +158,19 @@ def demo(output):
     result={'status':'CPU_SYNTHETIC_DEMO_COMPLETE','evidence_kind':'synthetic_test','inference':False,
             'source':'installed wheel package resource','assessment_status':assessment['status'],'new_gpu_runs':0}
     write(out/'demo.json',result);return result
+
+
+def bench_plan(suite,models,local,output):
+    from .suites.bench05a_plan import plan
+    return plan(suite,models,local,output)
+
+
+def bench_run(plan,output):
+    """Explicitly authorized GPU operation; CLI additionally requires --allow-gpu."""
+    from .suites.bench05a_run import run
+    return run(plan,output)
+
+
+def bench_replay(run,output):
+    from .suites.bench05a_replay import replay
+    return replay(run,output)

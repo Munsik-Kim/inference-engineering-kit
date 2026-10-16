@@ -25,7 +25,7 @@ async def ensure_port_free(url):
 def start(launch_plan, directory):
     if os.name != "posix":
         raise ValueError("Managed launch requires Linux/WSL; CPU client tests remain portable")
-    log = (Path(directory) / "server.log").open("x")
+    log = (Path(directory) / "server.log").open("x", encoding="utf-8")
     try:
         process = subprocess.Popen(launch_plan["argv"], env=os.environ | launch_plan["environment"],
                                    stdout=log, stderr=subprocess.STDOUT, start_new_session=True)

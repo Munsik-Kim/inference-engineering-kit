@@ -69,7 +69,7 @@ async def managed(spec_file,local_file,output):
         try:
             if process is not None:
                 exit_record=await asyncio.to_thread(owned.stop,process,log,grace=profile['cleanup_grace'])
-                lifecycle=observed_shutdown(exit_record,(out/'server.log').read_text(),profile['shutdown_timeout'])
+                lifecycle=observed_shutdown(exit_record,(out/'server.log').read_text(encoding='utf-8'),profile['shutdown_timeout'])
                 await owned.ensure_port_free(launch['url']);lifecycle['owned_port_cleanup']='FREE'
                 write(out/'lifecycle.json',lifecycle)
             write(out/'readiness-http.json',readiness)

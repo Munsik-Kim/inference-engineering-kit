@@ -14,3 +14,6 @@ GPTQ, Marlin, vLLM, Transformers, LLM Compressor, compressed-tensors, lm-evaluat
 - 평가 정의: [lm-evaluation-harness pinned source](https://github.com/EleutherAI/lm-evaluation-harness/tree/d6de81643928d653435c431bae19945d41d32520). raw prompt/choice normalization과 subset ID는 frozen protocol을 따릅니다.
 
 관련 공개 조건 확인은 기존 acquisition/asset DATA_LICENSES와 링크의 범위입니다. 비공개 저장소도 upstream 고지를 면제하지 않습니다. 새 artifact/고객 데이터·별도 자료 재배포 권한은 이 문서가 부여하지 않습니다. 외부 재배포가 필요하면 각 데이터의 share-alike/attribution 조건을 따로 검토해야 합니다.
+# BENCH05-A 진단 adapter 추가
+
+선택 attention 관측은 설치된 PyTorch SDPA/Transformers Llama forward의 원래 Q/K/V·반환값을 사용한다. RTN dense 진단은 설치된 compressed-tensors의 pack-quantized decode를 호출한다. 이들 backend·decode·RoPE·quantization 알고리즘을 새로 개발했다고 주장하지 않는다. 모델/가중치는 포함하지 않으며, 짧은 진단 문항만 자체 작성했다. generic stdlib metric·관측 schema·순차 실행/검산의 통합은 이 toolkit의 추가 구현이다. 모델/runtime별 실제 소스 SHA와 원시 GPU 실행 wheel은 로컬 BENCH05-A evidence에 따로 보존한다. 과거 GPU source hash는 새 소스 hash로 대체하지 않는다.

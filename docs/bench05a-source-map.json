@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "base_head": "d6c0b4be3db3b9ef8e609c5bc7cb420abaa44d27",
+  "note": "Current uncommitted toolkit implementation and historical model revision have separate identities.",
+  "toolkit_base_head": "d6c0b4be3db3b9ef8e609c5bc7cb420abaa44d27",
+  "gpu_python_sources_equal_delivery": true,
+  "files": [
+    {
+      "new_file": "src/inference_kit/probes/prepare_tokens.py",
+      "sha256": "11fd82cd69a806374363a4842ecb2893ad54f9beb8af19d2bb57fd9a4b40e389",
+      "origin": "BENCH05-A new integration in toolkit; installed runtime interfaces referenced, no research checkout imports",
+      "reuse": "core IO/config/state/evidence, owned lifecycle, NVML and vLLM adapters from base toolkit",
+      "tests": "tests/bench05a; ordinary installed wheel consumer and raw replay"
+    },
+    {
+      "new_file": "src/inference_kit/probes/contracts.py",
+      "sha256": "feccf6baa432168f429b6691a00cf9bdefb934ded9fea5d9bac03821b0a40fa7",
+      "origin": "BENCH05-A new integration in toolkit; installed runtime interfaces referenced, no research checkout imports",
+      "reuse": "core IO/config/state/evidence, owned lifecycle, NVML and vLLM adapters from base toolkit",
+      "tests": "tests/bench05a; ordinary installed wheel consumer and raw replay"
+    },
+    {
+      "new_file": "src/inference_kit/probes/weights.py",
+      "sha256": "8a2fce0db72af3c427a24040e43fcb3f92e1e9fcf277bcd8158a7ca33ffe615b",
+      "origin": "BENCH05-A new integration in toolkit; installed runtime interfaces referenced, no research checkout imports",
+      "reuse": "core IO/config/state/evidence, owned lifecycle, NVML and vLLM adapters from base toolkit",
+      "tests": "tests/bench05a; ordinary installed wheel consumer and raw replay"
+    },
+    {
+      "new_file": "src/inference_kit/probes/attention.py",
+      "sha256": "ad9820fdb4f1620543acf47b507b4d4eb4213dfc2fb2fa3c3518d4f32fac770d",
+      "origin": "BENCH05-A new integration in toolkit; installed runtime interfaces referenced, no research checkout imports",
+      "reuse": "core IO/config/state/evidence, owned lifecycle, NVML and vLLM adapters from base toolkit",
+      "tests": "tests/bench05a; ordinary installed wheel consumer and raw replay"
+    },
+    {
+      "new_file": "src/inference_kit/probes/blobs.py",
+      "sha256": "3b3894e1df61a2d9ba167f25b0d1ee4b19185e424467e423fb06c60c5ecaf9d5",
+      "origin": "BENCH05-A new integration in toolkit; installed runtime interfaces referenced, no research checkout imports",
+      "reuse": "core IO/config/state/evidence, owned lifecycle, NVML and vLLM adapters from base toolkit",
+      "tests": "tests/bench05a; ordinary installed wheel consumer and raw replay"
+    },
+    {
+      "new_file": "src/inference_kit/probes/local_transformer.py",
+      "sha256": "d15758d44a8e5b00c9c5d3b5cd62cc6b3c2e5fbc1b25aada6ad9f6dcbe4bf68f",
+      "origin": "BENCH05-A new integration in toolkit; installed runtime interfaces referenced, no research checkout imports",
+      "reuse": "core IO/config/state/evidence, owned lifecycle, NVML and vLLM adapters from base toolkit",
+      "tests": "tests/bench05a; ordinary installed wheel consumer and raw replay"
+    },
+    {
+      "new_file": "src/inference_kit/probes/__init__.py",
+      "sha256": "5d3dce2f993b2a5bf5d9ac8eabc7aa6932ec3b831b8169c6ac48fd6f32071444",
+      "origin": "BENCH05-A new integration in toolkit; installed runtime interfaces referenced, no research checkout imports",
+      "reuse": "core IO/config/state/evidence, owned lifecycle, NVML and vLLM adapters from base toolkit",
+      "tests": "tests/bench05a; ordinary installed wheel consumer and raw replay"
+    },
+    {
+      "new_file": "src/inference_kit/metrics/attention.py",
+      "sha256": "2f518cd4e5823894a434b205451a7a8a2500cad861425bf86957e5d371c1a578",
+      "origin": "BENCH05-A new integration in toolkit; installed runtime interfaces referenced, no research checkout imports",
+      "reuse": "core IO/config/state/evidence, owned lifecycle, NVML and vLLM adapters from base toolkit",
+      "tests": "tests/bench05a; ordinary installed wheel consumer and raw replay"
+    },
+    {
+      "new_file": "src/inference_kit/metrics/token.py",
+      "sha256": "2b5522647010623910437648bc73f60c39d295f64d8da8492163056c04c775a4",
+      "origin": "BENCH05-A new integration in toolkit; installed runtime interfaces referenced, no research checkout imports",
+      "reuse": "core IO/config/state/evidence, owned lifecycle, NVML and vLLM adapters from base toolkit",
+      "tests": "tests/bench05a; ordinary installed wheel consumer and raw replay"
+    },
+    {
+      "new_file": "src/inference_kit/metrics/__init__.py",
+      "sha256": "58ca559c5478b316a5045a2990d8456955753d7b8438c57b81f75dc15e4e6384",
+      "origin": "BENCH05-A new integration in toolkit; installed runtime interfaces referenced, no research checkout imports",
+      "reuse": "core IO/config/state/evidence, owned lifecycle, NVML and vLLM adapters from base toolkit",
+      "tests": "tests/bench05a; ordinary installed wheel consumer and raw replay"
+    },
+    {
+      "new_file": "src/inference_kit/models/capabilities.py",
+      "sha256": "64331cbdbba6a34eea564db3e846adb96bef6f0723253eb1bf53c2555c76b158",
+      "origin": "BENCH05-A new integration in toolkit; installed runtime interfaces referenced, no research checkout imports",
+      "reuse": "core IO/config/state/evidence, owned lifecycle, NVML and vLLM adapters from base toolkit",
+      "tests": "tests/bench05a; ordinary installed wheel consumer and raw replay"
+    },
+    {
+      "new_file": "src/inference_kit/models/__init__.py",
+      "sha256": "61081bb9ccb5c15c30ed019a6fdd63db3f35fe136ccfd3a7ee78607ab2330d27",
+      "origin": "BENCH05-A new integration in toolkit; installed runtime interfaces referenced, no research checkout imports",
+      "reuse": "core IO/config/state/evidence, owned lifecycle, NVML and vLLM adapters from base toolkit",
+      "tests": "tests/bench05a; ordinary installed wheel consumer and raw replay"
+    },
+    {
+      "new_file": "src/inference_kit/suites/bench05a_plan.py",
+      "sha256": "3f5248d4302bddb2babc01df42c2b6d864d440b09e60a28996dd7d9cd4640a77",
+      "origin": "BENCH05-A new integration in toolkit; installed runtime interfaces referenced, no research checkout imports",
+      "reuse": "core IO/config/state/evidence, owned lifecycle, NVML and vLLM adapters from base toolkit",
+      "tests": "tests/bench05a; ordinary installed wheel consumer and raw replay"
+    },
+    {
+      "new_file": "src/inference_kit/suites/bench05a_run.py",
+      "sha256": "da75bea89d228c91d44f1821466bd78a3a6df128f36101ba303e6dd8951fcd61",
+      "origin": "BENCH05-A new integration in toolkit; installed runtime interfaces referenced, no research checkout imports",
+      "reuse": "core IO/config/state/evidence, owned lifecycle, NVML and vLLM adapters from base toolkit",
+      "tests": "tests/bench05a; ordinary installed wheel consumer and raw replay"
+    },
+    {
+      "new_file": "src/inference_kit/suites/bench05a_replay.py",
+      "sha256": "5beb34a92dc7b8efad2fc01b214a394c5645e8b457e7a80b459e32ac1cd5afdd",
+      "origin": "BENCH05-A new integration in toolkit; installed runtime interfaces referenced, no research checkout imports",
+      "reuse": "core IO/config/state/evidence, owned lifecycle, NVML and vLLM adapters from base toolkit",
+      "tests": "tests/bench05a; ordinary installed wheel consumer and raw replay"
+    },
+    {
+      "new_file": "src/inference_kit/suites/__init__.py",
+      "sha256": "00cb686e833e15b2fe09b07bb0183f38b3715c30a6c6469b1efbc987deea1e12",
+      "origin": "BENCH05-A new integration in toolkit; installed runtime interfaces referenced, no research checkout imports",
+      "reuse": "core IO/config/state/evidence, owned lifecycle, NVML and vLLM adapters from base toolkit",
+      "tests": "tests/bench05a; ordinary installed wheel consumer and raw replay"
+    }
+  ],
+  "model_revision": "31b70e2e869a7173562077fd711b654946d38674"
+}

@@ -46,7 +46,7 @@ def gpu_query(gpu=0, applications=False):
 
 async def gpu_monitor(stop, abort, directory, spec, owner):
     tracked = {}
-    with (directory / 'memory.jsonl').open('x') as memory, (directory / 'ownership.jsonl').open('x') as ownership:
+    with (directory / 'memory.jsonl').open('x',encoding='utf-8') as memory, (directory / 'ownership.jsonl').open('x',encoding='utf-8') as ownership:
         last_owner = -float('inf')
         while not stop.is_set():
             sample = await asyncio.to_thread(gpu_query, spec['runtime']['gpu'])

@@ -24,3 +24,8 @@ raw output은 새 경로/immutable입니다. budget/progress만 atomic snapshot�
 STEP03 v3 `latency_constraints`는 전부 AND, 관측되지 않은 cell은 UNKNOWN입니다. retained quality는 허용을 명시해도 `CONDITIONAL_OBSERVED_CANDIDATE`이며 exact-profile 인증이 아닙니다. interval이 경계를 걸치면 INCONCLUSIVE/UNKNOWN입니다. STEP04 DEV의 production status는 항상 NOT_ELIGIBLE입니다.
 
 숫자 parity 허용오차는 finite float에 abs=1e-10, rel=1e-9입니다. 정수·boolean·상태·ID·pairing·정오답은 정확히 같아야 합니다. NaN/inf는 거절합니다. JSON CRLF/LF 차이와 archive byte identity는 수치 일치와 별도입니다.
+# BENCH05-A 추가 계약
+
+기존 STEP02/03/04 schema는 유지한다. BENCH05-A schema1은 Sample/Execution/Observation/MetricSpec/MetricResult를 별도 사용하며 `evidence_kind=synthetic_contract`와 `live_model_diagnostic`을 섞지 않는다. 실행 label과 source artifact/effective dtype를 별개로 저장한다. artifact는 의도한 treatment이므로 pair 간 달라질 수 있고, tokenizer/prefix/vocabulary/좌표/mask/관측 정책은 같아야 한다.
+
+numeric blob은 little-endian float32, 명시한 shape·byte 수·SHA로 검산한다. target `t`는 logit `t-1`에 대응한다. attention은 full key 축 및 allowed mask를 갖고, reconstructed probability/native-returned AV/reconstructed AV/output projection을 구분한다. 누락·all-masked·near-zero 분모는0/PASS로 바꾸지 않는다. 세부 계산식과 단위는 [BENCH05-A](BENCH05A_KO.md)에 있다.

@@ -1,14 +1,41 @@
-# inference-engineering-kit 0.1.0
+# inference-engineering-kit — 0.1.1.dev3 비공개 개발본
 
 LLM 추론 실험의 실행·계측·품질 비교·packed artifact 진단을 재사용하고, 저장된 원시 기록에서 결과를 다시 계산하는 Python toolkit.
 
 모델/recipe/profile과 로컬 경로를 분리하고, 요청 완료·품질·프로세스 정리·kernel 관측·배포 근거를 각각 기록합니다. 원본 연구 저장소 없이 설치해 CPU 검산과 비교를 수행할 수 있습니다. 기본 설치에는 Torch/vLLM/Transformers가 없습니다. 내부 비공개 사용을 위한 첫 엔지니어링 릴리스입니다.
 
-English: A small Python toolkit for portable inference experiment plumbing, raw-record replay, paired comparison, constraint assessment and packed-tensor provenance. CPU portability is verified separately from historical GPU experiments. No new accuracy/speed claim is made.
+English: A small Python toolkit for portable inference experiment plumbing, raw-record replay, paired comparison, constraint assessment and packed-tensor provenance. The development build includes selected token/attention diagnostics, historically measured with 0.1.1.dev2 on one Smol BF16/decoded-RTN pair, and CPU distribution fixes in 0.1.1.dev3. No accuracy/speed or production claim is made. The private 0.1.0 release remains unchanged.
+
+## CPU 배포 수정
+
+`0.1.1.dev3`는 UTF-8 파일 처리, 테스트0건 실패 판정, 설치 wheel 검증과 3버전 CPU workflow를 보강합니다. Python3.10/3.11/3.12에서 각각 source·wheel123개 계약을 검증했고, 깨끗한 CPU venv의 demo/compare/assess/recorded replay도 통과했습니다. 원격 실행 상태와 wheel 자산은 [수동 CPU workflow](https://github.com/Munsik-Kim/inference-engineering-kit/actions/workflows/cpu.yml)에서 확인합니다. [검증 범위](docs/CPU_RELEASE_FIX_KO.md)의 로컬 task 기록과 원격 실행을 구분합니다. 게시 과정에서 발견한 합성 fixture의 호스트 자원 의존성도 수정했습니다. 현재124개 계약과 첫 CI 실패 보존은 [게시 검증 기록](docs/CPU_PUBLICATION_KO.md)을 따릅니다. 기존 v0.1.0 릴리스는 유지합니다.
+
+## BENCH05-A: 실제 토큰·attention 관측
+
+현재 `0.1.1.dev3`의 `bench` 이름공간은 설정 동결 → 순차 진단 → 원시 numeric blob의 CPU 재계산을 연결합니다. 아래 실제 SmolLM2-1.7B GPU 관측은 이전 `0.1.1.dev2`에서 같은 pinned tokenizer/입력으로 BF16과 기존 RTN을 실행한 기록입니다. RTN은 실제 packed/scale/shape를 해석한 **DECODED_WEIGHT_DIAGNOSTIC**입니다. INT4 kernel 내부 관측이나 INT4 VRAM 측정으로 해석하지 않습니다. 확률 행은 native post-RoPE Q/K에서 재구성하고, attention output은 원래 SDPA 반환값에서 읽습니다.
+
+```bash
+# 준비된 로컬 wheel만 일반 설치합니다. 의존성/모델 다운로드는 없습니다.
+python -m pip install --no-index --no-deps /path/to/inference_engineering_kit-0.1.1.dev3-py3-none-any.whl
+inference-kit bench --help
+inference-kit bench plan --suite configs/bench05a/suite.json --models configs/bench05a/pair.json --local /path/to/private-local.json --output runs/new-plan
+inference-kit bench replay --run /path/to/recorded-bench05a-run --output runs/new-replay
+```
+
+`plan`에는 기존 artifact receipt·준비된 token manifest·명시적 runtime·연결된 campaign ledger가 필요합니다. 모델을 로딩하거나 GPU를 확인한 것으로 표시하지 않습니다. `bench run --plan runs/new-plan/PLAN_FROZEN.json --output runs/new-run --allow-gpu`만 실제 GPU 작업을 시작합니다. source/config가 동결 이후 바뀌거나 외부 compute PID/예산 문제가 있으면 중단합니다. 자동 재시도는 없습니다.
+
+```python
+from inference_kit import bench_plan, bench_replay
+
+planned = bench_plan("suite.json", "pair.json", "private-local.json", "new-plan")
+observed = bench_replay("recorded-bench05a-run", "new-replay")
+```
+
+전체 관측에는 4개 합성 문항×2 arm, arm당 참조 23위치·선택 attention 16행·full vocabulary 15위치가 있습니다. 이 짧은 continuation NLL/attention 차이는 일반 품질·언어 능력·사고 과정의 정답이 아닙니다. 별도 vLLM bridge는 경로 간 차이를 측정했으며 동등성을 주장하지 않습니다. 이 기능만 새 wheel GPU 검증 범위이며 기존 `run` 전체를 재인증하지 않습니다. 세부 계약·재현과 작은 실제 fixture 사용은 [BENCH05-A 안내](docs/BENCH05A_KO.md)를 따릅니다. 당시 GPU raw와 dev2 wheel은 로컬에 보존합니다. 이번 dev3 소스 게시에서는 GPU를 재실행하지 않으며 기존 원격 release를 변경하지 않습니다.
 
 ## 설치와 CPU Quickstart
 
-Python 3.10 이상을 대상으로 하며 이번 로컬 검증은 Linux/WSL Python 3.12에서 수행했습니다. 릴리스의 wheel을 인증된 계정으로 명시적으로 받거나 이 저장소를 clone해 wheel을 만드세요. 자동 다운로드는 없습니다.
+Python 3.10 이상을 대상으로 하며 Linux/WSL Python 3.10·3.11·3.12에서 CPU 검증했습니다. 아래는 보존한 v0.1.0 release의 Quickstart입니다. 현재 dev3 wheel은 위 CPU workflow의 명시적 artifact 다운로드나 검토한 로컬 build로 준비합니다. 릴리스의 wheel을 인증된 계정으로 명시적으로 받거나 이 저장소를 clone해 wheel을 만드세요. 자동 다운로드는 없습니다.
 
 ```bash
 gh release download v0.1.0-internal --repo Munsik-Kim/inference-engineering-kit --pattern '*.whl' --dir ./downloads
@@ -42,7 +69,7 @@ assessment = assess("portable-index.json", "requirements.json", output="new-asse
 
 CLI는 같은 Python API를 호출합니다. `plan/help/demo/verify/replay/compare/assess`는 GPU·모델 로딩·네트워크를 시작하지 않습니다. `verify`는 bounded archive/manifest/index를 확인하고, `replay`는 설치된 코드로 원시 응답을 다시 채점합니다. archive의 Python은 자동 실행하지 않습니다. 전체 STEP02~04 자산 사용법은 [재현 안내](docs/REPRODUCIBILITY_KO.md)에 있습니다.
 
-`run --allow-gpu`는 명시적 spec/local/runtime/GPU UUID/output/budget과 기존 로컬 artifact를 요구하는 opt-in 실행 경로입니다. `compose --allow-tensor-runtime`은 준비된 별도 tensor runtime에서만 작동합니다. 이번 릴리스에서는 실제 모델과 GPU를 실행하지 않았습니다. vLLM 실행 경로 상태는 `REFACTORED_CPU_CONTRACT_VERIFIED_GPU_NOT_RERUN`입니다.
+`run --allow-gpu`는 명시적 spec/local/runtime/GPU UUID/output/budget과 기존 로컬 artifact를 요구하는 opt-in 실행 경로입니다. `compose --allow-tensor-runtime`은 준비된 별도 tensor runtime에서만 작동합니다. **0.1.0 릴리스**에서는 실제 모델과 GPU를 실행하지 않았습니다. 그 일반 `run` 경로의 상태는 `REFACTORED_CPU_CONTRACT_VERIFIED_GPU_NOT_RERUN`입니다. BENCH05-A의 제한된 새 관측은 위 별도 범위입니다.
 
 | 기능 | 현재 검증 | 경계 |
 |---|---|---|

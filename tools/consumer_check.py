@@ -59,11 +59,22 @@ def main():
     sys.argv=['consumer_project.py','--output','api-consumer'];runpy.run_path(str(root/'consumer_project.py'),run_name='__main__')
     console=subprocess.run([str(Path(sys.executable).parent/'inference-kit'),'--help'],capture_output=True,text=True,cwd=root,timeout=10)
     assert console.returncode==0 and 'assess' in console.stdout
+    external=[]
+    for argv,expected in [(['demo','--output','console-demo'],0),
+        (['compare','--baseline','console-demo/baseline.json','--candidate','console-demo/candidate.json','--output','console-compare'],0),
+        (['assess','--index','console-demo/index.json','--requirements','console-demo/requirements.json','--output','console-assess'],0),
+        (['replay','--case','step04','--bundle','recorded','--output','console-replay'],0),
+        (['demo','--output','console-demo'],2)]:
+        child=subprocess.run([str(Path(sys.executable).parent/'inference-kit'),*argv],capture_output=True,text=True,cwd=root,timeout=30)
+        assert child.returncode==expected,(argv,child.returncode,child.stderr)
+        external.append({'argv':['inference-kit',*argv],'returncode':child.returncode})
     forbidden_imports=[n for n in sys.modules if n.split('.')[0] in ('torch','vllm','transformers','aiohttp')];assert not forbidden_imports
     result={'status':'INDEPENDENT_WHEEL_CONSUMER_PASS','package_version':inference_kit.__version__,'import_origin':str(origin),
             'python':sys.version,'commands':commands,'console_entrypoint':'PASS','editable':False,'original_checkout_reads':'DENIED_BY_AUDIT_HOOK',
             'forbidden_roots':forbidden,'explicit_fixture':'2-document recorded slice copied before deny gate',
             'engine_sdk_imports':forbidden_imports,'core_modified_for_custom_workload':False,'new_gpu_runs':0,'model_downloads':0}
+    result['external_console_commands']=external
+    result['read_guard_scope']='In-process CLI/API only; not an OS sandbox and not inherited by console subprocesses'
     (root/'CONSUMER_RECEIPT.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))
 
 if __name__=='__main__':main()

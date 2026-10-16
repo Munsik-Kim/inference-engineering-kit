@@ -45,7 +45,7 @@ async def live_quality(url, rows, directory, concurrency=4):
     import aiohttp
     directory=Path(directory); require(not directory.exists(), 'Refuse quality output overwrite'); directory.mkdir()
     semaphore=asyncio.Semaphore(concurrency)
-    raw=(directory/'http-responses.jsonl').open('x'); records=[]; requests=[]
+    raw=(directory/'http-responses.jsonl').open('x',encoding='utf-8'); records=[]; requests=[]
     async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=120),connector=aiohttp.TCPConnector(limit=concurrency)) as session:
         async def one(row, request):
             body={'model':'serving-lab','prompt':request['input_ids'],'max_tokens':1,'temperature':0,
@@ -131,7 +131,7 @@ def paired_quality(baseline, candidate, replicates=5000, seed=909223, threshold=
 
 
 def jsonl(path):
-    return [loads(line) for line in Path(path).read_text().splitlines() if line.strip()]
+    return [loads(line) for line in Path(path).read_text(encoding='utf-8').splitlines() if line.strip()]
 
 def replay_scores(directory,rows,strict_order=False):
     saved=read(directory/'scores.json');raw=jsonl(directory/'http-responses.jsonl')

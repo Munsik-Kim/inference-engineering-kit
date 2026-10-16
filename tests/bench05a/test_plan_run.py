@@ -12,6 +12,9 @@ from .helpers import prepared
 
 def local_fixture(root):
     p=prepared();kit=Path(__file__).parents[2];suite=read(kit/'configs/bench05a/suite.json');pair=read(kit/'configs/bench05a/pair.json')
+    # Tiny metadata fixtures do not load a model and must not require its 10GiB RAM.
+    # Keep the live suite's resource limits unchanged; test its gate separately.
+    suite['budget'].update(minimum_cpu_available_bytes=1,minimum_disk_free_bytes=1)
     write(root/'suite.json',suite);write(root/'pair.json',pair)
     authored=[{k:r[k] for k in ('sample_id','source_id','prompt','reference_text','language')} for r in p['rows']];write(root/'samples.json',authored)
     p['authored_sha256']=sha(root/'samples.json');write(root/'prepared.json',p)
@@ -49,3 +52,13 @@ class PlanTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as t:
             root=Path(t);args=local_fixture(root);(root/'runtime.json').write_text(json.dumps({'packages':{'transformers':{'version':'unknown'}}}))
             with self.assertRaises(ValueError):bench_plan(*args,root/'plan')
+    def test_resource_shortfall_blocks_before_gpu_query_or_launch(self):
+        with tempfile.TemporaryDirectory() as t:
+            root=Path(t);args=local_fixture(root);suite=read(args[0])
+            suite['budget']['minimum_cpu_available_bytes']=sys.maxsize;args[0].write_text(json.dumps(suite),encoding='utf-8')
+            result=bench_plan(*args,root/'plan')
+            self.assertEqual(result['status'],'BLOCKED_LOCAL_RESOURCE_OR_ARTIFACT')
+            with patch('inference_kit.suites.bench05a_run.check_gpu',side_effect=AssertionError('resource-blocked GPU query')),patch('inference_kit.adapters.owned.start',side_effect=AssertionError('resource-blocked launch')):
+                with self.assertRaisesRegex(ValueError,'unresolved local artifacts/resources'):
+                    bench_run(root/'plan/PLAN_FROZEN.json',root/'run')
+            self.assertFalse((root/'run').exists());self.assertEqual(read(root/'prior.json')['used_seconds'],10)

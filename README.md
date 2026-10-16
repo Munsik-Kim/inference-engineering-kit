@@ -8,7 +8,7 @@ English: A small Python toolkit for portable inference experiment plumbing, raw-
 
 ## CPU 배포 수정
 
-`0.1.1.dev3`는 UTF-8 파일 처리, 테스트0건 실패 판정, 설치 wheel 검증과 3버전 CPU workflow를 보강합니다. Python3.10/3.11/3.12에서 각각 source·wheel123개 계약을 검증했고, 깨끗한 CPU venv의 demo/compare/assess/recorded replay도 통과했습니다. 원격 실행 상태와 wheel 자산은 [수동 CPU workflow](https://github.com/Munsik-Kim/inference-engineering-kit/actions/workflows/cpu.yml)에서 확인합니다. [검증 범위](docs/CPU_RELEASE_FIX_KO.md)의 로컬 task 기록과 원격 실행을 구분합니다. 기존 v0.1.0 릴리스는 유지합니다.
+`0.1.1.dev3`는 UTF-8 파일 처리, 테스트0건 실패 판정, 설치 wheel 검증과 3버전 CPU workflow를 보강합니다. Python3.10/3.11/3.12에서 각각 source·wheel123개 계약을 검증했고, 깨끗한 CPU venv의 demo/compare/assess/recorded replay도 통과했습니다. 원격 실행 상태와 wheel 자산은 [수동 CPU workflow](https://github.com/Munsik-Kim/inference-engineering-kit/actions/workflows/cpu.yml)에서 확인합니다. [검증 범위](docs/CPU_RELEASE_FIX_KO.md)의 로컬 task 기록과 원격 실행을 구분합니다. 게시 과정에서 발견한 합성 fixture의 호스트 자원 의존성도 수정했습니다. 현재124개 계약과 첫 CI 실패 보존은 [게시 검증 기록](docs/CPU_PUBLICATION_KO.md)을 따릅니다. 기존 v0.1.0 릴리스는 유지합니다.
 
 ## BENCH05-A: 실제 토큰·attention 관측
 

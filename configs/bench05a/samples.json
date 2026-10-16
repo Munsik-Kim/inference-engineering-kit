@@ -1,0 +1,6 @@
+[
+  {"sample_id":"en-note-1","source_id":"authored-bench05a-1","language":"en","prompt":"The log says: a blue box is on the desk.\nThe box","reference_text":" holds three pencils."},
+  {"sample_id":"en-note-2","source_id":"authored-bench05a-2","language":"en","prompt":"The record lists two cups and one plate.\nThere are","reference_text":" two cups."},
+  {"sample_id":"ko-note-1","source_id":"authored-bench05a-3","language":"ko","prompt":"기록: 책상에 파란 상자가 있다.\n상자에는","reference_text":" 연필 셋."},
+  {"sample_id":"ko-note-2","source_id":"authored-bench05a-4","language":"ko","prompt":"메모: 컵 둘과 접시 하나.\n컵은","reference_text":" 두 개."}
+]

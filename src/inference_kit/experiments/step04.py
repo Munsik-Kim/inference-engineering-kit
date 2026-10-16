@@ -14,7 +14,7 @@ from .step04_recipe import H, ARMS, COEFFICIENTS
 
 
 def jsonl(path):
-    return [json.loads(line) for line in Path(path).read_text().splitlines() if line.strip()]
+    return [json.loads(line) for line in Path(path).read_text(encoding='utf-8').splitlines() if line.strip()]
 
 
 def retain(path,value):

@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-15",
+  "version": "0.1.1.dev2",
+  "task": "BENCH05-A",
+  "tests": {
+    "unique_tests": 116,
+    "existing_unique_tests": 81,
+    "new_bench05a_unique_tests": 35,
+    "invocations": 300,
+    "repeat_invocations": 184,
+    "skip_invocations": 18,
+    "initial_failure_invocations": 1,
+    "initial_error_invocations": 1,
+    "all_unique_tests_passed_at_least_once": true,
+    "final_base_suite": {
+      "total": 116,
+      "passed": 104,
+      "optional_skipped": 12
+    },
+    "final_existing_tensor_runtime_suite": {
+      "total": 12,
+      "passed": 12,
+      "skipped": 0,
+      "cuda_visible_devices": ""
+    },
+    "receipts": [
+      "regression-existing.json",
+      "cpu-all-before-gpu.json",
+      "cpu-new-attempt1.json",
+      "cpu-new-attempt2.json",
+      "cpu-new-attempt3.json",
+      "cpu-optional-final.json",
+      "cpu-plan-run-attempt1.json",
+      "cpu-torch-attempt1.json",
+      "cpu-torch-attempt2.json"
+    ],
+    "fixes_before_gpu": [
+      "Stable exact-identity JS log-mixture formula",
+      "Native nonpersistent FP32 RoPE buffer initialization for strict meta loading"
+    ],
+    "consumer_initial_failure": "Test venv initially inside denied checkout; moved to new /tmp CPU venv. No model failure/retry.",
+    "historical_111_124_348_not_included": true,
+    "remote_ci": "CI_NOT_RUN"
+  },
+  "whole_legacy_replay": {
+    "step02": "CPU_REPLAY_PARITY_PASS",
+    "step03": "CPU_REPLAY_PARITY_PASS",
+    "step04": "CPU_REPLAY_PARITY_PASS"
+  },
+  "ordinary_wheel_consumers": {
+    "bench": "BENCH05A_ORDINARY_WHEEL_CONSUMER_PASS",
+    "legacy": "INDEPENDENT_WHEEL_CONSUMER_PASS"
+  },
+  "actual_gpu_jobs": 6,
+  "actual_gpu_wall_seconds": 71.62388237100458,
+  "stages": {
+    "engineering": "COMPLETE_CPU_CONTRACT_AND_ORDINARY_WHEEL_VERIFIED",
+    "live_token": "MEASURED_BF16_AND_DECODED_RTN",
+    "live_attention": "MEASURED_SELECTED_NATIVE_QK_RECONSTRUCTION_AND_NATIVE_SDPA_OUTPUT",
+    "bridge": "BRIDGE_MEASURED_NO_EQUIVALENCE_CLAIM",
+    "portability": "RAW_REPLAY_WITHOUT_RESEARCH_OR_TOOLKIT_CHECKOUT_VERIFIED",
+    "research_quality": "NOT_EVALUATED",
+    "production": "NOT_EVALUATED",
+    "customer_validation": "NOT_EVALUATED",
+    "bench05b_to_e_and_bench06": "NOT_RUN"
+  },
+  "source_artifact_policy": "RTN decoded BF16 diagnostic; native packed vLLM only short bridge",
+  "remote_ci": "CI_NOT_RUN",
+  "evidence": "/home/mskim/Codex_main/inference-engineering-kit/reports/bench05a_token_attention_20261015_155710",
+  "publish": "NOT_REQUESTED_NOT_RUN"
+}

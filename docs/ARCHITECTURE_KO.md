@@ -19,3 +19,6 @@
 GPU `run`은 optional HTTP client와 외부 server Python을 분리합니다. server runtime tuple이 다르면 거절하고 설치하지 않습니다. CUDA 초기화는 이 외부 opt-in 서버에서만 일어날 수 있습니다. `plan`은 작은 config/tokenizer identity만 검사하며 server를 실행하지 않습니다. `run`은 외부 프로세스가 보이면 요청을 중단하고 자기 group만 정리합니다. WSL의 process 관측 한계는 남습니다.
 
 배포는 단일 Python 패키지이며 DB/UI/telemetry는 없습니다. 큰 raw, GPU 당시 execution source, 후속 correction source는 release 자산에 남습니다. 새 패키지는 이 역사적 source hash를 대신하지 않습니다.
+# BENCH05-A 추가 경계
+
+`probes.contracts/blobs`와 `metrics`는 stdlib CPU 계층이다. `models.capabilities`는 model+artifact+runtime별 준비 가능성과 실측을 구분한다. `suites.bench05a_*`가 계획·owned 순차 실행·재계산을 연결한다. Torch/Transformers/CT는 명시적으로 실행한 `probes.local_transformer/weights/attention` worker 안에서만 사용한다. 기존 experiments와 결과 schema를 새 계층으로 교체하지 않는다. [관측 좌표·실행 방식·재사용](BENCH05A_KO.md).

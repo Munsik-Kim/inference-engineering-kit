@@ -27,7 +27,7 @@ def immutable(path, value):
 
 def memory(directory):
     markers = read(directory / 'memory-phases.json')
-    samples = [json.loads(line) for line in (directory / 'memory.jsonl').read_text().splitlines()]
+    samples = [json.loads(line) for line in (directory / 'memory.jsonl').read_text(encoding='utf-8').splitlines()]
     valid = []
     for row in samples:
         fields = [s.strip() for s in row.get('values', '').split(',')]
@@ -69,7 +69,7 @@ def cell_summary(cell, directory):
         if metric in stored:
             require(out[metric] == stored[metric], 'Raw client statistic readback differs')
     out['task_e2e_seconds'] = {s: quantile([r['completed_monotonic']-r['queued_monotonic'] for r in records], p) for s,p in (('p50',.5),('p95',.95))}
-    observations = [json.loads(s) for s in (directory / 'metrics.jsonl').read_text().splitlines()]
+    observations = [json.loads(s) for s in (directory / 'metrics.jsonl').read_text(encoding='utf-8').splitlines()]
     block = cell['timed']
     observations = [block['metrics_before']] + observations + [block['metrics_after']]
     out['scheduler'] = summarize(observations, block['metrics_before']['parsed'], block['metrics_after']['parsed'], block['measurement_begin'], block['measurement_end'])
@@ -137,7 +137,7 @@ def analyze(spec, root, output):
         require(result['runtime_identity'] == frozen['runtime_identity'] and result['data_sha256'] == frozen['performance_sha256'], 'Runtime or inputs changed')
         require(result['execution_identity'] == frozen['actual_launches'][arm]['execution_identity'], 'Execution artifact/cache/profile identity changed')
         lifecycle = read(directory / 'lifecycle.json') if (directory / 'lifecycle.json').exists() else {}
-        ownership = [json.loads(s) for s in (directory / 'ownership.jsonl').read_text().splitlines()]
+        ownership = [json.loads(s) for s in (directory / 'ownership.jsonl').read_text(encoding='utf-8').splitlines()]
         clean = not (directory / 'failure.json').exists() and lifecycle.get('owned_process_cleanup') == 'CLEANED' and lifecycle.get('owned_port_cleanup') == 'FREE' and lifecycle.get('parent_returncode') == 0
         observed = bool(ownership) and all(o['returncode'] == 0 and not o['unverified_pids'] for o in ownership)
         m = memory(directory)

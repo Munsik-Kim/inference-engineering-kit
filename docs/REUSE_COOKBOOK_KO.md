@@ -20,3 +20,6 @@ execution_plan = plan("spec.json", "local.json")
 packed 조합은 별도 준비된 tensor runtime에서 `python -m inference_kit compose --base <기존RTN> --intervention <기존CLIP> --modules <정확한모듈> --base-receipt <json> --intervention-receipt <json> --output <새artifact> --allow-tensor-runtime`입니다. base/intervention receipt는 동일 model_id/model_revision을 가져야 합니다. R00/R11은 기존 값, R10/R01은 전체 packed/scale/shape bundle을 선택합니다. INT4를 BF16으로 복원하는 ablation이 아닙니다. 조합 후 별도 GPU loader 검증은 여전히 필요합니다.
 
 다음 확장 경로는 **실제 업무 품질 adapter 하나**입니다. 고객/프로젝트의 입력·gold/실패 정의·허용 지연/품질을 먼저 받아 별도 task/version record로 연결합니다. STEP05·모델 평가·새 데이터 수집은 이번 릴리스에 포함하지 않습니다.
+# 실제 token/attention 기록 소비
+
+준비된 BENCH05-A run/derived fixture를 명시적으로 받아 `from inference_kit import bench_replay; bench_replay("recorded-run", "new-output")`로 계산한다. 원본 모델·GPU·연구 checkout은 필요 없다. [소비자 예제](../examples/bench05a_consumer.py), [준비/계획/관측 계약](BENCH05A_KO.md)을 따른다. full logits 없는 slice에서는 full KL/JS가 NOT_RUN이며 완전한 observer-logit 검사가 부족하다는 상태도 보존한다. 새 task adapter는 고정 Sample/token manifest와 reference_source/의미를 먼저 정의하고 같은 관측·metric 계약을 사용한다. 임의 task/model을 현재 지원한다고 등록하지 않는다.

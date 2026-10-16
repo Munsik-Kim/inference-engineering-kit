@@ -1,0 +1,9 @@
+{
+  "schema_version":1,"model_id":"HuggingFaceTB/SmolLM2-1.7B-Instruct","revision":"31b70e2e869a7173562077fd711b654946d38674",
+  "arms":[
+    {"arm_id":"bf16","receipt_arm":"BF16_REF","execution_mode":"INSTRUMENTED_PATH","source_format":"native"},
+    {"arm_id":"rtn","receipt_arm":"R00","execution_mode":"DECODED_WEIGHT_DIAGNOSTIC","source_format":"compressed-tensors/pack-quantized"}
+  ],
+  "weight_treatment_only":true,
+  "decoded_reason":"Installed compressed-tensors0.18 CompressedLinear.from_linear explicitly raises no-longer-supported; planned exact packed decode with strict complete dense state, not an automatic fallback or INT4 serving observation"
+}

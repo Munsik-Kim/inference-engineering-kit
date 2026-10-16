@@ -13,3 +13,4 @@ local.json
 *.zip
 runs/
 .pytest_cache/
+reports/

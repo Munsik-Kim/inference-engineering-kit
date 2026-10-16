@@ -1,0 +1,11 @@
+{
+  "schema_version":1,"suite_id":"BENCH05-A","task_id":"diagnostic_continuation_v1","task_version":"1",
+  "samples":"samples.json","seed":909250,
+  "tokenization":{"policy":"plain_completion_joint_no_special_tokens","boundary_rule":"first joint token whose end offset crosses prompt end; score whole boundary token","max_sequence_tokens":128,"max_reference_positions":16,"full_vocab_positions":4},
+  "attention":{"layer_rule":"middle","head_rule":"first_and_middle","query_rule":"last_prompt_and_before_last_reference","backend":"sdpa","output_attentions":false,"scope":"selected_rows_from_native_post_rope_qk_and_native_sdpa_output","native_gqa_support":false},
+  "observer":{"off_repeats":2,"off_samples":2,"max_target_logprob_abs_delta":0.00001,"max_selected_logit_abs_delta":0.00001,"raw_logit_to_logprob_abs_tolerance":0.00002,"av_reconstruction":"MEASURE_ONLY_NO_EQUIVALENCE_CLAIM","vector_min_energy":1e-12},
+  "budget":{"campaign_cap_seconds":7200,"task_gpu_wall_seconds":1200,"cleanup_reserve_seconds":120,"max_gpu_processes":8,"automatic_retries":0,"probe_gpu_buffer_bytes":268435456,"raw_bytes_per_job":536870912,"delivery_zip_target_bytes":104857600,"minimum_disk_free_bytes":4294967296,"minimum_cpu_available_bytes":10737418240},
+  "bridge":{"requested":true,"servers_per_arm":1,"max_samples_per_arm":4,"request_concurrency":1,"context":2048,"kv_tokens":4096,"max_num_batched_tokens":2048,"shutdown_timeout":10,"cleanup_grace":25,"classification":"BRIDGE_MEASURED_NO_EQUIVALENCE_CLAIM"},
+  "smoke":{"samples":1,"reference_positions":1,"heads":1,"queries":1},
+  "scope":"Synthetic text diagnostic; no quality/throughput/production certification; clipping not resumed"
+}

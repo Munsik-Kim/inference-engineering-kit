@@ -392,7 +392,7 @@ def binding_layout(compiled, loaded):
             'diagnostic':'NOT_REQUESTED','full_vocabulary':'NOT_COLLECTED',
             'artifact_presence':'ARTIFACT_PRESENCE_NOT_CHECKED','runtime':'CHECK_NOT_RUN',
             'authorization':'NONE','live_status':'LIVE_BINDING_NOT_VALIDATED',
-            'GPU_queries':0,'model_loads':0,'inference_POSTs':0,'tokenizer_calls':0,'ledger_changes':0} 
+            'GPU_queries':0,'model_loads':0,'inference_POSTs':0,'tokenizer_calls':0,'ledger_changes':0}
     groups = serving_groups(compiled, samples)
     probe = probe_inputs(compiled, samples, loaded['model_metadata'], loaded['manifest_sha256'])
     models = compiled['semantic']['models']

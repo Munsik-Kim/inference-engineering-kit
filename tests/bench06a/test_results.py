@@ -177,4 +177,3 @@ class NativeSuiteResultsTests(unittest.TestCase):
         a=suite_results.analyze_tokens(self.run,self.root/'one');b=suite_results.analyze_tokens(run,self.root/'three')
         self.assertEqual(b['coverage']['measured'],3*a['coverage']['measured'])
         self.assertNotEqual(b['coverage']['measured'],123)
-

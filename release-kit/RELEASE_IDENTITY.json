@@ -1,7 +1,7 @@
 {
   "kind": "frozen_release_package_identity_v1",
   "version": "0.2.0",
-  "python_source_digest": "069437eeb76bb156e1e2962b5c00927b52f8dec524fa55af52b3efb1d0df501f",
+  "python_source_digest": "ed062389bb93bf8367e6d1c8b8ae52bc488276aefcc81eb2d8d7c9174b4fb66c",
   "resources_identity": "a7363cee05fa7902ae41f61b7f701c485e9f2098b34a47961bc2caa6fcff3aac",
   "python_count": 109,
   "resource_count": 4,

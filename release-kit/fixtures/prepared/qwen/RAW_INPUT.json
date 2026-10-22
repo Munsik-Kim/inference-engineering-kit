@@ -1,0 +1,645 @@
+{
+  "dataset_id": "E4A_FRESH_AND_ARC_REUSE_MAIN9",
+  "kind": "raw_task_manifest_v1",
+  "rows": [
+    {
+      "dataset_id": "E4A_FRESH_ENGINEERING",
+      "policy_id": "P00",
+      "reference_source": "task_author_gold_json",
+      "sample": {
+        "case_type": "basic",
+        "document": "[L1] Record EXP-8807 | temperature_c = 23.625 C.\n[L2] Record EXP-8807 | state = finished.\n[L3] Archive note: café / calibration 🙂.",
+        "document_hash": "fe840a626e3f18fc77ef21220943b5e1069d88199cf39e508284af30e279211c",
+        "events": [
+          {
+            "experiment_id": "EXP-8807",
+            "field": "temperature_c",
+            "line_id": "L1",
+            "value": 23.625
+          },
+          {
+            "experiment_id": "EXP-8807",
+            "field": "status",
+            "line_id": "L2",
+            "value": "complete"
+          },
+          {
+            "field": "note",
+            "line_id": "L3",
+            "text": "Archive note: café / calibration 🙂."
+          }
+        ],
+        "experiment_id": "EXP-8807",
+        "gold": {
+          "experiment_id": "EXP-8807",
+          "status": "complete",
+          "support": {
+            "status": [
+              "L2"
+            ],
+            "temperature_c": [
+              "L1"
+            ]
+          },
+          "temperature_c": 23.625
+        },
+        "language": "en",
+        "sample_id": "e4a-tech-en-basic",
+        "sample_identity": "8fa299a4d67f9d25369af6087871f9e44a0b9ae69d4644b7426beadb43004619",
+        "source_family": "e4a-new-controlled-facts-v1",
+        "source_id": "e4a-tech-author-0",
+        "split": "ENGINEERING_INPUT_ONLY",
+        "task_id": "tech_record_extract",
+        "task_version": "0.1",
+        "template_family": "b2-pipe-record-basic-v1"
+      },
+      "sample_id": "e4a-tech-en-basic",
+      "source_id": "e4a-tech-author-0",
+      "split": "ENGINEERING_INPUT_ONLY",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "usage_scope": "ENGINEERING_INPUT_ONLY"
+    },
+    {
+      "dataset_id": "E4A_FRESH_ENGINEERING",
+      "policy_id": "P00",
+      "reference_source": "task_author_gold_json",
+      "sample": {
+        "case_type": "basic",
+        "document": "[L1] 기록 EXP-8826 | 온도 = 26.75 C.\n[L2] 기록 EXP-8826 | 상태 = 반복 필요.\n[L3] 메모: 장비 점검 🙂.",
+        "document_hash": "ba68ba0251dc290689e9893b08a08fe2d5df950ed2499bb8a5d536f37bbf4b20",
+        "events": [
+          {
+            "experiment_id": "EXP-8826",
+            "field": "temperature_c",
+            "line_id": "L1",
+            "value": 26.75
+          },
+          {
+            "experiment_id": "EXP-8826",
+            "field": "status",
+            "line_id": "L2",
+            "value": "repeat"
+          },
+          {
+            "field": "note",
+            "line_id": "L3",
+            "text": "메모: 장비 점검 🙂."
+          }
+        ],
+        "experiment_id": "EXP-8826",
+        "gold": {
+          "experiment_id": "EXP-8826",
+          "status": "repeat",
+          "support": {
+            "status": [
+              "L2"
+            ],
+            "temperature_c": [
+              "L1"
+            ]
+          },
+          "temperature_c": 26.75
+        },
+        "language": "ko",
+        "sample_id": "e4a-tech-ko-basic",
+        "sample_identity": "d759d75629c9a02c28099ef615c9543c55b55317a08ce2200973d06dbdac727d",
+        "source_family": "e4a-new-controlled-facts-v1",
+        "source_id": "e4a-tech-author-1",
+        "split": "ENGINEERING_INPUT_ONLY",
+        "task_id": "tech_record_extract",
+        "task_version": "0.1",
+        "template_family": "b2-pipe-record-basic-v1"
+      },
+      "sample_id": "e4a-tech-ko-basic",
+      "source_id": "e4a-tech-author-1",
+      "split": "ENGINEERING_INPUT_ONLY",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "usage_scope": "ENGINEERING_INPUT_ONLY"
+    },
+    {
+      "dataset_id": "E4A_FRESH_ENGINEERING",
+      "policy_id": "P00",
+      "reference_source": "task_author_gold_json",
+      "sample": {
+        "case_type": "missing",
+        "document": "[L1] Record EXP-8845 | temperature_c = 29.875 C.\n[L2] Archive note: café / calibration 🙂.",
+        "document_hash": "27cc8d504398cbad27457ca7838e19708bfc930f6dda621d407e5a1e97c83b89",
+        "events": [
+          {
+            "experiment_id": "EXP-8845",
+            "field": "temperature_c",
+            "line_id": "L1",
+            "value": 29.875
+          },
+          {
+            "field": "note",
+            "line_id": "L2",
+            "text": "Archive note: café / calibration 🙂."
+          }
+        ],
+        "experiment_id": "EXP-8845",
+        "gold": {
+          "experiment_id": "EXP-8845",
+          "status": null,
+          "support": {
+            "status": [],
+            "temperature_c": [
+              "L1"
+            ]
+          },
+          "temperature_c": 29.875
+        },
+        "language": "en",
+        "sample_id": "e4a-tech-en-missing",
+        "sample_identity": "31feb44a3c4068758b08b8298e380c25982a107b0e045575048aaf8e8a0b2830",
+        "source_family": "e4a-new-controlled-facts-v1",
+        "source_id": "e4a-tech-author-2",
+        "split": "ENGINEERING_INPUT_ONLY",
+        "task_id": "tech_record_extract",
+        "task_version": "0.1",
+        "template_family": "b2-pipe-record-missing-v1"
+      },
+      "sample_id": "e4a-tech-en-missing",
+      "source_id": "e4a-tech-author-2",
+      "split": "ENGINEERING_INPUT_ONLY",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "usage_scope": "ENGINEERING_INPUT_ONLY"
+    },
+    {
+      "dataset_id": "E4A_FRESH_ENGINEERING",
+      "policy_id": "context_evidence_fixed_v1",
+      "reference_source": "task_author_gold_answer_evidence_v1",
+      "sample": {
+        "authored_facts": [
+          {
+            "entity": "UNIT-9500",
+            "relation": "route",
+            "value": "QZLA-21"
+          },
+          {
+            "entity": "UNIT-9501",
+            "relation": "service",
+            "value": "BRIX-64"
+          },
+          {
+            "entity": "UNIT-9201",
+            "relation": "route",
+            "value": "VENU-38"
+          },
+          {
+            "entity": "UNIT-9503",
+            "relation": "route",
+            "value": "CWOT-57"
+          },
+          {
+            "entity": "UNIT-9504",
+            "relation": "service",
+            "value": "HAGL-92"
+          },
+          {
+            "entity": "UNIT-9505",
+            "relation": "channel",
+            "value": "DYPS-43"
+          }
+        ],
+        "case_type": "direct",
+        "data_version": "e4a-authored-v1",
+        "document": "[P01] For asset UNIT-9500, the route code is QZLA-21.\n[P02] For asset UNIT-9501, the service code is BRIX-64.\n[P03] For asset UNIT-9201, the route code is VENU-38.\n[P04] For asset UNIT-9503, the route code is CWOT-57.\n[P05] For asset UNIT-9504, the service code is HAGL-92.\n[P06] For asset UNIT-9505, the channel code is DYPS-43.",
+        "document_hash": "e530a19f48cc090f83c64e0d15b67f50101ab665b93a8808d6eb6e7403c4719c",
+        "entity": "UNIT-9201",
+        "gold": {
+          "answer": "VENU-38",
+          "answer_span": [
+            155,
+            162
+          ],
+          "answerable": true,
+          "content_span": [
+            116,
+            163
+          ],
+          "evidence": "P03"
+        },
+        "language": "en",
+        "passages": [
+          {
+            "content": "For asset UNIT-9500, the route code is QZLA-21.",
+            "content_span": [
+              6,
+              53
+            ],
+            "passage_id": "P01"
+          },
+          {
+            "content": "For asset UNIT-9501, the service code is BRIX-64.",
+            "content_span": [
+              60,
+              109
+            ],
+            "passage_id": "P02"
+          },
+          {
+            "content": "For asset UNIT-9201, the route code is VENU-38.",
+            "content_span": [
+              116,
+              163
+            ],
+            "passage_id": "P03"
+          },
+          {
+            "content": "For asset UNIT-9503, the route code is CWOT-57.",
+            "content_span": [
+              170,
+              217
+            ],
+            "passage_id": "P04"
+          },
+          {
+            "content": "For asset UNIT-9504, the service code is HAGL-92.",
+            "content_span": [
+              224,
+              273
+            ],
+            "passage_id": "P05"
+          },
+          {
+            "content": "For asset UNIT-9505, the channel code is DYPS-43.",
+            "content_span": [
+              280,
+              329
+            ],
+            "passage_id": "P06"
+          }
+        ],
+        "question": "Which route code is assigned to asset UNIT-9201?",
+        "relation": "route",
+        "sample_id": "e4a-retrieval-en-direct",
+        "sample_identity": "efa1c3cf8d441baf647c395ea30ed36257b7a938c16baaecc64d999023df2476",
+        "source_family": "controlled-single-fact-v1",
+        "source_id": "e4a-retrieval-author-0",
+        "split": "ENGINEERING_INPUT_ONLY",
+        "task_id": "context_evidence_retrieval",
+        "task_version": "0.1",
+        "template_family": "closed-context-direct-en-v1"
+      },
+      "sample_id": "e4a-retrieval-en-direct",
+      "source_id": "e4a-retrieval-author-0",
+      "split": "ENGINEERING_INPUT_ONLY",
+      "task_id": "context_evidence_retrieval",
+      "task_version": "0.1",
+      "usage_scope": "ENGINEERING_INPUT_ONLY"
+    },
+    {
+      "dataset_id": "E4A_FRESH_ENGINEERING",
+      "policy_id": "context_evidence_fixed_v1",
+      "reference_source": "task_author_gold_answer_evidence_v1",
+      "sample": {
+        "authored_facts": [
+          {
+            "entity": "UNIT-9511",
+            "relation": "route",
+            "value": "BRIX-64"
+          },
+          {
+            "entity": "UNIT-9512",
+            "relation": "service",
+            "value": "VENU-38"
+          },
+          {
+            "entity": "UNIT-9513",
+            "relation": "channel",
+            "value": "CWOT-57"
+          },
+          {
+            "entity": "UNIT-9218",
+            "relation": "channel",
+            "value": "HAGL-92"
+          },
+          {
+            "entity": "UNIT-9219",
+            "relation": "channel",
+            "value": "DYPS-43"
+          },
+          {
+            "entity": "UNIT-9516",
+            "relation": "channel",
+            "value": "QZLA-21"
+          }
+        ],
+        "case_type": "similar_entity",
+        "data_version": "e4a-authored-v1",
+        "document": "[P01] 자산 UNIT-9511의 경로 코드는 BRIX-64이다.\n[P02] 자산 UNIT-9512의 서비스 코드는 VENU-38이다.\n[P03] 자산 UNIT-9513의 채널 코드는 CWOT-57이다.\n[P04] 자산 UNIT-9218의 채널 코드는 HAGL-92이다.\n[P05] 자산 UNIT-9219의 채널 코드는 DYPS-43이다.\n[P06] 자산 UNIT-9516의 채널 코드는 QZLA-21이다.",
+        "document_hash": "74ec4d5a96fc782ad9793cf8c1d23c42ade41118d95d51e2ef0257e51416f482",
+        "entity": "UNIT-9218",
+        "gold": {
+          "answer": "HAGL-92",
+          "answer_span": [
+            142,
+            149
+          ],
+          "answerable": true,
+          "content_span": [
+            121,
+            152
+          ],
+          "evidence": "P04"
+        },
+        "language": "ko",
+        "passages": [
+          {
+            "content": "자산 UNIT-9511의 경로 코드는 BRIX-64이다.",
+            "content_span": [
+              6,
+              37
+            ],
+            "passage_id": "P01"
+          },
+          {
+            "content": "자산 UNIT-9512의 서비스 코드는 VENU-38이다.",
+            "content_span": [
+              44,
+              76
+            ],
+            "passage_id": "P02"
+          },
+          {
+            "content": "자산 UNIT-9513의 채널 코드는 CWOT-57이다.",
+            "content_span": [
+              83,
+              114
+            ],
+            "passage_id": "P03"
+          },
+          {
+            "content": "자산 UNIT-9218의 채널 코드는 HAGL-92이다.",
+            "content_span": [
+              121,
+              152
+            ],
+            "passage_id": "P04"
+          },
+          {
+            "content": "자산 UNIT-9219의 채널 코드는 DYPS-43이다.",
+            "content_span": [
+              159,
+              190
+            ],
+            "passage_id": "P05"
+          },
+          {
+            "content": "자산 UNIT-9516의 채널 코드는 QZLA-21이다.",
+            "content_span": [
+              197,
+              228
+            ],
+            "passage_id": "P06"
+          }
+        ],
+        "question": "자산 UNIT-9218에 지정된 채널 코드는 무엇인가?",
+        "relation": "channel",
+        "sample_id": "e4a-retrieval-ko-similar_entity",
+        "sample_identity": "4a81415d7b0e15e0031518fb8f0eb642e5b94184011b9aa88afeebddf0d6be40",
+        "source_family": "controlled-single-fact-v1",
+        "source_id": "e4a-retrieval-author-1",
+        "split": "ENGINEERING_INPUT_ONLY",
+        "task_id": "context_evidence_retrieval",
+        "task_version": "0.1",
+        "template_family": "closed-context-similar_entity-ko-v1"
+      },
+      "sample_id": "e4a-retrieval-ko-similar_entity",
+      "source_id": "e4a-retrieval-author-1",
+      "split": "ENGINEERING_INPUT_ONLY",
+      "task_id": "context_evidence_retrieval",
+      "task_version": "0.1",
+      "usage_scope": "ENGINEERING_INPUT_ONLY"
+    },
+    {
+      "dataset_id": "E4A_FRESH_ENGINEERING",
+      "policy_id": "context_evidence_fixed_v1",
+      "reference_source": "task_author_gold_answer_evidence_v1",
+      "sample": {
+        "authored_facts": [
+          {
+            "entity": "UNIT-9235",
+            "relation": "route",
+            "value": "VENU-38"
+          },
+          {
+            "entity": "UNIT-9523",
+            "relation": "service",
+            "value": "CWOT-57"
+          },
+          {
+            "entity": "UNIT-9524",
+            "relation": "channel",
+            "value": "HAGL-92"
+          },
+          {
+            "entity": "UNIT-9525",
+            "relation": "route",
+            "value": "DYPS-43"
+          },
+          {
+            "entity": "UNIT-9526",
+            "relation": "service",
+            "value": "QZLA-21"
+          },
+          {
+            "entity": "UNIT-9527",
+            "relation": "channel",
+            "value": "BRIX-64"
+          }
+        ],
+        "case_type": "not_found",
+        "data_version": "e4a-authored-v1",
+        "document": "[P01] For asset UNIT-9235, the route code is VENU-38.\n[P02] For asset UNIT-9523, the service code is CWOT-57.\n[P03] For asset UNIT-9524, the channel code is HAGL-92.\n[P04] For asset UNIT-9525, the route code is DYPS-43.\n[P05] For asset UNIT-9526, the service code is QZLA-21.\n[P06] For asset UNIT-9527, the channel code is BRIX-64.",
+        "document_hash": "4c61a1c2751673725657dd609fdd4b6b7309bd8a986cb185bd75781328076f70",
+        "entity": "UNIT-9235",
+        "gold": {
+          "answer": "NOT_FOUND",
+          "answer_span": null,
+          "answerable": false,
+          "content_span": null,
+          "evidence": "NONE"
+        },
+        "language": "en",
+        "passages": [
+          {
+            "content": "For asset UNIT-9235, the route code is VENU-38.",
+            "content_span": [
+              6,
+              53
+            ],
+            "passage_id": "P01"
+          },
+          {
+            "content": "For asset UNIT-9523, the service code is CWOT-57.",
+            "content_span": [
+              60,
+              109
+            ],
+            "passage_id": "P02"
+          },
+          {
+            "content": "For asset UNIT-9524, the channel code is HAGL-92.",
+            "content_span": [
+              116,
+              165
+            ],
+            "passage_id": "P03"
+          },
+          {
+            "content": "For asset UNIT-9525, the route code is DYPS-43.",
+            "content_span": [
+              172,
+              219
+            ],
+            "passage_id": "P04"
+          },
+          {
+            "content": "For asset UNIT-9526, the service code is QZLA-21.",
+            "content_span": [
+              226,
+              275
+            ],
+            "passage_id": "P05"
+          },
+          {
+            "content": "For asset UNIT-9527, the channel code is BRIX-64.",
+            "content_span": [
+              282,
+              331
+            ],
+            "passage_id": "P06"
+          }
+        ],
+        "question": "Which service code is assigned to asset UNIT-9235?",
+        "relation": "service",
+        "sample_id": "e4a-retrieval-en-not_found",
+        "sample_identity": "86248e09ae76b3a5b1530e1d63746db5d810d3ed8eb8c51bdabf9d5806796a3f",
+        "source_family": "controlled-single-fact-v1",
+        "source_id": "e4a-retrieval-author-2",
+        "split": "ENGINEERING_INPUT_ONLY",
+        "task_id": "context_evidence_retrieval",
+        "task_version": "0.1",
+        "template_family": "closed-context-not_found-en-v1"
+      },
+      "sample_id": "e4a-retrieval-en-not_found",
+      "source_id": "e4a-retrieval-author-2",
+      "split": "ENGINEERING_INPUT_ONLY",
+      "task_id": "context_evidence_retrieval",
+      "task_version": "0.1",
+      "usage_scope": "ENGINEERING_INPUT_ONLY"
+    },
+    {
+      "dataset_id": "ARC_CHALLENGE_LOCAL_POOL_REUSE",
+      "policy_id": "arc_original_completion_v1",
+      "reference_source": "dataset_answer_key_choice",
+      "sample": {
+        "document": {
+          "answerKey": "B",
+          "choices": {
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "text": [
+              "produce food.",
+              "pass genetic information.",
+              "move through the body.",
+              "use energy."
+            ]
+          },
+          "id": "Mercury_7056823",
+          "question": "A cell that has lost its nucleus no longer has the ability to"
+        },
+        "original_index": 476,
+        "prompt_context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+        "prompt_contract_id": "arc_original_completion_v1"
+      },
+      "sample_id": "Mercury_7056823",
+      "source_id": "Mercury_7056823",
+      "split": "test",
+      "task_id": "arc_challenge",
+      "task_version": "1.0",
+      "usage_scope": "REGRESSION_REUSE"
+    },
+    {
+      "dataset_id": "ARC_CHALLENGE_LOCAL_POOL_REUSE",
+      "policy_id": "arc_original_completion_v1",
+      "reference_source": "dataset_answer_key_choice",
+      "sample": {
+        "document": {
+          "answerKey": "A",
+          "choices": {
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "text": [
+              "Insulin stimulates cells to absorb glucose from the blood.",
+              "Insulin causes the liver to release glucose into the blood.",
+              "Insulin facilitates the effects of antibiotics in the cell.",
+              "Insulin develops chemical bonds on the cell membrane."
+            ]
+          },
+          "id": "Mercury_7109603",
+          "question": "Insulin is an important protein for the regulation of glucose levels in the blood. Which statement best describes the function of insulin?"
+        },
+        "original_index": 974,
+        "prompt_context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: Insulin is an important protein for the regulation of glucose levels in the blood. Which statement best describes the function of insulin?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+        "prompt_contract_id": "arc_original_completion_v1"
+      },
+      "sample_id": "Mercury_7109603",
+      "source_id": "Mercury_7109603",
+      "split": "test",
+      "task_id": "arc_challenge",
+      "task_version": "1.0",
+      "usage_scope": "REGRESSION_REUSE"
+    },
+    {
+      "dataset_id": "ARC_CHALLENGE_LOCAL_POOL_REUSE",
+      "policy_id": "arc_original_completion_v1",
+      "reference_source": "dataset_answer_key_choice",
+      "sample": {
+        "document": {
+          "answerKey": "B",
+          "choices": {
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "text": [
+              "Salt is the solvent and water is the solute.",
+              "Salt is the solute and water is the solvent.",
+              "Salt is the solvent and water is the solution.",
+              "Salt is the solution and water is the solvent."
+            ]
+          },
+          "id": "ACTAAP_2014_7_13",
+          "question": "People often use a mixture of salt and water to clean contact lenses. Which statement best describes this mixture?"
+        },
+        "original_index": 221,
+        "prompt_context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: People often use a mixture of salt and water to clean contact lenses. Which statement best describes this mixture?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+        "prompt_contract_id": "arc_original_completion_v1"
+      },
+      "sample_id": "ACTAAP_2014_7_13",
+      "source_id": "ACTAAP_2014_7_13",
+      "split": "test",
+      "task_id": "arc_challenge",
+      "task_version": "1.0",
+      "usage_scope": "REGRESSION_REUSE"
+    }
+  ],
+  "schema_version": 1,
+  "usage_scope": "MIXED_ENGINEERING_AND_REGRESSION_REUSE"
+}

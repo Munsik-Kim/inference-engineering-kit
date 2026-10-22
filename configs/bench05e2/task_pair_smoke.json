@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "kind": "suite_spec_v1",
+  "suite_id": "task_pair_smoke",
+  "version": "1",
+  "purpose": "smoke",
+  "tasks": [
+    {
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "source_id": "tech_p00",
+      "sample_ids": [
+        "b2-eval_locked-en-basic-1",
+        "b2-eval_locked-en-missing-1"
+      ],
+      "input_mode": "prepared_manifest",
+      "execution_kind": "serve",
+      "required": true
+    },
+    {
+      "task_id": "arc_challenge",
+      "task_version": "1.0",
+      "source_id": "arc",
+      "sample_ids": [
+        "Mercury_7191433",
+        "Mercury_SC_400579"
+      ],
+      "input_mode": "prepared_manifest",
+      "execution_kind": "serve",
+      "required": true
+    },
+    {
+      "task_id": "context_evidence_retrieval",
+      "task_version": "0.1",
+      "source_id": "retrieval",
+      "sample_ids": [
+        "b4-eval_locked-ko-not_found-2",
+        "b4-eval_locked-en-relation_distractor-3"
+      ],
+      "input_mode": "prepared_manifest",
+      "execution_kind": "serve",
+      "required": true
+    }
+  ],
+  "models": [
+    {
+      "arm_id": "baseline",
+      "role": "baseline",
+      "artifact_ref": "bf16",
+      "profile": "preserved_smol_v1"
+    },
+    {
+      "arm_id": "candidate",
+      "role": "candidate",
+      "artifact_ref": "rtn",
+      "profile": "preserved_smol_v1"
+    }
+  ],
+  "observations": {
+    "token": {
+      "enabled": false,
+      "required": false,
+      "full_vocabulary": false,
+      "selection": "preserved_c2_main_v1"
+    },
+    "structure": {
+      "enabled": false,
+      "required": false,
+      "selection": "preserved_d1_main_v1",
+      "provides_token_on": false
+    }
+  },
+  "metrics": [
+    "task_default_v1"
+  ],
+  "comparisons": [
+    {
+      "baseline": "baseline",
+      "candidate": "candidate",
+      "mode": "within_recipe"
+    }
+  ],
+  "budget": {
+    "max_inference_posts": 24,
+    "max_output_tokens": 1040,
+    "max_numeric_bytes": 268435456,
+    "max_probe_buffer_bytes": 268435456,
+    "max_gpu_jobs": 6,
+    "gpu_wall_seconds": 600,
+    "cleanup_reserve_seconds": 120
+  },
+  "permissions": {
+    "gpu_execution": "NONE",
+    "network": "NONE",
+    "tokenizer": "NONE"
+  },
+  "seed": 909280,
+  "outputs": {
+    "index": true,
+    "report": true,
+    "historical_source_ids": [
+      "tech_p00",
+      "arc",
+      "retrieval",
+      "C2",
+      "D1"
+    ]
+  }
+}

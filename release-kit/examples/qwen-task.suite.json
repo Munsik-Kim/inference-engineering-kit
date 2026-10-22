@@ -1,0 +1,101 @@
+{
+  "budget": {
+    "cleanup_reserve_seconds": 120,
+    "gpu_wall_seconds": 600,
+    "max_gpu_jobs": 6,
+    "max_inference_posts": 12,
+    "max_numeric_bytes": 268435456,
+    "max_output_tokens": 520,
+    "max_probe_buffer_bytes": 268435456
+  },
+  "comparisons": [
+    {
+      "baseline": "baseline",
+      "candidate": "candidate",
+      "mode": "within_recipe"
+    }
+  ],
+  "kind": "suite_spec_v1",
+  "metrics": [
+    "task_default_v1",
+    "native_arc_tokens_c1_v1"
+  ],
+  "models": [
+    {
+      "arm_id": "baseline",
+      "artifact_ref": "qwen_bf16",
+      "profile": "qwen3_4b_gptq_serving_v1",
+      "role": "baseline"
+    },
+    {
+      "arm_id": "candidate",
+      "artifact_ref": "qwen_gptq_w4",
+      "profile": "qwen3_4b_gptq_serving_v1",
+      "role": "candidate"
+    }
+  ],
+  "observations": {
+    "structure": {
+      "enabled": false,
+      "provides_token_on": false,
+      "required": false,
+      "selection": "preserved_d1_main_v1"
+    },
+    "token": {
+      "enabled": false,
+      "full_vocabulary": false,
+      "required": false,
+      "selection": "prepared_reference_positions_v1"
+    }
+  },
+  "outputs": {
+    "historical_source_ids": [],
+    "index": true,
+    "report": true
+  },
+  "permissions": {
+    "gpu_execution": "NONE",
+    "network": "NONE",
+    "tokenizer": "NONE"
+  },
+  "purpose": "smoke",
+  "schema_version": 1,
+  "seed": 909284,
+  "suite_id": "V1-CANDIDATE-01-qwen-task",
+  "tasks": [
+    {
+      "execution_kind": "serve",
+      "input_mode": "prepared_manifest",
+      "required": true,
+      "sample_ids": [
+        "e4a-tech-en-basic"
+      ],
+      "source_id": "prepared-tech_record_extract-be15f9f37926889f",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1"
+    },
+    {
+      "execution_kind": "serve",
+      "input_mode": "prepared_manifest",
+      "required": true,
+      "sample_ids": [
+        "e4a-retrieval-en-direct"
+      ],
+      "source_id": "prepared-context_evidence_retrieval-75892bff0aa24ea8",
+      "task_id": "context_evidence_retrieval",
+      "task_version": "0.1"
+    },
+    {
+      "execution_kind": "serve",
+      "input_mode": "prepared_manifest",
+      "required": true,
+      "sample_ids": [
+        "Mercury_7056823"
+      ],
+      "source_id": "prepared-arc_challenge-0b629b79ff9a0b04",
+      "task_id": "arc_challenge",
+      "task_version": "1.0"
+    }
+  ],
+  "version": "1"
+}

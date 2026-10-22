@@ -10,13 +10,39 @@ import time
 from ..core.io import read,write,require,digest,sha
 from .contracts import Execution,Observation
 from .blobs import save
-from .attention import AttentionObserver
+
+
+def selected_token_forward(model,input_ids,attention_mask,targets,buffer_cap,*,context=None,functional=None):
+    """Run native backbone, then native LM head on selected hidden rows only.
+
+    The optional attention context wraps only the backbone, matching the original
+    BENCH05-A call order. Supplying ``functional`` makes the shape/dispatch
+    contract testable without importing any model or numerical SDK.
+    """
+    if functional is None:
+        import torch.nn.functional as functional
+    require(targets and len(input_ids.shape)==2 and input_ids.shape[0]==1,'Selected forward requires batch1 and targets')
+    positions=[target['logit_position'] for target in targets]
+    require(all(type(t) is int and 0<=t<input_ids.shape[1] for t in positions) and len(set(positions))==len(positions),'Invalid/duplicate selected logit position')
+    require(all(type(target['token_position']) is int and 0<target['token_position']<input_ids.shape[1] and target['token_position']==target['logit_position']+1 for target in targets),'Selected target/logit shift differs')
+    if context:
+        with context:hidden=model.model(input_ids=input_ids,attention_mask=attention_mask,use_cache=False).last_hidden_state
+    else:hidden=model.model(input_ids=input_ids,attention_mask=attention_mask,use_cache=False).last_hidden_state
+    chosen=hidden[0,positions,:]
+    logits=model.lm_head(chosen)
+    require(len(logits.shape)==2 and logits.shape[0]==len(targets),'Native LM head selected-row shape differs')
+    require(all(type(target['target_token_id']) is int and 0<=target['target_token_id']<logits.shape[-1] for target in targets),'Selected target outside vocabulary')
+    logprobs=functional.log_softmax(logits.float(),dim=-1)
+    required=logits.numel()*logits.element_size()+logprobs.numel()*logprobs.element_size()+chosen.numel()*chosen.element_size()
+    require(required<=buffer_cap,'Selected LM head buffer cap')
+    return {'hidden':hidden,'chosen':chosen,'logits':logits,'logprobs':logprobs,'required_buffer_bytes':required}
 
 
 def run(plan_file,arm_id,stage,output):
     import torch
     import torch.nn.functional as F
     from transformers.modeling_utils import ALL_ATTENTION_FUNCTIONS
+    from .attention import AttentionObserver
     from .weights import load_model
     plan=read(Path(plan_file));directory=Path(output);directory.mkdir(parents=True,exist_ok=True)
     from ..suites.bench05a_plan import source_identity
@@ -64,13 +90,9 @@ def run(plan_file,arm_id,stage,output):
             context=AttentionObserver(ALL_ATTENTION_FUNCTIONS,model.model.layers[selection['layer']].self_attn,selection,emit) if observe else None
             if context:observers.append(context)
             with torch.no_grad():
-                if context:
-                    with context:hidden=model.model(input_ids=ids,attention_mask=mask,use_cache=False).last_hidden_state
-                else:hidden=model.model(input_ids=ids,attention_mask=mask,use_cache=False).last_hidden_state
-                chosen=hidden[0,positions,:]
-                logits=model.lm_head(chosen);logprobs=F.log_softmax(logits.float(),dim=-1)
-                required=logits.numel()*logits.element_size()+logprobs.numel()*logprobs.element_size()+chosen.numel()*chosen.element_size()
-                require(required<=suite['budget']['probe_gpu_buffer_bytes'],'Selected LM head buffer cap')
+                selected=selected_token_forward(model,ids,mask,targets,suite['budget']['probe_gpu_buffer_bytes'],context=context,functional=F)
+                hidden,chosen,logits,logprobs=(selected[key] for key in ('hidden','chosen','logits','logprobs'))
+                del selected
                 for j,target in enumerate(targets):
                     t=target['token_position'];argmax=int(logits[j].argmax());logprob=logprobs[j,target['target_token_id']]
                     emit('target_logprob',target,logprob.reshape(1),{'raw_argmax_token_id':argmax,'stored_nll':-float(logprob),

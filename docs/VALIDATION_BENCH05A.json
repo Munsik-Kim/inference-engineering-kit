@@ -66,6 +66,6 @@
   },
   "source_artifact_policy": "RTN decoded BF16 diagnostic; native packed vLLM only short bridge",
   "remote_ci": "CI_NOT_RUN",
-  "evidence": "/home/mskim/Codex_main/inference-engineering-kit/reports/bench05a_token_attention_20261015_155710",
+  "evidence": "<LOCAL_WORKSPACE>/inference-engineering-kit/reports/bench05a_token_attention_20261015_155710",
   "publish": "NOT_REQUESTED_NOT_RUN"
 }

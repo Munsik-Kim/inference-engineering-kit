@@ -1,0 +1,21 @@
+{
+  "kind": "suite_prepared_sources_v1",
+  "schema_version": 1,
+  "sources": [
+    {
+      "path": "source-tech_record_extract.json",
+      "sha256": "1af10c4d583cf9550009a27de0f5ec028dfa400bc61ac93c2da2764b0db3cb97",
+      "source_id": "prepared-tech_record_extract-be15f9f37926889f"
+    },
+    {
+      "path": "source-context_evidence_retrieval.json",
+      "sha256": "447e6fae523808695bf4c5eb0d7a025e71d931f32108e175a0d6c2541460f21f",
+      "source_id": "prepared-context_evidence_retrieval-75892bff0aa24ea8"
+    },
+    {
+      "path": "source-arc_challenge.json",
+      "sha256": "f819977a8d825fc3bbb8fa86604472785f099d15ab605cf829ed89432ece55f3",
+      "source_id": "prepared-arc_challenge-0b629b79ff9a0b04"
+    }
+  ]
+}

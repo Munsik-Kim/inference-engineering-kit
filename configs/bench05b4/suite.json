@@ -1,0 +1,48 @@
+{
+  "budget": {
+    "automatic_retries": 0,
+    "cleanup_reserve_seconds": 120,
+    "max_gpu_processes": 6,
+    "minimum_cpu_available_bytes": 10737418240,
+    "minimum_disk_free_bytes": 4294967296,
+    "probe_gpu_buffer_bytes": 268435456,
+    "raw_bytes_per_job": 536870912,
+    "task_gpu_wall_seconds": 600
+  },
+  "generation": {
+    "ignore_eos": false,
+    "max_new_tokens": 64,
+    "profile": "natural_generation_v1",
+    "stream": true,
+    "temperature": 0,
+    "top_p": 1
+  },
+  "observer": {
+    "off_repeats": 0,
+    "off_samples": 0
+  },
+  "request_kind": "generate_until",
+  "request_seed": 909267,
+  "schema_version": 1,
+  "scope": "SYNTHETIC_DEV_LOCKED",
+  "seed": 909266,
+  "serving": {
+    "async_scheduling": false,
+    "chunked_prefill": true,
+    "cleanup_grace": 25,
+    "context": 2048,
+    "eager": true,
+    "kv_tokens": 4096,
+    "max_num_batched_tokens": 2048,
+    "max_num_seqs": 1,
+    "prefix_caching": false,
+    "shutdown_timeout": 10
+  },
+  "serving_job_seconds": 180,
+  "suite_id": "BENCH05-B4",
+  "task_id": "context_evidence_retrieval",
+  "task_version": "0.1",
+  "treatment_axes": [
+    "weight_artifact"
+  ]
+}

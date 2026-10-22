@@ -1,0 +1,23 @@
+{
+  "GPU_actions": 0,
+  "aggregation": "Token weighted and source-document macro separately per task/policy/acquisition/reference scope/field; no combined task score",
+  "fields": "Preserved literal-token overlap tags; a boundary token may belong to multiple fields; no retokenization",
+  "free_generation_audit_tokens": "Likelihood audit generation excluded from free-answer comparisons",
+  "full_distribution": "Exact KL(reference||candidate), JS=.5KL(p||m)+.5KL(q||m), m=(p+q)/2; only complete stored vocabulary",
+  "generation": "Same-prompt output trajectory comparison only; no teacher-forced pairing after divergence",
+  "generation_positions": "0-based actual generated-output indices; distinct from absolute teacher-forced target t/logit t-1",
+  "log_base": "e",
+  "metric_family": "common_tokens_c1",
+  "metric_version": "1",
+  "missing": "UNKNOWN/INCOMPARABLE/null with explicit requested and measured coverage, never zero filled",
+  "model_loads": 0,
+  "native_diagnostic": "Separate acquisition panels; instrumented/decoded diagnostic pair explicitly allowed, no deployed-kernel equivalence",
+  "rank": "1-based descending logit, token ID ascending for ties",
+  "schema_version": 1,
+  "selection": "Selected observed positions are not whole-reference likelihood or corpus perplexity",
+  "target_margin": "target logit minus maximum other vocabulary logit; distinct from choice margin",
+  "target_nll": "-raw target logprob; delta=candidate-reference",
+  "tokenizer_loads": 0,
+  "top_k": "Intersection size/effective_k, not Jaccard; requested k=1,5,10; effective_k=min(k,vocabulary); descending logit then ascending ID",
+  "unit": "nat"
+}

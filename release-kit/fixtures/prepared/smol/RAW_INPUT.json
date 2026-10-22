@@ -1,0 +1,225 @@
+{
+  "dataset_id": "E4A_FRESH_AND_ARC_REUSE_SUBSET3",
+  "kind": "raw_task_manifest_v1",
+  "rows": [
+    {
+      "dataset_id": "E4A_FRESH_ENGINEERING",
+      "policy_id": "P00",
+      "reference_source": "task_author_gold_json",
+      "sample": {
+        "case_type": "basic",
+        "document": "[L1] Record EXP-8807 | temperature_c = 23.625 C.\n[L2] Record EXP-8807 | state = finished.\n[L3] Archive note: café / calibration 🙂.",
+        "document_hash": "fe840a626e3f18fc77ef21220943b5e1069d88199cf39e508284af30e279211c",
+        "events": [
+          {
+            "experiment_id": "EXP-8807",
+            "field": "temperature_c",
+            "line_id": "L1",
+            "value": 23.625
+          },
+          {
+            "experiment_id": "EXP-8807",
+            "field": "status",
+            "line_id": "L2",
+            "value": "complete"
+          },
+          {
+            "field": "note",
+            "line_id": "L3",
+            "text": "Archive note: café / calibration 🙂."
+          }
+        ],
+        "experiment_id": "EXP-8807",
+        "gold": {
+          "experiment_id": "EXP-8807",
+          "status": "complete",
+          "support": {
+            "status": [
+              "L2"
+            ],
+            "temperature_c": [
+              "L1"
+            ]
+          },
+          "temperature_c": 23.625
+        },
+        "language": "en",
+        "sample_id": "e4a-tech-en-basic",
+        "sample_identity": "8fa299a4d67f9d25369af6087871f9e44a0b9ae69d4644b7426beadb43004619",
+        "source_family": "e4a-new-controlled-facts-v1",
+        "source_id": "e4a-tech-author-0",
+        "split": "ENGINEERING_INPUT_ONLY",
+        "task_id": "tech_record_extract",
+        "task_version": "0.1",
+        "template_family": "b2-pipe-record-basic-v1"
+      },
+      "sample_id": "e4a-tech-en-basic",
+      "source_id": "e4a-tech-author-0",
+      "split": "ENGINEERING_INPUT_ONLY",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "usage_scope": "ENGINEERING_INPUT_ONLY"
+    },
+    {
+      "dataset_id": "ARC_CHALLENGE_LOCAL_POOL_REUSE",
+      "policy_id": "arc_original_completion_v1",
+      "reference_source": "dataset_answer_key_choice",
+      "sample": {
+        "document": {
+          "answerKey": "B",
+          "choices": {
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "text": [
+              "produce food.",
+              "pass genetic information.",
+              "move through the body.",
+              "use energy."
+            ]
+          },
+          "id": "Mercury_7056823",
+          "question": "A cell that has lost its nucleus no longer has the ability to"
+        },
+        "original_index": 476,
+        "prompt_context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+        "prompt_contract_id": "arc_original_completion_v1"
+      },
+      "sample_id": "Mercury_7056823",
+      "source_id": "Mercury_7056823",
+      "split": "test",
+      "task_id": "arc_challenge",
+      "task_version": "1.0",
+      "usage_scope": "REGRESSION_REUSE"
+    },
+    {
+      "dataset_id": "E4A_FRESH_ENGINEERING",
+      "policy_id": "context_evidence_fixed_v1",
+      "reference_source": "task_author_gold_answer_evidence_v1",
+      "sample": {
+        "authored_facts": [
+          {
+            "entity": "UNIT-9500",
+            "relation": "route",
+            "value": "QZLA-21"
+          },
+          {
+            "entity": "UNIT-9501",
+            "relation": "service",
+            "value": "BRIX-64"
+          },
+          {
+            "entity": "UNIT-9201",
+            "relation": "route",
+            "value": "VENU-38"
+          },
+          {
+            "entity": "UNIT-9503",
+            "relation": "route",
+            "value": "CWOT-57"
+          },
+          {
+            "entity": "UNIT-9504",
+            "relation": "service",
+            "value": "HAGL-92"
+          },
+          {
+            "entity": "UNIT-9505",
+            "relation": "channel",
+            "value": "DYPS-43"
+          }
+        ],
+        "case_type": "direct",
+        "data_version": "e4a-authored-v1",
+        "document": "[P01] For asset UNIT-9500, the route code is QZLA-21.\n[P02] For asset UNIT-9501, the service code is BRIX-64.\n[P03] For asset UNIT-9201, the route code is VENU-38.\n[P04] For asset UNIT-9503, the route code is CWOT-57.\n[P05] For asset UNIT-9504, the service code is HAGL-92.\n[P06] For asset UNIT-9505, the channel code is DYPS-43.",
+        "document_hash": "e530a19f48cc090f83c64e0d15b67f50101ab665b93a8808d6eb6e7403c4719c",
+        "entity": "UNIT-9201",
+        "gold": {
+          "answer": "VENU-38",
+          "answer_span": [
+            155,
+            162
+          ],
+          "answerable": true,
+          "content_span": [
+            116,
+            163
+          ],
+          "evidence": "P03"
+        },
+        "language": "en",
+        "passages": [
+          {
+            "content": "For asset UNIT-9500, the route code is QZLA-21.",
+            "content_span": [
+              6,
+              53
+            ],
+            "passage_id": "P01"
+          },
+          {
+            "content": "For asset UNIT-9501, the service code is BRIX-64.",
+            "content_span": [
+              60,
+              109
+            ],
+            "passage_id": "P02"
+          },
+          {
+            "content": "For asset UNIT-9201, the route code is VENU-38.",
+            "content_span": [
+              116,
+              163
+            ],
+            "passage_id": "P03"
+          },
+          {
+            "content": "For asset UNIT-9503, the route code is CWOT-57.",
+            "content_span": [
+              170,
+              217
+            ],
+            "passage_id": "P04"
+          },
+          {
+            "content": "For asset UNIT-9504, the service code is HAGL-92.",
+            "content_span": [
+              224,
+              273
+            ],
+            "passage_id": "P05"
+          },
+          {
+            "content": "For asset UNIT-9505, the channel code is DYPS-43.",
+            "content_span": [
+              280,
+              329
+            ],
+            "passage_id": "P06"
+          }
+        ],
+        "question": "Which route code is assigned to asset UNIT-9201?",
+        "relation": "route",
+        "sample_id": "e4a-retrieval-en-direct",
+        "sample_identity": "efa1c3cf8d441baf647c395ea30ed36257b7a938c16baaecc64d999023df2476",
+        "source_family": "controlled-single-fact-v1",
+        "source_id": "e4a-retrieval-author-0",
+        "split": "ENGINEERING_INPUT_ONLY",
+        "task_id": "context_evidence_retrieval",
+        "task_version": "0.1",
+        "template_family": "closed-context-direct-en-v1"
+      },
+      "sample_id": "e4a-retrieval-en-direct",
+      "source_id": "e4a-retrieval-author-0",
+      "split": "ENGINEERING_INPUT_ONLY",
+      "task_id": "context_evidence_retrieval",
+      "task_version": "0.1",
+      "usage_scope": "ENGINEERING_INPUT_ONLY"
+    }
+  ],
+  "schema_version": 1,
+  "usage_scope": "MIXED_ENGINEERING_AND_REGRESSION_REUSE"
+}

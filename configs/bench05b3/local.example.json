@@ -1,0 +1,17 @@
+{
+  "arc_data": "${DATA_ROOT}/arc-regression.json",
+  "prepared_samples": "${DATA_ROOT}/prepared.json",
+  "artifact_receipt": "${ARTIFACT_ROOT}/artifact-receipt.json",
+  "runtime_metadata": "${DATA_ROOT}/runtime.json",
+  "runtime_python": "${PROJECT_ROOT}/diagnostic-env/bin/python",
+  "server_python": "${PROJECT_ROOT}/serving-env/bin/python",
+  "package_site": "${RUNS_ROOT}/worker-site",
+  "prior_ledger": "${RUNS_ROOT}/prior-budget.json",
+  "campaign_root": "${PROJECT_ROOT}",
+  "task_clock": "${RUNS_ROOT}/START.json",
+  "task_origin_used_seconds": 4529.096235314011,
+  "serving_runtime_identity": "REPLACE_WITH_VERIFIED_INSTALLED_TUPLE_DIGEST",
+  "gpu": 0,
+  "gpu_uuid": "REPLACE_WITH_OBSERVED_UUID",
+  "port": 18188
+}

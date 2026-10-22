@@ -27,7 +27,11 @@ class Sample:
         require(self.task_id and self.task_version and self.source_id,'Missing task/source identity')
         require(safe_name(self.sample_id)==self.sample_id and '/' not in self.sample_id,'Unsafe sample ID')
         require(self.prompt_hash==digest(self.prompt),'Prompt identity differs')
-        require(self.reference_source=='author_provided_diagnostic_text','Unregistered diagnostic reference source')
+        require(self.reference_source=='author_provided_diagnostic_text' or
+                (self.task_id=='tech_record_extract' and self.task_version=='0.1' and self.reference_source=='task_author_gold_json') or
+                (self.task_id=='arc_challenge' and self.task_version=='1.0' and self.reference_source=='dataset_answer_key_choice') or
+                (self.task_id=='context_evidence_retrieval' and self.task_version=='0.1' and self.reference_source=='task_author_gold_answer_evidence_v1'),
+                'Unregistered diagnostic reference source')
         require(self.prompt and self.reference_text,'Empty diagnostic text')
         return asdict(self)
 

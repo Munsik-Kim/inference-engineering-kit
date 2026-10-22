@@ -1,0 +1,34 @@
+{
+  "arm_id": "bf16",
+  "artifact_identity": "0c668d5b8e51322d63898007d3d4a4ea488f21168208c3f3fc0d0f9643ac371b",
+  "attempt_id": "main-bf16-attempt1",
+  "backend": "transformers5.14.1/torchSDPA/native-selected-lm-head",
+  "effective_weight_dtype": "torch.bfloat16",
+  "evidence_kind": "live_model_diagnostic",
+  "execution_id": "0d492eb2c6ea7244e3dfff573851c411a683fd47c7f9d012dcedd9d38ea9bb81",
+  "execution_mode": "INSTRUMENTED_PATH",
+  "model_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+  "model_revision": "31b70e2e869a7173562077fd711b654946d38674",
+  "observation_profile": "structure_probe_raw_v1",
+  "observer_consistency_policy": {
+    "absolute_tolerance": 1e-05,
+    "id": "d1_off_repeat_and_on_v1",
+    "passes": [
+      "OFF1",
+      "OFF2",
+      "ON"
+    ]
+  },
+  "pass_ids": [
+    "OFF1",
+    "OFF2",
+    "ON"
+  ],
+  "phase": "main",
+  "raw_path": "observations.jsonl",
+  "recipe_identity": "7139c7ebc95daad8c9f3850cb8d0036a3f0d9a6f53817eb103aa6743d05b3675",
+  "run_id": "run-attempt1",
+  "runtime_identity": "33c7cd42d0c4fd2bec331491685445fb8abff9c9536d9a9f6c496f32d037c595",
+  "status": "MEASURED",
+  "tokenizer_identity": "420c39aaae8d6bcb216797f9459582938b501ac5268f6c36d2d40d983d86a641"
+}

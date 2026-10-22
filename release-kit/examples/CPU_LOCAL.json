@@ -1,0 +1,7 @@
+{
+  "artifact_check": "not_requested",
+  "artifact_roots": {},
+  "authorization": "NONE",
+  "runtime_check": "not_run",
+  "schema_version": 1
+}

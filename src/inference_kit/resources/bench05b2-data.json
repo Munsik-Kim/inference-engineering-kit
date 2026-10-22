@@ -1,0 +1,1452 @@
+{
+  "data_seed": 909241,
+  "data_version": "tech_record_authored_b2_v1",
+  "rows": [
+    {
+      "case_type": "basic",
+      "document": "[L1] Record EXP-2203 | temperature_c = 18.375 C.\n[L2] Note: archive.\n[L3] Record EXP-2203 | state = waiting.",
+      "document_hash": "d46204d0373669d8beb4c9993e3236c187937d2f299435b673fbff39b0e4f59b",
+      "events": [
+        {
+          "experiment_id": "EXP-2203",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 18.375
+        },
+        {
+          "field": "note",
+          "line_id": "L2",
+          "text": "Note: archive."
+        },
+        {
+          "experiment_id": "EXP-2203",
+          "field": "status",
+          "line_id": "L3",
+          "value": "pending"
+        }
+      ],
+      "experiment_id": "EXP-2203",
+      "gold": {
+        "experiment_id": "EXP-2203",
+        "status": "pending",
+        "support": {
+          "status": [
+            "L3"
+          ],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": 18.375
+      },
+      "language": "en",
+      "sample_id": "b2-smoke-en-basic-1",
+      "sample_identity": "97d93a8cb472d3ef455705d9a6b3fa0bfc8350f4d10cd00c000ce716ab4b3ccd",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-0",
+      "split": "SMOKE",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-basic-v1"
+    },
+    {
+      "case_type": "final_correction",
+      "document": "[L1] Note: archive.\n[L2] Final revision EXP-2216 | temperature_c = 13.25 C.\n[L3] Final revision EXP-2216 | state = repeat required.\n[L4] Record EXP-2216 | temperature_c = 19.5 C.\n[L5] Record EXP-2216 | state = finished.",
+      "document_hash": "1cb18f75c2574b194266e7029f8e1b5b7cee66438514e314a304268669a1204d",
+      "events": [
+        {
+          "field": "note",
+          "line_id": "L1",
+          "text": "Note: archive."
+        },
+        {
+          "experiment_id": "EXP-2216",
+          "field": "temperature_c",
+          "final": true,
+          "line_id": "L2",
+          "value": 13.25
+        },
+        {
+          "experiment_id": "EXP-2216",
+          "field": "status",
+          "final": true,
+          "line_id": "L3",
+          "value": "repeat"
+        },
+        {
+          "experiment_id": "EXP-2216",
+          "field": "temperature_c",
+          "line_id": "L4",
+          "value": 19.5
+        },
+        {
+          "experiment_id": "EXP-2216",
+          "field": "status",
+          "line_id": "L5",
+          "value": "complete"
+        }
+      ],
+      "experiment_id": "EXP-2216",
+      "gold": {
+        "experiment_id": "EXP-2216",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L3"
+          ],
+          "temperature_c": [
+            "L2"
+          ]
+        },
+        "temperature_c": 13.25
+      },
+      "language": "en",
+      "sample_id": "b2-smoke-en-final_correction-1",
+      "sample_identity": "8143ecffd8bd9f15341116eda481dc6d1dc5ea1b5780a4054a926fed96b4e949",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-1",
+      "split": "SMOKE",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-final_correction-v1"
+    },
+    {
+      "case_type": "basic",
+      "document": "[L1] 기록 EXP-2229 | 상태 = 반복 필요.\n[L2] 메모: 보관.\n[L3] 기록 EXP-2229 | 온도 = 22.875 C.",
+      "document_hash": "19425d16fd02ffedc11c3bf1bc8d12ee5d3ef87ea23bc8d8386b38ab02d3f2a6",
+      "events": [
+        {
+          "experiment_id": "EXP-2229",
+          "field": "status",
+          "line_id": "L1",
+          "value": "repeat"
+        },
+        {
+          "field": "note",
+          "line_id": "L2",
+          "text": "메모: 보관."
+        },
+        {
+          "experiment_id": "EXP-2229",
+          "field": "temperature_c",
+          "line_id": "L3",
+          "value": 22.875
+        }
+      ],
+      "experiment_id": "EXP-2229",
+      "gold": {
+        "experiment_id": "EXP-2229",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L1"
+          ],
+          "temperature_c": [
+            "L3"
+          ]
+        },
+        "temperature_c": 22.875
+      },
+      "language": "ko",
+      "sample_id": "b2-smoke-ko-basic-1",
+      "sample_identity": "94dc4221d1020027a9bb397e8c6eac7e6b2a596641d1a67d4ba620438bbecb3f",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-2",
+      "split": "SMOKE",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-basic-v1"
+    },
+    {
+      "case_type": "final_correction",
+      "document": "[L1] 기록 EXP-2242 | 온도 = 24.0 C.\n[L2] Final EXP-2242 | 온도 = 17.75 C.\n[L3] Final EXP-2242 | 상태 = 반복 필요.\n[L4] 기록 EXP-2242 | 상태 = 대기.\n[L5] 메모: 보관.",
+      "document_hash": "018865026e838adb0051d5b3bc1751a3e9e62370279f1067f270dc93b4ac78b7",
+      "events": [
+        {
+          "experiment_id": "EXP-2242",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 24.0
+        },
+        {
+          "experiment_id": "EXP-2242",
+          "field": "temperature_c",
+          "final": true,
+          "line_id": "L2",
+          "value": 17.75
+        },
+        {
+          "experiment_id": "EXP-2242",
+          "field": "status",
+          "final": true,
+          "line_id": "L3",
+          "value": "repeat"
+        },
+        {
+          "experiment_id": "EXP-2242",
+          "field": "status",
+          "line_id": "L4",
+          "value": "pending"
+        },
+        {
+          "field": "note",
+          "line_id": "L5",
+          "text": "메모: 보관."
+        }
+      ],
+      "experiment_id": "EXP-2242",
+      "gold": {
+        "experiment_id": "EXP-2242",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L3"
+          ],
+          "temperature_c": [
+            "L2"
+          ]
+        },
+        "temperature_c": 17.75
+      },
+      "language": "ko",
+      "sample_id": "b2-smoke-ko-final_correction-1",
+      "sample_identity": "6cdfc8f4120df31bd87752fc1373ebfc47aced547babf9299aadf85bde5f7269",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-3",
+      "split": "SMOKE",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-final_correction-v1"
+    },
+    {
+      "case_type": "basic",
+      "document": "[L1] Note: archive.\n[L2] Record EXP-2255 | temperature_c = 22.875 C.\n[L3] Record EXP-2255 | state = finished.",
+      "document_hash": "e027b979366d525dce657d66f8e974f823459b4e46811142de83d989ccfaee36",
+      "events": [
+        {
+          "field": "note",
+          "line_id": "L1",
+          "text": "Note: archive."
+        },
+        {
+          "experiment_id": "EXP-2255",
+          "field": "temperature_c",
+          "line_id": "L2",
+          "value": 22.875
+        },
+        {
+          "experiment_id": "EXP-2255",
+          "field": "status",
+          "line_id": "L3",
+          "value": "complete"
+        }
+      ],
+      "experiment_id": "EXP-2255",
+      "gold": {
+        "experiment_id": "EXP-2255",
+        "status": "complete",
+        "support": {
+          "status": [
+            "L3"
+          ],
+          "temperature_c": [
+            "L2"
+          ]
+        },
+        "temperature_c": 22.875
+      },
+      "language": "en",
+      "sample_id": "b2-eval_locked-en-basic-1",
+      "sample_identity": "a6b0f17b02e6e20dcabf8b598b1aa932b8badb795bd6c0119fa2341dac7fb53f",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-4",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-basic-v1"
+    },
+    {
+      "case_type": "basic",
+      "document": "[L1] Record EXP-2268 | temperature_c = 24.0 C.\n[L2] Note: archive.\n[L3] Record EXP-2268 | state = waiting.",
+      "document_hash": "de783f01bc2268750d59515efcb2f505c5415eea41d33e37b029558ac6ef71f3",
+      "events": [
+        {
+          "experiment_id": "EXP-2268",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 24.0
+        },
+        {
+          "field": "note",
+          "line_id": "L2",
+          "text": "Note: archive."
+        },
+        {
+          "experiment_id": "EXP-2268",
+          "field": "status",
+          "line_id": "L3",
+          "value": "pending"
+        }
+      ],
+      "experiment_id": "EXP-2268",
+      "gold": {
+        "experiment_id": "EXP-2268",
+        "status": "pending",
+        "support": {
+          "status": [
+            "L3"
+          ],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": 24.0
+      },
+      "language": "en",
+      "sample_id": "b2-eval_locked-en-basic-2",
+      "sample_identity": "5647bdd1099dacab7f8ae86e655db58f0c234d983bfe8b69b2a11a15e216634e",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-5",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-basic-v1"
+    },
+    {
+      "case_type": "similar_id",
+      "document": "[L1] Record EXP-2281 | temperature_c = 25.125 C.\n[L2] Record EXP-2281 | state = waiting.\n[L3] Record EXP-22812 | state = finished.\n[L4] Record EXP-22812 | temperature_c = 52.125 C.\n[L5] Note: archive.",
+      "document_hash": "4769db7f8c411df249d7dac3eb9de9f8f2768ffaac7018685cae13176ba6668f",
+      "events": [
+        {
+          "experiment_id": "EXP-2281",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 25.125
+        },
+        {
+          "experiment_id": "EXP-2281",
+          "field": "status",
+          "line_id": "L2",
+          "value": "pending"
+        },
+        {
+          "experiment_id": "EXP-22812",
+          "field": "status",
+          "line_id": "L3",
+          "value": "complete"
+        },
+        {
+          "experiment_id": "EXP-22812",
+          "field": "temperature_c",
+          "line_id": "L4",
+          "value": 52.125
+        },
+        {
+          "field": "note",
+          "line_id": "L5",
+          "text": "Note: archive."
+        }
+      ],
+      "experiment_id": "EXP-2281",
+      "gold": {
+        "experiment_id": "EXP-2281",
+        "status": "pending",
+        "support": {
+          "status": [
+            "L2"
+          ],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": 25.125
+      },
+      "language": "en",
+      "sample_id": "b2-eval_locked-en-similar_id-1",
+      "sample_identity": "19faf891870e83ad4d098b93574fec7c1c1d8f32fab3372784a485aef347e215",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-6",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-similar_id-v1"
+    },
+    {
+      "case_type": "similar_id",
+      "document": "[L1] Record EXP-2294 | temperature_c = 26.25 C.\n[L2] Record EXP-22942 | state = finished.\n[L3] Note: archive.\n[L4] Record EXP-22942 | temperature_c = 53.25 C.\n[L5] Record EXP-2294 | state = repeat required.",
+      "document_hash": "0e7fdeb84e740cb1f421f4267ee0da5ad90c521acbca6e0331e5405946e3371f",
+      "events": [
+        {
+          "experiment_id": "EXP-2294",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 26.25
+        },
+        {
+          "experiment_id": "EXP-22942",
+          "field": "status",
+          "line_id": "L2",
+          "value": "complete"
+        },
+        {
+          "field": "note",
+          "line_id": "L3",
+          "text": "Note: archive."
+        },
+        {
+          "experiment_id": "EXP-22942",
+          "field": "temperature_c",
+          "line_id": "L4",
+          "value": 53.25
+        },
+        {
+          "experiment_id": "EXP-2294",
+          "field": "status",
+          "line_id": "L5",
+          "value": "repeat"
+        }
+      ],
+      "experiment_id": "EXP-2294",
+      "gold": {
+        "experiment_id": "EXP-2294",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L5"
+          ],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": 26.25
+      },
+      "language": "en",
+      "sample_id": "b2-eval_locked-en-similar_id-2",
+      "sample_identity": "0a7ebf26cd7269b9763d41b263983d13bf69a2aa26782d4ccf37f050b6359b34",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-7",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-similar_id-v1"
+    },
+    {
+      "case_type": "final_correction",
+      "document": "[L1] Final revision EXP-2307 | state = finished.\n[L2] Final revision EXP-2307 | temperature_c = 21.125 C.\n[L3] Note: archive.\n[L4] Record EXP-2307 | state = repeat required.\n[L5] Record EXP-2307 | temperature_c = 27.375 C.",
+      "document_hash": "bf902edb4e222ae145e7f940269ab35c878b1ac8ad301dfa25f232123c7c9923",
+      "events": [
+        {
+          "experiment_id": "EXP-2307",
+          "field": "status",
+          "final": true,
+          "line_id": "L1",
+          "value": "complete"
+        },
+        {
+          "experiment_id": "EXP-2307",
+          "field": "temperature_c",
+          "final": true,
+          "line_id": "L2",
+          "value": 21.125
+        },
+        {
+          "field": "note",
+          "line_id": "L3",
+          "text": "Note: archive."
+        },
+        {
+          "experiment_id": "EXP-2307",
+          "field": "status",
+          "line_id": "L4",
+          "value": "repeat"
+        },
+        {
+          "experiment_id": "EXP-2307",
+          "field": "temperature_c",
+          "line_id": "L5",
+          "value": 27.375
+        }
+      ],
+      "experiment_id": "EXP-2307",
+      "gold": {
+        "experiment_id": "EXP-2307",
+        "status": "complete",
+        "support": {
+          "status": [
+            "L1"
+          ],
+          "temperature_c": [
+            "L2"
+          ]
+        },
+        "temperature_c": 21.125
+      },
+      "language": "en",
+      "sample_id": "b2-eval_locked-en-final_correction-1",
+      "sample_identity": "35e02f1caee2a10d978903849fd6ff6c93ff8859ffb71f46e44ad61c2147a2a8",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-8",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-final_correction-v1"
+    },
+    {
+      "case_type": "final_correction",
+      "document": "[L1] Final revision EXP-2320 | temperature_c = 22.25 C.\n[L2] Note: archive.\n[L3] Record EXP-2320 | state = finished.\n[L4] Record EXP-2320 | temperature_c = 28.5 C.\n[L5] Final revision EXP-2320 | state = repeat required.",
+      "document_hash": "4434d90bb78f9c063f621c978eb0e1459b47b96273e1cad249d87394fea2ab82",
+      "events": [
+        {
+          "experiment_id": "EXP-2320",
+          "field": "temperature_c",
+          "final": true,
+          "line_id": "L1",
+          "value": 22.25
+        },
+        {
+          "field": "note",
+          "line_id": "L2",
+          "text": "Note: archive."
+        },
+        {
+          "experiment_id": "EXP-2320",
+          "field": "status",
+          "line_id": "L3",
+          "value": "complete"
+        },
+        {
+          "experiment_id": "EXP-2320",
+          "field": "temperature_c",
+          "line_id": "L4",
+          "value": 28.5
+        },
+        {
+          "experiment_id": "EXP-2320",
+          "field": "status",
+          "final": true,
+          "line_id": "L5",
+          "value": "repeat"
+        }
+      ],
+      "experiment_id": "EXP-2320",
+      "gold": {
+        "experiment_id": "EXP-2320",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L5"
+          ],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": 22.25
+      },
+      "language": "en",
+      "sample_id": "b2-eval_locked-en-final_correction-2",
+      "sample_identity": "f2cdd98385655f967843e00725c8a1a5490abd502a1f79efaeb643c9707ed68a",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-9",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-final_correction-v1"
+    },
+    {
+      "case_type": "missing",
+      "document": "[L1] Record EXP-2333 | state = finished.\n[L2] Note: archive.",
+      "document_hash": "e2e33a2f3a673e28f040365a7377c3c2b616e50890bc6e21e54b4ef1a1681c36",
+      "events": [
+        {
+          "experiment_id": "EXP-2333",
+          "field": "status",
+          "line_id": "L1",
+          "value": "complete"
+        },
+        {
+          "field": "note",
+          "line_id": "L2",
+          "text": "Note: archive."
+        }
+      ],
+      "experiment_id": "EXP-2333",
+      "gold": {
+        "experiment_id": "EXP-2333",
+        "status": "complete",
+        "support": {
+          "status": [
+            "L1"
+          ],
+          "temperature_c": []
+        },
+        "temperature_c": null
+      },
+      "language": "en",
+      "sample_id": "b2-eval_locked-en-missing-1",
+      "sample_identity": "52ecf44d1cfb4439627b8309930223d436d8de1ca494643316abee7ffda40b4e",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-10",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-missing-v1"
+    },
+    {
+      "case_type": "missing",
+      "document": "[L1] Note: archive.\n[L2] Record EXP-2346 | temperature_c = 30.75 C.",
+      "document_hash": "a0d6a078a47d35edcc8382ef0fb6a63792b2b1398f085b35f9f3379456f103d1",
+      "events": [
+        {
+          "field": "note",
+          "line_id": "L1",
+          "text": "Note: archive."
+        },
+        {
+          "experiment_id": "EXP-2346",
+          "field": "temperature_c",
+          "line_id": "L2",
+          "value": 30.75
+        }
+      ],
+      "experiment_id": "EXP-2346",
+      "gold": {
+        "experiment_id": "EXP-2346",
+        "status": null,
+        "support": {
+          "status": [],
+          "temperature_c": [
+            "L2"
+          ]
+        },
+        "temperature_c": 30.75
+      },
+      "language": "en",
+      "sample_id": "b2-eval_locked-en-missing-2",
+      "sample_identity": "ed0bcf5b0b3e48e576ef8edeb544af2cee4217212dce1b28069e0c8a937dc191",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-11",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-missing-v1"
+    },
+    {
+      "case_type": "numeric",
+      "document": "[L1] Record EXP-2359 | temperature_c = -7.875 C.\n[L2] Note: archive.\n[L3] Record EXP-2359 | state = waiting.",
+      "document_hash": "0c60a94313216416270ce40acdc276fb682de1c73e48ebc747a9845d95432710",
+      "events": [
+        {
+          "experiment_id": "EXP-2359",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": -7.875
+        },
+        {
+          "field": "note",
+          "line_id": "L2",
+          "text": "Note: archive."
+        },
+        {
+          "experiment_id": "EXP-2359",
+          "field": "status",
+          "line_id": "L3",
+          "value": "pending"
+        }
+      ],
+      "experiment_id": "EXP-2359",
+      "gold": {
+        "experiment_id": "EXP-2359",
+        "status": "pending",
+        "support": {
+          "status": [
+            "L3"
+          ],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": -7.875
+      },
+      "language": "en",
+      "sample_id": "b2-eval_locked-en-numeric-1",
+      "sample_identity": "3d46c57d453c931d32faf0d6e37927c13758c5bb6397b6f8bbd1b9a04497b34b",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-12",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-numeric-v1"
+    },
+    {
+      "case_type": "numeric",
+      "document": "[L1] Record EXP-2372 | temperature_c = 0.0625 C.\n[L2] Record EXP-2372 | state = repeat required.\n[L3] Note: archive.",
+      "document_hash": "cc1bfd4676894d23d2e5829a69e32e9ed6a26b743d30a95db7c1f2e75583ec35",
+      "events": [
+        {
+          "experiment_id": "EXP-2372",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 0.0625
+        },
+        {
+          "experiment_id": "EXP-2372",
+          "field": "status",
+          "line_id": "L2",
+          "value": "repeat"
+        },
+        {
+          "field": "note",
+          "line_id": "L3",
+          "text": "Note: archive."
+        }
+      ],
+      "experiment_id": "EXP-2372",
+      "gold": {
+        "experiment_id": "EXP-2372",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L2"
+          ],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": 0.0625
+      },
+      "language": "en",
+      "sample_id": "b2-eval_locked-en-numeric-2",
+      "sample_identity": "a9e27ae416d87e360ca9c1d250ee43f129fa6dec5b4093d19cbdd8f2345f524e",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-13",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-numeric-v1"
+    },
+    {
+      "case_type": "reordered",
+      "document": "[L1] Note: archive.\n[L2] Record EXP-23852 | temperature_c = 45.125 C.\n[L3] Record EXP-2385 | temperature_c = 34.125 C.\n[L4] Record EXP-2385 | state = repeat required.",
+      "document_hash": "bdaa92cb030c203c51f182d9474f2a953758b7abb6a360ea0e76d2b6575436e0",
+      "events": [
+        {
+          "field": "note",
+          "line_id": "L1",
+          "text": "Note: archive."
+        },
+        {
+          "experiment_id": "EXP-23852",
+          "field": "temperature_c",
+          "line_id": "L2",
+          "value": 45.125
+        },
+        {
+          "experiment_id": "EXP-2385",
+          "field": "temperature_c",
+          "line_id": "L3",
+          "value": 34.125
+        },
+        {
+          "experiment_id": "EXP-2385",
+          "field": "status",
+          "line_id": "L4",
+          "value": "repeat"
+        }
+      ],
+      "experiment_id": "EXP-2385",
+      "gold": {
+        "experiment_id": "EXP-2385",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L4"
+          ],
+          "temperature_c": [
+            "L3"
+          ]
+        },
+        "temperature_c": 34.125
+      },
+      "language": "en",
+      "sample_id": "b2-eval_locked-en-reordered-1",
+      "sample_identity": "7f06df69cde9df4d9f1b9773e56690c720ac71b2463c534531474fa91a4ec150",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-14",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-reordered-v1"
+    },
+    {
+      "case_type": "reordered",
+      "document": "[L1] Record EXP-23982 | temperature_c = 46.25 C.\n[L2] Record EXP-2398 | temperature_c = 35.25 C.\n[L3] Record EXP-2398 | state = finished.\n[L4] Note: archive.",
+      "document_hash": "9a941cd7d8f84cfe56a72c6aa60177717877b7462ff03dbe33f1a921a10ee62a",
+      "events": [
+        {
+          "experiment_id": "EXP-23982",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 46.25
+        },
+        {
+          "experiment_id": "EXP-2398",
+          "field": "temperature_c",
+          "line_id": "L2",
+          "value": 35.25
+        },
+        {
+          "experiment_id": "EXP-2398",
+          "field": "status",
+          "line_id": "L3",
+          "value": "complete"
+        },
+        {
+          "field": "note",
+          "line_id": "L4",
+          "text": "Note: archive."
+        }
+      ],
+      "experiment_id": "EXP-2398",
+      "gold": {
+        "experiment_id": "EXP-2398",
+        "status": "complete",
+        "support": {
+          "status": [
+            "L3"
+          ],
+          "temperature_c": [
+            "L2"
+          ]
+        },
+        "temperature_c": 35.25
+      },
+      "language": "en",
+      "sample_id": "b2-eval_locked-en-reordered-2",
+      "sample_identity": "a319a4ba3625b18c8038d171304a492fc0b5d2d3a78ffe116ace29ac6a0dd424",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-15",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-reordered-v1"
+    },
+    {
+      "case_type": "basic",
+      "document": "[L1] 메모: 보관.\n[L2] 기록 EXP-2411 | 상태 = 완료.\n[L3] 기록 EXP-2411 | 온도 = 38.625 C.",
+      "document_hash": "5962391662c1021d26deb06a0b3b48463e17fa3476a2cd0f1ca73f7a2f8d166a",
+      "events": [
+        {
+          "field": "note",
+          "line_id": "L1",
+          "text": "메모: 보관."
+        },
+        {
+          "experiment_id": "EXP-2411",
+          "field": "status",
+          "line_id": "L2",
+          "value": "complete"
+        },
+        {
+          "experiment_id": "EXP-2411",
+          "field": "temperature_c",
+          "line_id": "L3",
+          "value": 38.625
+        }
+      ],
+      "experiment_id": "EXP-2411",
+      "gold": {
+        "experiment_id": "EXP-2411",
+        "status": "complete",
+        "support": {
+          "status": [
+            "L2"
+          ],
+          "temperature_c": [
+            "L3"
+          ]
+        },
+        "temperature_c": 38.625
+      },
+      "language": "ko",
+      "sample_id": "b2-eval_locked-ko-basic-1",
+      "sample_identity": "3a7b69a30268ceaf2bb32be7aa57b0c67c3fc872aab9d0d8952543195931fb98",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-16",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-basic-v1"
+    },
+    {
+      "case_type": "basic",
+      "document": "[L1] 메모: 보관.\n[L2] 기록 EXP-2424 | 상태 = 대기.\n[L3] 기록 EXP-2424 | 온도 = 39.75 C.",
+      "document_hash": "5e750ecd03c4e9becd142199303bcc6598bd0162580788f5498898811291e78d",
+      "events": [
+        {
+          "field": "note",
+          "line_id": "L1",
+          "text": "메모: 보관."
+        },
+        {
+          "experiment_id": "EXP-2424",
+          "field": "status",
+          "line_id": "L2",
+          "value": "pending"
+        },
+        {
+          "experiment_id": "EXP-2424",
+          "field": "temperature_c",
+          "line_id": "L3",
+          "value": 39.75
+        }
+      ],
+      "experiment_id": "EXP-2424",
+      "gold": {
+        "experiment_id": "EXP-2424",
+        "status": "pending",
+        "support": {
+          "status": [
+            "L2"
+          ],
+          "temperature_c": [
+            "L3"
+          ]
+        },
+        "temperature_c": 39.75
+      },
+      "language": "ko",
+      "sample_id": "b2-eval_locked-ko-basic-2",
+      "sample_identity": "788c711b37d28934b47ec8a2ed3fb8eb720309a03fac59549deb5d15eb7bc518",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-17",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-basic-v1"
+    },
+    {
+      "case_type": "similar_id",
+      "document": "[L1] 기록 EXP-24372 | 상태 = 완료.\n[L2] 기록 EXP-2437 | 상태 = 대기.\n[L3] 기록 EXP-24372 | 온도 = 67.875 C.\n[L4] 메모: 보관.\n[L5] 기록 EXP-2437 | 온도 = 40.875 C.",
+      "document_hash": "ebbba4d766bbf9eb2704664d1a1ebeb62063e9301f2bcd2cdb9440eeb7f9f89d",
+      "events": [
+        {
+          "experiment_id": "EXP-24372",
+          "field": "status",
+          "line_id": "L1",
+          "value": "complete"
+        },
+        {
+          "experiment_id": "EXP-2437",
+          "field": "status",
+          "line_id": "L2",
+          "value": "pending"
+        },
+        {
+          "experiment_id": "EXP-24372",
+          "field": "temperature_c",
+          "line_id": "L3",
+          "value": 67.875
+        },
+        {
+          "field": "note",
+          "line_id": "L4",
+          "text": "메모: 보관."
+        },
+        {
+          "experiment_id": "EXP-2437",
+          "field": "temperature_c",
+          "line_id": "L5",
+          "value": 40.875
+        }
+      ],
+      "experiment_id": "EXP-2437",
+      "gold": {
+        "experiment_id": "EXP-2437",
+        "status": "pending",
+        "support": {
+          "status": [
+            "L2"
+          ],
+          "temperature_c": [
+            "L5"
+          ]
+        },
+        "temperature_c": 40.875
+      },
+      "language": "ko",
+      "sample_id": "b2-eval_locked-ko-similar_id-1",
+      "sample_identity": "7818bda92be688f0ac57796f6903fbd8f77bdc6a9e03a8ee5079f145a57f1d63",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-18",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-similar_id-v1"
+    },
+    {
+      "case_type": "similar_id",
+      "document": "[L1] 기록 EXP-24502 | 온도 = 69.0 C.\n[L2] 기록 EXP-2450 | 상태 = 반복 필요.\n[L3] 기록 EXP-24502 | 상태 = 완료.\n[L4] 메모: 보관.\n[L5] 기록 EXP-2450 | 온도 = 42.0 C.",
+      "document_hash": "0ffb3bebc50f97437290246ff2979ed700a0290df1a034be2f6a03c418cfccda",
+      "events": [
+        {
+          "experiment_id": "EXP-24502",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 69.0
+        },
+        {
+          "experiment_id": "EXP-2450",
+          "field": "status",
+          "line_id": "L2",
+          "value": "repeat"
+        },
+        {
+          "experiment_id": "EXP-24502",
+          "field": "status",
+          "line_id": "L3",
+          "value": "complete"
+        },
+        {
+          "field": "note",
+          "line_id": "L4",
+          "text": "메모: 보관."
+        },
+        {
+          "experiment_id": "EXP-2450",
+          "field": "temperature_c",
+          "line_id": "L5",
+          "value": 42.0
+        }
+      ],
+      "experiment_id": "EXP-2450",
+      "gold": {
+        "experiment_id": "EXP-2450",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L2"
+          ],
+          "temperature_c": [
+            "L5"
+          ]
+        },
+        "temperature_c": 42.0
+      },
+      "language": "ko",
+      "sample_id": "b2-eval_locked-ko-similar_id-2",
+      "sample_identity": "d665bc8fe0a715a00f9f082e0155adc69688b06562d8c4b2ea5a9eca729a8903",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-19",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-similar_id-v1"
+    },
+    {
+      "case_type": "final_correction",
+      "document": "[L1] 기록 EXP-2463 | 온도 = 43.125 C.\n[L2] Final EXP-2463 | 상태 = 완료.\n[L3] Final EXP-2463 | 온도 = 36.875 C.\n[L4] 기록 EXP-2463 | 상태 = 반복 필요.\n[L5] 메모: 보관.",
+      "document_hash": "dc1369ec606762baacad41eb5ad75b5b6c3c8697747024853e4bd2f21aba66db",
+      "events": [
+        {
+          "experiment_id": "EXP-2463",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 43.125
+        },
+        {
+          "experiment_id": "EXP-2463",
+          "field": "status",
+          "final": true,
+          "line_id": "L2",
+          "value": "complete"
+        },
+        {
+          "experiment_id": "EXP-2463",
+          "field": "temperature_c",
+          "final": true,
+          "line_id": "L3",
+          "value": 36.875
+        },
+        {
+          "experiment_id": "EXP-2463",
+          "field": "status",
+          "line_id": "L4",
+          "value": "repeat"
+        },
+        {
+          "field": "note",
+          "line_id": "L5",
+          "text": "메모: 보관."
+        }
+      ],
+      "experiment_id": "EXP-2463",
+      "gold": {
+        "experiment_id": "EXP-2463",
+        "status": "complete",
+        "support": {
+          "status": [
+            "L2"
+          ],
+          "temperature_c": [
+            "L3"
+          ]
+        },
+        "temperature_c": 36.875
+      },
+      "language": "ko",
+      "sample_id": "b2-eval_locked-ko-final_correction-1",
+      "sample_identity": "4b5f1054124305b8e0185e19ab4d49e29b67afb4536fce85e0c44bdb8c9ec9e8",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-20",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-final_correction-v1"
+    },
+    {
+      "case_type": "final_correction",
+      "document": "[L1] 기록 EXP-2476 | 상태 = 완료.\n[L2] 메모: 보관.\n[L3] 기록 EXP-2476 | 온도 = 44.25 C.\n[L4] Final EXP-2476 | 상태 = 반복 필요.\n[L5] Final EXP-2476 | 온도 = 38.0 C.",
+      "document_hash": "1f719fd3252a02f5efff703b1ac075eaa98528a205e9bc71251f2b77a91168e9",
+      "events": [
+        {
+          "experiment_id": "EXP-2476",
+          "field": "status",
+          "line_id": "L1",
+          "value": "complete"
+        },
+        {
+          "field": "note",
+          "line_id": "L2",
+          "text": "메모: 보관."
+        },
+        {
+          "experiment_id": "EXP-2476",
+          "field": "temperature_c",
+          "line_id": "L3",
+          "value": 44.25
+        },
+        {
+          "experiment_id": "EXP-2476",
+          "field": "status",
+          "final": true,
+          "line_id": "L4",
+          "value": "repeat"
+        },
+        {
+          "experiment_id": "EXP-2476",
+          "field": "temperature_c",
+          "final": true,
+          "line_id": "L5",
+          "value": 38.0
+        }
+      ],
+      "experiment_id": "EXP-2476",
+      "gold": {
+        "experiment_id": "EXP-2476",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L4"
+          ],
+          "temperature_c": [
+            "L5"
+          ]
+        },
+        "temperature_c": 38.0
+      },
+      "language": "ko",
+      "sample_id": "b2-eval_locked-ko-final_correction-2",
+      "sample_identity": "453ba0129fe915b637f08096b9a303a28173c9bef1ea2ad69e366c72d4b76f95",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-21",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-final_correction-v1"
+    },
+    {
+      "case_type": "missing",
+      "document": "[L1] 기록 EXP-2489 | 상태 = 완료.\n[L2] 메모: 보관.",
+      "document_hash": "6da124fbae1b3e45e811e28cd6160152edcdb2262aa686415a16aacebf21d479",
+      "events": [
+        {
+          "experiment_id": "EXP-2489",
+          "field": "status",
+          "line_id": "L1",
+          "value": "complete"
+        },
+        {
+          "field": "note",
+          "line_id": "L2",
+          "text": "메모: 보관."
+        }
+      ],
+      "experiment_id": "EXP-2489",
+      "gold": {
+        "experiment_id": "EXP-2489",
+        "status": "complete",
+        "support": {
+          "status": [
+            "L1"
+          ],
+          "temperature_c": []
+        },
+        "temperature_c": null
+      },
+      "language": "ko",
+      "sample_id": "b2-eval_locked-ko-missing-1",
+      "sample_identity": "7c4ece179e5ac443e368236b032488c9bc384189ce1cfd762160f3137872c9d6",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-22",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-missing-v1"
+    },
+    {
+      "case_type": "missing",
+      "document": "[L1] 메모: 보관.\n[L2] 기록 EXP-2502 | 온도 = 46.5 C.",
+      "document_hash": "0a299a6b715a559982f782c1acd0d2011207bfeb3faacacd8e2234199c28ef23",
+      "events": [
+        {
+          "field": "note",
+          "line_id": "L1",
+          "text": "메모: 보관."
+        },
+        {
+          "experiment_id": "EXP-2502",
+          "field": "temperature_c",
+          "line_id": "L2",
+          "value": 46.5
+        }
+      ],
+      "experiment_id": "EXP-2502",
+      "gold": {
+        "experiment_id": "EXP-2502",
+        "status": null,
+        "support": {
+          "status": [],
+          "temperature_c": [
+            "L2"
+          ]
+        },
+        "temperature_c": 46.5
+      },
+      "language": "ko",
+      "sample_id": "b2-eval_locked-ko-missing-2",
+      "sample_identity": "afd505da1900a0fb009a9560b2e13422869741b90fac6668c40c18bc6a256076",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-23",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-missing-v1"
+    },
+    {
+      "case_type": "numeric",
+      "document": "[L1] 메모: 보관.\n[L2] 기록 EXP-2515 | 온도 = -6.375 C.\n[L3] 기록 EXP-2515 | 상태 = 대기.",
+      "document_hash": "913ba95603e032a5afd18581defeb7b337e6da5b097ea09eb891aef00c6b576e",
+      "events": [
+        {
+          "field": "note",
+          "line_id": "L1",
+          "text": "메모: 보관."
+        },
+        {
+          "experiment_id": "EXP-2515",
+          "field": "temperature_c",
+          "line_id": "L2",
+          "value": -6.375
+        },
+        {
+          "experiment_id": "EXP-2515",
+          "field": "status",
+          "line_id": "L3",
+          "value": "pending"
+        }
+      ],
+      "experiment_id": "EXP-2515",
+      "gold": {
+        "experiment_id": "EXP-2515",
+        "status": "pending",
+        "support": {
+          "status": [
+            "L3"
+          ],
+          "temperature_c": [
+            "L2"
+          ]
+        },
+        "temperature_c": -6.375
+      },
+      "language": "ko",
+      "sample_id": "b2-eval_locked-ko-numeric-1",
+      "sample_identity": "25b9dea814da41f065820c38487e85b914d0f330c698fc650938259f56f9928b",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-24",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-numeric-v1"
+    },
+    {
+      "case_type": "numeric",
+      "document": "[L1] 메모: 보관.\n[L2] 기록 EXP-2528 | 온도 = 1.5625 C.\n[L3] 기록 EXP-2528 | 상태 = 반복 필요.",
+      "document_hash": "0d6be447e9af0fa9033bb13b9a2a29270b44377c38c9e136f3fbdc8612f31fa2",
+      "events": [
+        {
+          "field": "note",
+          "line_id": "L1",
+          "text": "메모: 보관."
+        },
+        {
+          "experiment_id": "EXP-2528",
+          "field": "temperature_c",
+          "line_id": "L2",
+          "value": 1.5625
+        },
+        {
+          "experiment_id": "EXP-2528",
+          "field": "status",
+          "line_id": "L3",
+          "value": "repeat"
+        }
+      ],
+      "experiment_id": "EXP-2528",
+      "gold": {
+        "experiment_id": "EXP-2528",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L3"
+          ],
+          "temperature_c": [
+            "L2"
+          ]
+        },
+        "temperature_c": 1.5625
+      },
+      "language": "ko",
+      "sample_id": "b2-eval_locked-ko-numeric-2",
+      "sample_identity": "a349126c590c7082a36aa008d0f617db163bbf03a9de9a2968955c2c4ec7aecb",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-25",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-numeric-v1"
+    },
+    {
+      "case_type": "reordered",
+      "document": "[L1] 기록 EXP-2541 | 온도 = 49.875 C.\n[L2] 기록 EXP-2541 | 상태 = 반복 필요.\n[L3] 메모: 보관.\n[L4] 기록 EXP-25412 | 온도 = 60.875 C.",
+      "document_hash": "65667874a256283f2a4728dc76439435788e97e95e2d57ad6e5dc6d52f566d33",
+      "events": [
+        {
+          "experiment_id": "EXP-2541",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 49.875
+        },
+        {
+          "experiment_id": "EXP-2541",
+          "field": "status",
+          "line_id": "L2",
+          "value": "repeat"
+        },
+        {
+          "field": "note",
+          "line_id": "L3",
+          "text": "메모: 보관."
+        },
+        {
+          "experiment_id": "EXP-25412",
+          "field": "temperature_c",
+          "line_id": "L4",
+          "value": 60.875
+        }
+      ],
+      "experiment_id": "EXP-2541",
+      "gold": {
+        "experiment_id": "EXP-2541",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L2"
+          ],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": 49.875
+      },
+      "language": "ko",
+      "sample_id": "b2-eval_locked-ko-reordered-1",
+      "sample_identity": "cf2a31deb263ee1420cdfdbff76b8a82f1e670111f76941dc4f5eec0795b23fa",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-26",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-reordered-v1"
+    },
+    {
+      "case_type": "reordered",
+      "document": "[L1] 기록 EXP-2554 | 상태 = 완료.\n[L2] 기록 EXP-2554 | 온도 = 51.0 C.\n[L3] 메모: 보관.\n[L4] 기록 EXP-25542 | 온도 = 62.0 C.",
+      "document_hash": "b85104517d83dfb063c2e4e7da2c11703c44c6030e5373252a9f875e93951fa8",
+      "events": [
+        {
+          "experiment_id": "EXP-2554",
+          "field": "status",
+          "line_id": "L1",
+          "value": "complete"
+        },
+        {
+          "experiment_id": "EXP-2554",
+          "field": "temperature_c",
+          "line_id": "L2",
+          "value": 51.0
+        },
+        {
+          "field": "note",
+          "line_id": "L3",
+          "text": "메모: 보관."
+        },
+        {
+          "experiment_id": "EXP-25542",
+          "field": "temperature_c",
+          "line_id": "L4",
+          "value": 62.0
+        }
+      ],
+      "experiment_id": "EXP-2554",
+      "gold": {
+        "experiment_id": "EXP-2554",
+        "status": "complete",
+        "support": {
+          "status": [
+            "L1"
+          ],
+          "temperature_c": [
+            "L2"
+          ]
+        },
+        "temperature_c": 51.0
+      },
+      "language": "ko",
+      "sample_id": "b2-eval_locked-ko-reordered-2",
+      "sample_identity": "071f3ee9063d716c74bcf2fc9afd2f16ceb096096f078feabc5b3a8b92f86f78",
+      "source_family": "authored_b2_new_facts_wording_seeded_layout",
+      "source_id": "b2-author-27",
+      "split": "EVAL_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "b2-pipe-record-reordered-v1"
+    }
+  ],
+  "rows_identity": "da00e0949599a5c0bc9c661b8950da07ebe55729da6e9fd7bf3f0e574f28f7fc",
+  "schema_version": 1,
+  "scope": "authored_synthetic_locked_pilot_not_benchmark_test",
+  "scorer": "tech_record_strict_json_v1",
+  "task_id": "tech_record_extract",
+  "task_version": "0.1"
+}

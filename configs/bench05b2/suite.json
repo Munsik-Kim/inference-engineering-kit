@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "suite_id": "BENCH05-B2-CONTRACT",
+  "task_id": "tech_record_extract",
+  "task_version": "0.1",
+  "seed": 909244,
+  "generation": {
+    "profile": "natural_generation_v1",
+    "max_tokens": 192,
+    "concurrency": 1,
+    "smoke_samples": 4,
+    "warmup_posts": 0,
+    "eval_samples": 24
+  },
+  "serving": {
+    "context": 2048,
+    "max_num_seqs": 1,
+    "max_num_batched_tokens": 2048,
+    "kv_tokens": 4096,
+    "shutdown_timeout": 10,
+    "cleanup_grace": 25,
+    "chunked_prefill": true,
+    "eager": true,
+    "prefix_caching": false,
+    "async_scheduling": false
+  },
+  "observer": {
+    "off_samples": 0,
+    "off_repeats": 0
+  },
+  "budget": {
+    "task_gpu_wall_seconds": 600,
+    "cleanup_reserve_seconds": 60,
+    "max_gpu_processes": 6,
+    "automatic_retries": 0,
+    "probe_gpu_buffer_bytes": 268435456,
+    "raw_bytes_per_job": 536870912,
+    "minimum_disk_free_bytes": 4294967296,
+    "minimum_cpu_available_bytes": 10737418240
+  },
+  "treatment_axes": [
+    "weight_artifact",
+    "evidence_instruction",
+    "status_instruction"
+  ],
+  "serving_job_seconds": 240,
+  "probe_policies": [
+    "P00",
+    "P11"
+  ]
+}

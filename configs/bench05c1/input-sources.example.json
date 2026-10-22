@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "kind": "token_input_sources",
+  "sources": [
+    {"source_id": "tech_p00", "adapter": "bench05b2", "path": "./evidence/b2/run-attempt1", "policies": ["P00"]},
+    {"source_id": "arc", "adapter": "bench05b3", "path": "./evidence/b3/run-attempt1", "include_native": true},
+    {"source_id": "retrieval", "adapter": "bench05b4", "path": "./evidence/b4/run-attempt1"}
+  ]
+}

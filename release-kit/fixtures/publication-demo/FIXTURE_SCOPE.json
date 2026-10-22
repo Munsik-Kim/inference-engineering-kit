@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "kind": "SYNTHETIC_CONTRACT_TEST",
+  "scope": "Independent publication/index/report CPU state-machine fixture, not actual model evidence",
+  "source_digest": "57dbad3d793cf3519f37105a448d81b88bc179933d7faa12f458cd4114dd8352",
+  "tokenizer_execution": "NOT_RUN_SYNTHETIC_TOKEN_IDS",
+  "model_forward": "NOT_RUN_SYNTHETIC_RESPONSES",
+  "subjects": 3,
+  "HTTP_records": 12,
+  "diagnostic_scalar_records": 74,
+  "paired_targets": 37,
+  "full_vectors": 24,
+  "paired_full_positions": 12,
+  "construction": "Existing bench05e4b test fixture generated using actual final candidate compiler and validators. No validators were stubbed. The prepared source physical locators are relative metadata here.",
+  "relocation": [
+    {
+      "relative_path": "prepared-inputs/prepared-tech_record_extract.json",
+      "sha256": "b7dc470313f389798a06a3d98b0301f10b359c3027b2d1e89384dbbd9fe1aa90",
+      "role": "Synthetic prepared source metadata; raw values retained"
+    },
+    {
+      "relative_path": "prepared-inputs/prepared-arc_challenge.json",
+      "sha256": "cba4fc1edb497918500bf73f8ee581977efd0b60ec56e9b5bd32b3fea5a7e112",
+      "role": "Synthetic prepared source metadata; raw values retained"
+    },
+    {
+      "relative_path": "prepared-inputs/prepared-context_evidence_retrieval.json",
+      "sha256": "a1fb85bba6360282924416342c49c2b13b340b7432d28aba74c7bc3fe6b69ac7",
+      "role": "Synthetic prepared source metadata; raw values retained"
+    }
+  ]
+}

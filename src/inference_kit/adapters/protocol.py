@@ -12,18 +12,18 @@ class Adapter:
             raise ValueError("Engine must be vllm or sglang")
 
     def body(self, row, model, output_tokens, profile):
-        if profile not in ("text", "token_ids") or output_tokens < 1:
+        if profile not in ("text", "token_ids", "natural_generation_v1") or output_tokens < 1:
             raise ValueError("Invalid profile/output length")
         body = {"model": model, "prompt": row["prompt_text"] if profile == "text" else row["token_ids"],
                 "max_tokens": output_tokens, "temperature": 0, "top_p": 1,
                 "n": 1, "echo": False, "stream": True,
                 "stream_options": {"include_usage": True},
-                "ignore_eos": True, "repetition_penalty": 1.0,
+                "ignore_eos": profile != "natural_generation_v1", "repetition_penalty": 1.0,
                 "presence_penalty": 0.0, "frequency_penalty": 0.0}
         # vLLM's text tokenizer extension is not a SGLang completion field.
         if self.engine == "vllm":
             body["add_special_tokens"] = False
-        if profile == "token_ids":
+        if profile in ("token_ids", "natural_generation_v1"):
             # Verified in vLLM v0.29.0 and SGLang v0.5.21 source.
             # Runtime must still return both prompt and generated IDs.
             body["return_token_ids"] = True

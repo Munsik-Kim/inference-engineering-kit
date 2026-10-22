@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "kind": "actual_structure_observation_numeric_slice_v1",
+  "scope": "SLICE_NOT_FULL_D1_RUN",
+  "parent_stage": "BENCH05-D1",
+  "parent_manifest_sha256": "2dbe24da0cd4cff2b7061e6332cac33ff6b8fdf80ff3fe2df7b18e200fe95b71",
+  "parent_plan_sha256": "27fa7a84814e175d13e23fdc028917cf12e1936982d7f0db920a122949870371",
+  "parent_plan_identity": "218c23c89ad5166bb9d09dc4e12f71c28e93091d3e12679414cda2097ef4eedf",
+  "original_acquisition_source_digest": "7b17bff9e03622dedeb330ccbabbaaf4322564a8a78828807ddcd43cb9702a84",
+  "parent_package": "0.1.1.dev10",
+  "selection_policy": "Frozen input order,first document per task,first frozen layer/head,last_prompt query; no metric-based selection",
+  "selected_coordinates": [
+    {
+      "task_id": "tech_record_extract",
+      "sample_id": "b2-eval_locked-en-basic-1",
+      "layer": 0,
+      "head": 0,
+      "query_position": 240,
+      "query_roles": [
+        "last_prompt"
+      ]
+    },
+    {
+      "task_id": "arc_challenge",
+      "sample_id": "Mercury_7191433",
+      "layer": 0,
+      "head": 0,
+      "query_position": 57,
+      "query_roles": [
+        "last_prompt"
+      ]
+    },
+    {
+      "task_id": "context_evidence_retrieval",
+      "sample_id": "b4-eval_locked-ko-not_found-2",
+      "layer": 0,
+      "head": 0,
+      "query_position": 487,
+      "query_roles": [
+        "last_prompt"
+      ]
+    }
+  ],
+  "included_original_members": [
+    "attempts/main-bf16-attempt1/observations.jsonl",
+    "attempts/main-bf16-attempt1/execution.json",
+    "attempts/main-bf16-attempt1/blobs/6729b3dbcc0dcb74df0cb4c9055b.f32",
+    "attempts/main-bf16-attempt1/blobs/3fa62459da9d03ce36801f631e8b.f32",
+    "attempts/main-bf16-attempt1/blobs/c340cf4d0346eb436da9b78567e9.f32",
+    "attempts/main-bf16-attempt1/blobs/473c9962914302cfbe093abac453.f32",
+    "attempts/main-bf16-attempt1/blobs/0170eb11e6df701387511c9ee395.f32",
+    "attempts/main-bf16-attempt1/blobs/cc544d9a331e7d0a9c065bed1326.f32",
+    "attempts/main-bf16-attempt1/blobs/2f3744a012ff0046ece5ee20504a.f32",
+    "attempts/main-bf16-attempt1/blobs/4b5c68967f3fc4f8a7c1a55ece08.f32",
+    "attempts/main-bf16-attempt1/blobs/5a402ee576a4f86107c2e1f10485.f32",
+    "attempts/main-bf16-attempt1/blobs/be0e40e50b7d307ac66da0aacf6e.f32",
+    "attempts/main-bf16-attempt1/blobs/3308b2e7a5fcb1ee1d5dc29f6545.f32",
+    "attempts/main-bf16-attempt1/blobs/88ba26ce759452587af750486c77.f32",
+    "attempts/main-rtn-attempt1/observations.jsonl",
+    "attempts/main-rtn-attempt1/execution.json",
+    "attempts/main-rtn-attempt1/blobs/dc9c86681e35d41500106ae10bf2.f32",
+    "attempts/main-rtn-attempt1/blobs/b00fbecb052247ca8ce6494dbdf8.f32",
+    "attempts/main-rtn-attempt1/blobs/2484381c4a8fd3b80a0d47903eb7.f32",
+    "attempts/main-rtn-attempt1/blobs/b1ecfa36b32a4d207ba99e3b5017.f32",
+    "attempts/main-rtn-attempt1/blobs/412ae8f418c0ef5dc521614d5a3f.f32",
+    "attempts/main-rtn-attempt1/blobs/2c8f9b71b2c0bf14be750a547eac.f32",
+    "attempts/main-rtn-attempt1/blobs/16604b84fd99557ca94d89362b4c.f32",
+    "attempts/main-rtn-attempt1/blobs/a40f69369f8d5911e24787140fc7.f32",
+    "attempts/main-rtn-attempt1/blobs/1fa64599da3b166e1b937c150899.f32",
+    "attempts/main-rtn-attempt1/blobs/2ebeadf239b82ba239c5904cfa64.f32",
+    "attempts/main-rtn-attempt1/blobs/22d8ea81f6655d80e276b614aba3.f32",
+    "attempts/main-rtn-attempt1/blobs/4db843298ae95253c170fbe842ac.f32"
+  ],
+  "selected_observation_ids": [
+    "0170eb11e6df701387511c9ee395",
+    "16604b84fd99557ca94d89362b4c",
+    "1fa64599da3b166e1b937c150899",
+    "22d8ea81f6655d80e276b614aba3",
+    "2484381c4a8fd3b80a0d47903eb7",
+    "2c8f9b71b2c0bf14be750a547eac",
+    "2ebeadf239b82ba239c5904cfa64",
+    "2f3744a012ff0046ece5ee20504a",
+    "3308b2e7a5fcb1ee1d5dc29f6545",
+    "3fa62459da9d03ce36801f631e8b",
+    "412ae8f418c0ef5dc521614d5a3f",
+    "473c9962914302cfbe093abac453",
+    "4b5c68967f3fc4f8a7c1a55ece08",
+    "4db843298ae95253c170fbe842ac",
+    "5a402ee576a4f86107c2e1f10485",
+    "6729b3dbcc0dcb74df0cb4c9055b",
+    "88ba26ce759452587af750486c77",
+    "a40f69369f8d5911e24787140fc7",
+    "b00fbecb052247ca8ce6494dbdf8",
+    "b1ecfa36b32a4d207ba99e3b5017",
+    "be0e40e50b7d307ac66da0aacf6e",
+    "c340cf4d0346eb436da9b78567e9",
+    "cc544d9a331e7d0a9c065bed1326",
+    "dc9c86681e35d41500106ae10bf2"
+  ],
+  "parent_raw_member_count": 1459,
+  "included_numeric_observations": 24,
+  "excluded_numeric_observations": "All remaining raw numeric files; original full observation metadata retained for parent membership verification",
+  "copied_original_observation_documents": true,
+  "control_raw_included": false,
+  "observer_integrity": "Historical D1 receipt only; not recertified by SLICE",
+  "source_weights": "BF16 instrumented vs RTN DECODED_WEIGHT_DIAGNOSTIC/effective BF16; not INT4 serving",
+  "new_acquisitions": 0,
+  "new_forward": 0,
+  "metric_functions": [
+    "inference_kit.metrics.attention.row_metrics",
+    "inference_kit.metrics.attention.vector_metrics"
+  ],
+  "full_structure_replay_supported_on_slice": false,
+  "reference_expected_metric_tolerance": {
+    "absolute": 1e-10,
+    "relative": 1e-09
+  },
+  "historical_analysis_parents": {
+    "structure-comparisons.jsonl": {
+      "sha256": "dc30f75d14f185bc16e84250a215e5afb6e7d61cdc8baaee8b082b7420e5ad51",
+      "bytes": 401139
+    },
+    "output-projection-comparisons.jsonl": {
+      "sha256": "5afa366da82e02a42079e77483bbb42a73455f07e8c73b79b77938746bb0d5ae",
+      "bytes": 67313
+    },
+    "reconstructed-native-AV.jsonl": {
+      "sha256": "30b07ed88ff0a1bc8c105f125f4fa64a0a667c9f710bbdb8d00f3ea54921e1fd",
+      "bytes": 265179
+    }
+  }
+}

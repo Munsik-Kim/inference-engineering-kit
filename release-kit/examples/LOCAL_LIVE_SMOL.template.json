@@ -1,0 +1,20 @@
+{
+  "artifact_receipt": "<LOCAL_ARTIFACT_RECEIPT> ",
+  "campaign_reservation_root": "<LOCAL_CAMPAIGN_RESERVATION_ROOT> ",
+  "campaign_root": "<LOCAL_CAMPAIGN_ROOT> ",
+  "gpu": "<APPROVED_GPU_INDEX>",
+  "gpu_uuid": "<LOCAL_GPU_UUID> ",
+  "historical_index": "<LOCAL_HISTORICAL_INDEX> ",
+  "kind": "prepared_suite_live_binding_v1",
+  "package_site": "<LOCAL_PACKAGE_SITE> ",
+  "port": "<APPROVED_LOOPBACK_PORT>",
+  "prepared_manifest": "<LOCAL_PREPARED_MANIFEST> ",
+  "prepared_manifest_sha256": "<LOCAL_PREPARED_MANIFEST_SHA256> ",
+  "prior_ledger": "<LOCAL_PRIOR_LEDGER> ",
+  "profile": "prepared_smol_live_v1",
+  "runtime_metadata": "<LOCAL_RUNTIME_METADATA> ",
+  "runtime_python": "<LOCAL_RUNTIME_PYTHON> ",
+  "schema_version": 1,
+  "server_python": "<LOCAL_SERVER_PYTHON> ",
+  "task_clock": "<LOCAL_TASK_CLOCK> "
+}

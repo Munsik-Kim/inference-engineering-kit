@@ -1,0 +1,18 @@
+{
+  "roots": {
+    "PROJECT_ROOT": "../..",
+    "ARTIFACT_ROOT": "../../../prepared-research-assets",
+    "DATA_ROOT": "../../runs/prepared-token-inputs",
+    "RUNS_ROOT": "../../runs"
+  },
+  "artifact_receipt": "${ARTIFACT_ROOT}/artifact-receipt.json",
+  "runtime_metadata": "${DATA_ROOT}/diagnostic-runtime.json",
+  "runtime_python": "${PROJECT_ROOT}/prepared-diagnostic-runtime/bin/python",
+  "package_site": "${RUNS_ROOT}/c2-worker-site",
+  "prior_ledger": "${RUNS_ROOT}/previous/budget-continuation.json",
+  "campaign_root": "${PROJECT_ROOT}",
+  "task_clock": "${RUNS_ROOT}/c2-session/START.json",
+  "task_origin_used_seconds": "REPLACE_WITH_VERIFIED_NUMERIC_CAMPAIGN_USED_SECONDS",
+  "gpu": 0,
+  "gpu_uuid": "REPLACE_WITH_OBSERVED_GPU_UUID"
+}

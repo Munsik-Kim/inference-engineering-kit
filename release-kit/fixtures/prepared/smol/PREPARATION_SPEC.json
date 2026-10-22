@@ -1,0 +1,17 @@
+{
+  "kind": "input_preparation_spec_v1",
+  "limits": {
+    "context_tokens": 2048,
+    "max_joint_tokens": 640,
+    "max_prompt_tokens": 512,
+    "max_reference_tokens": 128
+  },
+  "policy_id": "existing_tasks_local_tokenizer_v1",
+  "schema_version": 1,
+  "seed": 909284,
+  "selection": {
+    "max_full": 4,
+    "max_targets": 16,
+    "policy_id": "field_round_robin_uniform_v1"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "kind": "STORED_RAW_EXAMPLE_NO_NEW_PREPARATION",
+  "source": "fixtures/prepared/smol/RAW_INPUT.json",
+  "sha256": "7219aec3830d456ef4dce0d9423e3546a7af36ea260ee21074ae5c0ac9fb66b2",
+  "preserved_identity": "Same historical MAIN9 raw/gold bytes; supplied as user data example. Fresh localtokenizer preparation is NOT_RUN in candidate stage.",
+  "policy": "Existing three task contracts/external gold; no new task/scorer or synthetic official ARC"
+}

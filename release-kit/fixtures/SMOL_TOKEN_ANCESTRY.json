@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "kind": "PRESERVED_COMMON_TOKEN_VIEW_SLICE",
+  "parent_stage": "BENCH05-E4B-R1",
+  "view_manifest_sha256": "683fab030ee2d4cc9ead109748a595608412bd5dfcaf48eb87c1a33564873c3c",
+  "view_identity": "75989d0160f6e6b87d3bd4d3589f8cf8f1eb9bb08d87bb883a6cf8a19433a4cb",
+  "scope": {
+    "physical_scalar_records": 246,
+    "paired_scalar_coordinates": 123,
+    "full_vectors": 6,
+    "full_pairs": 3,
+    "tasks": 3,
+    "samples": 9
+  },
+  "original_acquisition_package": "0.1.1.dev16",
+  "field_membership_analyzer_package": "0.1.1.dev17",
+  "new_acquisitions": 0,
+  "separate_from_structure_acquisition": true,
+  "original_bytes_retained": true,
+  "excluded": "Other33full pairs,parent full suite raw,history DB,live resume state",
+  "relocation": "Physical location only; TokenView members and canonical IDs byte exact"
+}

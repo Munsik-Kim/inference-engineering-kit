@@ -1,0 +1,22 @@
+{
+  "roots": {
+    "PROJECT_ROOT": "../..",
+    "DATA_ROOT": "../../runs/b2-prepared",
+    "ARTIFACT_ROOT": "../../../prepared-artifacts"
+  },
+  "authored_data": "${DATA_ROOT}/data.json",
+  "prepared_samples": "${DATA_ROOT}/prepared.json",
+  "runtime_metadata": "${DATA_ROOT}/runtime.json",
+  "artifact_receipt": "${ARTIFACT_ROOT}/artifact-receipt.json",
+  "runtime_python": "${PROJECT_ROOT}/diagnostic-env/bin/python",
+  "server_python": "${PROJECT_ROOT}/serving-env/bin/python",
+  "package_site": "${PROJECT_ROOT}/runs/b2-worker-site",
+  "prior_ledger": "${ARTIFACT_ROOT}/latest-budget.json",
+  "campaign_root": "${ARTIFACT_ROOT}",
+  "task_clock": "${DATA_ROOT}/task-clock.json",
+  "task_origin_used_seconds": 4321.496343302004,
+  "gpu": 0,
+  "gpu_uuid": "REPLACE_FROM_DEVICE_QUERY",
+  "port": 18188,
+  "serving_runtime_identity": "REPLACE_WITH_DIGEST_OF_EXISTING_SERVING_RUNTIME_SNAPSHOT"
+}

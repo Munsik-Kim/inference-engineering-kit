@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "selection_policy": "preserved_field_round_robin_uniform_v1",
+  "selection_version": "1",
+  "reference_role_filter": [
+    "author_gold_json",
+    "dataset_gold_choice",
+    "author_answer_evidence"
+  ],
+  "max_sequence_tokens": 640,
+  "max_target_positions_per_sample": 32,
+  "max_full_vocab_positions_per_sample": 8,
+  "observe_attention": false,
+  "normalization": {
+    "dtype": "float32",
+    "probability_stage": "raw_pre_sampling",
+    "log_base": "e"
+  },
+  "consistency_policy": {
+    "id": "same_pass_saved_f32_v1",
+    "absolute_tolerance_nat": 2e-05,
+    "scope": "same-pass saved float32 full logits CPU log_softmax[target] vs saved float32 scalar"
+  },
+  "budget": {
+    "task_gpu_wall_seconds": 600,
+    "cleanup_reserve_seconds": 120,
+    "max_gpu_processes": 3,
+    "automatic_retries": 0,
+    "probe_gpu_buffer_bytes": 268435456,
+    "raw_bytes_total": 268435456,
+    "minimum_cpu_available_bytes": 10737418240,
+    "minimum_disk_free_bytes": 4294967296
+  },
+  "seed": 909274
+}

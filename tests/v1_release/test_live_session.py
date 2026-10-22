@@ -55,6 +55,9 @@ class SessionHelperTests(unittest.TestCase):
                 self.assertEqual(sum(len(t['sample_ids']) for t in value['tasks']), result['counts']['documents'])
                 self.assertGreater(result['counts']['inference_POSTs'], 0)
                 self.assertEqual(value['budget']['max_output_tokens'], result['counts']['output_token_upper'])
+                expected_policy = read(repo/'release-kit/examples/REPORT_PACKAGING.json')
+                self.assertEqual(value['outputs']['report_packaging'], expected_policy)
+                self.assertEqual(result['report_packaging'], expected_policy)
 
     def test_changed_identity_is_rejected(self):
         self.start(); value = read(self.clock); value['start_monotonic'] += 1

@@ -104,11 +104,16 @@ def validate_spec(spec):
     b=spec['budget'];require(120<=b['cleanup_reserve_seconds']<b['gpu_wall_seconds']<=600 and
         0<b['max_probe_buffer_bytes']<=256*1024**2 and 0<b['max_numeric_bytes']<=256*1024**2 and b['max_gpu_jobs']>0, 'Unbounded probe/cleanup budget')
     require(spec['permissions']=={'gpu_execution':'NONE','network':'NONE','tokenizer':'NONE'}, 'E2 execution permission must be NONE')
-    fields(spec['outputs'],('index','report','historical_source_ids'))
+    fields(spec['outputs'],('index','report','historical_source_ids'),('report_packaging',))
     require(type(spec['outputs']['index']) is bool and type(spec['outputs']['report']) is bool and
             (not spec['outputs']['report'] or spec['outputs']['index']), 'Report requires index output')
     require(isinstance(spec['outputs']['historical_source_ids'],list) and all(isinstance(v,str) for v in spec['outputs']['historical_source_ids']) and
             len(set(spec['outputs']['historical_source_ids']))==len(spec['outputs']['historical_source_ids']), 'Invalid historical source references')
+    if 'report_packaging' in spec['outputs']:
+        from ..analysis.report_packaging import validate_report_packaging
+        require(spec['outputs']['report'], 'Report packaging requires report output')
+        require(isinstance(spec['outputs']['report_packaging'],dict), 'Explicit report packaging must be an object')
+        validate_report_packaging(spec['outputs']['report_packaging'])
     return spec
 
 
@@ -226,6 +231,10 @@ def _node(name,kind,dependencies,inputs,outputs,samples,*,arm=None,task=None,req
 def compile_suite(spec,sources,local):
     """Compile data only. No worker, runtime, network, GPU or tokenizer call."""
     validate_spec(spec);_local(local)
+    spec=copy.deepcopy(spec)
+    if 'report_packaging' in spec['outputs']:
+        from ..analysis.report_packaging import validate_report_packaging
+        spec['outputs']['report_packaging']=validate_report_packaging(spec['outputs']['report_packaging'])
     metadata=sources['model_metadata'];models,bindings=_artifact_bindings(spec['models'],metadata,local)
     by_source={s['source_id']:s for s in sources['sources']};selected=[];nodes=[];task_context=[];warnings=[]
     for i,task in enumerate(spec['tasks']):
@@ -395,7 +404,10 @@ def compile_suite(spec,sources,local):
         iref=_ref('index.results','e1_index_revision_v1',samples=all_ids,identity=digest([ref['identity'] for _,ref in terminal]))
         nodes.append(_node('index.add','index_add',[n for n,_ in terminal],[ref for _,ref in terminal],[iref],all_ids,details={'new_acquisition_count_in_E2':0,'historical_sources':historical,'cache_reuse':'RELATED_ONLY_NO_SKIPPING','output_path':'logical:index/new.sqlite'}))
         if spec['outputs']['report']:
-            nodes.append(_node('index.report','report',['index.add'],[iref],[_ref('index.report','offline_html_v1',samples=all_ids)],all_ids,details={'output_path':'logical:report/index.html','historical_outcome_not_same_execution':True}))
+            report_details={'output_path':'logical:report/index.html','historical_outcome_not_same_execution':True}
+            if 'report_packaging' in spec['outputs']:
+                report_details['report_packaging']=spec['outputs']['report_packaging']
+            nodes.append(_node('index.report','report',['index.add'],[iref],[_ref('index.report','offline_html_v1',samples=all_ids)],all_ids,details=report_details))
     totals['output_token_upper']=totals['natural_generation_token_upper']+totals['audit_token_upper']
     limits={'inference_POSTs':'max_inference_posts','output_token_upper':'max_output_tokens','numeric_bytes':'max_numeric_bytes','probe_buffer_upper_bytes':'max_probe_buffer_bytes','GPU_jobs':'max_gpu_jobs'}
     for count,limit in limits.items():require(totals[count]<=spec['budget'][limit], 'BUDGET_EXCEEDED: '+count)

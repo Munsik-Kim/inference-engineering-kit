@@ -1,4 +1,11 @@
 {
+  "blocked_parent_distribution": {
+    "reason": "Valid cumulative evidence exceeded legacy single-report256MiB cap; old run and assets immutable.",
+    "source_digest": "ed062389bb93bf8367e6d1c8b8ae52bc488276aefcc81eb2d8d7c9174b4fb66c",
+    "status": "DRAFT_BLOCKED_RETAINED",
+    "version": "0.2.0",
+    "wheel_sha256": "ce781101a61b12f4b00b036f62579c5e80ddb28e29b27eb2f1a5b90de9e74be1"
+  },
   "documentation": "QUICKSTART_LIVE_KO.md",
   "final_results": "External RELEASE_DECISION.json and LIVE_ACCEPTANCE_RECEIPT.json; NOT_RUN/PARTIAL cannot publish stable",
   "helper": "tools/release_live_session.py",
@@ -14,7 +21,10 @@
     "complete disk/API/CLI state",
     "completed noop adds zero request/GPU query/load/worker/debit/DB duplicate",
     "all failed attempts/raw/cost preserved",
-    "gate cannot be deleted after failure"
+    "gate cannot be deleted after failure",
+    "L1 cumulative historical and current eligible evidence preserved in bounded collection",
+    "root/part/member closure verified on completion and noop",
+    "historical STALE excluded evidence retains original state and reason"
   ],
   "not_in_scope": [
     "new model",
@@ -23,7 +33,18 @@
     "new quantization",
     "customer quality certification"
   ],
-  "release_version": "0.2.0",
+  "release_version": "0.2.1",
+  "report_packaging": {
+    "collection_bytes": 671088640,
+    "evidence_payload_bytes": 536870912,
+    "max_members": 10000,
+    "max_volumes": 2,
+    "member_bytes": 67108864,
+    "mode": "bounded_collection_v1",
+    "presentation_bytes": 134217728,
+    "schema_version": 1,
+    "volume_payload_bytes": 268435456
+  },
   "required_profiles": [
     {
       "artifacts": [

@@ -32,6 +32,14 @@ def executor_fixture(root):
         units.append({'node_id':n,'operation_kind':kind,'dependencies':['validate'],'required':True,'counts':counts})
     units.append({'node_id':'report','operation_kind':'report','dependencies':names,'required':True,'counts':{'documents':9}})
     plan=read(root/'EXECUTION_PLAN.json');plan.pop('execution_plan_identity');plan['units']=units
+    # This synthetic dispatcher has no renderer, but its report operation must
+    # still bind immutable intent. Real runs always freeze this Suite input;
+    # absence must not become a permissive legacy fallback in product code.
+    write(root/'SUITE_PLAN.json',{'kind':'synthetic_executor_suite_intent_v1',
+        'evidence_kind':'SYNTHETIC_EXECUTOR_TEST','semantic':{'suite':{'outputs':{
+            'index':True,'report':True,'historical_source_ids':[],
+            'report_packaging':{'schema_version':1,'mode':'single_report_v1'}}}}})
+    plan['immutable_inputs']['SUITE_PLAN.json']={}
     for n in plan['immutable_inputs']:
         plan['immutable_inputs'][n]={'bytes':(root/n).stat().st_size,'sha256':sha(root/n)}
     plan['execution_plan_identity']=digest(plan);atomic(root/'EXECUTION_PLAN.json',plan)

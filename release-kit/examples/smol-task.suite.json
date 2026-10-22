@@ -50,7 +50,18 @@
   "outputs": {
     "historical_source_ids": [],
     "index": true,
-    "report": true
+    "report": true,
+    "report_packaging": {
+      "collection_bytes": 671088640,
+      "evidence_payload_bytes": 536870912,
+      "max_members": 10000,
+      "max_volumes": 2,
+      "member_bytes": 67108864,
+      "mode": "bounded_collection_v1",
+      "presentation_bytes": 134217728,
+      "schema_version": 1,
+      "volume_payload_bytes": 268435456
+    }
   },
   "permissions": {
     "gpu_execution": "NONE",

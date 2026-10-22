@@ -1,4 +1,4 @@
-# 0.2.0의 명시적 로컬 live 실행
+# 0.2.1의 명시적 로컬 live 실행
 
 기본 wheel의 CPU 성공과 live 권한·준비는 별개다. 이 절차는 이미 보유한 pinned Smol BF16/RTN 및 Qwen BF16/GPTQ만 사용한다. 다운로드·runtime 업그레이드·다른 프로세스 종료·source migration은 하지 않는다. MAIN9 원문/gold/scorer는 유지하며 모델별 tokenizer로 새 준비한다. release gate는 L1 Smol combined task+token, L2 Qwen serving/native ARC, L3 별도 Smol standalone structure다. 실패한 gate를 뒤늦게 제거하지 않는다.
 
@@ -8,18 +8,18 @@
 
 ```sh
 PYTHON='/absolute/path/to/prepared/python'
-KIT='/absolute/path/to/inference-kit-0.2.0'
+KIT='/absolute/path/to/inference-kit-0.2.1'
 WORK='/absolute/path/to/new-acceptance-work'
 FAMILY=smol  # L1; L2는 별도 새 WORK에서 qwen
 TOKENIZER_PRIOR='/absolute/path/to/verified-tokenizer-binding.json'
 LOCAL_LIVE_INPUT='/absolute/path/to/filled-live-binding.json'
-SESSION_STARTED_UTC='2026-10-22T00:20:13+00:00' # 예: 현재 승인 작업의 실제 시작 UTC로 바꾼다
+SESSION_STARTED_UTC='<actual-authorized-session-start-UTC>' # 실제 시작 ISO8601(+00:00)로 바꾼다; 미해결 placeholder는 거절
 unset PYTHONPATH PYTHONHOME
 "$PYTHON" -m venv "$WORK/controller"
 PY="$WORK/controller/bin/python"
 CONSOLE="$WORK/controller/bin/inference-kit"
-"$PY" -m pip install --no-index --no-deps "$KIT/dist/inference_engineering_kit-0.2.0-py3-none-any.whl"
-"$PY" -m pip install --no-index --no-deps --target "$WORK/worker-site" "$KIT/dist/inference_engineering_kit-0.2.0-py3-none-any.whl"
+"$PY" -m pip install --no-index --no-deps "$KIT/dist/inference_engineering_kit-0.2.1-py3-none-any.whl"
+"$PY" -m pip install --no-index --no-deps --target "$WORK/worker-site" "$KIT/dist/inference_engineering_kit-0.2.1-py3-none-any.whl"
 RAW="$KIT/fixtures/prepared/$FAMILY/RAW_INPUT.json"
 PREPARATION_SPEC="$KIT/fixtures/prepared/$FAMILY/PREPARATION_SPEC.json"
 TOKENIZER_LOCAL="$WORK/tokenizer-local.json"
@@ -55,9 +55,9 @@ prepare만 지정된 별도 local-only CPU tokenizer runtime에서 tokenizer SDK
 
 ## 실제 자료에서 Suite와 binding 생성
 
-`LOCAL_LIVE_INPUT`는 모델별 `examples/LOCAL_LIVE_SMOL.template.json` 또는 Qwen template을 사용자가 채운 새 파일이다. `prepared_manifest/prepared_manifest_sha256/task_clock` 세 항목은 아래 helper가 생성한다. 나머지 artifact/runtime Python, worker-site, parent ledger/campaign/reservation root, GPU index/UUID, 승인된127.0.0.1 port는 실제 값이어야 한다. `historical_index`가 불필요하면 그 선택 필드를 제거한다. CPU_LOCAL을 여기에 쓰지 않는다.
+`LOCAL_LIVE_INPUT`는 모델별 `examples/LOCAL_LIVE_SMOL.template.json` 또는 Qwen template을 사용자가 채운 새 파일이다. `prepared_manifest/prepared_manifest_sha256/task_clock` 세 항목은 아래 helper가 생성한다. 나머지 artifact/runtime Python, worker-site, parent ledger/campaign/reservation root, GPU index/UUID, 승인된127.0.0.1 port는 실제 값이어야 한다. 이번 L1 필수 수용시험에서는 검토한 누적 `historical_index`를 유지한다. current-only/빈 DB로 바꾸어 필수 누적 report gate를 대체하지 않는다. 새 일반 작업에서 역사 비교가 원래 필요 없을 때만 이 선택 필드를 제거한다. CPU_LOCAL을 여기에 쓰지 않는다.
 
-L1의 Suite template은 `examples/smol-live-combined.suite.template.json`, L2는 `examples/qwen-task.suite.json`이다. helper는 새 SOURCES 전체의 sample/source ID를 읽고 요청/출력 cap을 계산한 뒤 기존 compiler로 대조한다. 과거6/110/44나 MAIN9 관측 수를 통과 상수로 넣지 않는다. 준비된 자료가 부족하면 중단한다.
+L1의 Suite template은 `examples/smol-live-combined.suite.template.json`, L2는 `examples/qwen-task.suite.json`이다. helper는 새 SOURCES 전체의 sample/source ID를 읽고 요청/출력 cap을 계산한 뒤 기존 compiler로 대조한다. 과거6/110/44나 MAIN9 관측 수를 통과 상수로 넣지 않는다. 준비된 자료가 부족하면 중단한다. maintained Suite template의 `outputs.report_packaging`은 `examples/REPORT_PACKAGING.json`과 같은 명시적 bounded collection 정책이며 처음 계획할 때 동결한다. 실행 중 cap/mode를 바꾸지 않는다. 모든 evidence part와 root를 함께 전달하는 [포장 계약](REPORT_PACKAGING_KO.md)을 따른다.
 
 ```sh
 SUITE_TEMPLATE="$KIT/examples/smol-live-combined.suite.template.json"

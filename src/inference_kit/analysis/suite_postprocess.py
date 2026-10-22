@@ -30,6 +30,10 @@ def _plan(root):
             'CPU analysis semantic identity changed')
     require(semantic['operations'] == list(OPERATIONS), 'Only the fixed CPU operations are permitted')
     _revision(semantic['analysis_revision'])
+    if 'report_packaging' in semantic:
+        from .report_packaging import validate_report_packaging
+        require(semantic['report_packaging'] == validate_report_packaging(semantic['report_packaging']),
+                'CPU report packaging policy changed')
     require(semantic['analyzer_source_digest'] == source_identity(),
             'CPU analyzer source changed; resume requires the original installed source')
     raw = Path(record['locators']['raw']); parent, _, _, compiled, _ = verify_run(raw)
@@ -62,6 +66,10 @@ def _completion(root, plan, name, parents):
     if name == 'index_add':
         from .suite_results import validate_index_completion
         validate_index_completion(target, plan['locators']['raw'])
+    if name == 'report':
+        from .suite_results import report_packaging_for_run, validate_report_completion
+        policy = plan['semantic'].get('report_packaging', report_packaging_for_run(plan['locators']['raw']))
+        validate_report_completion(target, policy)
     return value
 
 
@@ -78,6 +86,8 @@ def _drive(root, stop_after=None):
         stages.update(historical_index=historical,
                       historical_index_sha256=plan['semantic']['historical_index_sha256'])
     stages['analysis_revision'] = plan['semantic']['analysis_revision']
+    if 'report_packaging' in plan['semantic']:
+        stages['report_packaging'] = plan['semantic']['report_packaging']
     pending = []
     for name in OPERATIONS:
         entry = state['nodes'][name]; marker = root/'completions'/(name+'.json')
@@ -145,7 +155,8 @@ def _result(root, state, **details):
         'inference_POSTs': 0, 'campaign_debit': 0, 'historical_live_controller': 'UNCHANGED', **details}
 
 
-def postprocess(run, output, *, historical_index=None, analysis_revision=None, stop_after=None):
+def postprocess(run, output, *, historical_index=None, analysis_revision=None, stop_after=None,
+                report_packaging=None):
     """Start a new CPU revision; never resume or modify the parent live run."""
     parent, _, _, compiled, _ = verify_run(run); source = source_identity(); parent_sha = sha(parent/'RUN_MANIFEST.json')
     output = Path(output).absolute()
@@ -159,6 +170,10 @@ def postprocess(run, output, *, historical_index=None, analysis_revision=None, s
         'parent_manifest_sha256': parent_sha, 'parent_plan_identity': compiled['plan_identity'],
         'parent_acquisition_source_digest': compiled['semantic']['compiler']['source_digest'],
         'historical_index_sha256': sha(history) if history is not None else None, 'operations': list(OPERATIONS)}
+    from .report_packaging import validate_report_packaging
+    from .suite_results import report_packaging_for_run
+    semantic['report_packaging'] = validate_report_packaging(
+        report_packaging if report_packaging is not None else report_packaging_for_run(parent))
     root = new_output(output)
     plan = {'kind': KIND, 'schema_version': 1, 'semantic': semantic, 'analysis_plan_identity': digest(semantic),
         'locators': {'raw': str(parent), 'historical_index': str(history) if history else None}, 'created_utc': _utc()}

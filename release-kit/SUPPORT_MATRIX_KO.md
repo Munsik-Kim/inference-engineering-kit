@@ -1,6 +1,6 @@
-# 0.2.0 지원 범위
+# 0.2.1 지원 범위
 
-정본은 [SUPPORT_MATRIX.json](SUPPORT_MATRIX.json)이다. 구현·historical live·이전 rc1 CPU·현재 release CPU·현재 release live·외부 조건·OS/Python 축을 분리한다. 이 동결 문서는 결과를 미리 PASS로 선언하지 않는다. 실제0.2.0 commit/wheel의 통과 여부는 release의 RELEASE_DECISION/CPU_TESTS/REMOTE_CI/LIVE_ACCEPTANCE 영수증을 따른다.
+정본은 [SUPPORT_MATRIX.json](SUPPORT_MATRIX.json)이다. 구현·historical live·이전 rc1 CPU·현재 release CPU·현재 release live·외부 조건·OS/Python 축을 분리한다. 이 동결 문서는 결과를 미리 PASS로 선언하지 않는다. 실제0.2.1 commit/wheel의 통과 여부는 release의 RELEASE_DECISION/CPU_TESTS/REMOTE_CI/LIVE_ACCEPTANCE 영수증을 따른다.
 
 | 기능/모델 | 구현 범위 | 현재 live 수용 gate | 한계 |
 |---|---|---|---|
@@ -14,3 +14,5 @@
 CPU 선언은 Linux/WSL의 준비된 Python3.10/3.11/3.12 검증 범위다. 각 버전의 실제 실행/환경 차단은 현재 영수증에 따른다. py3-none-any wheel을 모든 OS live 검증으로 해석하지 않는다. Live는 지정된 Linux/WSL host의 pinned runtime·artifact·tokenizer·현재 권한/자원·ledger 조건에 한정한다.
 
 동일 bare sample ID의 namespace 충돌은 명시 거절한다. Qwen NFC 두 문서 source-span unavailable, same-source resume만 허용, UNKNOWN submission 자동 retry 금지, 과거 Smol PARTIAL/final noop NOT_RUN/E3 STALE 및 HOLD_CLIPPING_VARIANT/INCONCLUSIVE는 유지한다. 세 task9문항 engineering 수용 결과가 일반 품질·고객 검증·배포 동등성을 보증하지 않는다.
+
+report의 기본 single 모드는 evidence256MiB이고, 명시적인 bounded collection 모드는 volume256MiB×최대2/payload512MiB/presentation128MiB/전체640MiB다. 수집·metric 지원을 늘리는 기능이 아니라 손실 없는 유한 포장이다. [공개 계약](REPORT_PACKAGING_KO.md)의 전체 part 이동·closure 검증을 따른다.

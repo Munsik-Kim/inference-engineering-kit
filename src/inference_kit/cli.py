@@ -44,10 +44,14 @@ def main(argv=None):
     for action in ('status','replay'):
         sub=suite_actions.add_parser(action)
         for name in ('run','output'):sub.add_argument('--'+name,required=True,type=Path)
+        if action=='replay':
+            sub.add_argument('--historical-index',type=Path)
+            sub.add_argument('--report-packaging',type=Path,help='Explicit JSON report packaging policy; no execution authorization')
     cpu=suite_actions.add_parser('postprocess',help='New CPU analysis revision over immutable acquired raw; no live migration')
     for name in ('run','output'):cpu.add_argument('--'+name,required=True,type=Path)
     cpu.add_argument('--historical-index',type=Path);cpu.add_argument('--analysis-revision')
     cpu.add_argument('--stop-after',choices=('score_task','analyze_tokens','index_add','report'))
+    cpu.add_argument('--report-packaging',type=Path,help='Freeze an explicit JSON report packaging policy in this new CPU revision')
     cr=suite_actions.add_parser('postprocess-resume',help='Resume only this CPU analysis workspace')
     cr.add_argument('--analysis',required=True,type=Path)
     cr.add_argument('--stop-after',choices=('score_task','analyze_tokens','index_add','report'))
@@ -55,6 +59,9 @@ def main(argv=None):
     cs.add_argument('--analysis',required=True,type=Path);cs.add_argument('--output',required=True,type=Path)
     index=actions.add_parser('index',help='CPU-only evidence registration and offline report')
     index_actions=index.add_subparsers(dest='index_action',required=True)
+    report_check=index_actions.add_parser('validate-report',help='Verify every report collection part/member after publication or relocation')
+    report_check.add_argument('--report',required=True,type=Path)
+    report_check.add_argument('--output',required=True,type=Path)
     for action in ('build','add'):
         sub=index_actions.add_parser(action)
         for name in ('sources','db','output'):sub.add_argument('--'+name,required=True,type=Path)
@@ -63,6 +70,7 @@ def main(argv=None):
         for name in ('db','output'):sub.add_argument('--'+name,required=True,type=Path)
         sub.add_argument('--root-map',type=Path,help='Explicit JSON mapping old physical roots to relocated roots')
         if action=='query':sub.add_argument('--task')
+        else:sub.add_argument('--report-packaging',type=Path,help='Explicit bounded report packaging JSON; omitted retains legacy single-report limits')
     structure=actions.add_parser('structure',help='D1 explicit multi-layer capture and CPU raw replay')
     structure_actions=structure.add_subparsers(dest='structure_action',required=True)
     structure_plan=structure_actions.add_parser('plan')
@@ -137,22 +145,30 @@ def main(argv=None):
                 elif a.suite_action=='run':r=api.suite_run(a.plan,a.local,a.output,a.allow_gpu,a.stop_after_node)
                 elif a.suite_action=='resume':r=api.suite_resume(a.run,a.local,a.allow_gpu,a.stop_after_node)
                 elif a.suite_action=='status':r=api.suite_status(a.run,a.output)
-                elif a.suite_action=='postprocess':r=api.suite_postprocess(a.run,a.output,a.historical_index,a.analysis_revision,a.stop_after)
+                elif a.suite_action=='postprocess':
+                    from .core.io import read
+                    r=api.suite_postprocess(a.run,a.output,a.historical_index,a.analysis_revision,a.stop_after,
+                                            read(a.report_packaging) if a.report_packaging else None)
                 elif a.suite_action=='postprocess-resume':r=api.suite_postprocess_resume(a.analysis,a.stop_after)
                 elif a.suite_action=='postprocess-status':
                     r=api.suite_postprocess_status(a.analysis)
                     from .core.io import write
                     from .core.state import new_output
                     write(new_output(a.output)/'STATUS.json',r)
-                else:r=api.suite_replay(a.run,a.output)
+                else:
+                    from .core.io import read
+                    r=api.suite_replay(a.run,a.output,a.historical_index,
+                                       read(a.report_packaging) if a.report_packaging else None)
             elif a.bench_action=='index':
                 if a.index_action=='build':r=api.index_build(a.sources,a.db,a.output)
                 elif a.index_action=='add':r=api.index_add(a.sources,a.db,a.output)
+                elif a.index_action=='validate-report':r=api.index_report_validate(a.report,a.output)
                 else:
                     from .core.io import read
                     roots=read(a.root_map) if a.root_map else None
                     if a.index_action=='query':r=api.index_query(a.db,a.output,a.task,roots)
-                    else:r=api.index_report(a.db,a.output,roots)
+                    else:r=api.index_report(a.db,a.output,roots,
+                                             read(a.report_packaging) if a.report_packaging else None)
             elif a.bench_action=='structure':
                 if a.structure_action=='plan':
                     full=api.structure_plan(a.spec,a.inputs,a.models,a.local,a.output)

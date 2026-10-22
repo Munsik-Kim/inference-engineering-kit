@@ -284,8 +284,10 @@ def query_index(db, output, task=None, root_map=None):
     write(out/'QUERY_RECEIPT.json', result); return result
 
 
-def report_index(db, output, root_map=None):
+def report_index(db, output, root_map=None, packaging=None):
     from .index_report import render_report
+    from .report_packaging import validate_report_packaging
+    policy = validate_report_packaging(packaging)
     export = canonical_export(db, root_map=root_map)
     export['compatibility'] = {'relations':[{'id':r['id'],'kind':r['kind'],'status':r['status']} for r in export['relations']],
                               'negative_control':_negative_comparison_control(export),
@@ -303,16 +305,24 @@ def report_index(db, output, root_map=None):
         total = 0
         for evidence in export['evidence']:
             source = evidence['source_id']; relative = evidence['relative_path']
-            if source not in roots: continue
+            if source not in roots:
+                evidence['copy_exclusion_status'] = next((s['validation']['status'] for s in export['sources'] if s['id'] == source), 'MISSING_EVIDENCE')
+                evidence['copy_exclusion_reason'] = 'No currently hash-verified source locator'
+                continue
             # Numeric data and frozen JSON/HTTP/log receipts only. Never Python,
             # shell, HTML, pickle, model weights or arbitrary archive members.
             if Path(relative).suffix.lower() not in ('.json','.jsonl','.csv','.txt','.log','.f32'):
+                evidence['copy_exclusion_status'] = 'UNSUPPORTED_PORTABLE_TYPE'
+                evidence['copy_exclusion_reason'] = 'Excluded executable/archive or unsupported evidence type'
                 continue
-            total += evidence['bytes']; require(total <= 256*1024**2, 'Portable evidence byte cap exceeded')
+            total += evidence['bytes']
+            if policy['mode'] == 'single_report_v1':
+                require(total <= 256*1024**2, 'Portable evidence byte cap exceeded')
             evidence['approved_copy'] = {'source_root':str(roots[source]), 'relative_path':relative,
                 'portable_path':'evidence/'+source+'/'+relative, 'sha256':evidence['sha256'], 'max_bytes':64*1024**2}
-        result = render_report(export, output)
-        write(Path(output)/'COMPATIBILITY_REPORT.json', export['compatibility'])
+        result = render_report(export, output, packaging=policy)
+        if policy['mode'] == 'single_report_v1':
+            write(Path(output)/'COMPATIBILITY_REPORT.json', export['compatibility'])
     result['raw_copy_scope'] = 'Explicit hash-verified source manifest data members only; excluded executable types are not copied'
     return result
 

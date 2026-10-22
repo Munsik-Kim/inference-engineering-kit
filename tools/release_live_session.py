@@ -189,7 +189,7 @@ def make_suite(template, sources, output):
                     metadata['tokenizer_identity'], metadata['token_id_space'], metadata['runtime_identities']['serving'])
                 posts += len(requests)
                 cap += sum(request_body(request)['max_tokens'] for request in requests)
-    spec['suite_id'] = 'V1-RELEASE-01-'+spec['models'][0]['profile']
+    spec['suite_id'] = 'V1-RELEASE-R1-'+spec['models'][0]['profile']
     spec['budget']['max_inference_posts'] = posts*len(spec['models'])
     spec['budget']['max_output_tokens'] = cap*len(spec['models'])
     compiled = compile_suite(spec, loaded, {'schema_version':1,'artifact_check':'not_requested','artifact_roots':{},'authorization':'NONE','runtime_check':'not_run'})
@@ -200,7 +200,7 @@ def make_suite(template, sources, output):
     write(Path(output), spec)
     return {'status':'SUITE_SPEC_DERIVED_NOT_EXECUTED','source_manifest_sha256':sha(Path(sources)),
             'template_sha256':sha(Path(template)), 'suite_sha256':sha(Path(output)),
-            'counts':compiled['semantic']['counts'],'GPU_queries':0,'tokenizer_calls':0,'ledger_changes':0}
+            'counts':compiled['semantic']['counts'],'report_packaging':spec['outputs'].get('report_packaging'),'GPU_queries':0,'tokenizer_calls':0,'ledger_changes':0}
 
 
 def first_serving_unit(binding):

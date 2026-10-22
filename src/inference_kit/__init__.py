@@ -1,5 +1,5 @@
 """Portable inference experiment/evidence toolkit. No engine SDK imported here."""
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 from .api import plan, compare, assess, replay, verify, demo, bench_plan, bench_run, bench_replay
 from .api import bench_b1_plan, bench_b1_run, bench_b1_replay, bench_b1_score
 __all__ = ["plan", "compare", "assess", "replay", "verify", "demo", "bench_plan", "bench_run", "bench_replay"]

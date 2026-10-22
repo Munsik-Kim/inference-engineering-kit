@@ -7,12 +7,12 @@
 PYTHON=/absolute/path/to/prepared/python
 unset PYTHONPATH PYTHONHOME
 "$PYTHON" -m venv ../inference-kit-cpu
-../inference-kit-cpu/bin/python -m pip install --no-index --no-deps dist/inference_engineering_kit-0.2.0-py3-none-any.whl
+../inference-kit-cpu/bin/python -m pip install --no-index --no-deps dist/inference_engineering_kit-0.2.1-py3-none-any.whl
 ../inference-kit-cpu/bin/python -I -B -m inference_kit --version
 ../inference-kit-cpu/bin/inference-kit --version
 ```
 
-두 출력은 `inference-kit 0.2.0`이다. 새 output 경로를 쓴다. 완료된 CPU workspace 반복은 D의 명시 resume가 검사한다. 같은 새 출력 폴더에 초기 명령을 덮어쓰지 않는다.
+두 출력은 `inference-kit 0.2.1`이다. 새 output 경로를 쓴다. 완료된 CPU workspace 반복은 D의 명시 resume가 검사한다. 같은 새 출력 폴더에 초기 명령을 덮어쓰지 않는다.
 
 세 인터페이스에서 같은 경로를 검증하는 닫힌 진입점:
 
@@ -30,7 +30,7 @@ unset PYTHONPATH PYTHONHOME
 ../inference-kit-cpu/bin/python -I -B -m inference_kit bench suite replay --run fixtures/qwen-native --output ../qwen-replay
 ```
 
-36HTTP, output503token, native ARC226scalar/113pair의 저장 SLICE를 기존 scorer/C1으로 재계산한다. full 분포·attention은 NOT_COLLECTED다. index full-source importer는 이 partial parent run을 인증하지 않는다. 원래 acquisition·raw hash는 그대로이며 0.2.0 analyzer identity만 새로 기록된다.
+36HTTP, output503token, native ARC226scalar/113pair의 저장 SLICE를 기존 scorer/C1으로 재계산한다. full 분포·attention은 NOT_COLLECTED다. index full-source importer는 이 partial parent run을 인증하지 않는다. 원래 acquisition·raw hash는 그대로이며 0.2.1 analyzer identity만 새로 기록된다.
 
 ## B. 실제 Smol 진단
 
@@ -57,7 +57,7 @@ scalar123pair, 전체 어휘3pair만 포함한다. 구조는 별도 D1 획득의
 ../inference-kit-cpu/bin/python -I -B acceptance/replay_publication.py --kit . --output ../publication-api --mode api
 ```
 
-별도 SYNTHETIC_CONTRACT_TEST 정적 run을 새 workspace로 복사해, public CPU postprocess를 score 경계에서 멈추고 새 controller로 resume한다. 자동 raw-only publication·현재 source 검증·빈 DB 등록·report·재등록/rebuild·완료 no-op를 검사한다. 실제 A/B의 partial manifest를 full acquisition으로 위장하지 않는다. 새 실제 acquisition은0이다. raw-only 복사를 사용자가 수동 수행할 필요가 없다.
+별도 SYNTHETIC_CONTRACT_TEST 정적 run을 새 workspace로 복사해, public CPU postprocess를 score 경계에서 멈추고 새 controller로 resume한다. 자동 raw-only publication·현재 source 검증·빈 DB 등록·report·재등록/rebuild·완료 no-op를 검사한다. 명시한 `examples/REPORT_PACKAGING.json`으로 bounded collection을 만들고 root/part/member closure를 검증한다. 실제 A/B의 partial manifest를 full acquisition으로 위장하지 않는다. 새 실제 acquisition은0이다. raw-only 복사를 사용자가 수동 수행할 필요가 없다.
 
 ## 복사 실패·이동 검증
 
@@ -68,3 +68,5 @@ scalar123pair, 전체 어휘3pair만 포함한다. 구조는 별도 D1 획득의
 EEXIST/ENOSPC/EACCES와 fdopen 실패·정상/빈 파일·hash/길이 거절·public publisher 정리를 검사한다. 키트 전체를 다른 폴더로 복사한 뒤 같은 `--kit` 명령으로 replay/plan을 재실행할 수 있다. ID·bytes는 바꾸지 않고 물리 locator만 이동한다. 원본 fixture를 수정하지 않는다.
 
 작은 report의 정적 상대링크·escape/local-only 검사는 영수증을 따른다. 브라우저가 없으면 시각 검증은 NOT_RUN이며 설치하지 않는다. CPU replay 성공은 과거 GPU cleanup·서버 동작의 재인증이 아니다. 현재 release live 결과는 별도 LIVE_ACCEPTANCE_RECEIPT에서 확인한다.
+
+누적 실제 DB/전체 raw의 공개 CPU 명령과 모든 part의 이동 단위는 [REPORT_PACKAGING_KO.md](REPORT_PACKAGING_KO.md)를 따른다. 작은 키트의 SLICE가 full 누적285MB와 새 GPU를 재현하는 것은 아니다.

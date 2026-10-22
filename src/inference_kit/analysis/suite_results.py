@@ -596,6 +596,29 @@ def validate_index_completion(output, run):
     return None
 
 
+def report_packaging_for_run(run):
+    """Read policy from immutable Suite intent; legacy runs retain single mode."""
+    compiled = read(Path(run) / 'SUITE_PLAN.json')
+    return compiled['semantic']['suite']['outputs'].get('report_packaging')
+
+
+def validate_report_completion(output, report_packaging=None):
+    """Validate the exact current collection, including every part and member.
+
+    Legacy executor fixtures have no collection manifest and retain their
+    existing per-file completion checks. Explicit collection policy requires
+    the collection itself; another valid source locator cannot substitute it.
+    """
+    from .report_packaging import validate_report_packaging, validate_report_collection
+    policy = validate_report_packaging(report_packaging)
+    manifest = Path(output) / 'REPORT_COLLECTION_MANIFEST.json'
+    if policy['mode'] == 'bounded_collection_v1' or manifest.exists():
+        receipt = validate_report_collection(output)
+        require(receipt['packaging'] == policy, 'Report completion packaging differs from frozen policy')
+        return receipt
+    return None
+
+
 def execute_cpu(kind, run, output, *, stage_outputs=None):
     """Dispatch four fixed CPU operations; no scheduler or arbitrary SQL."""
     stage_outputs=stage_outputs or {};root=Path(run).absolute()
@@ -649,21 +672,29 @@ def execute_cpu(kind, run, output, *, stage_outputs=None):
         publication_path = db.parent/'EVIDENCE_PUBLICATION_RECEIPT.json'
         publication = read(publication_path) if publication_path.exists() else None
         validate_current_index(db, root, publication=publication)
-        result = report_index(db,output)
+        packaging = stage_outputs.get('report_packaging', report_packaging_for_run(root))
+        result = report_index(db,output,packaging=packaging)
         validation = validate_current_index(db, root, publication=publication)
-        write(Path(output)/'CURRENT_SOURCE_VALIDATION.json',validation)
-        return {'status':'COMPLETE','result':result,'current_source_validation':validation}
+        collection = validate_report_completion(output, packaging)
+        if collection is None:
+            write(Path(output)/'CURRENT_SOURCE_VALIDATION.json',validation)
+        return {'status':'COMPLETE','result':result,'current_source_validation':validation,
+                **({'report_collection_validation':collection} if collection is not None else {})}
     raise ValueError('Unsupported suite CPU operation: '+str(kind))
 
 
-def replay(run, output, *, historical_index=None):
+def replay(run, output, *, historical_index=None, report_packaging=None):
     """Replay sealed immutable raw with installed CPU code, without inference."""
     root,context,sources,compiled,manifest=verify_run(run)
     if manifest.get('scope')=='suite_e3_task_slice_v1':
         require(historical_index is None,'MINI task/token slice does not import historical/full-acquisition index')
+        require(report_packaging is None,'MINI slice replay has no cumulative report operation; use explicit CPU postprocess')
         return replay_slice(root,output)
     out=new_output(output);stages={};results={}
     if historical_index is not None:stages['historical_index']=historical_index
+    if report_packaging is not None:
+        from .report_packaging import validate_report_packaging
+        stages['report_packaging']=validate_report_packaging(report_packaging)
     for kind in ('score_task','analyze_tokens','index_add','report'):
         target=out/kind;results[kind]=execute_cpu(kind,run,target,stage_outputs=stages);stages[kind]=target
     receipt={'schema_version':1,'status':'CPU_RAW_REPLAYED','analyzer':VERSION,'source_identity':source_identity(),

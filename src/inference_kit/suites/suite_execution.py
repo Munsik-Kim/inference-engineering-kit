@@ -152,6 +152,9 @@ def _completion(root,plan,state,node):
     if node['operation_kind'] == 'index_add':
         from ..analysis.suite_results import validate_index_completion
         validate_index_completion(_path(root, value['evidence_directory']), root)
+    if node['operation_kind'] == 'report':
+        from ..analysis.suite_results import report_packaging_for_run, validate_report_completion
+        validate_report_completion(_path(root, value['evidence_directory']), report_packaging_for_run(root))
     if 'ledger_prefix' in value:
         current=_verify_ledger(read(root/'suite-execution-context.json'),root);prefix=value['ledger_prefix']
         require(current is not None and current['jobs'][:len(prefix['jobs'])]==prefix['jobs'] and prefix['jobs'],'Committed GPU budget prefix changed')
@@ -434,6 +437,6 @@ def status(run,output=None):
     return result
 
 
-def replay(run,output):
+def replay(run,output,*,historical_index=None,report_packaging=None):
     from ..analysis.suite_results import replay as calculate
-    return calculate(run,output)
+    return calculate(run,output,historical_index=historical_index,report_packaging=report_packaging)

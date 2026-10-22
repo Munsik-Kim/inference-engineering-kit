@@ -59,10 +59,13 @@ def main():
     from inference_kit.analysis.result_index import canonical_export
     from inference_kit.analysis.suite_results import validate_current_index
     from inference_kit.analysis.evidence_publication import publish_suite_evidence
+    from inference_kit.analysis.report_packaging import validate_report_collection
     from inference_kit.core.evidence import Limits
     library = Path(inference_kit.__file__).absolute()
     if 'site-packages' not in library.parts:
         raise ValueError('Requires ordinarily installed candidate site-packages')
+    policy_path = kit/'examples/REPORT_PACKAGING.json'
+    report_policy = read(policy_path)
     fixture = kit/'fixtures/publication-demo'
     scope = read(fixture/'FIXTURE_SCOPE.json')
     assert scope['kind'] == 'SYNTHETIC_CONTRACT_TEST'
@@ -90,7 +93,8 @@ def main():
         if args.mode == 'api' and not new_process:
             if action == 'postprocess':
                 return api.suite_postprocess(values['run'], values['output'],
-                    analysis_revision=values['analysis-revision'], stop_after=values.get('stop-after'))
+                    analysis_revision=values['analysis-revision'], stop_after=values.get('stop-after'),
+                    report_packaging=report_policy)
             if action == 'postprocess-resume': return api.suite_postprocess_resume(values['analysis'])
             if action == 'postprocess-status': return api.suite_postprocess_status(values['analysis'])
             raise AssertionError(action)
@@ -104,7 +108,8 @@ def main():
         for key, value in values.items(): command += ['--'+key, str(value)]
         return child(command, name)
     first = invoke('postprocess', {'run':raw,'output':analysis,
-        'analysis-revision':'v1-release01-synthetic-publication','stop-after':'score_task'}, 'pause')
+        'analysis-revision':'v1-release-r1-synthetic-publication','stop-after':'score_task',
+        'report-packaging':policy_path}, 'pause')
     assert first['status'] == 'CPU_PAUSED_BOUNDARY'
     score_marker = sha(analysis/'completions/score_task.json')
     last = invoke('postprocess-resume', {'analysis':analysis}, 'new-process-resume', new_process=True)
@@ -112,6 +117,9 @@ def main():
     assert sha(analysis/'completions/score_task.json') == score_marker
     index_output = analysis/last['nodes']['index_add']['output']
     report_output = analysis/last['nodes']['report']['output']
+    collection = validate_report_collection(report_output)
+    assert collection['status'] == 'REPORT_COLLECTION_VERIFIED'
+    assert collection['packaging'] == report_policy
     publication = read(index_output/'EVIDENCE_PUBLICATION_RECEIPT.json')
     published = Path(publication['evidence_root'])
     assert publication['status'] == 'RAW_HASH_VERIFIED' and not published.is_relative_to(raw)
@@ -122,6 +130,32 @@ def main():
     assert len(canonical['sources']) == 1
     assert canonical['sources'][0]['validation']['status'] == 'RAW_HASH_VERIFIED'
     assert len(canonical['acquisitions']) == 8
+    # Exercise the same common report path with a smaller finite approved cap.
+    # One byte below the actual total forces exactly two volumes without any
+    # giant fixture or modified raw. It is a new output, not a changed run policy.
+    split_policy = dict(report_policy)
+    split_policy['volume_payload_bytes'] = collection['logical_payload_bytes'] - 1
+    split_root = output/'small-cap-collection'
+    api.index_report(db, split_root, report_packaging=split_policy)
+    split_validation = validate_report_collection(split_root)
+    assert split_validation['volume_count'] == 2
+    assert split_validation['logical_member_count'] == collection['logical_member_count']
+    assert split_validation['logical_payload_bytes'] == collection['logical_payload_bytes']
+    moved_collection = output/'relocated collection 한글'
+    shutil.copytree(split_root, moved_collection)
+    assert validate_report_collection(moved_collection) == split_validation
+    # Damage only the independently copied second part. Root presence must
+    # never certify a missing part or fall back to the valid original locator.
+    part = moved_collection/'evidence/part-0002/PART_MANIFEST.json'
+    part.unlink()
+    try:
+        validate_report_collection(moved_collection)
+    except ValueError as error:
+        missing_part_error = str(error)
+    else:
+        raise AssertionError('Missing second part unexpectedly validated')
+    assert validate_report_collection(split_root) == split_validation
+    assert canonical_export(db) == canonical
     current = validate_current_index(db, raw, publication=publication)
     evidence_before = pins(published)
     # Repeat public publisher is a validated no-op over the original mixed root.
@@ -157,6 +191,7 @@ def main():
                  for parent in (analysis/'stages',analysis/'completions')
                  for p in parent.rglob('*') if p.is_file()}
     assert canonical_export(db) == canonical and pins(published) == evidence_before
+    assert validate_report_collection(report_output) == collection
     # A copied, corrupt raw parent is still rejected, despite the old valid publication.
     corrupt = output/'tampered-copy'; shutil.copytree(fixture, corrupt)
     name = next(name for name in manifest['files'] if name.endswith('task-responses.jsonl'))
@@ -181,6 +216,9 @@ def main():
         'new_process_resume':True, 'score_completion_unchanged':True,
         'reregister_count_unchanged':True,'rebuild_canonical_equal':True,
         'completed_noop':True,'checkpoint_bytes_mtime_unchanged':True,
+        'report_collection_validation':collection,
+        'small_cap_collection_validation':split_validation,
+        'relocated_collection_equal':True,'missing_second_part_refused':missing_part_error,
         'completion_evidence_db_immutable_files':len(immutable), 'derived_growth_bytes':growth.stat().st_size,
         'tamper_refused':tamper_error,'fixture_unchanged':True,
         'report_entry':str(report_output/'index.html'), 'report_bytes':(report_output/'index.html').stat().st_size,

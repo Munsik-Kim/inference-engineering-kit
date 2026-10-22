@@ -57,6 +57,7 @@ jobs:
               "$RUNNER_TEMP/release kit 한글/acceptance/run_cpu_acceptance.py" \
               --kit "$RUNNER_TEMP/release kit 한글" --output "$RUNNER_TEMP/release-$mode" --mode "$mode"
             cp "$RUNNER_TEMP/release-$mode/CPU_ACCEPTANCE_RECEIPT.json" "$RUNNER_TEMP/cpu-evidence/release-$mode.json"
+            cp "$RUNNER_TEMP/release-$mode/publication/PUBLICATION_ACCEPTANCE.json" "$RUNNER_TEMP/cpu-evidence/release-$mode-publication.json"
           done
           cp -a "$RUNNER_TEMP/release kit 한글" "$RUNNER_TEMP/relocated kit 한글"
           env -u PYTHONPATH -u PYTHONHOME "$RUNNER_TEMP/consumer-venv/bin/python" -I -B \

@@ -1,6 +1,6 @@
 # 역사적 rc1 후보 scope (보존)
 
-이 문서는 V1-CANDIDATE-01 당시 범위다. 현재0.2.0 지원/수용시험 상태는 SUPPORT_MATRIX.json과 release RELEASE_DECISION 영수증을 따른다.
+이 문서는 V1-CANDIDATE-01 당시 범위다. 현재0.2.1 지원/수용시험 상태는 SUPPORT_MATRIX.json과 release RELEASE_DECISION 영수증을 따른다.
 
 # V1-CANDIDATE-01 범위 동결
 

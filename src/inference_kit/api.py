@@ -45,15 +45,17 @@ def suite_resume(run, local=None, allow_gpu=False, stop_after_node=None):
     return resume(run,local,allow_gpu,stop_after_node)
 
 
-def suite_replay(run, output):
+def suite_replay(run, output, historical_index=None, report_packaging=None):
     from .suites.suite_execution import replay
-    return replay(run,output)
+    return replay(run,output,historical_index=historical_index,report_packaging=report_packaging)
 
 
-def suite_postprocess(run, output, historical_index=None, analysis_revision=None, stop_after=None):
+def suite_postprocess(run, output, historical_index=None, analysis_revision=None, stop_after=None,
+                      report_packaging=None):
     from .analysis.suite_postprocess import postprocess
     return postprocess(run, output, historical_index=historical_index,
-                       analysis_revision=analysis_revision, stop_after=stop_after)
+                       analysis_revision=analysis_revision, stop_after=stop_after,
+                       report_packaging=report_packaging)
 
 
 def suite_postprocess_resume(analysis, stop_after=None):
@@ -81,9 +83,18 @@ def index_query(db, output, task=None, root_map=None):
     return query_index(db, output, task, root_map)
 
 
-def index_report(db, output, root_map=None):
+def index_report(db, output, root_map=None, report_packaging=None):
     from .analysis.result_index import report_index
-    return report_index(db, output, root_map)
+    return report_index(db, output, root_map, packaging=report_packaging)
+
+
+def index_report_validate(report, output=None):
+    """Read and verify the closed report collection without model/runtime access."""
+    from .analysis.report_packaging import validate_report_collection
+    result = validate_report_collection(report)
+    if output is not None:
+        write(new_output(output)/'REPORT_COLLECTION_VALIDATION.json', result)
+    return result
 
 
 def plan(spec,local=None):

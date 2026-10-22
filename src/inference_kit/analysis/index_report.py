@@ -8,8 +8,8 @@ import csv
 import hashlib
 import html
 import json
+import os
 import re
-import shutil
 import statistics
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -123,9 +123,32 @@ def copy_evidence(source_root, relative_path, destination_root, portable_path,
     require(target.resolve().is_relative_to(target_root.resolve()) and not target.exists(),
             "Refuse overwrite or escaping evidence destination")
     target.parent.mkdir(parents=True, exist_ok=True)
-    with source.open("rb") as incoming, target.open("xb") as outgoing:
-        shutil.copyfileobj(incoming, outgoing)
-    require(sha(target) == identity and sha(source) == identity,
+    before = source.stat()
+    descriptor = os.open(source, os.O_RDONLY | getattr(os, 'O_NOFOLLOW', 0))
+    try:
+        incoming = os.fdopen(descriptor, 'rb')
+        descriptor = None
+        with incoming, target.open("xb") as outgoing:
+            opened = os.fstat(incoming.fileno())
+            require((opened.st_dev, opened.st_ino, opened.st_size, opened.st_mtime_ns) ==
+                    (before.st_dev, before.st_ino, before.st_size, before.st_mtime_ns),
+                    "Evidence changed before copy")
+            copied_hash = hashlib.sha256()
+            copied_bytes = 0
+            while True:
+                block = incoming.read(1024 * 1024)
+                if not block: break
+                copied_bytes += len(block)
+                require(copied_bytes <= max_bytes, "Evidence grew beyond byte bound")
+                copied_hash.update(block)
+                outgoing.write(block)
+    finally:
+        if descriptor is not None: os.close(descriptor)
+    after = source.stat()
+    require((before.st_dev, before.st_ino, before.st_size, before.st_mtime_ns) ==
+            (after.st_dev, after.st_ino, after.st_size, after.st_mtime_ns) and
+            copied_bytes == before.st_size and copied_hash.hexdigest() == identity and
+            sha(target) == identity and sha(source) == identity,
             "Evidence changed during copy")
     return {"path": portable_path, "sha256": identity, "bytes": target.stat().st_size}
 
@@ -231,7 +254,33 @@ def _family(row):
     return "other"
 
 
-def render_report(export, output):
+def _bounded_write(stream, text, budget=None):
+    if budget is not None:
+        count = len(text.encode('utf-8'))
+        require(budget[1] + count <= budget[0], 'Report presentation byte cap exceeded')
+        budget[1] += count
+    return stream.write(text)
+
+
+def _bounded_json(path, value, budget=None):
+    if budget is None:
+        write(path, value)
+    else:
+        text = json.dumps(value, indent=2, sort_keys=True, ensure_ascii=False, allow_nan=False) + '\n'
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open('x', encoding='utf-8') as stream:
+            _bounded_write(stream, text, budget)
+
+
+class _CSVWriterBudget:
+    def __init__(self, stream, budget):
+        self.stream, self.budget = stream, budget
+
+    def write(self, value):
+        return _bounded_write(self.stream, value, self.budget)
+
+
+def render_report(export, output, packaging=None, *, _presentation_budget=None):
     """Render an immutable offline report from a validated canonical export.
 
     This presentation layer does not certify numerical comparability or raw
@@ -241,6 +290,10 @@ def render_report(export, output):
     for table in TABLES:
         require(isinstance(export.get(table, []), list), "Expected export table list: " + table)
         require(all(isinstance(row, dict) for row in export.get(table, [])), "Expected export row objects")
+    from .report_packaging import validate_report_packaging, render_collection
+    policy = validate_report_packaging(packaging)
+    if policy['mode'] == 'bounded_collection_v1':
+        return render_collection(export, output, policy)
     destination = new_output(output)
     copies = {}
     for row in export.get("evidence", []):
@@ -355,9 +408,9 @@ def render_report(export, output):
                        _details(row)] for identifier, row in evidence_rows.items()]))
     fragments.append("</section><footer><p>브라우저 시각 확인: NOT_RUN. HTML parse·escape·로컬 링크 검사는 별도 receipt 범위입니다. CSV는 표시용 formula escaping을 적용하며 canonical JSON/raw는 변경하지 않습니다.</p></footer></body></html>")
     with (destination / "index.html").open("x", encoding="utf-8", newline="\n") as stream:
-        stream.write("\n".join(fragments) + "\n")
+        _bounded_write(stream, "\n".join(fragments) + "\n", _presentation_budget)
     with (destination / "display.csv").open("x", encoding="utf-8", newline="") as stream:
-        writer = csv.writer(stream)
+        writer = csv.writer(_CSVWriterBudget(stream, _presentation_budget))
         writer.writerow(["family", "task_id", "sample_id", "metric", "status", "value", "scope", "coordinates", "measurement_id"])
         for row in csv_rows:
             writer.writerow([display_csv_cell(_text(v) if isinstance(v, (dict, list)) else _redact(v)) for v in row])
@@ -369,5 +422,5 @@ def render_report(export, output):
               "display_transformations": ["HTML text/attribute escaping", "local absolute path withholding", "display-only CSV formula prefix escaping"],
               "files": {name: {"sha256": sha(destination / name), "bytes": (destination / name).stat().st_size}
                         for name in ("index.html", "display.csv")}}
-    write(destination / "REPORT_MANIFEST.json", result)
+    _bounded_json(destination / "REPORT_MANIFEST.json", result, _presentation_budget)
     return result

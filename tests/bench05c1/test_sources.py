@@ -190,7 +190,10 @@ class TokenSourceTests(unittest.TestCase):
 
     def test_unsupported_full_observation_is_missing_not_zero_or_failure(self):
         with tempfile.TemporaryDirectory() as t:
-            root=b4_run(Path(t)/'raw',probes=True);path=next(root.glob('attempts/main-*/observations.jsonl'))
+            root=b4_run(Path(t)/'raw',probes=True)
+            first_arm=read(root/'PLAN_FROZEN.json')['arms'][0]['arm_id']
+            self.assertEqual(first_arm,'bf16')
+            path=root/read(root/'progress.json')['jobs']['main-'+first_arm]['directory']/'observations.jsonl'
             rows=[json.loads(line) for line in path.read_text(encoding='utf-8').splitlines()]
             full=next(r for r in rows if r['kind']=='full_logits');full.update(status='UNSUPPORTED',numeric=None,details={})
             replace_lines(path,rows);reseal(root,'bench05b4_context_raw')

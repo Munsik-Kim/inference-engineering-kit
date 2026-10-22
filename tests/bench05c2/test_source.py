@@ -144,7 +144,9 @@ class GenericTokenSourceTests(unittest.TestCase):
 
     def test_saved_full_target_inconsistency_rejected_before_sink(self):
         with tempfile.TemporaryDirectory() as t:
-            raw=synthetic_raw(Path(t)/'raw');path=next(raw.glob('attempts/main-*/observations.jsonl'));rows=lines(path)
+            raw=synthetic_raw(Path(t)/'raw')
+            first_arm=read(raw/'PLAN_FROZEN.json')['arms'][0]['arm_id']
+            path=raw/read(raw/'progress.json')['jobs']['main-'+first_arm]['directory']/'observations.jsonl';rows=lines(path)
             target=next(r for r in rows if r['kind']=='target_logprob');directory=path.parent
             target['numeric']=save(directory,'corrupted-scalar',[-.1],[1]);replace_lines(path,rows);reseal(raw);calls=[]
             with self.assertRaisesRegex(ValueError,'same-pass'):

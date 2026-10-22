@@ -1,0 +1,2308 @@
+{
+  "Qwen": {
+    "document_score_rows": 18,
+    "full_vectors": 0,
+    "native_aggregates": {
+      "document_unit": "source sample_id; choices and token positions are repeated within document",
+      "grouping": "task/dataset/split/policy/acquisition/runtime/reference scope/field kept separate",
+      "groups": [
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "continuation",
+          "full_distribution": {
+            "entropy_candidate_nat": null,
+            "entropy_reference_nat": null,
+            "js_nat": null,
+            "kl_ref_candidate_nat": null,
+            "measured_tokens": 0
+          },
+          "group_identity": "074338b8675c9c311c21207e68b5a4fce5ac341119d305dd9abecf21a523cc42",
+          "identity": {
+            "acquisition_source_left": "native_likelihood",
+            "acquisition_source_right": "native_likelihood",
+            "backend_policy": "native",
+            "dataset_identity": "56ab7c8d5bbfe113faeb276613fef4b6b15c812664ad282a5464d2f4c299f08e",
+            "evidence_kind": "live_prepared_suite_v1",
+            "metric_contract": "target_logprob_v1",
+            "panel": "native_choice_likelihood_v1",
+            "policy_id": null,
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "GOLD_ONLY",
+            "runtime_identity": "cc88384a71f03de82c3f130c62cfa134b73aa301e8218f17d8c20cf25a54445b",
+            "source_id": "suite-native-choice-likelihood",
+            "split": "test",
+            "task_id": "arc_challenge",
+            "task_version": "1.0",
+            "token_id_space": "f488fa45d324a8bc64c84f0e27b47223872d550f2a6900564f77dfa67ca5ff4d",
+            "tokenizer_identity": "3fb415f03fcb8a59a538bce25028c5b0f618e8a3e96721645c278c7d79674dd8",
+            "vocabulary_size": 151936
+          },
+          "measured_comparison_tokens": 29,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 7.756747491106751,
+              "measured_documents": 3,
+              "measured_tokens": 29,
+              "token_weighted": 6.806983719499651
+            },
+            "delta_nll_nat": {
+              "document_macro": 0.3491408659908597,
+              "measured_documents": 3,
+              "measured_tokens": 29,
+              "token_weighted": 0.247224700381875
+            },
+            "reference_nll_nat": {
+              "document_macro": 7.407606625115892,
+              "measured_documents": 3,
+              "measured_tokens": 29,
+              "token_weighted": 6.5597590191177755
+            }
+          },
+          "planned_comparison_tokens": 29,
+          "raw_top1": {
+            "match_fraction": null,
+            "matches": 0,
+            "measured_tokens": 0
+          },
+          "requested_comparison_tokens": 29,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 29,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 5
+            }
+          }
+        },
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "gold_choice",
+          "full_distribution": {
+            "entropy_candidate_nat": null,
+            "entropy_reference_nat": null,
+            "js_nat": null,
+            "kl_ref_candidate_nat": null,
+            "measured_tokens": 0
+          },
+          "group_identity": "1a24635e2c266073f3f6b0784d7b583334257733d1bd5321886618e760077fae",
+          "identity": {
+            "acquisition_source_left": "native_likelihood",
+            "acquisition_source_right": "native_likelihood",
+            "backend_policy": "native",
+            "dataset_identity": "56ab7c8d5bbfe113faeb276613fef4b6b15c812664ad282a5464d2f4c299f08e",
+            "evidence_kind": "live_prepared_suite_v1",
+            "metric_contract": "target_logprob_v1",
+            "panel": "native_choice_likelihood_v1",
+            "policy_id": null,
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "ALL_CHOICES",
+            "runtime_identity": "cc88384a71f03de82c3f130c62cfa134b73aa301e8218f17d8c20cf25a54445b",
+            "source_id": "suite-native-choice-likelihood",
+            "split": "test",
+            "task_id": "arc_challenge",
+            "task_version": "1.0",
+            "token_id_space": "f488fa45d324a8bc64c84f0e27b47223872d550f2a6900564f77dfa67ca5ff4d",
+            "tokenizer_identity": "3fb415f03fcb8a59a538bce25028c5b0f618e8a3e96721645c278c7d79674dd8",
+            "vocabulary_size": 151936
+          },
+          "measured_comparison_tokens": 29,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 7.756747491106751,
+              "measured_documents": 3,
+              "measured_tokens": 29,
+              "token_weighted": 6.806983719499651
+            },
+            "delta_nll_nat": {
+              "document_macro": 0.3491408659908597,
+              "measured_documents": 3,
+              "measured_tokens": 29,
+              "token_weighted": 0.247224700381875
+            },
+            "reference_nll_nat": {
+              "document_macro": 7.407606625115892,
+              "measured_documents": 3,
+              "measured_tokens": 29,
+              "token_weighted": 6.5597590191177755
+            }
+          },
+          "planned_comparison_tokens": 29,
+          "raw_top1": {
+            "match_fraction": null,
+            "matches": 0,
+            "measured_tokens": 0
+          },
+          "requested_comparison_tokens": 29,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 29,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 5
+            }
+          }
+        },
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "non_gold_choice",
+          "full_distribution": {
+            "entropy_candidate_nat": null,
+            "entropy_reference_nat": null,
+            "js_nat": null,
+            "kl_ref_candidate_nat": null,
+            "measured_tokens": 0
+          },
+          "group_identity": "1bc02d34cddd9a191df0608b98decbc6d87e2e67a50d70c9be573321d4ac7bdb",
+          "identity": {
+            "acquisition_source_left": "native_likelihood",
+            "acquisition_source_right": "native_likelihood",
+            "backend_policy": "native",
+            "dataset_identity": "56ab7c8d5bbfe113faeb276613fef4b6b15c812664ad282a5464d2f4c299f08e",
+            "evidence_kind": "live_prepared_suite_v1",
+            "metric_contract": "target_logprob_v1",
+            "panel": "native_choice_likelihood_v1",
+            "policy_id": null,
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "NON_GOLD",
+            "runtime_identity": "cc88384a71f03de82c3f130c62cfa134b73aa301e8218f17d8c20cf25a54445b",
+            "source_id": "suite-native-choice-likelihood",
+            "split": "test",
+            "task_id": "arc_challenge",
+            "task_version": "1.0",
+            "token_id_space": "f488fa45d324a8bc64c84f0e27b47223872d550f2a6900564f77dfa67ca5ff4d",
+            "tokenizer_identity": "3fb415f03fcb8a59a538bce25028c5b0f618e8a3e96721645c278c7d79674dd8",
+            "vocabulary_size": 151936
+          },
+          "measured_comparison_tokens": 84,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 8.306730526910334,
+              "measured_documents": 3,
+              "measured_tokens": 84,
+              "token_weighted": 7.764740192064457
+            },
+            "delta_nll_nat": {
+              "document_macro": 0.1934113201171016,
+              "measured_documents": 3,
+              "measured_tokens": 84,
+              "token_weighted": 0.19309452131683602
+            },
+            "reference_nll_nat": {
+              "document_macro": 8.113319206793232,
+              "measured_documents": 3,
+              "measured_tokens": 84,
+              "token_weighted": 7.571645670747621
+            }
+          },
+          "planned_comparison_tokens": 84,
+          "raw_top1": {
+            "match_fraction": null,
+            "matches": 0,
+            "measured_tokens": 0
+          },
+          "requested_comparison_tokens": 84,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 84,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 5
+            }
+          }
+        },
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "__all__",
+          "full_distribution": {
+            "entropy_candidate_nat": null,
+            "entropy_reference_nat": null,
+            "js_nat": null,
+            "kl_ref_candidate_nat": null,
+            "measured_tokens": 0
+          },
+          "group_identity": "5186ae359ec65030801320214b979133b8b16156e0c27d4618e6b23a03a64368",
+          "identity": {
+            "acquisition_source_left": "native_likelihood",
+            "acquisition_source_right": "native_likelihood",
+            "backend_policy": "native",
+            "dataset_identity": "56ab7c8d5bbfe113faeb276613fef4b6b15c812664ad282a5464d2f4c299f08e",
+            "evidence_kind": "live_prepared_suite_v1",
+            "metric_contract": "target_logprob_v1",
+            "panel": "native_choice_likelihood_v1",
+            "policy_id": null,
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "NON_GOLD",
+            "runtime_identity": "cc88384a71f03de82c3f130c62cfa134b73aa301e8218f17d8c20cf25a54445b",
+            "source_id": "suite-native-choice-likelihood",
+            "split": "test",
+            "task_id": "arc_challenge",
+            "task_version": "1.0",
+            "token_id_space": "f488fa45d324a8bc64c84f0e27b47223872d550f2a6900564f77dfa67ca5ff4d",
+            "tokenizer_identity": "3fb415f03fcb8a59a538bce25028c5b0f618e8a3e96721645c278c7d79674dd8",
+            "vocabulary_size": 151936
+          },
+          "measured_comparison_tokens": 84,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 8.306730526910334,
+              "measured_documents": 3,
+              "measured_tokens": 84,
+              "token_weighted": 7.764740192064457
+            },
+            "delta_nll_nat": {
+              "document_macro": 0.1934113201171016,
+              "measured_documents": 3,
+              "measured_tokens": 84,
+              "token_weighted": 0.19309452131683602
+            },
+            "reference_nll_nat": {
+              "document_macro": 8.113319206793232,
+              "measured_documents": 3,
+              "measured_tokens": 84,
+              "token_weighted": 7.571645670747621
+            }
+          },
+          "planned_comparison_tokens": 84,
+          "raw_top1": {
+            "match_fraction": null,
+            "matches": 0,
+            "measured_tokens": 0
+          },
+          "requested_comparison_tokens": 84,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 84,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 5
+            }
+          }
+        },
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "continuation",
+          "full_distribution": {
+            "entropy_candidate_nat": null,
+            "entropy_reference_nat": null,
+            "js_nat": null,
+            "kl_ref_candidate_nat": null,
+            "measured_tokens": 0
+          },
+          "group_identity": "51f6e40bd4a0f4ab533d5d0f2febe71a75e67d488fc32ac680cbf1951e6b23c3",
+          "identity": {
+            "acquisition_source_left": "native_likelihood",
+            "acquisition_source_right": "native_likelihood",
+            "backend_policy": "native",
+            "dataset_identity": "56ab7c8d5bbfe113faeb276613fef4b6b15c812664ad282a5464d2f4c299f08e",
+            "evidence_kind": "live_prepared_suite_v1",
+            "metric_contract": "target_logprob_v1",
+            "panel": "native_choice_likelihood_v1",
+            "policy_id": null,
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "ALL_CHOICES",
+            "runtime_identity": "cc88384a71f03de82c3f130c62cfa134b73aa301e8218f17d8c20cf25a54445b",
+            "source_id": "suite-native-choice-likelihood",
+            "split": "test",
+            "task_id": "arc_challenge",
+            "task_version": "1.0",
+            "token_id_space": "f488fa45d324a8bc64c84f0e27b47223872d550f2a6900564f77dfa67ca5ff4d",
+            "tokenizer_identity": "3fb415f03fcb8a59a538bce25028c5b0f618e8a3e96721645c278c7d79674dd8",
+            "vocabulary_size": 151936
+          },
+          "measured_comparison_tokens": 113,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 8.171419501261278,
+              "measured_documents": 3,
+              "measured_tokens": 113,
+              "token_weighted": 7.518944283176143
+            },
+            "delta_nll_nat": {
+              "document_macro": 0.2346319706480585,
+              "measured_documents": 3,
+              "measured_tokens": 113,
+              "token_weighted": 0.20698633718308496
+            },
+            "reference_nll_nat": {
+              "document_macro": 7.936787530613219,
+              "measured_documents": 3,
+              "measured_tokens": 113,
+              "token_weighted": 7.311957945993059
+            }
+          },
+          "planned_comparison_tokens": 113,
+          "raw_top1": {
+            "match_fraction": null,
+            "matches": 0,
+            "measured_tokens": 0
+          },
+          "requested_comparison_tokens": 113,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 113,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 5
+            }
+          }
+        },
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "__all__",
+          "full_distribution": {
+            "entropy_candidate_nat": null,
+            "entropy_reference_nat": null,
+            "js_nat": null,
+            "kl_ref_candidate_nat": null,
+            "measured_tokens": 0
+          },
+          "group_identity": "5d627b61b384b302a03acedb7416b8652f303b0c0672a51935c094632baa41d3",
+          "identity": {
+            "acquisition_source_left": "native_likelihood",
+            "acquisition_source_right": "native_likelihood",
+            "backend_policy": "native",
+            "dataset_identity": "56ab7c8d5bbfe113faeb276613fef4b6b15c812664ad282a5464d2f4c299f08e",
+            "evidence_kind": "live_prepared_suite_v1",
+            "metric_contract": "target_logprob_v1",
+            "panel": "native_choice_likelihood_v1",
+            "policy_id": null,
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "ALL_CHOICES",
+            "runtime_identity": "cc88384a71f03de82c3f130c62cfa134b73aa301e8218f17d8c20cf25a54445b",
+            "source_id": "suite-native-choice-likelihood",
+            "split": "test",
+            "task_id": "arc_challenge",
+            "task_version": "1.0",
+            "token_id_space": "f488fa45d324a8bc64c84f0e27b47223872d550f2a6900564f77dfa67ca5ff4d",
+            "tokenizer_identity": "3fb415f03fcb8a59a538bce25028c5b0f618e8a3e96721645c278c7d79674dd8",
+            "vocabulary_size": 151936
+          },
+          "measured_comparison_tokens": 113,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 8.171419501261278,
+              "measured_documents": 3,
+              "measured_tokens": 113,
+              "token_weighted": 7.518944283176143
+            },
+            "delta_nll_nat": {
+              "document_macro": 0.2346319706480585,
+              "measured_documents": 3,
+              "measured_tokens": 113,
+              "token_weighted": 0.20698633718308496
+            },
+            "reference_nll_nat": {
+              "document_macro": 7.936787530613219,
+              "measured_documents": 3,
+              "measured_tokens": 113,
+              "token_weighted": 7.311957945993059
+            }
+          },
+          "planned_comparison_tokens": 113,
+          "raw_top1": {
+            "match_fraction": null,
+            "matches": 0,
+            "measured_tokens": 0
+          },
+          "requested_comparison_tokens": 113,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 113,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 5
+            }
+          }
+        },
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "non_gold_choice",
+          "full_distribution": {
+            "entropy_candidate_nat": null,
+            "entropy_reference_nat": null,
+            "js_nat": null,
+            "kl_ref_candidate_nat": null,
+            "measured_tokens": 0
+          },
+          "group_identity": "91195c955409e665b2122574144778467e0c97657816e8433b795909859d00e5",
+          "identity": {
+            "acquisition_source_left": "native_likelihood",
+            "acquisition_source_right": "native_likelihood",
+            "backend_policy": "native",
+            "dataset_identity": "56ab7c8d5bbfe113faeb276613fef4b6b15c812664ad282a5464d2f4c299f08e",
+            "evidence_kind": "live_prepared_suite_v1",
+            "metric_contract": "target_logprob_v1",
+            "panel": "native_choice_likelihood_v1",
+            "policy_id": null,
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "ALL_CHOICES",
+            "runtime_identity": "cc88384a71f03de82c3f130c62cfa134b73aa301e8218f17d8c20cf25a54445b",
+            "source_id": "suite-native-choice-likelihood",
+            "split": "test",
+            "task_id": "arc_challenge",
+            "task_version": "1.0",
+            "token_id_space": "f488fa45d324a8bc64c84f0e27b47223872d550f2a6900564f77dfa67ca5ff4d",
+            "tokenizer_identity": "3fb415f03fcb8a59a538bce25028c5b0f618e8a3e96721645c278c7d79674dd8",
+            "vocabulary_size": 151936
+          },
+          "measured_comparison_tokens": 84,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 8.306730526910334,
+              "measured_documents": 3,
+              "measured_tokens": 84,
+              "token_weighted": 7.764740192064457
+            },
+            "delta_nll_nat": {
+              "document_macro": 0.1934113201171016,
+              "measured_documents": 3,
+              "measured_tokens": 84,
+              "token_weighted": 0.19309452131683602
+            },
+            "reference_nll_nat": {
+              "document_macro": 8.113319206793232,
+              "measured_documents": 3,
+              "measured_tokens": 84,
+              "token_weighted": 7.571645670747621
+            }
+          },
+          "planned_comparison_tokens": 84,
+          "raw_top1": {
+            "match_fraction": null,
+            "matches": 0,
+            "measured_tokens": 0
+          },
+          "requested_comparison_tokens": 84,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 84,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 5
+            }
+          }
+        },
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "gold_choice",
+          "full_distribution": {
+            "entropy_candidate_nat": null,
+            "entropy_reference_nat": null,
+            "js_nat": null,
+            "kl_ref_candidate_nat": null,
+            "measured_tokens": 0
+          },
+          "group_identity": "926407625d2b8ac3a5f37db6dbbde6295ae562bda900e675b7192262f3663a3c",
+          "identity": {
+            "acquisition_source_left": "native_likelihood",
+            "acquisition_source_right": "native_likelihood",
+            "backend_policy": "native",
+            "dataset_identity": "56ab7c8d5bbfe113faeb276613fef4b6b15c812664ad282a5464d2f4c299f08e",
+            "evidence_kind": "live_prepared_suite_v1",
+            "metric_contract": "target_logprob_v1",
+            "panel": "native_choice_likelihood_v1",
+            "policy_id": null,
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "GOLD_ONLY",
+            "runtime_identity": "cc88384a71f03de82c3f130c62cfa134b73aa301e8218f17d8c20cf25a54445b",
+            "source_id": "suite-native-choice-likelihood",
+            "split": "test",
+            "task_id": "arc_challenge",
+            "task_version": "1.0",
+            "token_id_space": "f488fa45d324a8bc64c84f0e27b47223872d550f2a6900564f77dfa67ca5ff4d",
+            "tokenizer_identity": "3fb415f03fcb8a59a538bce25028c5b0f618e8a3e96721645c278c7d79674dd8",
+            "vocabulary_size": 151936
+          },
+          "measured_comparison_tokens": 29,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 7.756747491106751,
+              "measured_documents": 3,
+              "measured_tokens": 29,
+              "token_weighted": 6.806983719499651
+            },
+            "delta_nll_nat": {
+              "document_macro": 0.3491408659908597,
+              "measured_documents": 3,
+              "measured_tokens": 29,
+              "token_weighted": 0.247224700381875
+            },
+            "reference_nll_nat": {
+              "document_macro": 7.407606625115892,
+              "measured_documents": 3,
+              "measured_tokens": 29,
+              "token_weighted": 6.5597590191177755
+            }
+          },
+          "planned_comparison_tokens": 29,
+          "raw_top1": {
+            "match_fraction": null,
+            "matches": 0,
+            "measured_tokens": 0
+          },
+          "requested_comparison_tokens": 29,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 29,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 5
+            }
+          }
+        },
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "__all__",
+          "full_distribution": {
+            "entropy_candidate_nat": null,
+            "entropy_reference_nat": null,
+            "js_nat": null,
+            "kl_ref_candidate_nat": null,
+            "measured_tokens": 0
+          },
+          "group_identity": "a410c7df10674854a958a5021e77ea48757a853a2d9acdf0418be8790c4ba579",
+          "identity": {
+            "acquisition_source_left": "native_likelihood",
+            "acquisition_source_right": "native_likelihood",
+            "backend_policy": "native",
+            "dataset_identity": "56ab7c8d5bbfe113faeb276613fef4b6b15c812664ad282a5464d2f4c299f08e",
+            "evidence_kind": "live_prepared_suite_v1",
+            "metric_contract": "target_logprob_v1",
+            "panel": "native_choice_likelihood_v1",
+            "policy_id": null,
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "GOLD_ONLY",
+            "runtime_identity": "cc88384a71f03de82c3f130c62cfa134b73aa301e8218f17d8c20cf25a54445b",
+            "source_id": "suite-native-choice-likelihood",
+            "split": "test",
+            "task_id": "arc_challenge",
+            "task_version": "1.0",
+            "token_id_space": "f488fa45d324a8bc64c84f0e27b47223872d550f2a6900564f77dfa67ca5ff4d",
+            "tokenizer_identity": "3fb415f03fcb8a59a538bce25028c5b0f618e8a3e96721645c278c7d79674dd8",
+            "vocabulary_size": 151936
+          },
+          "measured_comparison_tokens": 29,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 7.756747491106751,
+              "measured_documents": 3,
+              "measured_tokens": 29,
+              "token_weighted": 6.806983719499651
+            },
+            "delta_nll_nat": {
+              "document_macro": 0.3491408659908597,
+              "measured_documents": 3,
+              "measured_tokens": 29,
+              "token_weighted": 0.247224700381875
+            },
+            "reference_nll_nat": {
+              "document_macro": 7.407606625115892,
+              "measured_documents": 3,
+              "measured_tokens": 29,
+              "token_weighted": 6.5597590191177755
+            }
+          },
+          "planned_comparison_tokens": 29,
+          "raw_top1": {
+            "match_fraction": null,
+            "matches": 0,
+            "measured_tokens": 0
+          },
+          "requested_comparison_tokens": 29,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 29,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 5
+            }
+          }
+        },
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "continuation",
+          "full_distribution": {
+            "entropy_candidate_nat": null,
+            "entropy_reference_nat": null,
+            "js_nat": null,
+            "kl_ref_candidate_nat": null,
+            "measured_tokens": 0
+          },
+          "group_identity": "c4b307f1b98f4950892cd04d029b624e084e660b53ebc1e65b534b2b870368c7",
+          "identity": {
+            "acquisition_source_left": "native_likelihood",
+            "acquisition_source_right": "native_likelihood",
+            "backend_policy": "native",
+            "dataset_identity": "56ab7c8d5bbfe113faeb276613fef4b6b15c812664ad282a5464d2f4c299f08e",
+            "evidence_kind": "live_prepared_suite_v1",
+            "metric_contract": "target_logprob_v1",
+            "panel": "native_choice_likelihood_v1",
+            "policy_id": null,
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "NON_GOLD",
+            "runtime_identity": "cc88384a71f03de82c3f130c62cfa134b73aa301e8218f17d8c20cf25a54445b",
+            "source_id": "suite-native-choice-likelihood",
+            "split": "test",
+            "task_id": "arc_challenge",
+            "task_version": "1.0",
+            "token_id_space": "f488fa45d324a8bc64c84f0e27b47223872d550f2a6900564f77dfa67ca5ff4d",
+            "tokenizer_identity": "3fb415f03fcb8a59a538bce25028c5b0f618e8a3e96721645c278c7d79674dd8",
+            "vocabulary_size": 151936
+          },
+          "measured_comparison_tokens": 84,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 8.306730526910334,
+              "measured_documents": 3,
+              "measured_tokens": 84,
+              "token_weighted": 7.764740192064457
+            },
+            "delta_nll_nat": {
+              "document_macro": 0.1934113201171016,
+              "measured_documents": 3,
+              "measured_tokens": 84,
+              "token_weighted": 0.19309452131683602
+            },
+            "reference_nll_nat": {
+              "document_macro": 8.113319206793232,
+              "measured_documents": 3,
+              "measured_tokens": 84,
+              "token_weighted": 7.571645670747621
+            }
+          },
+          "planned_comparison_tokens": 84,
+          "raw_top1": {
+            "match_fraction": null,
+            "matches": 0,
+            "measured_tokens": 0
+          },
+          "requested_comparison_tokens": 84,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 84,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 5
+            }
+          }
+        }
+      ],
+      "missing_rule": "UNKNOWN/INCOMPARABLE retained in coverage; never zero-filled",
+      "no_global_task_average": true,
+      "schema_version": 1
+    },
+    "native_pairs": 113,
+    "native_scalar_rows": 226,
+    "output_tokens": 503,
+    "request_rows": 36,
+    "tasks": {
+      "arc_challenge": {
+        "baseline": {
+          "complete_documents": 3,
+          "latency_http_seconds": {
+            "max": null,
+            "n": 0,
+            "p50": null
+          },
+          "metrics": {
+            "acc": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "acc_norm": {
+              "correct": 3,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            }
+          },
+          "observed_documents": 3,
+          "planned_documents": 3
+        },
+        "candidate": {
+          "complete_documents": 3,
+          "latency_http_seconds": {
+            "max": null,
+            "n": 0,
+            "p50": null
+          },
+          "metrics": {
+            "acc": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "acc_norm": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            }
+          },
+          "observed_documents": 3,
+          "planned_documents": 3
+        }
+      },
+      "context_evidence_retrieval": {
+        "baseline": {
+          "complete_documents": 3,
+          "latency_http_seconds": {
+            "max": 0.5553790090016264,
+            "n": 3,
+            "p50": 0.5216058689984493
+          },
+          "metrics": {
+            "answer_correct_evidence_wrong": {
+              "correct": 0,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "answer_exact": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "answer_field_present": {
+              "correct": 3,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "answer_format_valid": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "answerable": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "cited_id_exists": {
+              "correct": 1,
+              "observed_denominator": 2,
+              "planned_denominator": 3
+            },
+            "empty": {
+              "correct": 0,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "evidence_correct_answer_wrong": {
+              "correct": 0,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "evidence_exact": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "evidence_field_present": {
+              "correct": 3,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "evidence_format_valid": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "false_abstention": {
+              "correct": 0,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "false_answer": {
+              "correct": 0,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "format_valid": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "length_cap": {
+              "correct": 0,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "natural_stop": {
+              "correct": 3,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "task_success": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "task_success_within_10s": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "transport_complete": {
+              "correct": 3,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "values_correct_format_wrong": {
+              "correct": 0,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            }
+          },
+          "observed_documents": 3,
+          "planned_documents": 3
+        },
+        "candidate": {
+          "complete_documents": 3,
+          "latency_http_seconds": {
+            "max": 0.7413464249984827,
+            "n": 3,
+            "p50": 0.6134866249994957
+          },
+          "metrics": {
+            "answer_correct_evidence_wrong": {
+              "correct": 1,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "answer_exact": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "answer_field_present": {
+              "correct": 3,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "answer_format_valid": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "answerable": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "cited_id_exists": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "empty": {
+              "correct": 0,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "evidence_correct_answer_wrong": {
+              "correct": 0,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "evidence_exact": {
+              "correct": 1,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "evidence_field_present": {
+              "correct": 3,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "evidence_format_valid": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "false_abstention": {
+              "correct": 0,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "false_answer": {
+              "correct": 0,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "format_valid": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "length_cap": {
+              "correct": 0,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "natural_stop": {
+              "correct": 3,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "task_success": {
+              "correct": 1,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "task_success_within_10s": {
+              "correct": 1,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "transport_complete": {
+              "correct": 3,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "values_correct_format_wrong": {
+              "correct": 0,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            }
+          },
+          "observed_documents": 3,
+          "planned_documents": 3
+        }
+      },
+      "tech_record_extract": {
+        "baseline": {
+          "complete_documents": 3,
+          "latency_http_seconds": {
+            "max": 1.1679064570016635,
+            "n": 3,
+            "p50": 1.055808248998801
+          },
+          "metrics": {
+            "evidence_correct.status": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "evidence_correct.temperature_c": {
+              "correct": 3,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "field_correct.experiment_id": {
+              "correct": 3,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "field_correct.status": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "field_correct.temperature_c": {
+              "correct": 3,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "json_valid": {
+              "correct": 3,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "schema_valid": {
+              "correct": 3,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "task_success": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "task_success_within_10s": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "transport_complete": {
+              "correct": 3,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            }
+          },
+          "observed_documents": 3,
+          "planned_documents": 3
+        },
+        "candidate": {
+          "complete_documents": 3,
+          "latency_http_seconds": {
+            "max": 1.1072575030011649,
+            "n": 3,
+            "p50": 1.0431143940004404
+          },
+          "metrics": {
+            "evidence_correct.status": {
+              "correct": 0,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "evidence_correct.temperature_c": {
+              "correct": 0,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "field_correct.experiment_id": {
+              "correct": 3,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "field_correct.status": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "field_correct.temperature_c": {
+              "correct": 3,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "json_valid": {
+              "correct": 3,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "schema_valid": {
+              "correct": 2,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "task_success": {
+              "correct": 0,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "task_success_within_10s": {
+              "correct": 0,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            },
+            "transport_complete": {
+              "correct": 3,
+              "observed_denominator": 3,
+              "planned_denominator": 3
+            }
+          },
+          "observed_documents": 3,
+          "planned_documents": 3
+        }
+      }
+    }
+  },
+  "Smol": {
+    "aggregates": {
+      "document_unit": "source sample_id; choices and token positions are repeated within document",
+      "grouping": "task/dataset/split/policy/acquisition/runtime/reference scope/field kept separate",
+      "groups": [
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "temperature_c",
+          "full_distribution": {
+            "entropy_candidate_nat": null,
+            "entropy_reference_nat": null,
+            "js_nat": null,
+            "kl_ref_candidate_nat": null,
+            "measured_tokens": 0
+          },
+          "group_identity": "0b5f4579f50ec02b986c1f50d15751ca53a169a5377c055ca1d97d153531bd89",
+          "identity": {
+            "acquisition_source_left": "instrumented_diagnostic",
+            "acquisition_source_right": "decoded_diagnostic",
+            "backend_policy": "diagnostic",
+            "dataset_identity": "c516addadb0c8c0d9a3d35c6b91a91bc58745c68bcc95fa85f5cbe7ff13e6bee",
+            "evidence_kind": "live_model_diagnostic",
+            "metric_contract": "target_logprob_v1",
+            "panel": "4931b1d0e650fe126c26d86b36bbe0a9b9db4451b4f8b1f29cdee3d77710413f",
+            "policy_id": "P00",
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "author_gold_json",
+            "runtime_identity": "33c7cd42d0c4fd2bec331491685445fb8abff9c9536d9a9f6c496f32d037c595",
+            "source_id": "suite-token-acquisition",
+            "split": "ENGINEERING_INPUT_ONLY",
+            "task_id": "tech_record_extract",
+            "task_version": "0.1",
+            "token_id_space": "7fc3b488e0654b519ba97fb5d30821d8172edb8c67ad24e2afc62de18d89dbc5",
+            "tokenizer_identity": "420c39aaae8d6bcb216797f9459582938b501ac5268f6c36d2d40d983d86a641",
+            "vocabulary_size": 49152
+          },
+          "measured_comparison_tokens": 17,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 0.008861346961283642,
+              "measured_documents": 3,
+              "measured_tokens": 17,
+              "token_weighted": 0.008724559245713274
+            },
+            "delta_nll_nat": {
+              "document_macro": -0.0013087522193220343,
+              "measured_documents": 3,
+              "measured_tokens": 17,
+              "token_weighted": -0.0015031372484586695
+            },
+            "reference_nll_nat": {
+              "document_macro": 0.010170099180605676,
+              "measured_documents": 3,
+              "measured_tokens": 17,
+              "token_weighted": 0.010227696494171944
+            }
+          },
+          "planned_comparison_tokens": 17,
+          "raw_top1": {
+            "match_fraction": 1.0,
+            "matches": 17,
+            "measured_tokens": 17
+          },
+          "requested_comparison_tokens": 17,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 17,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 5
+            }
+          }
+        },
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "status",
+          "full_distribution": {
+            "entropy_candidate_nat": null,
+            "entropy_reference_nat": null,
+            "js_nat": null,
+            "kl_ref_candidate_nat": null,
+            "measured_tokens": 0
+          },
+          "group_identity": "0e5e2cc219e111794a06276731f07f59c70dd7275b1e4568cd5bbd326b3cd157",
+          "identity": {
+            "acquisition_source_left": "instrumented_diagnostic",
+            "acquisition_source_right": "decoded_diagnostic",
+            "backend_policy": "diagnostic",
+            "dataset_identity": "c516addadb0c8c0d9a3d35c6b91a91bc58745c68bcc95fa85f5cbe7ff13e6bee",
+            "evidence_kind": "live_model_diagnostic",
+            "metric_contract": "target_logprob_v1",
+            "panel": "4931b1d0e650fe126c26d86b36bbe0a9b9db4451b4f8b1f29cdee3d77710413f",
+            "policy_id": "P00",
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "author_gold_json",
+            "runtime_identity": "33c7cd42d0c4fd2bec331491685445fb8abff9c9536d9a9f6c496f32d037c595",
+            "source_id": "suite-token-acquisition",
+            "split": "ENGINEERING_INPUT_ONLY",
+            "task_id": "tech_record_extract",
+            "task_version": "0.1",
+            "token_id_space": "7fc3b488e0654b519ba97fb5d30821d8172edb8c67ad24e2afc62de18d89dbc5",
+            "tokenizer_identity": "420c39aaae8d6bcb216797f9459582938b501ac5268f6c36d2d40d983d86a641",
+            "vocabulary_size": 49152
+          },
+          "measured_comparison_tokens": 7,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 1.68068271347632,
+              "measured_documents": 3,
+              "measured_tokens": 7,
+              "token_weighted": 2.1475982257564152
+            },
+            "delta_nll_nat": {
+              "document_macro": 1.472843704848654,
+              "measured_documents": 3,
+              "measured_tokens": 7,
+              "token_weighted": 1.9034063601866364
+            },
+            "reference_nll_nat": {
+              "document_macro": 0.20783900862766638,
+              "measured_documents": 3,
+              "measured_tokens": 7,
+              "token_weighted": 0.24419186556977884
+            }
+          },
+          "planned_comparison_tokens": 7,
+          "raw_top1": {
+            "match_fraction": 0.42857142857142855,
+            "matches": 3,
+            "measured_tokens": 7
+          },
+          "requested_comparison_tokens": 7,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 7,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 5
+            }
+          }
+        },
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "answer",
+          "full_distribution": {
+            "entropy_candidate_nat": null,
+            "entropy_reference_nat": null,
+            "js_nat": null,
+            "kl_ref_candidate_nat": null,
+            "measured_tokens": 0
+          },
+          "group_identity": "1190914ca0b473b6c033dc941a0ea89526566d14fa42fdb663a3458f19be1c90",
+          "identity": {
+            "acquisition_source_left": "instrumented_diagnostic",
+            "acquisition_source_right": "decoded_diagnostic",
+            "backend_policy": "diagnostic",
+            "dataset_identity": "c395d293ce3f0cd8028502bb165c7485fec5886637e1a5056dae38c52ff04049",
+            "evidence_kind": "live_model_diagnostic",
+            "metric_contract": "target_logprob_v1",
+            "panel": "8c74ac36e775a042576744fd222af9be741aa705197226480d3644b0b9dc7b6c",
+            "policy_id": "context_evidence_fixed_v1",
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "author_answer_evidence",
+            "runtime_identity": "33c7cd42d0c4fd2bec331491685445fb8abff9c9536d9a9f6c496f32d037c595",
+            "source_id": "suite-token-acquisition",
+            "split": "ENGINEERING_INPUT_ONLY",
+            "task_id": "context_evidence_retrieval",
+            "task_version": "0.1",
+            "token_id_space": "7fc3b488e0654b519ba97fb5d30821d8172edb8c67ad24e2afc62de18d89dbc5",
+            "tokenizer_identity": "420c39aaae8d6bcb216797f9459582938b501ac5268f6c36d2d40d983d86a641",
+            "vocabulary_size": 49152
+          },
+          "measured_comparison_tokens": 16,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 1.1884603585126066,
+              "measured_documents": 3,
+              "measured_tokens": 16,
+              "token_weighted": 1.0731600629899276
+            },
+            "delta_nll_nat": {
+              "document_macro": 0.08006531665695447,
+              "measured_documents": 3,
+              "measured_tokens": 16,
+              "token_weighted": 0.0936357770090126
+            },
+            "reference_nll_nat": {
+              "document_macro": 1.1083950418556519,
+              "measured_documents": 3,
+              "measured_tokens": 16,
+              "token_weighted": 0.979524285980915
+            }
+          },
+          "planned_comparison_tokens": 16,
+          "raw_top1": {
+            "match_fraction": 0.875,
+            "matches": 14,
+            "measured_tokens": 16
+          },
+          "requested_comparison_tokens": 16,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 16,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 5
+            }
+          }
+        },
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "__all__",
+          "full_distribution": {
+            "entropy_candidate_nat": 0.4270818567083397,
+            "entropy_reference_nat": 0.5162274422101158,
+            "js_nat": 0.011813572641448675,
+            "kl_ref_candidate_nat": 0.05576366678549197,
+            "measured_tokens": 1
+          },
+          "group_identity": "1fc748c13f99b9530c7129db9c56c47078cf745176733ced85dd61595f1968eb",
+          "identity": {
+            "acquisition_source_left": "instrumented_diagnostic",
+            "acquisition_source_right": "decoded_diagnostic",
+            "backend_policy": "diagnostic",
+            "dataset_identity": "c516addadb0c8c0d9a3d35c6b91a91bc58745c68bcc95fa85f5cbe7ff13e6bee",
+            "evidence_kind": "live_model_diagnostic",
+            "metric_contract": "target_logprob_v1",
+            "panel": "4931b1d0e650fe126c26d86b36bbe0a9b9db4451b4f8b1f29cdee3d77710413f",
+            "policy_id": "P00",
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "author_gold_json",
+            "runtime_identity": "33c7cd42d0c4fd2bec331491685445fb8abff9c9536d9a9f6c496f32d037c595",
+            "source_id": "suite-token-acquisition",
+            "split": "ENGINEERING_INPUT_ONLY",
+            "task_id": "tech_record_extract",
+            "task_version": "0.1",
+            "token_id_space": "7fc3b488e0654b519ba97fb5d30821d8172edb8c67ad24e2afc62de18d89dbc5",
+            "tokenizer_identity": "420c39aaae8d6bcb216797f9459582938b501ac5268f6c36d2d40d983d86a641",
+            "vocabulary_size": 49152
+          },
+          "measured_comparison_tokens": 48,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 0.6508765374869654,
+              "measured_documents": 3,
+              "measured_tokens": 48,
+              "token_weighted": 0.6508765374869654
+            },
+            "delta_nll_nat": {
+              "document_macro": 0.41878729373365786,
+              "measured_documents": 3,
+              "measured_tokens": 48,
+              "token_weighted": 0.41878729373365786
+            },
+            "reference_nll_nat": {
+              "document_macro": 0.23208924375330753,
+              "measured_documents": 3,
+              "measured_tokens": 48,
+              "token_weighted": 0.23208924375330753
+            }
+          },
+          "planned_comparison_tokens": 48,
+          "raw_top1": {
+            "match_fraction": 0.875,
+            "matches": 42,
+            "measured_tokens": 48
+          },
+          "requested_comparison_tokens": 48,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 48,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [
+                1
+              ],
+              "mean_overlap_fraction": 1.0,
+              "measured_tokens": 1,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [
+                10
+              ],
+              "mean_overlap_fraction": 0.6,
+              "measured_tokens": 1,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [
+                5
+              ],
+              "mean_overlap_fraction": 0.6,
+              "measured_tokens": 1,
+              "requested_k": 5
+            }
+          }
+        },
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "continuation",
+          "full_distribution": {
+            "entropy_candidate_nat": 1.9568789031181235,
+            "entropy_reference_nat": 1.92362432701988,
+            "js_nat": 0.2477771664000112,
+            "kl_ref_candidate_nat": 1.2236258781106601,
+            "measured_tokens": 1
+          },
+          "group_identity": "3585641ea1e4da4083052ce3348e9e934f410856914e3e82ecc130c0740fd175",
+          "identity": {
+            "acquisition_source_left": "instrumented_diagnostic",
+            "acquisition_source_right": "decoded_diagnostic",
+            "backend_policy": "diagnostic",
+            "dataset_identity": "c395d293ce3f0cd8028502bb165c7485fec5886637e1a5056dae38c52ff04049",
+            "evidence_kind": "live_model_diagnostic",
+            "metric_contract": "target_logprob_v1",
+            "panel": "8c74ac36e775a042576744fd222af9be741aa705197226480d3644b0b9dc7b6c",
+            "policy_id": "context_evidence_fixed_v1",
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "author_answer_evidence",
+            "runtime_identity": "33c7cd42d0c4fd2bec331491685445fb8abff9c9536d9a9f6c496f32d037c595",
+            "source_id": "suite-token-acquisition",
+            "split": "ENGINEERING_INPUT_ONLY",
+            "task_id": "context_evidence_retrieval",
+            "task_version": "0.1",
+            "token_id_space": "7fc3b488e0654b519ba97fb5d30821d8172edb8c67ad24e2afc62de18d89dbc5",
+            "tokenizer_identity": "420c39aaae8d6bcb216797f9459582938b501ac5268f6c36d2d40d983d86a641",
+            "vocabulary_size": 49152
+          },
+          "measured_comparison_tokens": 47,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 0.7519944463790189,
+              "measured_documents": 3,
+              "measured_tokens": 47,
+              "token_weighted": 0.7536949135716141
+            },
+            "delta_nll_nat": {
+              "document_macro": 0.17908286759076977,
+              "measured_documents": 3,
+              "measured_tokens": 47,
+              "token_weighted": 0.18448876626075134
+            },
+            "reference_nll_nat": {
+              "document_macro": 0.5729115787882489,
+              "measured_documents": 3,
+              "measured_tokens": 47,
+              "token_weighted": 0.5692061473108627
+            }
+          },
+          "planned_comparison_tokens": 47,
+          "raw_top1": {
+            "match_fraction": 0.8085106382978723,
+            "matches": 38,
+            "measured_tokens": 47
+          },
+          "requested_comparison_tokens": 47,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 47,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [
+                1
+              ],
+              "mean_overlap_fraction": 0.0,
+              "measured_tokens": 1,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [
+                10
+              ],
+              "mean_overlap_fraction": 0.7,
+              "measured_tokens": 1,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [
+                5
+              ],
+              "mean_overlap_fraction": 0.8,
+              "measured_tokens": 1,
+              "requested_k": 5
+            }
+          }
+        },
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "gold_choice",
+          "full_distribution": {
+            "entropy_candidate_nat": 0.0020887598032786757,
+            "entropy_reference_nat": 0.0007949902463702449,
+            "js_nat": 2.535930258656057e-05,
+            "kl_ref_candidate_nat": 9.766195147532444e-05,
+            "measured_tokens": 1
+          },
+          "group_identity": "4550eae57c941117ce5a02b1f07a7d06badb6cb11fdd804599ca6b1295317de2",
+          "identity": {
+            "acquisition_source_left": "instrumented_diagnostic",
+            "acquisition_source_right": "decoded_diagnostic",
+            "backend_policy": "diagnostic",
+            "dataset_identity": "45b5edb657727a8d651685269fde208efacecf53d109ec859846b4844d78481f",
+            "evidence_kind": "live_model_diagnostic",
+            "metric_contract": "target_logprob_v1",
+            "panel": "db79dc13a981c7c0ff79f9d73d954ed4e477d33a1f35d6b7cc56be1b004ec5bc",
+            "policy_id": "arc_original_completion_v1",
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "dataset_gold_choice",
+            "runtime_identity": "33c7cd42d0c4fd2bec331491685445fb8abff9c9536d9a9f6c496f32d037c595",
+            "source_id": "suite-token-acquisition",
+            "split": "test",
+            "task_id": "arc_challenge",
+            "task_version": "1.0",
+            "token_id_space": "7fc3b488e0654b519ba97fb5d30821d8172edb8c67ad24e2afc62de18d89dbc5",
+            "tokenizer_identity": "420c39aaae8d6bcb216797f9459582938b501ac5268f6c36d2d40d983d86a641",
+            "vocabulary_size": 49152
+          },
+          "measured_comparison_tokens": 28,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 3.152145596463265,
+              "measured_documents": 3,
+              "measured_tokens": 28,
+              "token_weighted": 2.4830829333207345
+            },
+            "delta_nll_nat": {
+              "document_macro": -0.027962456560674063,
+              "measured_documents": 3,
+              "measured_tokens": 28,
+              "token_weighted": -0.14567498910283966
+            },
+            "reference_nll_nat": {
+              "document_macro": 3.180108053023939,
+              "measured_documents": 3,
+              "measured_tokens": 28,
+              "token_weighted": 2.628757922423574
+            }
+          },
+          "planned_comparison_tokens": 28,
+          "raw_top1": {
+            "match_fraction": 0.8571428571428571,
+            "matches": 24,
+            "measured_tokens": 28
+          },
+          "requested_comparison_tokens": 28,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 28,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [
+                1
+              ],
+              "mean_overlap_fraction": 1.0,
+              "measured_tokens": 1,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [
+                10
+              ],
+              "mean_overlap_fraction": 0.5,
+              "measured_tokens": 1,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [
+                5
+              ],
+              "mean_overlap_fraction": 0.6,
+              "measured_tokens": 1,
+              "requested_k": 5
+            }
+          }
+        },
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "continuation",
+          "full_distribution": {
+            "entropy_candidate_nat": 0.0020887598032786757,
+            "entropy_reference_nat": 0.0007949902463702449,
+            "js_nat": 2.535930258656057e-05,
+            "kl_ref_candidate_nat": 9.766195147532444e-05,
+            "measured_tokens": 1
+          },
+          "group_identity": "99cf4452841906d904dfd2cb18df40e1d72df0e2ba7aaab698bae2fe77f0cb08",
+          "identity": {
+            "acquisition_source_left": "instrumented_diagnostic",
+            "acquisition_source_right": "decoded_diagnostic",
+            "backend_policy": "diagnostic",
+            "dataset_identity": "45b5edb657727a8d651685269fde208efacecf53d109ec859846b4844d78481f",
+            "evidence_kind": "live_model_diagnostic",
+            "metric_contract": "target_logprob_v1",
+            "panel": "db79dc13a981c7c0ff79f9d73d954ed4e477d33a1f35d6b7cc56be1b004ec5bc",
+            "policy_id": "arc_original_completion_v1",
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "dataset_gold_choice",
+            "runtime_identity": "33c7cd42d0c4fd2bec331491685445fb8abff9c9536d9a9f6c496f32d037c595",
+            "source_id": "suite-token-acquisition",
+            "split": "test",
+            "task_id": "arc_challenge",
+            "task_version": "1.0",
+            "token_id_space": "7fc3b488e0654b519ba97fb5d30821d8172edb8c67ad24e2afc62de18d89dbc5",
+            "tokenizer_identity": "420c39aaae8d6bcb216797f9459582938b501ac5268f6c36d2d40d983d86a641",
+            "vocabulary_size": 49152
+          },
+          "measured_comparison_tokens": 28,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 3.152145596463265,
+              "measured_documents": 3,
+              "measured_tokens": 28,
+              "token_weighted": 2.4830829333207345
+            },
+            "delta_nll_nat": {
+              "document_macro": -0.027962456560674063,
+              "measured_documents": 3,
+              "measured_tokens": 28,
+              "token_weighted": -0.14567498910283966
+            },
+            "reference_nll_nat": {
+              "document_macro": 3.180108053023939,
+              "measured_documents": 3,
+              "measured_tokens": 28,
+              "token_weighted": 2.628757922423574
+            }
+          },
+          "planned_comparison_tokens": 28,
+          "raw_top1": {
+            "match_fraction": 0.8571428571428571,
+            "matches": 24,
+            "measured_tokens": 28
+          },
+          "requested_comparison_tokens": 28,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 28,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [
+                1
+              ],
+              "mean_overlap_fraction": 1.0,
+              "measured_tokens": 1,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [
+                10
+              ],
+              "mean_overlap_fraction": 0.5,
+              "measured_tokens": 1,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [
+                5
+              ],
+              "mean_overlap_fraction": 0.6,
+              "measured_tokens": 1,
+              "requested_k": 5
+            }
+          }
+        },
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "__all__",
+          "full_distribution": {
+            "entropy_candidate_nat": 1.9568789031181235,
+            "entropy_reference_nat": 1.92362432701988,
+            "js_nat": 0.2477771664000112,
+            "kl_ref_candidate_nat": 1.2236258781106601,
+            "measured_tokens": 1
+          },
+          "group_identity": "a1f5bf93eb4bb5fa41ff6fb3a40f733a1769a7af0b45f4b14e50d1315c34638f",
+          "identity": {
+            "acquisition_source_left": "instrumented_diagnostic",
+            "acquisition_source_right": "decoded_diagnostic",
+            "backend_policy": "diagnostic",
+            "dataset_identity": "c395d293ce3f0cd8028502bb165c7485fec5886637e1a5056dae38c52ff04049",
+            "evidence_kind": "live_model_diagnostic",
+            "metric_contract": "target_logprob_v1",
+            "panel": "8c74ac36e775a042576744fd222af9be741aa705197226480d3644b0b9dc7b6c",
+            "policy_id": "context_evidence_fixed_v1",
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "author_answer_evidence",
+            "runtime_identity": "33c7cd42d0c4fd2bec331491685445fb8abff9c9536d9a9f6c496f32d037c595",
+            "source_id": "suite-token-acquisition",
+            "split": "ENGINEERING_INPUT_ONLY",
+            "task_id": "context_evidence_retrieval",
+            "task_version": "0.1",
+            "token_id_space": "7fc3b488e0654b519ba97fb5d30821d8172edb8c67ad24e2afc62de18d89dbc5",
+            "tokenizer_identity": "420c39aaae8d6bcb216797f9459582938b501ac5268f6c36d2d40d983d86a641",
+            "vocabulary_size": 49152
+          },
+          "measured_comparison_tokens": 47,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 0.7519944463790189,
+              "measured_documents": 3,
+              "measured_tokens": 47,
+              "token_weighted": 0.7536949135716141
+            },
+            "delta_nll_nat": {
+              "document_macro": 0.17908286759076977,
+              "measured_documents": 3,
+              "measured_tokens": 47,
+              "token_weighted": 0.18448876626075134
+            },
+            "reference_nll_nat": {
+              "document_macro": 0.5729115787882489,
+              "measured_documents": 3,
+              "measured_tokens": 47,
+              "token_weighted": 0.5692061473108627
+            }
+          },
+          "planned_comparison_tokens": 47,
+          "raw_top1": {
+            "match_fraction": 0.8085106382978723,
+            "matches": 38,
+            "measured_tokens": 47
+          },
+          "requested_comparison_tokens": 47,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 47,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [
+                1
+              ],
+              "mean_overlap_fraction": 0.0,
+              "measured_tokens": 1,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [
+                10
+              ],
+              "mean_overlap_fraction": 0.7,
+              "measured_tokens": 1,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [
+                5
+              ],
+              "mean_overlap_fraction": 0.8,
+              "measured_tokens": 1,
+              "requested_k": 5
+            }
+          }
+        },
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "continuation",
+          "full_distribution": {
+            "entropy_candidate_nat": 0.4270818567083397,
+            "entropy_reference_nat": 0.5162274422101158,
+            "js_nat": 0.011813572641448675,
+            "kl_ref_candidate_nat": 0.05576366678549197,
+            "measured_tokens": 1
+          },
+          "group_identity": "dcf3c277887558aa416598effb3da562e8af71efdd5e3f598074b7d4581d8c06",
+          "identity": {
+            "acquisition_source_left": "instrumented_diagnostic",
+            "acquisition_source_right": "decoded_diagnostic",
+            "backend_policy": "diagnostic",
+            "dataset_identity": "c516addadb0c8c0d9a3d35c6b91a91bc58745c68bcc95fa85f5cbe7ff13e6bee",
+            "evidence_kind": "live_model_diagnostic",
+            "metric_contract": "target_logprob_v1",
+            "panel": "4931b1d0e650fe126c26d86b36bbe0a9b9db4451b4f8b1f29cdee3d77710413f",
+            "policy_id": "P00",
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "author_gold_json",
+            "runtime_identity": "33c7cd42d0c4fd2bec331491685445fb8abff9c9536d9a9f6c496f32d037c595",
+            "source_id": "suite-token-acquisition",
+            "split": "ENGINEERING_INPUT_ONLY",
+            "task_id": "tech_record_extract",
+            "task_version": "0.1",
+            "token_id_space": "7fc3b488e0654b519ba97fb5d30821d8172edb8c67ad24e2afc62de18d89dbc5",
+            "tokenizer_identity": "420c39aaae8d6bcb216797f9459582938b501ac5268f6c36d2d40d983d86a641",
+            "vocabulary_size": 49152
+          },
+          "measured_comparison_tokens": 48,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 0.6508765374869654,
+              "measured_documents": 3,
+              "measured_tokens": 48,
+              "token_weighted": 0.6508765374869654
+            },
+            "delta_nll_nat": {
+              "document_macro": 0.41878729373365786,
+              "measured_documents": 3,
+              "measured_tokens": 48,
+              "token_weighted": 0.41878729373365786
+            },
+            "reference_nll_nat": {
+              "document_macro": 0.23208924375330753,
+              "measured_documents": 3,
+              "measured_tokens": 48,
+              "token_weighted": 0.23208924375330753
+            }
+          },
+          "planned_comparison_tokens": 48,
+          "raw_top1": {
+            "match_fraction": 0.875,
+            "matches": 42,
+            "measured_tokens": 48
+          },
+          "requested_comparison_tokens": 48,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 48,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [
+                1
+              ],
+              "mean_overlap_fraction": 1.0,
+              "measured_tokens": 1,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [
+                10
+              ],
+              "mean_overlap_fraction": 0.6,
+              "measured_tokens": 1,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [
+                5
+              ],
+              "mean_overlap_fraction": 0.6,
+              "measured_tokens": 1,
+              "requested_k": 5
+            }
+          }
+        },
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "__all__",
+          "full_distribution": {
+            "entropy_candidate_nat": 0.0020887598032786757,
+            "entropy_reference_nat": 0.0007949902463702449,
+            "js_nat": 2.535930258656057e-05,
+            "kl_ref_candidate_nat": 9.766195147532444e-05,
+            "measured_tokens": 1
+          },
+          "group_identity": "f524b7b25e4a19982e151540cc6eb6432764ac2b2181d643c74e315253fc6617",
+          "identity": {
+            "acquisition_source_left": "instrumented_diagnostic",
+            "acquisition_source_right": "decoded_diagnostic",
+            "backend_policy": "diagnostic",
+            "dataset_identity": "45b5edb657727a8d651685269fde208efacecf53d109ec859846b4844d78481f",
+            "evidence_kind": "live_model_diagnostic",
+            "metric_contract": "target_logprob_v1",
+            "panel": "db79dc13a981c7c0ff79f9d73d954ed4e477d33a1f35d6b7cc56be1b004ec5bc",
+            "policy_id": "arc_original_completion_v1",
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "dataset_gold_choice",
+            "runtime_identity": "33c7cd42d0c4fd2bec331491685445fb8abff9c9536d9a9f6c496f32d037c595",
+            "source_id": "suite-token-acquisition",
+            "split": "test",
+            "task_id": "arc_challenge",
+            "task_version": "1.0",
+            "token_id_space": "7fc3b488e0654b519ba97fb5d30821d8172edb8c67ad24e2afc62de18d89dbc5",
+            "tokenizer_identity": "420c39aaae8d6bcb216797f9459582938b501ac5268f6c36d2d40d983d86a641",
+            "vocabulary_size": 49152
+          },
+          "measured_comparison_tokens": 28,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 3.152145596463265,
+              "measured_documents": 3,
+              "measured_tokens": 28,
+              "token_weighted": 2.4830829333207345
+            },
+            "delta_nll_nat": {
+              "document_macro": -0.027962456560674063,
+              "measured_documents": 3,
+              "measured_tokens": 28,
+              "token_weighted": -0.14567498910283966
+            },
+            "reference_nll_nat": {
+              "document_macro": 3.180108053023939,
+              "measured_documents": 3,
+              "measured_tokens": 28,
+              "token_weighted": 2.628757922423574
+            }
+          },
+          "planned_comparison_tokens": 28,
+          "raw_top1": {
+            "match_fraction": 0.8571428571428571,
+            "matches": 24,
+            "measured_tokens": 28
+          },
+          "requested_comparison_tokens": 28,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 28,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [
+                1
+              ],
+              "mean_overlap_fraction": 1.0,
+              "measured_tokens": 1,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [
+                10
+              ],
+              "mean_overlap_fraction": 0.5,
+              "measured_tokens": 1,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [
+                5
+              ],
+              "mean_overlap_fraction": 0.6,
+              "measured_tokens": 1,
+              "requested_k": 5
+            }
+          }
+        },
+        {
+          "field_denominator_policy": "overlap allowed; do not sum field groups",
+          "field_tag": "evidence",
+          "full_distribution": {
+            "entropy_candidate_nat": null,
+            "entropy_reference_nat": null,
+            "js_nat": null,
+            "kl_ref_candidate_nat": null,
+            "measured_tokens": 0
+          },
+          "group_identity": "fd3ad224ba5b591c0c03d7e7d9ce96a9078a7dbff219cfec3e3be56256562d9f",
+          "identity": {
+            "acquisition_source_left": "instrumented_diagnostic",
+            "acquisition_source_right": "decoded_diagnostic",
+            "backend_policy": "diagnostic",
+            "dataset_identity": "c395d293ce3f0cd8028502bb165c7485fec5886637e1a5056dae38c52ff04049",
+            "evidence_kind": "live_model_diagnostic",
+            "metric_contract": "target_logprob_v1",
+            "panel": "8c74ac36e775a042576744fd222af9be741aa705197226480d3644b0b9dc7b6c",
+            "policy_id": "context_evidence_fixed_v1",
+            "probability_stage": "raw_pre_sampling",
+            "reference_scope": "author_answer_evidence",
+            "runtime_identity": "33c7cd42d0c4fd2bec331491685445fb8abff9c9536d9a9f6c496f32d037c595",
+            "source_id": "suite-token-acquisition",
+            "split": "ENGINEERING_INPUT_ONLY",
+            "task_id": "context_evidence_retrieval",
+            "task_version": "0.1",
+            "token_id_space": "7fc3b488e0654b519ba97fb5d30821d8172edb8c67ad24e2afc62de18d89dbc5",
+            "tokenizer_identity": "420c39aaae8d6bcb216797f9459582938b501ac5268f6c36d2d40d983d86a641",
+            "vocabulary_size": 49152
+          },
+          "measured_comparison_tokens": 8,
+          "measured_documents": 3,
+          "nll": {
+            "candidate_nll_nat": {
+              "document_macro": 0.9927413620357077,
+              "measured_documents": 3,
+              "measured_tokens": 8,
+              "token_weighted": 1.0981897917536116
+            },
+            "delta_nll_nat": {
+              "document_macro": 0.7857913297923208,
+              "measured_documents": 3,
+              "measured_tokens": 8,
+              "token_weighted": 0.8679825780159263
+            },
+            "reference_nll_nat": {
+              "document_macro": 0.20695003224338707,
+              "measured_documents": 3,
+              "measured_tokens": 8,
+              "token_weighted": 0.23020721373768538
+            }
+          },
+          "planned_comparison_tokens": 8,
+          "raw_top1": {
+            "match_fraction": 0.625,
+            "matches": 5,
+            "measured_tokens": 8
+          },
+          "requested_comparison_tokens": 8,
+          "status_counts": {
+            "INCOMPARABLE": 0,
+            "MEASURED": 8,
+            "UNKNOWN": 0
+          },
+          "top_k": {
+            "1": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 1
+            },
+            "10": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 10
+            },
+            "5": {
+              "effective_k_values": [],
+              "mean_overlap_fraction": null,
+              "measured_tokens": 0,
+              "requested_k": 5
+            }
+          }
+        }
+      ],
+      "missing_rule": "UNKNOWN/INCOMPARABLE retained in coverage; never zero-filled",
+      "no_global_task_average": true,
+      "schema_version": 1
+    },
+    "full_pairs": 3,
+    "full_vectors": 6,
+    "scalar_pairs": 123,
+    "scalar_rows": 246
+  },
+  "float_tolerance": {
+    "absolute": 1e-10,
+    "relative": 1e-09
+  },
+  "kind": "saved_cpu_acceptance_expectations_v1",
+  "origins": {
+    "QWEN_NATIVE_AGGREGATES": {
+      "bytes": 29790,
+      "filename": "aggregates.json",
+      "sha256": "d1144e4650ecf890ea6f8774c9323fa4677de2d77d466e66685e7e8d7a3bb4ab"
+    },
+    "QWEN_TASK_SUMMARY": {
+      "bytes": 11919,
+      "filename": "summary.json",
+      "sha256": "0ca40a37ac552122da626a1b0335cbf774e51e4e0e54ceb3094495560f777441"
+    },
+    "SMOL_PRESERVED_VIEW_MANIFEST": {
+      "bytes": 90108,
+      "filename": "TOKEN_VIEW_MANIFEST.json",
+      "sha256": "683fab030ee2d4cc9ead109748a595608412bd5dfcaf48eb87c1a33564873c3c"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Historicalstoredrawmetricexpectations; currentinstalledversion/source checkedthroughRELEASE_IDENTITY; raw/metricobjectsunchanged",
+  "historical_candidate_version": "0.2.0rc1",
+  "historical_candidate_source_digest": "57dbad3d793cf3519f37105a448d81b88bc179933d7faa12f458cd4114dd8352"
+}

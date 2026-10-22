@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "kind": "structure_probe_spec_v1",
+  "max_sequence_tokens": 640,
+  "observe_attention": true,
+  "backend": "native_transformers_sdpa_smol_mha_v1",
+  "numeric": {
+    "dtype": "float32",
+    "endianness": "little"
+  },
+  "observer_consistency_policy": {
+    "id": "d1_off_repeat_and_on_v1",
+    "absolute_tolerance": 1e-05,
+    "passes": [
+      "OFF1",
+      "OFF2",
+      "ON"
+    ]
+  },
+  "probability_source": "reconstructed_from_native_post_RoPE_qk",
+  "full_key_axis": true,
+  "mask_policy": "native actual mask and global causal query index; masked/future keys retained as zeros",
+  "same_pass_consistency": {
+    "absolute_tolerance_nat": 2e-05,
+    "id": "same_pass_saved_f32_v1",
+    "scope": "same-pass saved float32 full logits CPU log_softmax[target] vs saved float32 scalar"
+  },
+  "budget": {
+    "automatic_retries": 0,
+    "cleanup_reserve_seconds": 120,
+    "max_gpu_processes": 4,
+    "minimum_cpu_available_bytes": 10737418240,
+    "minimum_disk_free_bytes": 4294967296,
+    "probe_gpu_buffer_bytes": 268435456,
+    "raw_bytes_total": 268435456,
+    "task_gpu_wall_seconds": 600
+  },
+  "profile": "SMALL",
+  "layers": "middle",
+  "heads": "first",
+  "query_roles": [
+    "last_prompt"
+  ]
+}

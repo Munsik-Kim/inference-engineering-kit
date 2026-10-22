@@ -1,0 +1,1280 @@
+{
+  "data_seed": 909260,
+  "rows": [
+    {
+      "case_type": "basic",
+      "document": "[L1] EXP-300: temperature 31.0 C.\n[L2] EXP-300: status finished.",
+      "document_hash": "1dc8b07f31ab100ea6959f892c838a6a34ad919cfa8ab3b0fb0b7ffb59d37000",
+      "events": [
+        {
+          "experiment_id": "EXP-300",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 31.0
+        },
+        {
+          "experiment_id": "EXP-300",
+          "field": "status",
+          "line_id": "L2",
+          "value": "complete"
+        }
+      ],
+      "experiment_id": "EXP-300",
+      "gold": {
+        "experiment_id": "EXP-300",
+        "status": "complete",
+        "support": {
+          "status": [
+            "L2"
+          ],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": 31.0
+      },
+      "language": "en",
+      "sample_id": "b1-smoke-en-basic-1",
+      "sample_identity": "6f9a572ccf071ba86a1a543b13594b54ef4e6881f68dfbe423d5d581a159891e",
+      "source_id": "authored-0",
+      "split": "SMOKE",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-basic-v1"
+    },
+    {
+      "case_type": "final_correction",
+      "document": "[L1] EXP-307: temperature 32.75 C.\n[L2] EXP-307: status repeat required.\n[L3] Final correction for EXP-307: temperature 40.75 C.\n[L4] Final correction for EXP-307: status repeat required.",
+      "document_hash": "95713cfd7e792939edbe6378e14ae8f14ea70383528370bd33f4fb1c0eb80924",
+      "events": [
+        {
+          "experiment_id": "EXP-307",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 32.75
+        },
+        {
+          "experiment_id": "EXP-307",
+          "field": "status",
+          "line_id": "L2",
+          "value": "repeat"
+        },
+        {
+          "experiment_id": "EXP-307",
+          "field": "temperature_c",
+          "final": true,
+          "line_id": "L3",
+          "value": 40.75
+        },
+        {
+          "experiment_id": "EXP-307",
+          "field": "status",
+          "final": true,
+          "line_id": "L4",
+          "value": "repeat"
+        }
+      ],
+      "experiment_id": "EXP-307",
+      "gold": {
+        "experiment_id": "EXP-307",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L2",
+            "L4"
+          ],
+          "temperature_c": [
+            "L3"
+          ]
+        },
+        "temperature_c": 40.75
+      },
+      "language": "en",
+      "sample_id": "b1-smoke-en-final_correction-1",
+      "sample_identity": "4b9d343f786a11f29b876030a6639ddd89644d999f575e75f2546b5ec3c29fcf",
+      "source_id": "authored-1",
+      "split": "SMOKE",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-final_correction-v1"
+    },
+    {
+      "case_type": "basic",
+      "document": "[L1] EXP-314: 온도 34.5 C.\n[L2] EXP-314: 상태 대기.",
+      "document_hash": "335ad075ec27e2891b6f0b1edab29cf9e21f61d28eb67da331f730ff0f08de52",
+      "events": [
+        {
+          "experiment_id": "EXP-314",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 34.5
+        },
+        {
+          "experiment_id": "EXP-314",
+          "field": "status",
+          "line_id": "L2",
+          "value": "pending"
+        }
+      ],
+      "experiment_id": "EXP-314",
+      "gold": {
+        "experiment_id": "EXP-314",
+        "status": "pending",
+        "support": {
+          "status": [
+            "L2"
+          ],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": 34.5
+      },
+      "language": "ko",
+      "sample_id": "b1-smoke-ko-basic-1",
+      "sample_identity": "3cbea60fe542077853e3a303cbe9c622f4b104db509652c0ab06dd3ca86a4f47",
+      "source_id": "authored-2",
+      "split": "SMOKE",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-basic-v1"
+    },
+    {
+      "case_type": "final_correction",
+      "document": "[L1] EXP-321: 온도 36.25 C.\n[L2] EXP-321: 상태 완료.\n[L3] 최종 수정 EXP-321: 온도 44.25 C.\n[L4] 최종 수정 EXP-321: 상태 반복 필요.",
+      "document_hash": "dbae734362662dc8e4702fe91e88d49bb3745296fb69744093062a0b903f898b",
+      "events": [
+        {
+          "experiment_id": "EXP-321",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 36.25
+        },
+        {
+          "experiment_id": "EXP-321",
+          "field": "status",
+          "line_id": "L2",
+          "value": "complete"
+        },
+        {
+          "experiment_id": "EXP-321",
+          "field": "temperature_c",
+          "final": true,
+          "line_id": "L3",
+          "value": 44.25
+        },
+        {
+          "experiment_id": "EXP-321",
+          "field": "status",
+          "final": true,
+          "line_id": "L4",
+          "value": "repeat"
+        }
+      ],
+      "experiment_id": "EXP-321",
+      "gold": {
+        "experiment_id": "EXP-321",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L4"
+          ],
+          "temperature_c": [
+            "L3"
+          ]
+        },
+        "temperature_c": 44.25
+      },
+      "language": "ko",
+      "sample_id": "b1-smoke-ko-final_correction-1",
+      "sample_identity": "651530e7347013beca514bd05b7c4e90a2b5e857c0e5f0ec65c3fa4583c42aa0",
+      "source_id": "authored-3",
+      "split": "SMOKE",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-final_correction-v1"
+    },
+    {
+      "case_type": "basic",
+      "document": "[L1] EXP-328: temperature 38.0 C.\n[L2] EXP-328: status repeat required.",
+      "document_hash": "8fa4a7d889dfa223a4f653e31e80f1c3ae6d1c4be7263e562f9dbdbe76f46b76",
+      "events": [
+        {
+          "experiment_id": "EXP-328",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 38.0
+        },
+        {
+          "experiment_id": "EXP-328",
+          "field": "status",
+          "line_id": "L2",
+          "value": "repeat"
+        }
+      ],
+      "experiment_id": "EXP-328",
+      "gold": {
+        "experiment_id": "EXP-328",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L2"
+          ],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": 38.0
+      },
+      "language": "en",
+      "sample_id": "b1-dev_locked-en-basic-1",
+      "sample_identity": "8c3ddf02a2c66e31b97e6370bb23cea3c3d8ee70010027cd9119de2cf2528819",
+      "source_id": "authored-4",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-basic-v1"
+    },
+    {
+      "case_type": "basic",
+      "document": "[L1] EXP-335: temperature 39.75 C.\n[L2] EXP-335: status waiting.",
+      "document_hash": "9cadd3f04cb56e10617fa34732f4b2c64d9eedc92ec8eb9b825d07e38f777d3f",
+      "events": [
+        {
+          "experiment_id": "EXP-335",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 39.75
+        },
+        {
+          "experiment_id": "EXP-335",
+          "field": "status",
+          "line_id": "L2",
+          "value": "pending"
+        }
+      ],
+      "experiment_id": "EXP-335",
+      "gold": {
+        "experiment_id": "EXP-335",
+        "status": "pending",
+        "support": {
+          "status": [
+            "L2"
+          ],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": 39.75
+      },
+      "language": "en",
+      "sample_id": "b1-dev_locked-en-basic-2",
+      "sample_identity": "bd8a69b2c7f196b292170d421ca3dbe09b7ed259957fce002d9ba09f56c702bc",
+      "source_id": "authored-5",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-basic-v1"
+    },
+    {
+      "case_type": "similar_id",
+      "document": "[L1] EXP-3421: temperature 84.5 C.\n[L2] EXP-342: temperature 41.5 C.\n[L3] EXP-342: status finished.\n[L4] EXP-3421: status waiting.",
+      "document_hash": "313b143f8859d520d21dad556cc45a4305811eccf7e3ee5e97cf56ec419102a5",
+      "events": [
+        {
+          "experiment_id": "EXP-3421",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 84.5
+        },
+        {
+          "experiment_id": "EXP-342",
+          "field": "temperature_c",
+          "line_id": "L2",
+          "value": 41.5
+        },
+        {
+          "experiment_id": "EXP-342",
+          "field": "status",
+          "line_id": "L3",
+          "value": "complete"
+        },
+        {
+          "experiment_id": "EXP-3421",
+          "field": "status",
+          "line_id": "L4",
+          "value": "pending"
+        }
+      ],
+      "experiment_id": "EXP-342",
+      "gold": {
+        "experiment_id": "EXP-342",
+        "status": "complete",
+        "support": {
+          "status": [
+            "L3"
+          ],
+          "temperature_c": [
+            "L2"
+          ]
+        },
+        "temperature_c": 41.5
+      },
+      "language": "en",
+      "sample_id": "b1-dev_locked-en-similar_id-1",
+      "sample_identity": "558d70d1067ddaa4846939970e06ff716c03ff0612f1be23825b769d7dc29149",
+      "source_id": "authored-6",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-similar_id-v1"
+    },
+    {
+      "case_type": "similar_id",
+      "document": "[L1] EXP-3491: temperature 86.25 C.\n[L2] EXP-349: temperature 43.25 C.\n[L3] EXP-349: status repeat required.\n[L4] EXP-3491: status waiting.",
+      "document_hash": "105028efe8b63c321752f5727089da1f37a473609ef4b9cbca13bb2a9c594b78",
+      "events": [
+        {
+          "experiment_id": "EXP-3491",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 86.25
+        },
+        {
+          "experiment_id": "EXP-349",
+          "field": "temperature_c",
+          "line_id": "L2",
+          "value": 43.25
+        },
+        {
+          "experiment_id": "EXP-349",
+          "field": "status",
+          "line_id": "L3",
+          "value": "repeat"
+        },
+        {
+          "experiment_id": "EXP-3491",
+          "field": "status",
+          "line_id": "L4",
+          "value": "pending"
+        }
+      ],
+      "experiment_id": "EXP-349",
+      "gold": {
+        "experiment_id": "EXP-349",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L3"
+          ],
+          "temperature_c": [
+            "L2"
+          ]
+        },
+        "temperature_c": 43.25
+      },
+      "language": "en",
+      "sample_id": "b1-dev_locked-en-similar_id-2",
+      "sample_identity": "6190e213a3f7f50e23b0d0cf3b0fa8e93505b56e8849c95e6139eee0d5c53e5d",
+      "source_id": "authored-7",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-similar_id-v1"
+    },
+    {
+      "case_type": "final_correction",
+      "document": "[L1] EXP-356: temperature 45.0 C.\n[L2] EXP-356: status waiting.\n[L3] Final correction for EXP-356: temperature 53.0 C.\n[L4] Final correction for EXP-356: status repeat required.",
+      "document_hash": "bbc0acbd79a1e1f76ba8c3055e92a74c160b762a23c29971e676c932e2c27275",
+      "events": [
+        {
+          "experiment_id": "EXP-356",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 45.0
+        },
+        {
+          "experiment_id": "EXP-356",
+          "field": "status",
+          "line_id": "L2",
+          "value": "pending"
+        },
+        {
+          "experiment_id": "EXP-356",
+          "field": "temperature_c",
+          "final": true,
+          "line_id": "L3",
+          "value": 53.0
+        },
+        {
+          "experiment_id": "EXP-356",
+          "field": "status",
+          "final": true,
+          "line_id": "L4",
+          "value": "repeat"
+        }
+      ],
+      "experiment_id": "EXP-356",
+      "gold": {
+        "experiment_id": "EXP-356",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L4"
+          ],
+          "temperature_c": [
+            "L3"
+          ]
+        },
+        "temperature_c": 53.0
+      },
+      "language": "en",
+      "sample_id": "b1-dev_locked-en-final_correction-1",
+      "sample_identity": "e60110eb802cf326335ccdc84dc2d8b8c64c5c5473adce0daebf7548461eeeb8",
+      "source_id": "authored-8",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-final_correction-v1"
+    },
+    {
+      "case_type": "final_correction",
+      "document": "[L1] EXP-363: temperature 46.75 C.\n[L2] EXP-363: status finished.\n[L3] Final correction for EXP-363: temperature 54.75 C.\n[L4] Final correction for EXP-363: status repeat required.",
+      "document_hash": "52ac55c5ebdca3f5d4ac2dc685648fcae2727132af1752e1d118c5c23c6f47bd",
+      "events": [
+        {
+          "experiment_id": "EXP-363",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 46.75
+        },
+        {
+          "experiment_id": "EXP-363",
+          "field": "status",
+          "line_id": "L2",
+          "value": "complete"
+        },
+        {
+          "experiment_id": "EXP-363",
+          "field": "temperature_c",
+          "final": true,
+          "line_id": "L3",
+          "value": 54.75
+        },
+        {
+          "experiment_id": "EXP-363",
+          "field": "status",
+          "final": true,
+          "line_id": "L4",
+          "value": "repeat"
+        }
+      ],
+      "experiment_id": "EXP-363",
+      "gold": {
+        "experiment_id": "EXP-363",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L4"
+          ],
+          "temperature_c": [
+            "L3"
+          ]
+        },
+        "temperature_c": 54.75
+      },
+      "language": "en",
+      "sample_id": "b1-dev_locked-en-final_correction-2",
+      "sample_identity": "4e75d6e61a90dc58e58b130d2d7ea008b4b50cb304d0eaa48aa4a12ce639aea8",
+      "source_id": "authored-9",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-final_correction-v1"
+    },
+    {
+      "case_type": "missing",
+      "document": "[L1] EXP-370: status repeat required.",
+      "document_hash": "cf1454d602d1497274be5db3a1e860f784dbff119fab6e63688cc0b3878f7daf",
+      "events": [
+        {
+          "experiment_id": "EXP-370",
+          "field": "status",
+          "line_id": "L1",
+          "value": "repeat"
+        }
+      ],
+      "experiment_id": "EXP-370",
+      "gold": {
+        "experiment_id": "EXP-370",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L1"
+          ],
+          "temperature_c": []
+        },
+        "temperature_c": null
+      },
+      "language": "en",
+      "sample_id": "b1-dev_locked-en-missing-1",
+      "sample_identity": "eacbae631c5f50ee44b5751e3a9746fc1023b361f452cff56000a8c12b33cfb2",
+      "source_id": "authored-10",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-missing-v1"
+    },
+    {
+      "case_type": "missing",
+      "document": "[L1] EXP-377: temperature 50.25 C.",
+      "document_hash": "e964652917e08b9272ee2fac8f0b652e288e6326c9bb5d045ec6d8aaf012ddc7",
+      "events": [
+        {
+          "experiment_id": "EXP-377",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 50.25
+        }
+      ],
+      "experiment_id": "EXP-377",
+      "gold": {
+        "experiment_id": "EXP-377",
+        "status": null,
+        "support": {
+          "status": [],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": 50.25
+      },
+      "language": "en",
+      "sample_id": "b1-dev_locked-en-missing-2",
+      "sample_identity": "3c4dfd801bff09d95bbc0a0a4ba311184b5eeff7623c5ea1e3a7860dd73737b4",
+      "source_id": "authored-11",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-missing-v1"
+    },
+    {
+      "case_type": "numeric",
+      "document": "[L1] EXP-384: temperature -12.5 C.\n[L2] EXP-384: status finished.",
+      "document_hash": "f1110c25dbf1b06c6db38c649883edeedd9cdd1cde6d146fa1316710c47d4aea",
+      "events": [
+        {
+          "experiment_id": "EXP-384",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": -12.5
+        },
+        {
+          "experiment_id": "EXP-384",
+          "field": "status",
+          "line_id": "L2",
+          "value": "complete"
+        }
+      ],
+      "experiment_id": "EXP-384",
+      "gold": {
+        "experiment_id": "EXP-384",
+        "status": "complete",
+        "support": {
+          "status": [
+            "L2"
+          ],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": -12.5
+      },
+      "language": "en",
+      "sample_id": "b1-dev_locked-en-numeric-1",
+      "sample_identity": "d91da3ec42fe4698bd12cd0b5351248352310ce999798466fca9692df3dac44f",
+      "source_id": "authored-12",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-numeric-v1"
+    },
+    {
+      "case_type": "numeric",
+      "document": "[L1] EXP-391: temperature 0.125 C.\n[L2] EXP-391: status repeat required.",
+      "document_hash": "020d1ad33b4383fce649352e70b7c065843887151ee588efbf4c6097a79f09eb",
+      "events": [
+        {
+          "experiment_id": "EXP-391",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 0.125
+        },
+        {
+          "experiment_id": "EXP-391",
+          "field": "status",
+          "line_id": "L2",
+          "value": "repeat"
+        }
+      ],
+      "experiment_id": "EXP-391",
+      "gold": {
+        "experiment_id": "EXP-391",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L2"
+          ],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": 0.125
+      },
+      "language": "en",
+      "sample_id": "b1-dev_locked-en-numeric-2",
+      "sample_identity": "a1610adefe9bf13b7844563f72e39b07ce38218a68951105838ebf90017cfe56",
+      "source_id": "authored-13",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-numeric-v1"
+    },
+    {
+      "case_type": "reordered",
+      "document": "[L1] EXP-398: status waiting.\n[L2] Work note: keep records; other IDs do not change the requested extraction.\n[L3] EXP-398: temperature 55.5 C.",
+      "document_hash": "4d5fcf293370cd667f1853cf7aa84b813729e935291d46322bc5ea6802b6bfef",
+      "events": [
+        {
+          "experiment_id": "EXP-398",
+          "field": "status",
+          "line_id": "L1",
+          "value": "pending"
+        },
+        {
+          "field": "note",
+          "line_id": "L2",
+          "text": "Work note: keep records; other IDs do not change the requested extraction."
+        },
+        {
+          "experiment_id": "EXP-398",
+          "field": "temperature_c",
+          "line_id": "L3",
+          "value": 55.5
+        }
+      ],
+      "experiment_id": "EXP-398",
+      "gold": {
+        "experiment_id": "EXP-398",
+        "status": "pending",
+        "support": {
+          "status": [
+            "L1"
+          ],
+          "temperature_c": [
+            "L3"
+          ]
+        },
+        "temperature_c": 55.5
+      },
+      "language": "en",
+      "sample_id": "b1-dev_locked-en-reordered-1",
+      "sample_identity": "10b46d9d2cecffb3d0ef59346e0183950b47a4b7574e7382fdb759c33664d22b",
+      "source_id": "authored-14",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-reordered-v1"
+    },
+    {
+      "case_type": "reordered",
+      "document": "[L1] EXP-405: status finished.\n[L2] Work note: keep records; other IDs do not change the requested extraction.\n[L3] EXP-405: temperature 57.25 C.",
+      "document_hash": "05bc10d54de99e1e1a1ed740f248bffd46a9b9f1a3762c31b4169fe840acfac2",
+      "events": [
+        {
+          "experiment_id": "EXP-405",
+          "field": "status",
+          "line_id": "L1",
+          "value": "complete"
+        },
+        {
+          "field": "note",
+          "line_id": "L2",
+          "text": "Work note: keep records; other IDs do not change the requested extraction."
+        },
+        {
+          "experiment_id": "EXP-405",
+          "field": "temperature_c",
+          "line_id": "L3",
+          "value": 57.25
+        }
+      ],
+      "experiment_id": "EXP-405",
+      "gold": {
+        "experiment_id": "EXP-405",
+        "status": "complete",
+        "support": {
+          "status": [
+            "L1"
+          ],
+          "temperature_c": [
+            "L3"
+          ]
+        },
+        "temperature_c": 57.25
+      },
+      "language": "en",
+      "sample_id": "b1-dev_locked-en-reordered-2",
+      "sample_identity": "9b5db80c0551e5fbae1c89419a050c849c4d8e2c0a5115ac3fbf34f7712f2ba9",
+      "source_id": "authored-15",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-reordered-v1"
+    },
+    {
+      "case_type": "basic",
+      "document": "[L1] EXP-412: 온도 59.0 C.\n[L2] EXP-412: 상태 반복 필요.",
+      "document_hash": "bae7810e17329b0beb1a65e71d086cfe099c9e721cd5d4aff42ca19de2ec429b",
+      "events": [
+        {
+          "experiment_id": "EXP-412",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 59.0
+        },
+        {
+          "experiment_id": "EXP-412",
+          "field": "status",
+          "line_id": "L2",
+          "value": "repeat"
+        }
+      ],
+      "experiment_id": "EXP-412",
+      "gold": {
+        "experiment_id": "EXP-412",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L2"
+          ],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": 59.0
+      },
+      "language": "ko",
+      "sample_id": "b1-dev_locked-ko-basic-1",
+      "sample_identity": "17693071e108a335530e9a6df9a8e4389ef63e8762fa53518fbba33caabd48c2",
+      "source_id": "authored-16",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-basic-v1"
+    },
+    {
+      "case_type": "basic",
+      "document": "[L1] EXP-419: 온도 60.75 C.\n[L2] EXP-419: 상태 대기.",
+      "document_hash": "bdd52cf508f3c4112987165e1d0bcc5253c1e3eec9f1db3119b24732757fc30f",
+      "events": [
+        {
+          "experiment_id": "EXP-419",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 60.75
+        },
+        {
+          "experiment_id": "EXP-419",
+          "field": "status",
+          "line_id": "L2",
+          "value": "pending"
+        }
+      ],
+      "experiment_id": "EXP-419",
+      "gold": {
+        "experiment_id": "EXP-419",
+        "status": "pending",
+        "support": {
+          "status": [
+            "L2"
+          ],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": 60.75
+      },
+      "language": "ko",
+      "sample_id": "b1-dev_locked-ko-basic-2",
+      "sample_identity": "e1d6daab4da0800e86a02511d58a035227d9a477d8f45b38c0c384c038bab002",
+      "source_id": "authored-17",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-basic-v1"
+    },
+    {
+      "case_type": "similar_id",
+      "document": "[L1] EXP-4261: 온도 105.5 C.\n[L2] EXP-426: 온도 62.5 C.\n[L3] EXP-426: 상태 완료.\n[L4] EXP-4261: 상태 대기.",
+      "document_hash": "3a9c8c59e6c3f6cd308177182a137794c77ea9af8bf9a378a3b0e2f63c39906b",
+      "events": [
+        {
+          "experiment_id": "EXP-4261",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 105.5
+        },
+        {
+          "experiment_id": "EXP-426",
+          "field": "temperature_c",
+          "line_id": "L2",
+          "value": 62.5
+        },
+        {
+          "experiment_id": "EXP-426",
+          "field": "status",
+          "line_id": "L3",
+          "value": "complete"
+        },
+        {
+          "experiment_id": "EXP-4261",
+          "field": "status",
+          "line_id": "L4",
+          "value": "pending"
+        }
+      ],
+      "experiment_id": "EXP-426",
+      "gold": {
+        "experiment_id": "EXP-426",
+        "status": "complete",
+        "support": {
+          "status": [
+            "L3"
+          ],
+          "temperature_c": [
+            "L2"
+          ]
+        },
+        "temperature_c": 62.5
+      },
+      "language": "ko",
+      "sample_id": "b1-dev_locked-ko-similar_id-1",
+      "sample_identity": "8317cbc3eabd491f26422e23e82b0aecf3426c663185560c1e606779a203ac45",
+      "source_id": "authored-18",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-similar_id-v1"
+    },
+    {
+      "case_type": "similar_id",
+      "document": "[L1] EXP-4331: 온도 107.25 C.\n[L2] EXP-433: 온도 64.25 C.\n[L3] EXP-433: 상태 반복 필요.\n[L4] EXP-4331: 상태 대기.",
+      "document_hash": "ce6ee3f03cc088cc764db86c07eeef6d09f20165b38cf3873fb4ac043579a81d",
+      "events": [
+        {
+          "experiment_id": "EXP-4331",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 107.25
+        },
+        {
+          "experiment_id": "EXP-433",
+          "field": "temperature_c",
+          "line_id": "L2",
+          "value": 64.25
+        },
+        {
+          "experiment_id": "EXP-433",
+          "field": "status",
+          "line_id": "L3",
+          "value": "repeat"
+        },
+        {
+          "experiment_id": "EXP-4331",
+          "field": "status",
+          "line_id": "L4",
+          "value": "pending"
+        }
+      ],
+      "experiment_id": "EXP-433",
+      "gold": {
+        "experiment_id": "EXP-433",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L3"
+          ],
+          "temperature_c": [
+            "L2"
+          ]
+        },
+        "temperature_c": 64.25
+      },
+      "language": "ko",
+      "sample_id": "b1-dev_locked-ko-similar_id-2",
+      "sample_identity": "7468b7e01ad63f6ee657988668299578730b590f89b7f26b8a3e133d6a3a4993",
+      "source_id": "authored-19",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-similar_id-v1"
+    },
+    {
+      "case_type": "final_correction",
+      "document": "[L1] EXP-440: 온도 66.0 C.\n[L2] EXP-440: 상태 대기.\n[L3] 최종 수정 EXP-440: 온도 74.0 C.\n[L4] 최종 수정 EXP-440: 상태 반복 필요.",
+      "document_hash": "5845ce494a693dc471c0bdb858cbe008cf8a5c6aba83839d4962263363615c4b",
+      "events": [
+        {
+          "experiment_id": "EXP-440",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 66.0
+        },
+        {
+          "experiment_id": "EXP-440",
+          "field": "status",
+          "line_id": "L2",
+          "value": "pending"
+        },
+        {
+          "experiment_id": "EXP-440",
+          "field": "temperature_c",
+          "final": true,
+          "line_id": "L3",
+          "value": 74.0
+        },
+        {
+          "experiment_id": "EXP-440",
+          "field": "status",
+          "final": true,
+          "line_id": "L4",
+          "value": "repeat"
+        }
+      ],
+      "experiment_id": "EXP-440",
+      "gold": {
+        "experiment_id": "EXP-440",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L4"
+          ],
+          "temperature_c": [
+            "L3"
+          ]
+        },
+        "temperature_c": 74.0
+      },
+      "language": "ko",
+      "sample_id": "b1-dev_locked-ko-final_correction-1",
+      "sample_identity": "eca155973e93d0609ca057c356186207bcd657682f54a9d19f4cda1e35fcd76a",
+      "source_id": "authored-20",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-final_correction-v1"
+    },
+    {
+      "case_type": "final_correction",
+      "document": "[L1] EXP-447: 온도 67.75 C.\n[L2] EXP-447: 상태 완료.\n[L3] 최종 수정 EXP-447: 온도 75.75 C.\n[L4] 최종 수정 EXP-447: 상태 반복 필요.",
+      "document_hash": "d02d3d3ecad676408609ffae217bc2b8614490e223519cdf061efdd88df56ab5",
+      "events": [
+        {
+          "experiment_id": "EXP-447",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 67.75
+        },
+        {
+          "experiment_id": "EXP-447",
+          "field": "status",
+          "line_id": "L2",
+          "value": "complete"
+        },
+        {
+          "experiment_id": "EXP-447",
+          "field": "temperature_c",
+          "final": true,
+          "line_id": "L3",
+          "value": 75.75
+        },
+        {
+          "experiment_id": "EXP-447",
+          "field": "status",
+          "final": true,
+          "line_id": "L4",
+          "value": "repeat"
+        }
+      ],
+      "experiment_id": "EXP-447",
+      "gold": {
+        "experiment_id": "EXP-447",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L4"
+          ],
+          "temperature_c": [
+            "L3"
+          ]
+        },
+        "temperature_c": 75.75
+      },
+      "language": "ko",
+      "sample_id": "b1-dev_locked-ko-final_correction-2",
+      "sample_identity": "b80145a7b07f6c6c11a3025bd65755278425c420294486636c2e53fbd1870802",
+      "source_id": "authored-21",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-final_correction-v1"
+    },
+    {
+      "case_type": "missing",
+      "document": "[L1] EXP-454: 상태 반복 필요.",
+      "document_hash": "c76e04c28ceac848e2a85539f410d83cd816743815a016f32b960fe4caa93424",
+      "events": [
+        {
+          "experiment_id": "EXP-454",
+          "field": "status",
+          "line_id": "L1",
+          "value": "repeat"
+        }
+      ],
+      "experiment_id": "EXP-454",
+      "gold": {
+        "experiment_id": "EXP-454",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L1"
+          ],
+          "temperature_c": []
+        },
+        "temperature_c": null
+      },
+      "language": "ko",
+      "sample_id": "b1-dev_locked-ko-missing-1",
+      "sample_identity": "7798a899bf580331bd26541e9c729bbcf9e5fdf5dd936a52854e3753dc70d7cc",
+      "source_id": "authored-22",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-missing-v1"
+    },
+    {
+      "case_type": "missing",
+      "document": "[L1] EXP-461: 온도 71.25 C.",
+      "document_hash": "94e28c37d8085deb4f2d05ed579d36ff4d444c7ed724fd208cefb4945f72b719",
+      "events": [
+        {
+          "experiment_id": "EXP-461",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 71.25
+        }
+      ],
+      "experiment_id": "EXP-461",
+      "gold": {
+        "experiment_id": "EXP-461",
+        "status": null,
+        "support": {
+          "status": [],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": 71.25
+      },
+      "language": "ko",
+      "sample_id": "b1-dev_locked-ko-missing-2",
+      "sample_identity": "0bd4370f7589c2755054ba36edf887fe827ec7a25d705bd1f9b4e662aea6c937",
+      "source_id": "authored-23",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-missing-v1"
+    },
+    {
+      "case_type": "numeric",
+      "document": "[L1] EXP-468: 온도 -9.5 C.\n[L2] EXP-468: 상태 완료.",
+      "document_hash": "ce81a9391f84c07ff06d26fcd26a91ba15c94630a3a3cc287c1b87736eeb1535",
+      "events": [
+        {
+          "experiment_id": "EXP-468",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": -9.5
+        },
+        {
+          "experiment_id": "EXP-468",
+          "field": "status",
+          "line_id": "L2",
+          "value": "complete"
+        }
+      ],
+      "experiment_id": "EXP-468",
+      "gold": {
+        "experiment_id": "EXP-468",
+        "status": "complete",
+        "support": {
+          "status": [
+            "L2"
+          ],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": -9.5
+      },
+      "language": "ko",
+      "sample_id": "b1-dev_locked-ko-numeric-1",
+      "sample_identity": "82ac451bdf2a445733451b6d89e4d194898dae1fc31ba5856d37c1684147b93e",
+      "source_id": "authored-24",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-numeric-v1"
+    },
+    {
+      "case_type": "numeric",
+      "document": "[L1] EXP-475: 온도 3.125 C.\n[L2] EXP-475: 상태 반복 필요.",
+      "document_hash": "bb491931b38780f8030e76c7cc2474b78dcae7206ea294b950b19a8ac99b0d3b",
+      "events": [
+        {
+          "experiment_id": "EXP-475",
+          "field": "temperature_c",
+          "line_id": "L1",
+          "value": 3.125
+        },
+        {
+          "experiment_id": "EXP-475",
+          "field": "status",
+          "line_id": "L2",
+          "value": "repeat"
+        }
+      ],
+      "experiment_id": "EXP-475",
+      "gold": {
+        "experiment_id": "EXP-475",
+        "status": "repeat",
+        "support": {
+          "status": [
+            "L2"
+          ],
+          "temperature_c": [
+            "L1"
+          ]
+        },
+        "temperature_c": 3.125
+      },
+      "language": "ko",
+      "sample_id": "b1-dev_locked-ko-numeric-2",
+      "sample_identity": "80b217fbe0c9a2ce008b3e0407b236113032bca2f6f2153f9a2f65c38f8e32cd",
+      "source_id": "authored-25",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-numeric-v1"
+    },
+    {
+      "case_type": "reordered",
+      "document": "[L1] EXP-482: 상태 대기.\n[L2] 작업 메모: 다른 ID의 지시는 추출 규칙을 바꾸지 않는다.\n[L3] EXP-482: 온도 76.5 C.",
+      "document_hash": "0e705eaf4243d9de098e0440343080ec2b18866fab0547ad81e91bbe237766f5",
+      "events": [
+        {
+          "experiment_id": "EXP-482",
+          "field": "status",
+          "line_id": "L1",
+          "value": "pending"
+        },
+        {
+          "field": "note",
+          "line_id": "L2",
+          "text": "작업 메모: 다른 ID의 지시는 추출 규칙을 바꾸지 않는다."
+        },
+        {
+          "experiment_id": "EXP-482",
+          "field": "temperature_c",
+          "line_id": "L3",
+          "value": 76.5
+        }
+      ],
+      "experiment_id": "EXP-482",
+      "gold": {
+        "experiment_id": "EXP-482",
+        "status": "pending",
+        "support": {
+          "status": [
+            "L1"
+          ],
+          "temperature_c": [
+            "L3"
+          ]
+        },
+        "temperature_c": 76.5
+      },
+      "language": "ko",
+      "sample_id": "b1-dev_locked-ko-reordered-1",
+      "sample_identity": "5e01b9bbc6335cd0988bd02afe104bfd0204e4546350ddffce1501ebbd0af1fe",
+      "source_id": "authored-26",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-reordered-v1"
+    },
+    {
+      "case_type": "reordered",
+      "document": "[L1] EXP-489: 상태 완료.\n[L2] 작업 메모: 다른 ID의 지시는 추출 규칙을 바꾸지 않는다.\n[L3] EXP-489: 온도 78.25 C.",
+      "document_hash": "ff5ea8504cff008d3b5e71a84bfa40c6ab1bb61c689bc205f3ec114093644ae3",
+      "events": [
+        {
+          "experiment_id": "EXP-489",
+          "field": "status",
+          "line_id": "L1",
+          "value": "complete"
+        },
+        {
+          "field": "note",
+          "line_id": "L2",
+          "text": "작업 메모: 다른 ID의 지시는 추출 규칙을 바꾸지 않는다."
+        },
+        {
+          "experiment_id": "EXP-489",
+          "field": "temperature_c",
+          "line_id": "L3",
+          "value": 78.25
+        }
+      ],
+      "experiment_id": "EXP-489",
+      "gold": {
+        "experiment_id": "EXP-489",
+        "status": "complete",
+        "support": {
+          "status": [
+            "L1"
+          ],
+          "temperature_c": [
+            "L3"
+          ]
+        },
+        "temperature_c": 78.25
+      },
+      "language": "ko",
+      "sample_id": "b1-dev_locked-ko-reordered-2",
+      "sample_identity": "b066fa8f36f511ce6ce8712f5548d2282936460beccc39c56e19f4fc5e4d2dc2",
+      "source_id": "authored-27",
+      "split": "DEV_LOCKED",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1",
+      "template_family": "tech-record-reordered-v1"
+    }
+  ],
+  "rows_identity": "62fc6f024a5d0cec8d28819c1cd1c287062ddb570e284ee6beae513bc1caf6d1",
+  "schema_version": 1,
+  "scope": "authored_synthetic_dev_pilot_not_test",
+  "scorer": "tech_record_strict_json_v1",
+  "task_id": "tech_record_extract",
+  "task_version": "0.1"
+}

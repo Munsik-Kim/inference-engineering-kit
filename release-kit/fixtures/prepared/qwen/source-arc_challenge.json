@@ -1,0 +1,5275 @@
+{
+  "kind": "prepared_task_source_v1",
+  "model_metadata": {
+    "arms": [
+      {
+        "arm_id": "qwen_bf16",
+        "artifact": {
+          "artifact_bytes": 8044982000,
+          "artifact_identity": "80df9fe761e587e62157895ed06e4811608b93f12c3cd1c2ef4720dfec3711e1",
+          "config_sha256": "5beea1a4a34c62782bfb2f911c606741a3bab8f92d80a118fa053c28af12e8ba",
+          "configuration_id": "qwen3_4b--bf16",
+          "conversion_seconds": null,
+          "kv_tensor_payload_bytes_per_token": 147456,
+          "method": "bf16",
+          "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+          "model_key": "qwen3_4b",
+          "model_metadata_sha256": "5beea1a4a34c62782bfb2f911c606741a3bab8f92d80a118fa053c28af12e8ba",
+          "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+          "provenance": "Existing GPTQ source/recipe retained; Qwen conversion not repeated on shared STEP02 CAL",
+          "recipe": {
+            "algorithm": "native",
+            "runtime_dtype": "bfloat16"
+          },
+          "recipe_identity": "6cb6c2c7449ae201b2a723e41f1bd0dd81b5847501063903a7d96fcf07eaf170",
+          "schema_version": 2,
+          "status": "LOCAL_ARTIFACT_READY"
+        },
+        "execution_mode": "NATIVE_SERVING",
+        "model_config": {
+          "architectures": [
+            "Qwen3ForCausalLM"
+          ],
+          "attention_bias": false,
+          "attention_dropout": 0.0,
+          "bos_token_id": 151643,
+          "eos_token_id": 151645,
+          "head_dim": 128,
+          "hidden_act": "silu",
+          "hidden_size": 2560,
+          "initializer_range": 0.02,
+          "intermediate_size": 9728,
+          "max_position_embeddings": 262144,
+          "max_window_layers": 36,
+          "model_type": "qwen3",
+          "num_attention_heads": 32,
+          "num_hidden_layers": 36,
+          "num_key_value_heads": 8,
+          "rms_norm_eps": 1e-06,
+          "rope_scaling": null,
+          "rope_theta": 5000000,
+          "sliding_window": null,
+          "tie_word_embeddings": true,
+          "torch_dtype": "bfloat16",
+          "transformers_version": "4.51.0",
+          "use_cache": true,
+          "use_sliding_window": false,
+          "vocab_size": 151936
+        },
+        "quantization_config": null,
+        "quantization_method": "bf16",
+        "receipt_arm": "bf16",
+        "recipe": {
+          "algorithm": "native",
+          "runtime_dtype": "bfloat16"
+        },
+        "source_format": "native"
+      },
+      {
+        "arm_id": "qwen_gptq_w4",
+        "artifact": {
+          "artifact_bytes": 2651839568,
+          "artifact_identity": "ae127f55c20fcb9fc8aed6f461a1187695ca74c4d3b4e43cfcdbdd83258bfa5f",
+          "config_sha256": "61eb986daf57d8c42420795de1d1a551c39c71786492fbe245867187ae9ce54f",
+          "configuration_id": "qwen3_4b--gptq_w4",
+          "conversion_seconds": null,
+          "kv_tensor_payload_bytes_per_token": 147456,
+          "method": "gptq_w4",
+          "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+          "model_key": "qwen3_4b",
+          "model_metadata_sha256": "61eb986daf57d8c42420795de1d1a551c39c71786492fbe245867187ae9ce54f",
+          "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+          "provenance": "Existing GPTQ source/recipe retained; Qwen conversion not repeated on shared STEP02 CAL",
+          "recipe": {
+            "actorder": null,
+            "block_size": 128,
+            "dampening_frac": 0.01,
+            "fixture": false,
+            "group_size": 128,
+            "input_hash": "1074e82ebfb421fabce343e5a4884be2be1766225b29596174455819ed92ead4",
+            "method": "GPTQ",
+            "num_bits": 4,
+            "offload_hessians": true,
+            "pipeline": "sequential",
+            "symmetric": true
+          },
+          "recipe_identity": "9c742b7dc6667d9f3fd30b4543a2a973d078d17d7a3df6be9a3d44625de93a54",
+          "schema_version": 2,
+          "status": "LOCAL_ARTIFACT_READY"
+        },
+        "execution_mode": "NATIVE_SERVING",
+        "model_config": {
+          "architectures": [
+            "Qwen3ForCausalLM"
+          ],
+          "attention_bias": false,
+          "attention_dropout": 0.0,
+          "bos_token_id": 151643,
+          "dtype": "bfloat16",
+          "eos_token_id": 151645,
+          "head_dim": 128,
+          "hidden_act": "silu",
+          "hidden_size": 2560,
+          "initializer_range": 0.02,
+          "intermediate_size": 9728,
+          "layer_types": [
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention",
+            "full_attention"
+          ],
+          "max_position_embeddings": 262144,
+          "max_window_layers": 36,
+          "model_type": "qwen3",
+          "num_attention_heads": 32,
+          "num_hidden_layers": 36,
+          "num_key_value_heads": 8,
+          "pad_token_id": null,
+          "quantization_config": {
+            "config_groups": {
+              "group_0": {
+                "format": "pack-quantized",
+                "input_activations": null,
+                "output_activations": null,
+                "targets": [
+                  "Linear"
+                ],
+                "weights": {
+                  "actorder": null,
+                  "block_structure": null,
+                  "dynamic": false,
+                  "group_size": 128,
+                  "num_bits": 4,
+                  "observer": "memoryless_minmax",
+                  "observer_kwargs": {},
+                  "scale_dtype": null,
+                  "strategy": "group",
+                  "symmetric": true,
+                  "type": "int",
+                  "zp_dtype": null
+                }
+              }
+            },
+            "format": "pack-quantized",
+            "global_compression_ratio": null,
+            "ignore": [
+              "lm_head"
+            ],
+            "kv_cache_scheme": null,
+            "quant_method": "compressed-tensors",
+            "quantization_status": "compressed",
+            "sparsity_config": {},
+            "transform_config": {},
+            "version": "0.18.0"
+          },
+          "rms_norm_eps": 1e-06,
+          "rope_parameters": {
+            "rope_theta": 5000000,
+            "rope_type": "default"
+          },
+          "sliding_window": null,
+          "tie_word_embeddings": true,
+          "transformers_version": "5.14.1",
+          "use_cache": true,
+          "use_sliding_window": false,
+          "vocab_size": 151936
+        },
+        "quantization_config": {
+          "config_groups": {
+            "group_0": {
+              "format": "pack-quantized",
+              "input_activations": null,
+              "output_activations": null,
+              "targets": [
+                "Linear"
+              ],
+              "weights": {
+                "actorder": null,
+                "block_structure": null,
+                "dynamic": false,
+                "group_size": 128,
+                "num_bits": 4,
+                "observer": "memoryless_minmax",
+                "observer_kwargs": {},
+                "scale_dtype": null,
+                "strategy": "group",
+                "symmetric": true,
+                "type": "int",
+                "zp_dtype": null
+              }
+            }
+          },
+          "format": "pack-quantized",
+          "global_compression_ratio": null,
+          "ignore": [
+            "lm_head"
+          ],
+          "kv_cache_scheme": null,
+          "quant_method": "compressed-tensors",
+          "quantization_status": "compressed",
+          "sparsity_config": {},
+          "transform_config": {},
+          "version": "0.18.0"
+        },
+        "quantization_method": "gptq_w4",
+        "receipt_arm": "gptq_w4",
+        "recipe": {
+          "actorder": null,
+          "block_size": 128,
+          "dampening_frac": 0.01,
+          "fixture": false,
+          "group_size": 128,
+          "input_hash": "1074e82ebfb421fabce343e5a4884be2be1766225b29596174455819ed92ead4",
+          "method": "GPTQ",
+          "num_bits": 4,
+          "offload_hessians": true,
+          "pipeline": "sequential",
+          "symmetric": true
+        },
+        "source_format": "compressed-tensors/pack-quantized"
+      }
+    ],
+    "capability_profile": "qwen3_4b_gptq_serving_v1",
+    "embedding_vocabulary_size": 151936,
+    "model_config": {
+      "architectures": [
+        "Qwen3ForCausalLM"
+      ],
+      "attention_bias": false,
+      "attention_dropout": 0.0,
+      "bos_token_id": 151643,
+      "eos_token_id": 151645,
+      "head_dim": 128,
+      "hidden_act": "silu",
+      "hidden_size": 2560,
+      "initializer_range": 0.02,
+      "intermediate_size": 9728,
+      "max_position_embeddings": 262144,
+      "max_window_layers": 36,
+      "model_type": "qwen3",
+      "num_attention_heads": 32,
+      "num_hidden_layers": 36,
+      "num_key_value_heads": 8,
+      "rms_norm_eps": 1e-06,
+      "rope_scaling": null,
+      "rope_theta": 5000000,
+      "sliding_window": null,
+      "tie_word_embeddings": true,
+      "torch_dtype": "bfloat16",
+      "transformers_version": "4.51.0",
+      "use_cache": true,
+      "use_sliding_window": false,
+      "vocab_size": 151936
+    },
+    "pair": {
+      "arms": [
+        {
+          "arm_id": "qwen_bf16",
+          "execution_mode": "NATIVE_SERVING",
+          "quantization_method": "bf16",
+          "receipt_arm": "bf16",
+          "source_format": "native"
+        },
+        {
+          "arm_id": "qwen_gptq_w4",
+          "execution_mode": "NATIVE_SERVING",
+          "quantization_method": "gptq_w4",
+          "receipt_arm": "gptq_w4",
+          "source_format": "compressed-tensors/pack-quantized"
+        }
+      ],
+      "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+      "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "schema_version": 1,
+      "weight_treatment_only": true
+    },
+    "runtime_identities": {
+      "serving": "cc88384a71f03de82c3f130c62cfa134b73aa301e8218f17d8c20cf25a54445b"
+    },
+    "serving_policy": {
+      "async_scheduling": false,
+      "chunked_prefill": true,
+      "cleanup_grace": 25,
+      "context": 2048,
+      "eager": true,
+      "kv_tokens": 4096,
+      "max_num_batched_tokens": 2048,
+      "max_num_seqs": 1,
+      "prefix_caching": false,
+      "shutdown_timeout": 10
+    },
+    "token_id_space": "f488fa45d324a8bc64c84f0e27b47223872d550f2a6900564f77dfa67ca5ff4d",
+    "tokenizer_files": {
+      "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "tokenizer_config.json": "a62ff0a2472a0fa1b8eaabcb57c59b58afa42a22831dc141400b6e0cf2b65ce3",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "tokenizer_identity": "3fb415f03fcb8a59a538bce25028c5b0f618e8a3e96721645c278c7d79674dd8",
+    "vocabulary_size": 151669
+  },
+  "preparation": {
+    "limits": {
+      "context_tokens": 2048,
+      "max_joint_tokens": 640,
+      "max_prompt_tokens": 512,
+      "max_reference_tokens": 128
+    },
+    "policy_id": "existing_tasks_local_tokenizer_v1",
+    "preparation_spec_identity": "eccdc9696b213742ccdffa4a48e3d60de64eacda6823a76b3980ee866ea65c03",
+    "raw_manifest_identity": "70ceae5f7a1728adfcc627d84108457d87b0e069e3874bd13ce1a532a53a4548",
+    "schema_version": 1,
+    "scorer_version": "arc_choice_sum_character_norm_v1",
+    "selection": {
+      "max_full": 4,
+      "max_targets": 16,
+      "policy_id": "field_round_robin_uniform_v1"
+    },
+    "source_identity": "86c138c88836e6aad89df8a1c4d1eb8be517deaefb55368076d906fc5e48b520",
+    "token_id_space": "f488fa45d324a8bc64c84f0e27b47223872d550f2a6900564f77dfa67ca5ff4d",
+    "tokenizer_identity": "3fb415f03fcb8a59a538bce25028c5b0f618e8a3e96721645c278c7d79674dd8"
+  },
+  "request_kind": "choice_loglikelihood",
+  "samples": [
+    {
+      "authored_sample": {
+        "choice_labels": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "choices": [
+          "produce food.",
+          "pass genetic information.",
+          "move through the body.",
+          "use energy."
+        ],
+        "document": {
+          "answerKey": "B",
+          "choices": {
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "text": [
+              "produce food.",
+              "pass genetic information.",
+              "move through the body.",
+              "use energy."
+            ]
+          },
+          "id": "Mercury_7056823",
+          "question": "A cell that has lost its nucleus no longer has the ability to"
+        },
+        "gold": 1,
+        "original_index": 476,
+        "prompt": "<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+        "question": "A cell that has lost its nucleus no longer has the ability to",
+        "request_identity": "2be04679757512db487e6dcf679966121b917a2d42ad336750a29252f6951f4b",
+        "requests": [
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 0,
+            "context": "<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              362,
+              2779,
+              429,
+              702,
+              5558,
+              1181,
+              61507,
+              902,
+              5021,
+              702,
+              279,
+              5726,
+              311,
+              198,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " produce food.",
+            "continuation_ids": [
+              198,
+              8193,
+              3607,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              362,
+              2779,
+              429,
+              702,
+              5558,
+              1181,
+              61507,
+              902,
+              5021,
+              702,
+              279,
+              5726,
+              311,
+              198,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              8193,
+              3607,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 13
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 1,
+            "context": "<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              362,
+              2779,
+              429,
+              702,
+              5558,
+              1181,
+              61507,
+              902,
+              5021,
+              702,
+              279,
+              5726,
+              311,
+              198,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " pass genetic information.",
+            "continuation_ids": [
+              198,
+              1494,
+              18929,
+              1995,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              362,
+              2779,
+              429,
+              702,
+              5558,
+              1181,
+              61507,
+              902,
+              5021,
+              702,
+              279,
+              5726,
+              311,
+              198,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              1494,
+              18929,
+              1995,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 25
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 2,
+            "context": "<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              362,
+              2779,
+              429,
+              702,
+              5558,
+              1181,
+              61507,
+              902,
+              5021,
+              702,
+              279,
+              5726,
+              311,
+              198,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " move through the body.",
+            "continuation_ids": [
+              198,
+              3271,
+              1526,
+              279,
+              2487,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              362,
+              2779,
+              429,
+              702,
+              5558,
+              1181,
+              61507,
+              902,
+              5021,
+              702,
+              279,
+              5726,
+              311,
+              198,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              3271,
+              1526,
+              279,
+              2487,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 22
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 3,
+            "context": "<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              362,
+              2779,
+              429,
+              702,
+              5558,
+              1181,
+              61507,
+              902,
+              5021,
+              702,
+              279,
+              5726,
+              311,
+              198,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " use energy.",
+            "continuation_ids": [
+              198,
+              990,
+              4802,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              362,
+              2779,
+              429,
+              702,
+              5558,
+              1181,
+              61507,
+              902,
+              5021,
+              702,
+              279,
+              5726,
+              311,
+              198,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              990,
+              4802,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 11
+          }
+        ],
+        "sample_id": "Mercury_7056823",
+        "source_text_hash": "53ce007e44545918c5ec8056ff7cee5f245b94121949cb47d609ce6dd61b655f",
+        "split": "test",
+        "usage_scope": "REGRESSION_REUSE"
+      },
+      "diagnostic": {
+        "attention_mask": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "backend_normalization": {
+          "backend_normalized_text_hash": "9154c1d415e940623fb880cf57c43375210bb466539a4582195c56eaf612ba3b",
+          "backend_normalizer": "NFC",
+          "invented_mapping": false,
+          "native_offsets_preserved": true,
+          "normalizer_changed_prompt": false,
+          "normalizer_changed_reference": false,
+          "original_text_hash": "9154c1d415e940623fb880cf57c43375210bb466539a4582195c56eaf612ba3b",
+          "status": "NATIVE_OFFSETS_UNCHANGED",
+          "unmapped_codepoint_positions": []
+        },
+        "boundary_crossing_token": false,
+        "correctness_meaning": "External gold teacher-forced reference; separate from prompt-only generation",
+        "dataset_id": "ARC_CHALLENGE_LOCAL_POOL_REUSE",
+        "field_token_coverage": {
+          "gold_choice": {
+            "overlapping_positions": [
+              26,
+              27,
+              28,
+              29
+            ],
+            "selected_positions": [
+              26,
+              27,
+              28,
+              29
+            ]
+          }
+        },
+        "full_text": "<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n pass genetic information.",
+        "full_text_hash": "9154c1d415e940623fb880cf57c43375210bb466539a4582195c56eaf612ba3b",
+        "full_vocab_target_positions": [
+          25,
+          26,
+          28,
+          29
+        ],
+        "generation_input_ids": null,
+        "gold_choice_index": 1,
+        "input_ids": [
+          151644,
+          872,
+          198,
+          14582,
+          25,
+          362,
+          2779,
+          429,
+          702,
+          5558,
+          1181,
+          61507,
+          902,
+          5021,
+          702,
+          279,
+          5726,
+          311,
+          198,
+          16141,
+          25,
+          151645,
+          198,
+          151644,
+          77091,
+          198,
+          1494,
+          18929,
+          1995,
+          13
+        ],
+        "joint_equals_separate_concat": true,
+        "language": "en",
+        "loss_mask": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "moved_trailing_context_whitespace": "\n",
+        "native_choice_identity": "e1cd2a47bf784054a1a22db78c0d5ad7d2a93e9f80f9b2bef407031e7e9a43e3",
+        "offset_contract": {
+          "nonempty_overlap_policy": "keep whole token; overlapping offsets allowed and recorded",
+          "overlapping_offset_token_positions": [],
+          "unit": "unicode_codepoints",
+          "utf8_bytes_derived_from_codepoint_prefix": true,
+          "zero_length": "special tokens only"
+        },
+        "offset_mapping_status": "AVAILABLE",
+        "offsets_codepoints": [
+          [
+            0,
+            12
+          ],
+          [
+            12,
+            16
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            17,
+            25
+          ],
+          [
+            25,
+            26
+          ],
+          [
+            26,
+            28
+          ],
+          [
+            28,
+            33
+          ],
+          [
+            33,
+            38
+          ],
+          [
+            38,
+            42
+          ],
+          [
+            42,
+            47
+          ],
+          [
+            47,
+            51
+          ],
+          [
+            51,
+            59
+          ],
+          [
+            59,
+            62
+          ],
+          [
+            62,
+            69
+          ],
+          [
+            69,
+            73
+          ],
+          [
+            73,
+            77
+          ],
+          [
+            77,
+            85
+          ],
+          [
+            85,
+            88
+          ],
+          [
+            88,
+            89
+          ],
+          [
+            89,
+            95
+          ],
+          [
+            95,
+            96
+          ],
+          [
+            96,
+            106
+          ],
+          [
+            106,
+            107
+          ],
+          [
+            107,
+            119
+          ],
+          [
+            119,
+            128
+          ],
+          [
+            128,
+            129
+          ],
+          [
+            129,
+            134
+          ],
+          [
+            134,
+            142
+          ],
+          [
+            142,
+            154
+          ],
+          [
+            154,
+            155
+          ]
+        ],
+        "offsets_utf8_bytes": [
+          [
+            0,
+            12
+          ],
+          [
+            12,
+            16
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            17,
+            25
+          ],
+          [
+            25,
+            26
+          ],
+          [
+            26,
+            28
+          ],
+          [
+            28,
+            33
+          ],
+          [
+            33,
+            38
+          ],
+          [
+            38,
+            42
+          ],
+          [
+            42,
+            47
+          ],
+          [
+            47,
+            51
+          ],
+          [
+            51,
+            59
+          ],
+          [
+            59,
+            62
+          ],
+          [
+            62,
+            69
+          ],
+          [
+            69,
+            73
+          ],
+          [
+            73,
+            77
+          ],
+          [
+            77,
+            85
+          ],
+          [
+            85,
+            88
+          ],
+          [
+            88,
+            89
+          ],
+          [
+            89,
+            95
+          ],
+          [
+            95,
+            96
+          ],
+          [
+            96,
+            106
+          ],
+          [
+            106,
+            107
+          ],
+          [
+            107,
+            119
+          ],
+          [
+            119,
+            128
+          ],
+          [
+            128,
+            129
+          ],
+          [
+            129,
+            134
+          ],
+          [
+            134,
+            142
+          ],
+          [
+            142,
+            154
+          ],
+          [
+            154,
+            155
+          ]
+        ],
+        "original_context": "<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+        "original_continuation": " pass genetic information.",
+        "preparation_policy": "existing_tasks_local_tokenizer_v1",
+        "probe_input_identity": "f0ef1c3282ce09914b43d0c0c637b309eac67aa89b71143a1e9ddbdf9ca60e3f",
+        "prompt": "<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant",
+        "prompt_hash": "880d85b94d5a35a89eb3f48966a483ce43589ac0e12ed025cf8032e53aaea9a5",
+        "prompt_separate_ids": [
+          151644,
+          872,
+          198,
+          14582,
+          25,
+          362,
+          2779,
+          429,
+          702,
+          5558,
+          1181,
+          61507,
+          902,
+          5021,
+          702,
+          279,
+          5726,
+          311,
+          198,
+          16141,
+          25,
+          151645,
+          198,
+          151644,
+          77091
+        ],
+        "prompt_token_boundary": 25,
+        "reference_hash": "4738ab3214dcc706478da6c6c870f27dce02cbdf91af725431ed32bd400b35a3",
+        "reference_role": "dataset_gold_choice",
+        "reference_separate_ids": [
+          198,
+          1494,
+          18929,
+          1995,
+          13
+        ],
+        "reference_source": "dataset_answer_key_choice",
+        "reference_text": "\n pass genetic information.",
+        "reference_token_count": 5,
+        "sample_id": "Mercury_7056823",
+        "selection_policy": "field_round_robin_uniform_v1",
+        "selection_receipt": {
+          "eligible_target_count": 5,
+          "full_limit": 4,
+          "full_rule": "deterministic uniform subset of selected targets; Python round ties-to-even",
+          "full_status": "SELECTED",
+          "selected_full_count": 4,
+          "selected_target_count": 5,
+          "selection_rule": "first eligible; literal fields round-robin in renderer order; remaining deterministic uniform using Python round ties-to-even; deduplicate token positions",
+          "target_limit": 16
+        },
+        "sequence_identity": "8e683d3a3b8abb04cb0c92e9e91293e70318c368743938e2659eb3e8a95d284a",
+        "source_document_span": {
+          "reason": "source document is not a single model-visible text segment",
+          "status": "NOT_APPLICABLE"
+        },
+        "source_id": "Mercury_7056823",
+        "special_token_ids": [
+          151645,
+          151643,
+          151644,
+          151646,
+          151647,
+          151648,
+          151649,
+          151650,
+          151651,
+          151652,
+          151653,
+          151654,
+          151655,
+          151656
+        ],
+        "special_token_mask": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "split": "test",
+        "targets": [
+          {
+            "logit_position": 24,
+            "prefix_hash": "c8a8911958f1fffec4bc857746092bd74209424cd84784ea39c11b1df719b773",
+            "target_token_id": 198,
+            "token_position": 25
+          },
+          {
+            "logit_position": 25,
+            "prefix_hash": "63a01da9f485836c7b2926e1d19eb77482adfadd3ce28f0e41012727a4dfd9bb",
+            "target_token_id": 1494,
+            "token_position": 26
+          },
+          {
+            "logit_position": 26,
+            "prefix_hash": "678f127c654dab009b9a89cbd7ae43b865a1a693f884f6c28c890f0f9a2f93ca",
+            "target_token_id": 18929,
+            "token_position": 27
+          },
+          {
+            "logit_position": 27,
+            "prefix_hash": "f257c419c321c04bff071b003d57c5c8d8e2f1dbd3f3baede3fc75737b8e8f7a",
+            "target_token_id": 1995,
+            "token_position": 28
+          },
+          {
+            "logit_position": 28,
+            "prefix_hash": "f1150aa68d1224dd3b8a7f9dc924774ebfbd8affde841a3b69b84e1bbeca8059",
+            "target_token_id": 13,
+            "token_position": 29
+          }
+        ],
+        "task_id": "arc_challenge",
+        "task_prompt_hash": "c0bf2390355ee6e5053be441c9173f432d7f6ef50b4cb3cbd699423a4ed1f85d",
+        "task_version": "1.0",
+        "token_strings": [
+          "<|im_start|>",
+          "user",
+          "Ċ",
+          "Question",
+          ":",
+          "ĠA",
+          "Ġcell",
+          "Ġthat",
+          "Ġhas",
+          "Ġlost",
+          "Ġits",
+          "Ġnucleus",
+          "Ġno",
+          "Ġlonger",
+          "Ġhas",
+          "Ġthe",
+          "Ġability",
+          "Ġto",
+          "Ċ",
+          "Answer",
+          ":",
+          "<|im_end|>",
+          "Ċ",
+          "<|im_start|>",
+          "assistant",
+          "Ċ",
+          "Ġpass",
+          "Ġgenetic",
+          "Ġinformation",
+          "."
+        ],
+        "tokenization": {
+          "add_generation_prompt": true,
+          "add_special_tokens": false,
+          "bos_added_by_encoder": false,
+          "boundary_rule": "first joint token with end > prompt codepoint length; whole boundary token",
+          "chat_template_applied": 1,
+          "eos_added_by_encoder": false,
+          "historical_template_already_applied": false,
+          "model_profile": "qwen3_4b_gptq_serving_v1",
+          "padding_added": false,
+          "policy": "qwen_pinned_chat_joint_reference_v1",
+          "selection_policy": "field_round_robin_uniform_v1",
+          "token_id_space": "f488fa45d324a8bc64c84f0e27b47223872d550f2a6900564f77dfa67ca5ff4d",
+          "tokenizer_identity": "3fb415f03fcb8a59a538bce25028c5b0f618e8a3e96721645c278c7d79674dd8"
+        },
+        "usage_scope": "REGRESSION_REUSE",
+        "value_spans": {
+          "gold_choice": [
+            1,
+            27
+          ]
+        }
+      },
+      "likelihood": {
+        "choice_labels": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "gold_index": 1,
+        "requests": [
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 0,
+            "context": "<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              362,
+              2779,
+              429,
+              702,
+              5558,
+              1181,
+              61507,
+              902,
+              5021,
+              702,
+              279,
+              5726,
+              311,
+              198,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " produce food.",
+            "continuation_ids": [
+              198,
+              8193,
+              3607,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              362,
+              2779,
+              429,
+              702,
+              5558,
+              1181,
+              61507,
+              902,
+              5021,
+              702,
+              279,
+              5726,
+              311,
+              198,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              8193,
+              3607,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 13
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 1,
+            "context": "<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              362,
+              2779,
+              429,
+              702,
+              5558,
+              1181,
+              61507,
+              902,
+              5021,
+              702,
+              279,
+              5726,
+              311,
+              198,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " pass genetic information.",
+            "continuation_ids": [
+              198,
+              1494,
+              18929,
+              1995,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              362,
+              2779,
+              429,
+              702,
+              5558,
+              1181,
+              61507,
+              902,
+              5021,
+              702,
+              279,
+              5726,
+              311,
+              198,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              1494,
+              18929,
+              1995,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 25
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 2,
+            "context": "<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              362,
+              2779,
+              429,
+              702,
+              5558,
+              1181,
+              61507,
+              902,
+              5021,
+              702,
+              279,
+              5726,
+              311,
+              198,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " move through the body.",
+            "continuation_ids": [
+              198,
+              3271,
+              1526,
+              279,
+              2487,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              362,
+              2779,
+              429,
+              702,
+              5558,
+              1181,
+              61507,
+              902,
+              5021,
+              702,
+              279,
+              5726,
+              311,
+              198,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              3271,
+              1526,
+              279,
+              2487,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 22
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 3,
+            "context": "<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              362,
+              2779,
+              429,
+              702,
+              5558,
+              1181,
+              61507,
+              902,
+              5021,
+              702,
+              279,
+              5726,
+              311,
+              198,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " use energy.",
+            "continuation_ids": [
+              198,
+              990,
+              4802,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              362,
+              2779,
+              429,
+              702,
+              5558,
+              1181,
+              61507,
+              902,
+              5021,
+              702,
+              279,
+              5726,
+              311,
+              198,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              990,
+              4802,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 11
+          }
+        ]
+      },
+      "raw_record": {
+        "dataset_id": "ARC_CHALLENGE_LOCAL_POOL_REUSE",
+        "policy_id": "arc_original_completion_v1",
+        "reference_source": "dataset_answer_key_choice",
+        "sample": {
+          "document": {
+            "answerKey": "B",
+            "choices": {
+              "label": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "text": [
+                "produce food.",
+                "pass genetic information.",
+                "move through the body.",
+                "use energy."
+              ]
+            },
+            "id": "Mercury_7056823",
+            "question": "A cell that has lost its nucleus no longer has the ability to"
+          },
+          "original_index": 476,
+          "prompt_context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+          "prompt_contract_id": "arc_original_completion_v1"
+        },
+        "sample_id": "Mercury_7056823",
+        "source_id": "Mercury_7056823",
+        "split": "test",
+        "task_id": "arc_challenge",
+        "task_version": "1.0",
+        "usage_scope": "REGRESSION_REUSE"
+      },
+      "sample_id": "Mercury_7056823"
+    },
+    {
+      "authored_sample": {
+        "choice_labels": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "choices": [
+          "Insulin stimulates cells to absorb glucose from the blood.",
+          "Insulin causes the liver to release glucose into the blood.",
+          "Insulin facilitates the effects of antibiotics in the cell.",
+          "Insulin develops chemical bonds on the cell membrane."
+        ],
+        "document": {
+          "answerKey": "A",
+          "choices": {
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "text": [
+              "Insulin stimulates cells to absorb glucose from the blood.",
+              "Insulin causes the liver to release glucose into the blood.",
+              "Insulin facilitates the effects of antibiotics in the cell.",
+              "Insulin develops chemical bonds on the cell membrane."
+            ]
+          },
+          "id": "Mercury_7109603",
+          "question": "Insulin is an important protein for the regulation of glucose levels in the blood. Which statement best describes the function of insulin?"
+        },
+        "gold": 0,
+        "original_index": 974,
+        "prompt": "<|im_start|>user\nQuestion: Insulin is an important protein for the regulation of glucose levels in the blood. Which statement best describes the function of insulin?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+        "question": "Insulin is an important protein for the regulation of glucose levels in the blood. Which statement best describes the function of insulin?",
+        "request_identity": "e27188bd9e8a9687ae526eeb2f30c6f07da0d4d3d9e46251f464e5985e1fc429",
+        "requests": [
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 0,
+            "context": "<|im_start|>user\nQuestion: Insulin is an important protein for the regulation of glucose levels in the blood. Which statement best describes the function of insulin?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              9726,
+              23401,
+              374,
+              458,
+              2989,
+              12833,
+              369,
+              279,
+              19256,
+              315,
+              33223,
+              5866,
+              304,
+              279,
+              6543,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              279,
+              729,
+              315,
+              31052,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " Insulin stimulates cells to absorb glucose from the blood.",
+            "continuation_ids": [
+              198,
+              9726,
+              23401,
+              94355,
+              7761,
+              311,
+              34306,
+              33223,
+              504,
+              279,
+              6543,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              9726,
+              23401,
+              374,
+              458,
+              2989,
+              12833,
+              369,
+              279,
+              19256,
+              315,
+              33223,
+              5866,
+              304,
+              279,
+              6543,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              279,
+              729,
+              315,
+              31052,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              9726,
+              23401,
+              94355,
+              7761,
+              311,
+              34306,
+              33223,
+              504,
+              279,
+              6543,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 58
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 1,
+            "context": "<|im_start|>user\nQuestion: Insulin is an important protein for the regulation of glucose levels in the blood. Which statement best describes the function of insulin?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              9726,
+              23401,
+              374,
+              458,
+              2989,
+              12833,
+              369,
+              279,
+              19256,
+              315,
+              33223,
+              5866,
+              304,
+              279,
+              6543,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              279,
+              729,
+              315,
+              31052,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " Insulin causes the liver to release glucose into the blood.",
+            "continuation_ids": [
+              198,
+              9726,
+              23401,
+              11137,
+              279,
+              25506,
+              311,
+              4879,
+              33223,
+              1119,
+              279,
+              6543,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              9726,
+              23401,
+              374,
+              458,
+              2989,
+              12833,
+              369,
+              279,
+              19256,
+              315,
+              33223,
+              5866,
+              304,
+              279,
+              6543,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              279,
+              729,
+              315,
+              31052,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              9726,
+              23401,
+              11137,
+              279,
+              25506,
+              311,
+              4879,
+              33223,
+              1119,
+              279,
+              6543,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 59
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 2,
+            "context": "<|im_start|>user\nQuestion: Insulin is an important protein for the regulation of glucose levels in the blood. Which statement best describes the function of insulin?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              9726,
+              23401,
+              374,
+              458,
+              2989,
+              12833,
+              369,
+              279,
+              19256,
+              315,
+              33223,
+              5866,
+              304,
+              279,
+              6543,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              279,
+              729,
+              315,
+              31052,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " Insulin facilitates the effects of antibiotics in the cell.",
+            "continuation_ids": [
+              198,
+              9726,
+              23401,
+              72533,
+              279,
+              6239,
+              315,
+              45750,
+              304,
+              279,
+              2779,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              9726,
+              23401,
+              374,
+              458,
+              2989,
+              12833,
+              369,
+              279,
+              19256,
+              315,
+              33223,
+              5866,
+              304,
+              279,
+              6543,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              279,
+              729,
+              315,
+              31052,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              9726,
+              23401,
+              72533,
+              279,
+              6239,
+              315,
+              45750,
+              304,
+              279,
+              2779,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 59
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 3,
+            "context": "<|im_start|>user\nQuestion: Insulin is an important protein for the regulation of glucose levels in the blood. Which statement best describes the function of insulin?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              9726,
+              23401,
+              374,
+              458,
+              2989,
+              12833,
+              369,
+              279,
+              19256,
+              315,
+              33223,
+              5866,
+              304,
+              279,
+              6543,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              279,
+              729,
+              315,
+              31052,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " Insulin develops chemical bonds on the cell membrane.",
+            "continuation_ids": [
+              198,
+              9726,
+              23401,
+              38571,
+              11483,
+              26363,
+              389,
+              279,
+              2779,
+              38554,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              9726,
+              23401,
+              374,
+              458,
+              2989,
+              12833,
+              369,
+              279,
+              19256,
+              315,
+              33223,
+              5866,
+              304,
+              279,
+              6543,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              279,
+              729,
+              315,
+              31052,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              9726,
+              23401,
+              38571,
+              11483,
+              26363,
+              389,
+              279,
+              2779,
+              38554,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 53
+          }
+        ],
+        "sample_id": "Mercury_7109603",
+        "source_text_hash": "8ab04c17a5f68eff1d2b48edd00deeade5fc6bd48b125018e546c3abb8e95046",
+        "split": "test",
+        "usage_scope": "REGRESSION_REUSE"
+      },
+      "diagnostic": {
+        "attention_mask": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "backend_normalization": {
+          "backend_normalized_text_hash": "c01ebfb61e4751733167c92e181f32ccc40ec40f0b061bd48627559b646bb220",
+          "backend_normalizer": "NFC",
+          "invented_mapping": false,
+          "native_offsets_preserved": true,
+          "normalizer_changed_prompt": false,
+          "normalizer_changed_reference": false,
+          "original_text_hash": "c01ebfb61e4751733167c92e181f32ccc40ec40f0b061bd48627559b646bb220",
+          "status": "NATIVE_OFFSETS_UNCHANGED",
+          "unmapped_codepoint_positions": []
+        },
+        "boundary_crossing_token": false,
+        "correctness_meaning": "External gold teacher-forced reference; separate from prompt-only generation",
+        "dataset_id": "ARC_CHALLENGE_LOCAL_POOL_REUSE",
+        "field_token_coverage": {
+          "gold_choice": {
+            "overlapping_positions": [
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47
+            ],
+            "selected_positions": [
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47
+            ]
+          }
+        },
+        "full_text": "<|im_start|>user\nQuestion: Insulin is an important protein for the regulation of glucose levels in the blood. Which statement best describes the function of insulin?\nAnswer:<|im_end|>\n<|im_start|>assistant\n Insulin stimulates cells to absorb glucose from the blood.",
+        "full_text_hash": "c01ebfb61e4751733167c92e181f32ccc40ec40f0b061bd48627559b646bb220",
+        "full_vocab_target_positions": [
+          36,
+          40,
+          43,
+          47
+        ],
+        "generation_input_ids": null,
+        "gold_choice_index": 0,
+        "input_ids": [
+          151644,
+          872,
+          198,
+          14582,
+          25,
+          9726,
+          23401,
+          374,
+          458,
+          2989,
+          12833,
+          369,
+          279,
+          19256,
+          315,
+          33223,
+          5866,
+          304,
+          279,
+          6543,
+          13,
+          15920,
+          5114,
+          1850,
+          16555,
+          279,
+          729,
+          315,
+          31052,
+          5267,
+          16141,
+          25,
+          151645,
+          198,
+          151644,
+          77091,
+          198,
+          9726,
+          23401,
+          94355,
+          7761,
+          311,
+          34306,
+          33223,
+          504,
+          279,
+          6543,
+          13
+        ],
+        "joint_equals_separate_concat": true,
+        "language": "en",
+        "loss_mask": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "moved_trailing_context_whitespace": "\n",
+        "native_choice_identity": "01e6cec471a3601ad1581fca6ebcbb0c0bbcdea758dece8e41dfb0678d9dd3d9",
+        "offset_contract": {
+          "nonempty_overlap_policy": "keep whole token; overlapping offsets allowed and recorded",
+          "overlapping_offset_token_positions": [],
+          "unit": "unicode_codepoints",
+          "utf8_bytes_derived_from_codepoint_prefix": true,
+          "zero_length": "special tokens only"
+        },
+        "offset_mapping_status": "AVAILABLE",
+        "offsets_codepoints": [
+          [
+            0,
+            12
+          ],
+          [
+            12,
+            16
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            17,
+            25
+          ],
+          [
+            25,
+            26
+          ],
+          [
+            26,
+            30
+          ],
+          [
+            30,
+            34
+          ],
+          [
+            34,
+            37
+          ],
+          [
+            37,
+            40
+          ],
+          [
+            40,
+            50
+          ],
+          [
+            50,
+            58
+          ],
+          [
+            58,
+            62
+          ],
+          [
+            62,
+            66
+          ],
+          [
+            66,
+            77
+          ],
+          [
+            77,
+            80
+          ],
+          [
+            80,
+            88
+          ],
+          [
+            88,
+            95
+          ],
+          [
+            95,
+            98
+          ],
+          [
+            98,
+            102
+          ],
+          [
+            102,
+            108
+          ],
+          [
+            108,
+            109
+          ],
+          [
+            109,
+            115
+          ],
+          [
+            115,
+            125
+          ],
+          [
+            125,
+            130
+          ],
+          [
+            130,
+            140
+          ],
+          [
+            140,
+            144
+          ],
+          [
+            144,
+            153
+          ],
+          [
+            153,
+            156
+          ],
+          [
+            156,
+            164
+          ],
+          [
+            164,
+            166
+          ],
+          [
+            166,
+            172
+          ],
+          [
+            172,
+            173
+          ],
+          [
+            173,
+            183
+          ],
+          [
+            183,
+            184
+          ],
+          [
+            184,
+            196
+          ],
+          [
+            196,
+            205
+          ],
+          [
+            205,
+            206
+          ],
+          [
+            206,
+            210
+          ],
+          [
+            210,
+            214
+          ],
+          [
+            214,
+            225
+          ],
+          [
+            225,
+            231
+          ],
+          [
+            231,
+            234
+          ],
+          [
+            234,
+            241
+          ],
+          [
+            241,
+            249
+          ],
+          [
+            249,
+            254
+          ],
+          [
+            254,
+            258
+          ],
+          [
+            258,
+            264
+          ],
+          [
+            264,
+            265
+          ]
+        ],
+        "offsets_utf8_bytes": [
+          [
+            0,
+            12
+          ],
+          [
+            12,
+            16
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            17,
+            25
+          ],
+          [
+            25,
+            26
+          ],
+          [
+            26,
+            30
+          ],
+          [
+            30,
+            34
+          ],
+          [
+            34,
+            37
+          ],
+          [
+            37,
+            40
+          ],
+          [
+            40,
+            50
+          ],
+          [
+            50,
+            58
+          ],
+          [
+            58,
+            62
+          ],
+          [
+            62,
+            66
+          ],
+          [
+            66,
+            77
+          ],
+          [
+            77,
+            80
+          ],
+          [
+            80,
+            88
+          ],
+          [
+            88,
+            95
+          ],
+          [
+            95,
+            98
+          ],
+          [
+            98,
+            102
+          ],
+          [
+            102,
+            108
+          ],
+          [
+            108,
+            109
+          ],
+          [
+            109,
+            115
+          ],
+          [
+            115,
+            125
+          ],
+          [
+            125,
+            130
+          ],
+          [
+            130,
+            140
+          ],
+          [
+            140,
+            144
+          ],
+          [
+            144,
+            153
+          ],
+          [
+            153,
+            156
+          ],
+          [
+            156,
+            164
+          ],
+          [
+            164,
+            166
+          ],
+          [
+            166,
+            172
+          ],
+          [
+            172,
+            173
+          ],
+          [
+            173,
+            183
+          ],
+          [
+            183,
+            184
+          ],
+          [
+            184,
+            196
+          ],
+          [
+            196,
+            205
+          ],
+          [
+            205,
+            206
+          ],
+          [
+            206,
+            210
+          ],
+          [
+            210,
+            214
+          ],
+          [
+            214,
+            225
+          ],
+          [
+            225,
+            231
+          ],
+          [
+            231,
+            234
+          ],
+          [
+            234,
+            241
+          ],
+          [
+            241,
+            249
+          ],
+          [
+            249,
+            254
+          ],
+          [
+            254,
+            258
+          ],
+          [
+            258,
+            264
+          ],
+          [
+            264,
+            265
+          ]
+        ],
+        "original_context": "<|im_start|>user\nQuestion: Insulin is an important protein for the regulation of glucose levels in the blood. Which statement best describes the function of insulin?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+        "original_continuation": " Insulin stimulates cells to absorb glucose from the blood.",
+        "preparation_policy": "existing_tasks_local_tokenizer_v1",
+        "probe_input_identity": "997db7b4fd47f9bec70d83b17db5e40232cc2fd4b5bfa2059c08e3a3a9f6dc24",
+        "prompt": "<|im_start|>user\nQuestion: Insulin is an important protein for the regulation of glucose levels in the blood. Which statement best describes the function of insulin?\nAnswer:<|im_end|>\n<|im_start|>assistant",
+        "prompt_hash": "45dd1da4bdc87a147d063bef45fc308cc7f1563f02550bb9da141b079c48b275",
+        "prompt_separate_ids": [
+          151644,
+          872,
+          198,
+          14582,
+          25,
+          9726,
+          23401,
+          374,
+          458,
+          2989,
+          12833,
+          369,
+          279,
+          19256,
+          315,
+          33223,
+          5866,
+          304,
+          279,
+          6543,
+          13,
+          15920,
+          5114,
+          1850,
+          16555,
+          279,
+          729,
+          315,
+          31052,
+          5267,
+          16141,
+          25,
+          151645,
+          198,
+          151644,
+          77091
+        ],
+        "prompt_token_boundary": 36,
+        "reference_hash": "e743fb3195adb67e5455dc691715f5f2a604a6794d92a8d3abdf9ef88450978f",
+        "reference_role": "dataset_gold_choice",
+        "reference_separate_ids": [
+          198,
+          9726,
+          23401,
+          94355,
+          7761,
+          311,
+          34306,
+          33223,
+          504,
+          279,
+          6543,
+          13
+        ],
+        "reference_source": "dataset_answer_key_choice",
+        "reference_text": "\n Insulin stimulates cells to absorb glucose from the blood.",
+        "reference_token_count": 12,
+        "sample_id": "Mercury_7109603",
+        "selection_policy": "field_round_robin_uniform_v1",
+        "selection_receipt": {
+          "eligible_target_count": 12,
+          "full_limit": 4,
+          "full_rule": "deterministic uniform subset of selected targets; Python round ties-to-even",
+          "full_status": "SELECTED",
+          "selected_full_count": 4,
+          "selected_target_count": 12,
+          "selection_rule": "first eligible; literal fields round-robin in renderer order; remaining deterministic uniform using Python round ties-to-even; deduplicate token positions",
+          "target_limit": 16
+        },
+        "sequence_identity": "26106c773577bbfe08d703f3b93ca0abf490913a13079fb67d4488c216ecdf34",
+        "source_document_span": {
+          "reason": "source document is not a single model-visible text segment",
+          "status": "NOT_APPLICABLE"
+        },
+        "source_id": "Mercury_7109603",
+        "special_token_ids": [
+          151645,
+          151643,
+          151644,
+          151646,
+          151647,
+          151648,
+          151649,
+          151650,
+          151651,
+          151652,
+          151653,
+          151654,
+          151655,
+          151656
+        ],
+        "special_token_mask": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "split": "test",
+        "targets": [
+          {
+            "logit_position": 35,
+            "prefix_hash": "29dda27e80003c779d6e85219247bb30ca170310993cf658a328faed16dce1d2",
+            "target_token_id": 198,
+            "token_position": 36
+          },
+          {
+            "logit_position": 36,
+            "prefix_hash": "01d8170d69f699710a9f83a26581c72060559f3eff382a5b72c179a99a417260",
+            "target_token_id": 9726,
+            "token_position": 37
+          },
+          {
+            "logit_position": 37,
+            "prefix_hash": "acd1a23c1ea7136d885b5b203e118a31b39c6c9d4456233d5321b62c0cf8adc5",
+            "target_token_id": 23401,
+            "token_position": 38
+          },
+          {
+            "logit_position": 38,
+            "prefix_hash": "0aa79bfe9f2b8f03c23593c418e6003beed551086ae148079ebe5e96e62d519e",
+            "target_token_id": 94355,
+            "token_position": 39
+          },
+          {
+            "logit_position": 39,
+            "prefix_hash": "5e6f7467761d4afe2ac85b19053763949a3098d61a1671ab5e965cfee32b1498",
+            "target_token_id": 7761,
+            "token_position": 40
+          },
+          {
+            "logit_position": 40,
+            "prefix_hash": "c79d4d6afbd386bb7da7da2f020edbc45fa28feeabae50cfe54a91bcc5ea6e8e",
+            "target_token_id": 311,
+            "token_position": 41
+          },
+          {
+            "logit_position": 41,
+            "prefix_hash": "fdb0bdbfcef7131bf5977bce3a3e794a0908e38f9b265d0f7f7d35c31907437c",
+            "target_token_id": 34306,
+            "token_position": 42
+          },
+          {
+            "logit_position": 42,
+            "prefix_hash": "09d1ebeee5612cc3bdc523ba0419a88a7a9b5182a31814621c1e58a418019431",
+            "target_token_id": 33223,
+            "token_position": 43
+          },
+          {
+            "logit_position": 43,
+            "prefix_hash": "c3f75129a011d1917dbf7264fa42df728147c10bf2ba65ee1d80577dc504354a",
+            "target_token_id": 504,
+            "token_position": 44
+          },
+          {
+            "logit_position": 44,
+            "prefix_hash": "f41609d7fbba551ce657ca3ae8ed1fd172175234a34be9b2cfc2642808d0c9d8",
+            "target_token_id": 279,
+            "token_position": 45
+          },
+          {
+            "logit_position": 45,
+            "prefix_hash": "0b172daf188288e9d6471c9f57b6f2de72ed87e0ade1be029b03b5d82cfacc9e",
+            "target_token_id": 6543,
+            "token_position": 46
+          },
+          {
+            "logit_position": 46,
+            "prefix_hash": "ba5ac0f5a809f60262aed5ab82f4316630c7598d9f3a90ea727bb31fce0afe7d",
+            "target_token_id": 13,
+            "token_position": 47
+          }
+        ],
+        "task_id": "arc_challenge",
+        "task_prompt_hash": "6badfe29c1d2d01cebb8d41f79e6a1ceb0b004228368f6e0ac4c7ad109d20364",
+        "task_version": "1.0",
+        "token_strings": [
+          "<|im_start|>",
+          "user",
+          "Ċ",
+          "Question",
+          ":",
+          "ĠIns",
+          "ulin",
+          "Ġis",
+          "Ġan",
+          "Ġimportant",
+          "Ġprotein",
+          "Ġfor",
+          "Ġthe",
+          "Ġregulation",
+          "Ġof",
+          "Ġglucose",
+          "Ġlevels",
+          "Ġin",
+          "Ġthe",
+          "Ġblood",
+          ".",
+          "ĠWhich",
+          "Ġstatement",
+          "Ġbest",
+          "Ġdescribes",
+          "Ġthe",
+          "Ġfunction",
+          "Ġof",
+          "Ġinsulin",
+          "?Ċ",
+          "Answer",
+          ":",
+          "<|im_end|>",
+          "Ċ",
+          "<|im_start|>",
+          "assistant",
+          "Ċ",
+          "ĠIns",
+          "ulin",
+          "Ġstimulates",
+          "Ġcells",
+          "Ġto",
+          "Ġabsorb",
+          "Ġglucose",
+          "Ġfrom",
+          "Ġthe",
+          "Ġblood",
+          "."
+        ],
+        "tokenization": {
+          "add_generation_prompt": true,
+          "add_special_tokens": false,
+          "bos_added_by_encoder": false,
+          "boundary_rule": "first joint token with end > prompt codepoint length; whole boundary token",
+          "chat_template_applied": 1,
+          "eos_added_by_encoder": false,
+          "historical_template_already_applied": false,
+          "model_profile": "qwen3_4b_gptq_serving_v1",
+          "padding_added": false,
+          "policy": "qwen_pinned_chat_joint_reference_v1",
+          "selection_policy": "field_round_robin_uniform_v1",
+          "token_id_space": "f488fa45d324a8bc64c84f0e27b47223872d550f2a6900564f77dfa67ca5ff4d",
+          "tokenizer_identity": "3fb415f03fcb8a59a538bce25028c5b0f618e8a3e96721645c278c7d79674dd8"
+        },
+        "usage_scope": "REGRESSION_REUSE",
+        "value_spans": {
+          "gold_choice": [
+            1,
+            60
+          ]
+        }
+      },
+      "likelihood": {
+        "choice_labels": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "gold_index": 0,
+        "requests": [
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 0,
+            "context": "<|im_start|>user\nQuestion: Insulin is an important protein for the regulation of glucose levels in the blood. Which statement best describes the function of insulin?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              9726,
+              23401,
+              374,
+              458,
+              2989,
+              12833,
+              369,
+              279,
+              19256,
+              315,
+              33223,
+              5866,
+              304,
+              279,
+              6543,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              279,
+              729,
+              315,
+              31052,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " Insulin stimulates cells to absorb glucose from the blood.",
+            "continuation_ids": [
+              198,
+              9726,
+              23401,
+              94355,
+              7761,
+              311,
+              34306,
+              33223,
+              504,
+              279,
+              6543,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              9726,
+              23401,
+              374,
+              458,
+              2989,
+              12833,
+              369,
+              279,
+              19256,
+              315,
+              33223,
+              5866,
+              304,
+              279,
+              6543,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              279,
+              729,
+              315,
+              31052,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              9726,
+              23401,
+              94355,
+              7761,
+              311,
+              34306,
+              33223,
+              504,
+              279,
+              6543,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 58
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 1,
+            "context": "<|im_start|>user\nQuestion: Insulin is an important protein for the regulation of glucose levels in the blood. Which statement best describes the function of insulin?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              9726,
+              23401,
+              374,
+              458,
+              2989,
+              12833,
+              369,
+              279,
+              19256,
+              315,
+              33223,
+              5866,
+              304,
+              279,
+              6543,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              279,
+              729,
+              315,
+              31052,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " Insulin causes the liver to release glucose into the blood.",
+            "continuation_ids": [
+              198,
+              9726,
+              23401,
+              11137,
+              279,
+              25506,
+              311,
+              4879,
+              33223,
+              1119,
+              279,
+              6543,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              9726,
+              23401,
+              374,
+              458,
+              2989,
+              12833,
+              369,
+              279,
+              19256,
+              315,
+              33223,
+              5866,
+              304,
+              279,
+              6543,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              279,
+              729,
+              315,
+              31052,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              9726,
+              23401,
+              11137,
+              279,
+              25506,
+              311,
+              4879,
+              33223,
+              1119,
+              279,
+              6543,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 59
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 2,
+            "context": "<|im_start|>user\nQuestion: Insulin is an important protein for the regulation of glucose levels in the blood. Which statement best describes the function of insulin?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              9726,
+              23401,
+              374,
+              458,
+              2989,
+              12833,
+              369,
+              279,
+              19256,
+              315,
+              33223,
+              5866,
+              304,
+              279,
+              6543,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              279,
+              729,
+              315,
+              31052,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " Insulin facilitates the effects of antibiotics in the cell.",
+            "continuation_ids": [
+              198,
+              9726,
+              23401,
+              72533,
+              279,
+              6239,
+              315,
+              45750,
+              304,
+              279,
+              2779,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              9726,
+              23401,
+              374,
+              458,
+              2989,
+              12833,
+              369,
+              279,
+              19256,
+              315,
+              33223,
+              5866,
+              304,
+              279,
+              6543,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              279,
+              729,
+              315,
+              31052,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              9726,
+              23401,
+              72533,
+              279,
+              6239,
+              315,
+              45750,
+              304,
+              279,
+              2779,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 59
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 3,
+            "context": "<|im_start|>user\nQuestion: Insulin is an important protein for the regulation of glucose levels in the blood. Which statement best describes the function of insulin?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              9726,
+              23401,
+              374,
+              458,
+              2989,
+              12833,
+              369,
+              279,
+              19256,
+              315,
+              33223,
+              5866,
+              304,
+              279,
+              6543,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              279,
+              729,
+              315,
+              31052,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " Insulin develops chemical bonds on the cell membrane.",
+            "continuation_ids": [
+              198,
+              9726,
+              23401,
+              38571,
+              11483,
+              26363,
+              389,
+              279,
+              2779,
+              38554,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              9726,
+              23401,
+              374,
+              458,
+              2989,
+              12833,
+              369,
+              279,
+              19256,
+              315,
+              33223,
+              5866,
+              304,
+              279,
+              6543,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              279,
+              729,
+              315,
+              31052,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              9726,
+              23401,
+              38571,
+              11483,
+              26363,
+              389,
+              279,
+              2779,
+              38554,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 53
+          }
+        ]
+      },
+      "raw_record": {
+        "dataset_id": "ARC_CHALLENGE_LOCAL_POOL_REUSE",
+        "policy_id": "arc_original_completion_v1",
+        "reference_source": "dataset_answer_key_choice",
+        "sample": {
+          "document": {
+            "answerKey": "A",
+            "choices": {
+              "label": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "text": [
+                "Insulin stimulates cells to absorb glucose from the blood.",
+                "Insulin causes the liver to release glucose into the blood.",
+                "Insulin facilitates the effects of antibiotics in the cell.",
+                "Insulin develops chemical bonds on the cell membrane."
+              ]
+            },
+            "id": "Mercury_7109603",
+            "question": "Insulin is an important protein for the regulation of glucose levels in the blood. Which statement best describes the function of insulin?"
+          },
+          "original_index": 974,
+          "prompt_context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: Insulin is an important protein for the regulation of glucose levels in the blood. Which statement best describes the function of insulin?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+          "prompt_contract_id": "arc_original_completion_v1"
+        },
+        "sample_id": "Mercury_7109603",
+        "source_id": "Mercury_7109603",
+        "split": "test",
+        "task_id": "arc_challenge",
+        "task_version": "1.0",
+        "usage_scope": "REGRESSION_REUSE"
+      },
+      "sample_id": "Mercury_7109603"
+    },
+    {
+      "authored_sample": {
+        "choice_labels": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "choices": [
+          "Salt is the solvent and water is the solute.",
+          "Salt is the solute and water is the solvent.",
+          "Salt is the solvent and water is the solution.",
+          "Salt is the solution and water is the solvent."
+        ],
+        "document": {
+          "answerKey": "B",
+          "choices": {
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "text": [
+              "Salt is the solvent and water is the solute.",
+              "Salt is the solute and water is the solvent.",
+              "Salt is the solvent and water is the solution.",
+              "Salt is the solution and water is the solvent."
+            ]
+          },
+          "id": "ACTAAP_2014_7_13",
+          "question": "People often use a mixture of salt and water to clean contact lenses. Which statement best describes this mixture?"
+        },
+        "gold": 1,
+        "original_index": 221,
+        "prompt": "<|im_start|>user\nQuestion: People often use a mixture of salt and water to clean contact lenses. Which statement best describes this mixture?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+        "question": "People often use a mixture of salt and water to clean contact lenses. Which statement best describes this mixture?",
+        "request_identity": "1f9430bd5f28fd52314ec29d976e1504389638213c42995f8216b39b920facf5",
+        "requests": [
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 0,
+            "context": "<|im_start|>user\nQuestion: People often use a mixture of salt and water to clean contact lenses. Which statement best describes this mixture?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              8853,
+              3545,
+              990,
+              264,
+              20980,
+              315,
+              12021,
+              323,
+              3015,
+              311,
+              4240,
+              3645,
+              34957,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              419,
+              20980,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " Salt is the solvent and water is the solute.",
+            "continuation_ids": [
+              198,
+              27040,
+              374,
+              279,
+              68896,
+              323,
+              3015,
+              374,
+              279,
+              2048,
+              1070,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              8853,
+              3545,
+              990,
+              264,
+              20980,
+              315,
+              12021,
+              323,
+              3015,
+              311,
+              4240,
+              3645,
+              34957,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              419,
+              20980,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              27040,
+              374,
+              279,
+              68896,
+              323,
+              3015,
+              374,
+              279,
+              2048,
+              1070,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 44
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 1,
+            "context": "<|im_start|>user\nQuestion: People often use a mixture of salt and water to clean contact lenses. Which statement best describes this mixture?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              8853,
+              3545,
+              990,
+              264,
+              20980,
+              315,
+              12021,
+              323,
+              3015,
+              311,
+              4240,
+              3645,
+              34957,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              419,
+              20980,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " Salt is the solute and water is the solvent.",
+            "continuation_ids": [
+              198,
+              27040,
+              374,
+              279,
+              2048,
+              1070,
+              323,
+              3015,
+              374,
+              279,
+              68896,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              8853,
+              3545,
+              990,
+              264,
+              20980,
+              315,
+              12021,
+              323,
+              3015,
+              311,
+              4240,
+              3645,
+              34957,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              419,
+              20980,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              27040,
+              374,
+              279,
+              2048,
+              1070,
+              323,
+              3015,
+              374,
+              279,
+              68896,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 44
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 2,
+            "context": "<|im_start|>user\nQuestion: People often use a mixture of salt and water to clean contact lenses. Which statement best describes this mixture?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              8853,
+              3545,
+              990,
+              264,
+              20980,
+              315,
+              12021,
+              323,
+              3015,
+              311,
+              4240,
+              3645,
+              34957,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              419,
+              20980,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " Salt is the solvent and water is the solution.",
+            "continuation_ids": [
+              198,
+              27040,
+              374,
+              279,
+              68896,
+              323,
+              3015,
+              374,
+              279,
+              6291,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              8853,
+              3545,
+              990,
+              264,
+              20980,
+              315,
+              12021,
+              323,
+              3015,
+              311,
+              4240,
+              3645,
+              34957,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              419,
+              20980,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              27040,
+              374,
+              279,
+              68896,
+              323,
+              3015,
+              374,
+              279,
+              6291,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 46
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 3,
+            "context": "<|im_start|>user\nQuestion: People often use a mixture of salt and water to clean contact lenses. Which statement best describes this mixture?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              8853,
+              3545,
+              990,
+              264,
+              20980,
+              315,
+              12021,
+              323,
+              3015,
+              311,
+              4240,
+              3645,
+              34957,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              419,
+              20980,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " Salt is the solution and water is the solvent.",
+            "continuation_ids": [
+              198,
+              27040,
+              374,
+              279,
+              6291,
+              323,
+              3015,
+              374,
+              279,
+              68896,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              8853,
+              3545,
+              990,
+              264,
+              20980,
+              315,
+              12021,
+              323,
+              3015,
+              311,
+              4240,
+              3645,
+              34957,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              419,
+              20980,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              27040,
+              374,
+              279,
+              6291,
+              323,
+              3015,
+              374,
+              279,
+              68896,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 46
+          }
+        ],
+        "sample_id": "ACTAAP_2014_7_13",
+        "source_text_hash": "31d47961f51ecb7400224605d5b355c3642297366b42fd2c97533451b10c37d4",
+        "split": "test",
+        "usage_scope": "REGRESSION_REUSE"
+      },
+      "diagnostic": {
+        "attention_mask": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "backend_normalization": {
+          "backend_normalized_text_hash": "bfa562c8127efb26ed4b0bc93077ce2cada3af3e75098c06cfc083640e5b40ad",
+          "backend_normalizer": "NFC",
+          "invented_mapping": false,
+          "native_offsets_preserved": true,
+          "normalizer_changed_prompt": false,
+          "normalizer_changed_reference": false,
+          "original_text_hash": "bfa562c8127efb26ed4b0bc93077ce2cada3af3e75098c06cfc083640e5b40ad",
+          "status": "NATIVE_OFFSETS_UNCHANGED",
+          "unmapped_codepoint_positions": []
+        },
+        "boundary_crossing_token": false,
+        "correctness_meaning": "External gold teacher-forced reference; separate from prompt-only generation",
+        "dataset_id": "ARC_CHALLENGE_LOCAL_POOL_REUSE",
+        "field_token_coverage": {
+          "gold_choice": {
+            "overlapping_positions": [
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43
+            ],
+            "selected_positions": [
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43
+            ]
+          }
+        },
+        "full_text": "<|im_start|>user\nQuestion: People often use a mixture of salt and water to clean contact lenses. Which statement best describes this mixture?\nAnswer:<|im_end|>\n<|im_start|>assistant\n Salt is the solute and water is the solvent.",
+        "full_text_hash": "bfa562c8127efb26ed4b0bc93077ce2cada3af3e75098c06cfc083640e5b40ad",
+        "full_vocab_target_positions": [
+          32,
+          36,
+          39,
+          43
+        ],
+        "generation_input_ids": null,
+        "gold_choice_index": 1,
+        "input_ids": [
+          151644,
+          872,
+          198,
+          14582,
+          25,
+          8853,
+          3545,
+          990,
+          264,
+          20980,
+          315,
+          12021,
+          323,
+          3015,
+          311,
+          4240,
+          3645,
+          34957,
+          13,
+          15920,
+          5114,
+          1850,
+          16555,
+          419,
+          20980,
+          5267,
+          16141,
+          25,
+          151645,
+          198,
+          151644,
+          77091,
+          198,
+          27040,
+          374,
+          279,
+          2048,
+          1070,
+          323,
+          3015,
+          374,
+          279,
+          68896,
+          13
+        ],
+        "joint_equals_separate_concat": true,
+        "language": "en",
+        "loss_mask": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "moved_trailing_context_whitespace": "\n",
+        "native_choice_identity": "03ad40cf08fd77ab7efb2c94e0b137b90f9766f59090b4c07a2106b3334a65c6",
+        "offset_contract": {
+          "nonempty_overlap_policy": "keep whole token; overlapping offsets allowed and recorded",
+          "overlapping_offset_token_positions": [],
+          "unit": "unicode_codepoints",
+          "utf8_bytes_derived_from_codepoint_prefix": true,
+          "zero_length": "special tokens only"
+        },
+        "offset_mapping_status": "AVAILABLE",
+        "offsets_codepoints": [
+          [
+            0,
+            12
+          ],
+          [
+            12,
+            16
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            17,
+            25
+          ],
+          [
+            25,
+            26
+          ],
+          [
+            26,
+            33
+          ],
+          [
+            33,
+            39
+          ],
+          [
+            39,
+            43
+          ],
+          [
+            43,
+            45
+          ],
+          [
+            45,
+            53
+          ],
+          [
+            53,
+            56
+          ],
+          [
+            56,
+            61
+          ],
+          [
+            61,
+            65
+          ],
+          [
+            65,
+            71
+          ],
+          [
+            71,
+            74
+          ],
+          [
+            74,
+            80
+          ],
+          [
+            80,
+            88
+          ],
+          [
+            88,
+            95
+          ],
+          [
+            95,
+            96
+          ],
+          [
+            96,
+            102
+          ],
+          [
+            102,
+            112
+          ],
+          [
+            112,
+            117
+          ],
+          [
+            117,
+            127
+          ],
+          [
+            127,
+            132
+          ],
+          [
+            132,
+            140
+          ],
+          [
+            140,
+            142
+          ],
+          [
+            142,
+            148
+          ],
+          [
+            148,
+            149
+          ],
+          [
+            149,
+            159
+          ],
+          [
+            159,
+            160
+          ],
+          [
+            160,
+            172
+          ],
+          [
+            172,
+            181
+          ],
+          [
+            181,
+            182
+          ],
+          [
+            182,
+            187
+          ],
+          [
+            187,
+            190
+          ],
+          [
+            190,
+            194
+          ],
+          [
+            194,
+            198
+          ],
+          [
+            198,
+            201
+          ],
+          [
+            201,
+            205
+          ],
+          [
+            205,
+            211
+          ],
+          [
+            211,
+            214
+          ],
+          [
+            214,
+            218
+          ],
+          [
+            218,
+            226
+          ],
+          [
+            226,
+            227
+          ]
+        ],
+        "offsets_utf8_bytes": [
+          [
+            0,
+            12
+          ],
+          [
+            12,
+            16
+          ],
+          [
+            16,
+            17
+          ],
+          [
+            17,
+            25
+          ],
+          [
+            25,
+            26
+          ],
+          [
+            26,
+            33
+          ],
+          [
+            33,
+            39
+          ],
+          [
+            39,
+            43
+          ],
+          [
+            43,
+            45
+          ],
+          [
+            45,
+            53
+          ],
+          [
+            53,
+            56
+          ],
+          [
+            56,
+            61
+          ],
+          [
+            61,
+            65
+          ],
+          [
+            65,
+            71
+          ],
+          [
+            71,
+            74
+          ],
+          [
+            74,
+            80
+          ],
+          [
+            80,
+            88
+          ],
+          [
+            88,
+            95
+          ],
+          [
+            95,
+            96
+          ],
+          [
+            96,
+            102
+          ],
+          [
+            102,
+            112
+          ],
+          [
+            112,
+            117
+          ],
+          [
+            117,
+            127
+          ],
+          [
+            127,
+            132
+          ],
+          [
+            132,
+            140
+          ],
+          [
+            140,
+            142
+          ],
+          [
+            142,
+            148
+          ],
+          [
+            148,
+            149
+          ],
+          [
+            149,
+            159
+          ],
+          [
+            159,
+            160
+          ],
+          [
+            160,
+            172
+          ],
+          [
+            172,
+            181
+          ],
+          [
+            181,
+            182
+          ],
+          [
+            182,
+            187
+          ],
+          [
+            187,
+            190
+          ],
+          [
+            190,
+            194
+          ],
+          [
+            194,
+            198
+          ],
+          [
+            198,
+            201
+          ],
+          [
+            201,
+            205
+          ],
+          [
+            205,
+            211
+          ],
+          [
+            211,
+            214
+          ],
+          [
+            214,
+            218
+          ],
+          [
+            218,
+            226
+          ],
+          [
+            226,
+            227
+          ]
+        ],
+        "original_context": "<|im_start|>user\nQuestion: People often use a mixture of salt and water to clean contact lenses. Which statement best describes this mixture?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+        "original_continuation": " Salt is the solute and water is the solvent.",
+        "preparation_policy": "existing_tasks_local_tokenizer_v1",
+        "probe_input_identity": "6f47fdc4943960de3a5393f9f0dbb51c6bb0340e7cd608e2d48b66781a0b9b76",
+        "prompt": "<|im_start|>user\nQuestion: People often use a mixture of salt and water to clean contact lenses. Which statement best describes this mixture?\nAnswer:<|im_end|>\n<|im_start|>assistant",
+        "prompt_hash": "1c19fd2b36d36a1f185e1ecbebbcfbf2f97a28871c40114323baaa2a0a3a4ed9",
+        "prompt_separate_ids": [
+          151644,
+          872,
+          198,
+          14582,
+          25,
+          8853,
+          3545,
+          990,
+          264,
+          20980,
+          315,
+          12021,
+          323,
+          3015,
+          311,
+          4240,
+          3645,
+          34957,
+          13,
+          15920,
+          5114,
+          1850,
+          16555,
+          419,
+          20980,
+          5267,
+          16141,
+          25,
+          151645,
+          198,
+          151644,
+          77091
+        ],
+        "prompt_token_boundary": 32,
+        "reference_hash": "bb98316ba522a560de6d6b22654ed1ecda465395114366dbbd8b3f3ff77b8999",
+        "reference_role": "dataset_gold_choice",
+        "reference_separate_ids": [
+          198,
+          27040,
+          374,
+          279,
+          2048,
+          1070,
+          323,
+          3015,
+          374,
+          279,
+          68896,
+          13
+        ],
+        "reference_source": "dataset_answer_key_choice",
+        "reference_text": "\n Salt is the solute and water is the solvent.",
+        "reference_token_count": 12,
+        "sample_id": "ACTAAP_2014_7_13",
+        "selection_policy": "field_round_robin_uniform_v1",
+        "selection_receipt": {
+          "eligible_target_count": 12,
+          "full_limit": 4,
+          "full_rule": "deterministic uniform subset of selected targets; Python round ties-to-even",
+          "full_status": "SELECTED",
+          "selected_full_count": 4,
+          "selected_target_count": 12,
+          "selection_rule": "first eligible; literal fields round-robin in renderer order; remaining deterministic uniform using Python round ties-to-even; deduplicate token positions",
+          "target_limit": 16
+        },
+        "sequence_identity": "270f3aa64ceba37c8132b62917673ac6ff0445ec9c3a28e50ab31a010c90015f",
+        "source_document_span": {
+          "reason": "source document is not a single model-visible text segment",
+          "status": "NOT_APPLICABLE"
+        },
+        "source_id": "ACTAAP_2014_7_13",
+        "special_token_ids": [
+          151645,
+          151643,
+          151644,
+          151646,
+          151647,
+          151648,
+          151649,
+          151650,
+          151651,
+          151652,
+          151653,
+          151654,
+          151655,
+          151656
+        ],
+        "special_token_mask": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "split": "test",
+        "targets": [
+          {
+            "logit_position": 31,
+            "prefix_hash": "851286764929847b4135c6b2b3a943ff1daa2cb07aa6f9063977893c200524f7",
+            "target_token_id": 198,
+            "token_position": 32
+          },
+          {
+            "logit_position": 32,
+            "prefix_hash": "5911fc5d36e2d7ba407581696b7601817bd38fe856d2c6cfa319a2ed9c9348e2",
+            "target_token_id": 27040,
+            "token_position": 33
+          },
+          {
+            "logit_position": 33,
+            "prefix_hash": "291b1c2352c5d0989fa252072d40e495c68eb0a0823b903ed6cf130dc4a190aa",
+            "target_token_id": 374,
+            "token_position": 34
+          },
+          {
+            "logit_position": 34,
+            "prefix_hash": "3dac301a5a15aa9d9b38a3dcbb64ee1fed43bd82d4776930245e56bba9697493",
+            "target_token_id": 279,
+            "token_position": 35
+          },
+          {
+            "logit_position": 35,
+            "prefix_hash": "41f066fa6ddbd79ede702c39905aacd67816855b61c400a8426ab69c899860e6",
+            "target_token_id": 2048,
+            "token_position": 36
+          },
+          {
+            "logit_position": 36,
+            "prefix_hash": "3125301c0c2ca3b5c5d257e3c2732adfacc7ceb4b3d35197d44b220b2f28f818",
+            "target_token_id": 1070,
+            "token_position": 37
+          },
+          {
+            "logit_position": 37,
+            "prefix_hash": "965c4e2606fc96c5aa351ad845f6e64a0dd13feeeec646d373bb78e65dd5d7c9",
+            "target_token_id": 323,
+            "token_position": 38
+          },
+          {
+            "logit_position": 38,
+            "prefix_hash": "bec1cb6d09de6ec14bc83a366d830bc28a5a82b9a2602aa92343b6810ed42be6",
+            "target_token_id": 3015,
+            "token_position": 39
+          },
+          {
+            "logit_position": 39,
+            "prefix_hash": "a5b0550e7278f3c857cfb738add067b94887830a84327f979b06440b8ec719db",
+            "target_token_id": 374,
+            "token_position": 40
+          },
+          {
+            "logit_position": 40,
+            "prefix_hash": "bd12cb227dcc02b7914a9fc1f3c28da809b965ecd01837762415f47c9ac8dcc2",
+            "target_token_id": 279,
+            "token_position": 41
+          },
+          {
+            "logit_position": 41,
+            "prefix_hash": "27cc10c4965b8b4ab4df97e98591f49637f46bf7872223119ad4fc9351137cc5",
+            "target_token_id": 68896,
+            "token_position": 42
+          },
+          {
+            "logit_position": 42,
+            "prefix_hash": "e903f1f30a517aff9f69931f73f6b3a678be19d83c1c138611b73eed5e24b56f",
+            "target_token_id": 13,
+            "token_position": 43
+          }
+        ],
+        "task_id": "arc_challenge",
+        "task_prompt_hash": "fd746152a5365e3d1b20ca95109c870cb0dba71b70527d2a11e010c50365b1d6",
+        "task_version": "1.0",
+        "token_strings": [
+          "<|im_start|>",
+          "user",
+          "Ċ",
+          "Question",
+          ":",
+          "ĠPeople",
+          "Ġoften",
+          "Ġuse",
+          "Ġa",
+          "Ġmixture",
+          "Ġof",
+          "Ġsalt",
+          "Ġand",
+          "Ġwater",
+          "Ġto",
+          "Ġclean",
+          "Ġcontact",
+          "Ġlenses",
+          ".",
+          "ĠWhich",
+          "Ġstatement",
+          "Ġbest",
+          "Ġdescribes",
+          "Ġthis",
+          "Ġmixture",
+          "?Ċ",
+          "Answer",
+          ":",
+          "<|im_end|>",
+          "Ċ",
+          "<|im_start|>",
+          "assistant",
+          "Ċ",
+          "ĠSalt",
+          "Ġis",
+          "Ġthe",
+          "Ġsol",
+          "ute",
+          "Ġand",
+          "Ġwater",
+          "Ġis",
+          "Ġthe",
+          "Ġsolvent",
+          "."
+        ],
+        "tokenization": {
+          "add_generation_prompt": true,
+          "add_special_tokens": false,
+          "bos_added_by_encoder": false,
+          "boundary_rule": "first joint token with end > prompt codepoint length; whole boundary token",
+          "chat_template_applied": 1,
+          "eos_added_by_encoder": false,
+          "historical_template_already_applied": false,
+          "model_profile": "qwen3_4b_gptq_serving_v1",
+          "padding_added": false,
+          "policy": "qwen_pinned_chat_joint_reference_v1",
+          "selection_policy": "field_round_robin_uniform_v1",
+          "token_id_space": "f488fa45d324a8bc64c84f0e27b47223872d550f2a6900564f77dfa67ca5ff4d",
+          "tokenizer_identity": "3fb415f03fcb8a59a538bce25028c5b0f618e8a3e96721645c278c7d79674dd8"
+        },
+        "usage_scope": "REGRESSION_REUSE",
+        "value_spans": {
+          "gold_choice": [
+            1,
+            46
+          ]
+        }
+      },
+      "likelihood": {
+        "choice_labels": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "gold_index": 1,
+        "requests": [
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 0,
+            "context": "<|im_start|>user\nQuestion: People often use a mixture of salt and water to clean contact lenses. Which statement best describes this mixture?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              8853,
+              3545,
+              990,
+              264,
+              20980,
+              315,
+              12021,
+              323,
+              3015,
+              311,
+              4240,
+              3645,
+              34957,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              419,
+              20980,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " Salt is the solvent and water is the solute.",
+            "continuation_ids": [
+              198,
+              27040,
+              374,
+              279,
+              68896,
+              323,
+              3015,
+              374,
+              279,
+              2048,
+              1070,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              8853,
+              3545,
+              990,
+              264,
+              20980,
+              315,
+              12021,
+              323,
+              3015,
+              311,
+              4240,
+              3645,
+              34957,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              419,
+              20980,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              27040,
+              374,
+              279,
+              68896,
+              323,
+              3015,
+              374,
+              279,
+              2048,
+              1070,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 44
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 1,
+            "context": "<|im_start|>user\nQuestion: People often use a mixture of salt and water to clean contact lenses. Which statement best describes this mixture?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              8853,
+              3545,
+              990,
+              264,
+              20980,
+              315,
+              12021,
+              323,
+              3015,
+              311,
+              4240,
+              3645,
+              34957,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              419,
+              20980,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " Salt is the solute and water is the solvent.",
+            "continuation_ids": [
+              198,
+              27040,
+              374,
+              279,
+              2048,
+              1070,
+              323,
+              3015,
+              374,
+              279,
+              68896,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              8853,
+              3545,
+              990,
+              264,
+              20980,
+              315,
+              12021,
+              323,
+              3015,
+              311,
+              4240,
+              3645,
+              34957,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              419,
+              20980,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              27040,
+              374,
+              279,
+              2048,
+              1070,
+              323,
+              3015,
+              374,
+              279,
+              68896,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 44
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 2,
+            "context": "<|im_start|>user\nQuestion: People often use a mixture of salt and water to clean contact lenses. Which statement best describes this mixture?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              8853,
+              3545,
+              990,
+              264,
+              20980,
+              315,
+              12021,
+              323,
+              3015,
+              311,
+              4240,
+              3645,
+              34957,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              419,
+              20980,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " Salt is the solvent and water is the solution.",
+            "continuation_ids": [
+              198,
+              27040,
+              374,
+              279,
+              68896,
+              323,
+              3015,
+              374,
+              279,
+              6291,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              8853,
+              3545,
+              990,
+              264,
+              20980,
+              315,
+              12021,
+              323,
+              3015,
+              311,
+              4240,
+              3645,
+              34957,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              419,
+              20980,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              27040,
+              374,
+              279,
+              68896,
+              323,
+              3015,
+              374,
+              279,
+              6291,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 46
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 3,
+            "context": "<|im_start|>user\nQuestion: People often use a mixture of salt and water to clean contact lenses. Which statement best describes this mixture?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              8853,
+              3545,
+              990,
+              264,
+              20980,
+              315,
+              12021,
+              323,
+              3015,
+              311,
+              4240,
+              3645,
+              34957,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              419,
+              20980,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091
+            ],
+            "continuation": " Salt is the solution and water is the solvent.",
+            "continuation_ids": [
+              198,
+              27040,
+              374,
+              279,
+              6291,
+              323,
+              3015,
+              374,
+              279,
+              68896,
+              13
+            ],
+            "input_ids": [
+              151644,
+              872,
+              198,
+              14582,
+              25,
+              8853,
+              3545,
+              990,
+              264,
+              20980,
+              315,
+              12021,
+              323,
+              3015,
+              311,
+              4240,
+              3645,
+              34957,
+              13,
+              15920,
+              5114,
+              1850,
+              16555,
+              419,
+              20980,
+              5267,
+              16141,
+              25,
+              151645,
+              198,
+              151644,
+              77091,
+              198,
+              27040,
+              374,
+              279,
+              6291,
+              323,
+              3015,
+              374,
+              279,
+              68896,
+              13
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 46
+          }
+        ]
+      },
+      "raw_record": {
+        "dataset_id": "ARC_CHALLENGE_LOCAL_POOL_REUSE",
+        "policy_id": "arc_original_completion_v1",
+        "reference_source": "dataset_answer_key_choice",
+        "sample": {
+          "document": {
+            "answerKey": "B",
+            "choices": {
+              "label": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "text": [
+                "Salt is the solvent and water is the solute.",
+                "Salt is the solute and water is the solvent.",
+                "Salt is the solvent and water is the solution.",
+                "Salt is the solution and water is the solvent."
+              ]
+            },
+            "id": "ACTAAP_2014_7_13",
+            "question": "People often use a mixture of salt and water to clean contact lenses. Which statement best describes this mixture?"
+          },
+          "original_index": 221,
+          "prompt_context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: People often use a mixture of salt and water to clean contact lenses. Which statement best describes this mixture?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+          "prompt_contract_id": "arc_original_completion_v1"
+        },
+        "sample_id": "ACTAAP_2014_7_13",
+        "source_id": "ACTAAP_2014_7_13",
+        "split": "test",
+        "task_id": "arc_challenge",
+        "task_version": "1.0",
+        "usage_scope": "REGRESSION_REUSE"
+      },
+      "sample_id": "ACTAAP_2014_7_13"
+    }
+  ],
+  "schema_version": 1,
+  "source_id": "prepared-arc_challenge-0b629b79ff9a0b04",
+  "task_id": "arc_challenge",
+  "task_version": "1.0",
+  "validation_scope": "PREPARED_CONTRACT_VALIDATED_ONLY"
+}

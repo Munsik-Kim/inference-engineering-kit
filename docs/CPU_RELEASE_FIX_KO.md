@@ -43,4 +43,4 @@ wheel과 sdist 재빌드의 package53개 멤버는 byte-wise 같았다. archive 
 
 GitHub 저장소 PRIVATE와 기존 릴리스 자산 보존을 읽기 전용으로 확인했다. 새 GPU 실행0, 모델/데이터/패키지 다운로드0, 기존 환경 변경0이다. 새 source hash의 GPU 경로는 CPU 계약 검증 범위이며, BENCH05-A dev2의 실제 관측을 dev3에서 측정한 것으로 바꾸지 않는다. 품질 `INCONCLUSIVE`와 연구 보류 판정을 유지한다. Python3.13+ 및 다른 OS, 새 matrix의 원격 성공은 아직 주장하지 않는다.
 
-로컬 상세 receipt·wheel·task 시작 대비 patch와 인계 자료는 `/home/mskim/Codex_main/inference-kit-cpu-fix_20261016_080812/`에 있다. 새 workflow의 원격 확인에는 별도로 검토한 Git 반영이 필요하다.
+로컬 상세 receipt·wheel·task 시작 대비 patch와 인계 자료는 `<LOCAL_WORKSPACE>/inference-kit-cpu-fix_20261016_080812/`에 있다. 새 workflow의 원격 확인에는 별도로 검토한 Git 반영이 필요하다.

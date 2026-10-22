@@ -1,0 +1,19 @@
+{
+  "arm_id": "rtn",
+  "artifact_identity": "c8debb3188403ab9d332149969e6e0f9b7b689dc06e77e882fde07a9cb8da761",
+  "attempt_id": "main-rtn-attempt1",
+  "backend": "toy",
+  "effective_weight_dtype": "float32",
+  "evidence_kind": "synthetic_contract",
+  "execution_id": "782257f864283e9979d4c11d272552de538ddb3afdeffddd4d41b2106c354bcf",
+  "execution_mode": "REIMPLEMENTED_OR_SYNTHETIC",
+  "model_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+  "model_revision": "31b70e2e869a7173562077fd711b654946d38674",
+  "phase": "main",
+  "raw_path": "observations.jsonl",
+  "recipe_identity": "synthetic-recipe",
+  "run_id": "synthetic-prepared",
+  "runtime_identity": "synthetic-runtime",
+  "status": "MEASURED",
+  "tokenizer_identity": "044e8c4dcd0206354b1d50f5be27c45d39b9e57fc7a76b7b2ef2a78a7e1e34c9"
+}

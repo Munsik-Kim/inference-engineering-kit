@@ -1,0 +1,65 @@
+{
+  "kind": "PUBLIC_RECEIPT_PROJECTION",
+  "parent_receipt_sha256": "70d6a36ab30014493c7e638996ce1f4dd80969990707e0bc9ec1700136b95dca",
+  "status": "COPY_ERROR_FIXED",
+  "source_file_before": "336e06ea45f81f8c4f7fdfd2135a6ef903052c4c1168263b57a3ec8d90233539",
+  "source_file_after": "4b791f62d12e74839f9572515ac20140a7a5c2b0db7945b39b3a882471d0d4eb",
+  "cases": [
+    {
+      "case": "existing",
+      "before_errno": 9,
+      "after_errno": 17,
+      "expected_errno": 17,
+      "fd_states_after": [
+        "CLOSED"
+      ],
+      "explicit_close_after": 0,
+      "original_source_target_unchanged": true
+    },
+    {
+      "case": "no_space",
+      "before_errno": 9,
+      "after_errno": 28,
+      "expected_errno": 28,
+      "fd_states_after": [
+        "CLOSED"
+      ],
+      "explicit_close_after": 0,
+      "original_source_target_unchanged": true
+    },
+    {
+      "case": "permission",
+      "before_errno": 9,
+      "after_errno": 13,
+      "expected_errno": 13,
+      "fd_states_after": [
+        "CLOSED"
+      ],
+      "explicit_close_after": 0,
+      "original_source_target_unchanged": true
+    },
+    {
+      "case": "fdopen",
+      "before_errno": 24,
+      "after_errno": 24,
+      "expected_errno": 24,
+      "fd_states_after": [
+        "CLOSED"
+      ],
+      "explicit_close_after": 1,
+      "original_source_target_unchanged": true
+    }
+  ],
+  "new_unique_tests": 7,
+  "installed_closed_tests": 7,
+  "fd_ownership": "fdopen success transfersownership beforetargetopen; fdopenfailurestillclosesrawfdonce",
+  "unchanged_guards": [
+    "stream-copy bound",
+    "length and SHA",
+    "source before/open/read/after stat",
+    "safe paths",
+    "publication lock",
+    "atomic publication",
+    "current locator validation"
+  ]
+}

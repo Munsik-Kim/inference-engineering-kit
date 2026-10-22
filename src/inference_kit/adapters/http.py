@@ -44,13 +44,16 @@ def _ids(value):
     return value
 
 
-async def request(session, url, adapter, row, semaphore, model, output_tokens, profile, abort_event=None):
+async def request(session, url, adapter, row, semaphore, model, output_tokens, profile, abort_event=None, event_sink=None):
     queued = time.perf_counter()
+    natural = profile == "natural_generation_v1"
     async with semaphore:
         start = time.perf_counter()
         first = last = None
         finish = usage = None
-        ids, text_parts, trace = [], [], []
+        ids, text_parts, trace, raw_sse = [], [], [], []
+        body = None
+        http_status = None
         prompt_ids = None
         done = False
         error = None
@@ -60,12 +63,18 @@ async def request(session, url, adapter, row, semaphore, model, output_tokens, p
                 raise ValueError("New request submission stopped by ownership/resource gate")
             body = adapter.body(row, model, output_tokens, profile)
             http_submit = time.perf_counter()
+            if event_sink is not None:
+                event_sink({'event':'http_submit','request_id':row['id'],'request_body':body,
+                            'queued_monotonic':queued,'semaphore_acquired_monotonic':start,
+                            'http_submit_monotonic':http_submit})
             async with session.post(url.rstrip("/") + "/v1/completions", json=body) as response:
+                http_status = response.status
                 if response.status != 200:
                     raise ValueError(f"HTTP {response.status}: {(await response.text())[:300]}")
                 if response.content_type != "text/event-stream":
                     raise ValueError("Expected text/event-stream")
                 async for frame in sse_events(response.content):
+                    raw_sse.append(frame)
                     now = time.perf_counter()
                     if frame.strip() == "[DONE]":
                         if done:
@@ -81,7 +90,7 @@ async def request(session, url, adapter, row, semaphore, model, output_tokens, p
                         if prompt_ids is not None and prompt_ids != observed:
                             raise ValueError("Prompt IDs changed within stream")
                         prompt_ids = observed
-                    meaningful = bool(event["text"]) if profile == "text" else bool(delta)
+                    meaningful = bool(event["text"]) if profile in ("text", "natural_generation_v1") else bool(delta)
                     if meaningful:
                         if finish is not None:
                             raise ValueError("Content after finish_reason")
@@ -98,26 +107,40 @@ async def request(session, url, adapter, row, semaphore, model, output_tokens, p
                                   "finish_reason": event["finish"], "usage": event["usage"]})
             if not done:
                 raise ValueError("Missing [DONE]; truncated stream")
-            if first is None or not isinstance(usage, dict):
+            if (first is None and not natural) or not isinstance(usage, dict):
                 raise ValueError("Missing meaningful content/usage")
             if (type(usage.get("prompt_tokens")) is not int or
                     type(usage.get("completion_tokens")) is not int or
                     usage["prompt_tokens"] != row["input_length"] or
-                    usage["completion_tokens"] != output_tokens):
+                    (not 0 <= usage["completion_tokens"] <= output_tokens if natural else usage["completion_tokens"] != output_tokens)):
                 raise ValueError("Actual token length differs from frozen workload")
-            if usage.get("total_tokens") != row["input_length"] + output_tokens:
+            if usage.get("total_tokens") != row["input_length"] + usage["completion_tokens"]:
                 raise ValueError("Invalid total_tokens")
-            if finish != "length":
+            if (finish not in ("stop", "length") if natural else finish != "length"):
                 raise ValueError("Expected forced-length finish_reason=length")
-            if profile == "token_ids":
+            if profile in ("token_ids", "natural_generation_v1"):
                 if prompt_ids != row["token_ids"]:
                     raise ValueError("Missing/mismatched prompt_token_ids; strict capability NOT verified")
-                if len(ids) != output_tokens:
+                if len(ids) != usage["completion_tokens"]:
                     raise ValueError("Missing/mismatched token_ids; strict capability NOT verified")
+        except asyncio.CancelledError:
+            if event_sink is not None and http_submit is not None:
+                event_sink({'event':'response_end','request_id':row['id'],'completed_monotonic':None,
+                            'error':'CancelledError','raw_sse_frames':raw_sse})
+            raise
         except Exception as exc:
             error = f"{type(exc).__name__}: {exc}"
         completed = time.perf_counter()
+        if event_sink is not None and http_submit is not None:
+            event_sink({'event':'response_end','request_id':row['id'],'completed_monotonic':completed,'error':error})
         valid = error is None
+        count = usage.get("completion_tokens", 0) if isinstance(usage, dict) else 0
+        termination = ("NATURAL_STOP" if finish == "stop" else "LENGTH_CAP") if valid else "TRANSPORT_ERROR"
+        if valid and not "".join(text_parts).strip(): termination = "EMPTY_OUTPUT"
+        if error:
+            if "HTTP " in error: termination = "HTTP_ERROR"
+            elif "Timeout" in error: termination = "TIMEOUT"
+            elif not done: termination = "TRUNCATED_OR_EOF"
         return {"request_id": row["id"], "prompt_hash": row["prompt_hash"],
                 "text_hash": row.get("text_hash"), "engine": adapter.engine, "profile": profile,
                 "status": "OK" if valid else "ERROR", "error": error,
@@ -126,15 +149,20 @@ async def request(session, url, adapter, row, semaphore, model, output_tokens, p
                 "http_submit_monotonic": http_submit,
                 "first_content_monotonic": first, "last_content_monotonic": last,
                 "client_queue_seconds": start - queued, "http_complete_seconds": completed - start,
-                "ttft_seconds": first - start if valid else None,
-                "last_content_seconds": last - start if valid else None,
-                "tpot_stream_estimate_seconds": (last - first) / (output_tokens - 1) if valid and output_tokens > 1 else None,
+                "ttft_seconds": first - start if valid and first is not None else None,
+                "last_content_seconds": last - start if valid and last is not None else None,
+                "tpot_stream_estimate_seconds": (last - first) / (count - 1) if valid and count > 1 and first is not None else None,
+                "request_latency_http": completed - http_submit if http_submit is not None else None,
+                "request_latency_task": completed - queued,
+                "ttft_http": first - http_submit if first is not None and http_submit is not None else None,
+                "transport_complete": valid, "termination": termination,
+                "request_body": body, "http_status": http_status, "raw_sse_frames": raw_sse,
                 "usage": usage, "finish_reason": finish, "saw_done": done,
                 "output_text_hash": sha("".join(text_parts)),
                 "output_text": "".join(text_parts), "observed_prompt_ids": prompt_ids,
                 "output_token_ids": ids if ids else None,
                 "output_ids_hash": sha(ids) if profile == "token_ids" else None,
-                "sse_event_count": len(trace), "content_event_count": sum(bool(t["text_chars"] if profile == "text" else t["token_ids_count"]) for t in trace),
+                "sse_event_count": len(trace), "content_event_count": sum(bool(t["text_chars"] if profile in ("text", "natural_generation_v1") else t["token_ids_count"]) for t in trace),
                 "trace": trace}
 
 
@@ -165,7 +193,7 @@ def summary(records, elapsed):
 
 
 async def block(url, adapter, rows, concurrency, model="serving-lab", output_tokens=32,
-                profile="text", timeout=30, abort_event=None, record_callback=None):
+                profile="text", timeout=30, abort_event=None, record_callback=None, event_sink=None):
     if concurrency < 1 or timeout <= 0 or not rows:
         raise ValueError("Invalid block parameters")
     import aiohttp  # Optional HTTP runtime; CPU summaries/parser import without it.
@@ -174,8 +202,9 @@ async def block(url, adapter, rows, concurrency, model="serving-lab", output_tok
                                      connector=aiohttp.TCPConnector(limit=0)) as session:
         start = time.perf_counter()
         async def one(row):
+            options = {'event_sink': event_sink} if event_sink is not None else {}
             record = await request(session, url, adapter, row, semaphore, model,
-                                   output_tokens, profile, abort_event)
+                                   output_tokens, profile, abort_event, **options)
             if record_callback is not None:
                 record_callback(record)
             return record

@@ -1,0 +1,69 @@
+{
+  "data_identity": "816b19231fd6388f6004d6fd72d5e299ba5d3e73ab84a5704cbeeb31e429bc4e",
+  "files": [
+    {
+      "bytes": 4291,
+      "path": "PREPARATION_RECEIPT.json",
+      "sha256": "e63088f339a16d812bfa13c6e52d87c672047103d77a489bce809edf37df9d1c"
+    },
+    {
+      "bytes": 385,
+      "path": "PREPARATION_SPEC.json",
+      "sha256": "78a8154b107d67b0a0602619ea186cceda0f0d45444cbda34911a50e0f26f2b0"
+    },
+    {
+      "bytes": 21848,
+      "path": "RAW_INPUT.json",
+      "sha256": "dddad5ea49e9e95ca137e016d41473e32ad9896cddd338292982bdf1e4d71b3e"
+    },
+    {
+      "bytes": 3939,
+      "path": "RUNTIME_RECEIPT.json",
+      "sha256": "db26714ab16f0a7943c04f8c8ad712b9512ce3e1549d3d13dcfd8039ea787360"
+    },
+    {
+      "bytes": 725,
+      "path": "SOURCES.json",
+      "sha256": "237e5d98fcb22b4dc55523f8fef1251dbe8b87772cf7f45d3ed87a255085250f"
+    },
+    {
+      "bytes": 3426,
+      "path": "TOKENIZER_OFFSET_RECEIPT.json",
+      "sha256": "f65052769dcae0f76048a68556220893af937dc158b1d61ed7a627f8dcc0ac71"
+    },
+    {
+      "bytes": 0,
+      "path": "WORKER_STDERR.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3471,
+      "path": "WORKER_STDOUT.log",
+      "sha256": "4bb38fc97f59febaacb63d0cdb8f63922757e1c0c560aab5c0420e3043b53a72"
+    },
+    {
+      "bytes": 128178,
+      "path": "source-arc_challenge.json",
+      "sha256": "f819977a8d825fc3bbb8fa86604472785f099d15ab605cf829ed89432ece55f3"
+    },
+    {
+      "bytes": 304072,
+      "path": "source-context_evidence_retrieval.json",
+      "sha256": "447e6fae523808695bf4c5eb0d7a025e71d931f32108e175a0d6c2541460f21f"
+    },
+    {
+      "bytes": 234273,
+      "path": "source-tech_record_extract.json",
+      "sha256": "1af10c4d583cf9550009a27de0f5ec028dfa400bc61ac93c2da2764b0db3cb97"
+    }
+  ],
+  "kind": "prepared_input_bundle_v1",
+  "raw_identity": "70ceae5f7a1728adfcc627d84108457d87b0e069e3874bd13ce1a532a53a4548",
+  "raw_input": "RAW_INPUT.json",
+  "schema_version": 1,
+  "semantic_identity": "98ed02c2c79827973828aeb6775aad93dee6ac22de039e971141f0ee1d581974",
+  "source_manifest": "SOURCES.json",
+  "spec": "PREPARATION_SPEC.json",
+  "spec_identity": "eccdc9696b213742ccdffa4a48e3d60de64eacda6823a76b3980ee866ea65c03",
+  "validation_scope": "PREPARED_CONTRACT_VALIDATED_ONLY"
+}

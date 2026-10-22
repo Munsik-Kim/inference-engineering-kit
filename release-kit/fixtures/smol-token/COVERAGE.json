@@ -1,0 +1,13 @@
+{
+  "GPU_actions": 0,
+  "excluded_full_logits_records": 66,
+  "excluded_scalar_records": 0,
+  "full_logits_records": 6,
+  "generation_records": 0,
+  "meaning": "All scalar/argmax positions; only deterministic one complete vocabulary pair per task remains numerically available",
+  "parent_full_logits_records": 72,
+  "parent_records": 246,
+  "records": 246,
+  "sequences": 9,
+  "status": "ALL_SCALARS_SELECTED_FULL_SLICE"
+}

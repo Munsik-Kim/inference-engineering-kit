@@ -23,6 +23,7 @@ def validate_samples(prepared):
     require(digest(rows)==prepared['rows_identity'],'Prepared row identity differs')
     cfg=prepared['model_config'];sample_fields={f.name for f in dataclass_fields(Sample)}
     for row in rows:
+        require(row['task_id']=='diagnostic_continuation_v1' and row['task_version']=='1' and row['reference_source']=='author_provided_diagnostic_text','A wrapper requires its original diagnostic task/reference policy')
         Sample(**{k:row[k] for k in sample_fields}).validate()
         ids=row['input_ids'];boundary=row['prompt_token_boundary']
         require(ids and len(ids)<=128 and all(type(i) is int and 0<=i<prepared['vocabulary_size'] for i in ids),'Invalid token IDs/length')

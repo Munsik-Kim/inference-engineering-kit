@@ -1,0 +1,2143 @@
+{
+  "kind": "prepared_task_source_v1",
+  "model_metadata": {
+    "arms": [
+      {
+        "arm_id": "bf16",
+        "artifact": {
+          "artifact_identity": "0c668d5b8e51322d63898007d3d4a4ea488f21168208c3f3fc0d0f9643ac371b",
+          "config_sha256": "994f50b16abb4ae00880baefe03c10260b5bd608d2bf586f7056ca05a534feea",
+          "model_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+          "model_revision": "31b70e2e869a7173562077fd711b654946d38674",
+          "recipe_identity": "7139c7ebc95daad8c9f3850cb8d0036a3f0d9a6f53817eb103aa6743d05b3675"
+        },
+        "execution_mode": "INSTRUMENTED_PATH",
+        "receipt_arm": "BF16_REF",
+        "source_format": "native"
+      },
+      {
+        "arm_id": "rtn",
+        "artifact": {
+          "artifact_identity": "c8debb3188403ab9d332149969e6e0f9b7b689dc06e77e882fde07a9cb8da761",
+          "config_sha256": "e1fd0948c8d4625e4e9fd81776f3e575debd0bd0ae9b6174928e84cd00bba75b",
+          "model_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+          "model_revision": "31b70e2e869a7173562077fd711b654946d38674",
+          "recipe_identity": "45e7e27110de7bbbd5c160fef3423ee8878ea5d3678f37cb3e07325ef99028e2"
+        },
+        "execution_mode": "DECODED_WEIGHT_DIAGNOSTIC",
+        "receipt_arm": "R00",
+        "source_format": "compressed-tensors/pack-quantized"
+      }
+    ],
+    "model_config": {
+      "architectures": [
+        "LlamaForCausalLM"
+      ],
+      "attention_bias": false,
+      "attention_dropout": 0.0,
+      "bos_token_id": 1,
+      "eos_token_id": 2,
+      "hidden_act": "silu",
+      "hidden_size": 2048,
+      "initializer_range": 0.02,
+      "intermediate_size": 8192,
+      "max_position_embeddings": 8192,
+      "mlp_bias": false,
+      "model_type": "llama",
+      "num_attention_heads": 32,
+      "num_hidden_layers": 24,
+      "num_key_value_heads": 32,
+      "pad_token_id": 2,
+      "pretraining_tp": 1,
+      "rms_norm_eps": 1e-05,
+      "rope_scaling": null,
+      "rope_theta": 130000,
+      "tie_word_embeddings": true,
+      "torch_dtype": "bfloat16",
+      "transformers.js_config": {
+        "dtype": "q4",
+        "kv_cache_dtype": {
+          "fp16": "float16",
+          "q4f16": "float16"
+        },
+        "use_external_data_format": {
+          "model.onnx": true,
+          "model_fp16.onnx": true
+        }
+      },
+      "transformers_version": "4.42.3",
+      "use_cache": true,
+      "vocab_size": 49152
+    },
+    "pair": {
+      "arms": [
+        {
+          "arm_id": "bf16",
+          "execution_mode": "INSTRUMENTED_PATH",
+          "receipt_arm": "BF16_REF",
+          "source_format": "native"
+        },
+        {
+          "arm_id": "rtn",
+          "execution_mode": "DECODED_WEIGHT_DIAGNOSTIC",
+          "receipt_arm": "R00",
+          "source_format": "compressed-tensors/pack-quantized"
+        }
+      ],
+      "decoded_reason": "Installed compressed-tensors0.18 CompressedLinear.from_linear explicitly raises no-longer-supported; planned exact packed decode with strict complete dense state, not an automatic fallback or INT4 serving observation",
+      "model_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "revision": "31b70e2e869a7173562077fd711b654946d38674",
+      "schema_version": 1,
+      "weight_treatment_only": true
+    },
+    "runtime_identities": {
+      "diagnostic": "33c7cd42d0c4fd2bec331491685445fb8abff9c9536d9a9f6c496f32d037c595",
+      "serving": "cc88384a71f03de82c3f130c62cfa134b73aa301e8218f17d8c20cf25a54445b"
+    },
+    "serving_policy": {
+      "async_scheduling": false,
+      "chunked_prefill": true,
+      "cleanup_grace": 25,
+      "context": 2048,
+      "eager": true,
+      "kv_tokens": 4096,
+      "max_num_batched_tokens": 2048,
+      "max_num_seqs": 1,
+      "prefix_caching": false,
+      "shutdown_timeout": 10
+    },
+    "structure_spec": {
+      "backend": "native_transformers_sdpa_smol_mha_v1",
+      "budget": {
+        "automatic_retries": 0,
+        "cleanup_reserve_seconds": 120,
+        "max_gpu_processes": 4,
+        "minimum_cpu_available_bytes": 10737418240,
+        "minimum_disk_free_bytes": 4294967296,
+        "probe_gpu_buffer_bytes": 268435456,
+        "raw_bytes_total": 268435456,
+        "task_gpu_wall_seconds": 600
+      },
+      "full_key_axis": true,
+      "heads": "first_middle",
+      "kind": "structure_probe_spec_v1",
+      "layers": "first_middle_last",
+      "mask_policy": "native actual mask and global causal query index; masked/future keys retained as zeros",
+      "max_sequence_tokens": 640,
+      "numeric": {
+        "dtype": "float32",
+        "endianness": "little"
+      },
+      "observe_attention": true,
+      "observer_consistency_policy": {
+        "absolute_tolerance": 1e-05,
+        "id": "d1_off_repeat_and_on_v1",
+        "passes": [
+          "OFF1",
+          "OFF2",
+          "ON"
+        ]
+      },
+      "probability_source": "reconstructed_from_native_post_RoPE_qk",
+      "profile": "MAIN",
+      "query_roles": [
+        "last_prompt",
+        "before_last_reference"
+      ],
+      "same_pass_consistency": {
+        "absolute_tolerance_nat": 2e-05,
+        "id": "same_pass_saved_f32_v1",
+        "scope": "same-pass saved float32 full logits CPU log_softmax[target] vs saved float32 scalar"
+      },
+      "schema_version": 1
+    },
+    "token_id_space": "7fc3b488e0654b519ba97fb5d30821d8172edb8c67ad24e2afc62de18d89dbc5",
+    "token_spec": {
+      "budget": {
+        "automatic_retries": 0,
+        "cleanup_reserve_seconds": 120,
+        "max_gpu_processes": 3,
+        "minimum_cpu_available_bytes": 10737418240,
+        "minimum_disk_free_bytes": 4294967296,
+        "probe_gpu_buffer_bytes": 268435456,
+        "raw_bytes_total": 268435456,
+        "task_gpu_wall_seconds": 600
+      },
+      "consistency_policy": {
+        "absolute_tolerance_nat": 2e-05,
+        "id": "same_pass_saved_f32_v1",
+        "scope": "same-pass saved float32 full logits CPU log_softmax[target] vs saved float32 scalar"
+      },
+      "max_full_vocab_positions_per_sample": 4,
+      "max_sequence_tokens": 640,
+      "max_target_positions_per_sample": 16,
+      "normalization": {
+        "dtype": "float32",
+        "log_base": "e",
+        "probability_stage": "raw_pre_sampling"
+      },
+      "observe_attention": false,
+      "reference_role_filter": [
+        "author_gold_json",
+        "dataset_gold_choice",
+        "author_answer_evidence"
+      ],
+      "schema_version": 1,
+      "seed": 909274,
+      "selection_policy": "preserved_field_round_robin_uniform_v1",
+      "selection_version": "1"
+    },
+    "tokenizer_files": {
+      "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+      "special_tokens_map.json": "2b7379f3ae813529281a5c602bc5a11c1d4e0a99107aaa597fe936c1e813ca52",
+      "tokenizer.json": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+      "tokenizer_config.json": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df",
+      "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+    },
+    "tokenizer_identity": "420c39aaae8d6bcb216797f9459582938b501ac5268f6c36d2d40d983d86a641",
+    "vocabulary_size": 49152
+  },
+  "preparation": {
+    "limits": {
+      "context_tokens": 2048,
+      "max_joint_tokens": 640,
+      "max_prompt_tokens": 512,
+      "max_reference_tokens": 128
+    },
+    "policy_id": "existing_tasks_local_tokenizer_v1",
+    "preparation_spec_identity": "eccdc9696b213742ccdffa4a48e3d60de64eacda6823a76b3980ee866ea65c03",
+    "raw_manifest_identity": "7a9ed5aa3f9b8360ff9fc7cbb84051666966a8d989d0bf83f499e3855d5f7c42",
+    "schema_version": 1,
+    "scorer_version": "arc_choice_sum_character_norm_v1",
+    "selection": {
+      "max_full": 4,
+      "max_targets": 16,
+      "policy_id": "field_round_robin_uniform_v1"
+    },
+    "source_identity": "e25b7ab9fb0a5b8b785af2759fb53036f83569ff04ba70725ab649fd4eb81d16",
+    "token_id_space": "7fc3b488e0654b519ba97fb5d30821d8172edb8c67ad24e2afc62de18d89dbc5",
+    "tokenizer_identity": "420c39aaae8d6bcb216797f9459582938b501ac5268f6c36d2d40d983d86a641"
+  },
+  "request_kind": "choice_loglikelihood",
+  "samples": [
+    {
+      "authored_sample": {
+        "choice_labels": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "choices": [
+          "produce food.",
+          "pass genetic information.",
+          "move through the body.",
+          "use energy."
+        ],
+        "document": {
+          "answerKey": "B",
+          "choices": {
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "text": [
+              "produce food.",
+              "pass genetic information.",
+              "move through the body.",
+              "use energy."
+            ]
+          },
+          "id": "Mercury_7056823",
+          "question": "A cell that has lost its nucleus no longer has the ability to"
+        },
+        "gold": 1,
+        "original_index": 476,
+        "prompt": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+        "question": "A cell that has lost its nucleus no longer has the ability to",
+        "request_identity": "7c73ed19c0a3cd7d885ea144ce09fcd9519d3ca00552c490fcc0e54353fa4665",
+        "requests": [
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 0,
+            "context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              1,
+              9690,
+              198,
+              2683,
+              359,
+              253,
+              5356,
+              5646,
+              11173,
+              3365,
+              3511,
+              308,
+              34519,
+              28,
+              7018,
+              411,
+              407,
+              19712,
+              8182,
+              2,
+              198,
+              1,
+              4093,
+              198,
+              17872,
+              42,
+              330,
+              1297,
+              338,
+              553,
+              3590,
+              624,
+              14831,
+              787,
+              2848,
+              553,
+              260,
+              2470,
+              288,
+              198,
+              21350,
+              42,
+              2,
+              198,
+              1,
+              520,
+              9531
+            ],
+            "continuation": " produce food.",
+            "continuation_ids": [
+              198,
+              2690,
+              1114,
+              30
+            ],
+            "input_ids": [
+              1,
+              9690,
+              198,
+              2683,
+              359,
+              253,
+              5356,
+              5646,
+              11173,
+              3365,
+              3511,
+              308,
+              34519,
+              28,
+              7018,
+              411,
+              407,
+              19712,
+              8182,
+              2,
+              198,
+              1,
+              4093,
+              198,
+              17872,
+              42,
+              330,
+              1297,
+              338,
+              553,
+              3590,
+              624,
+              14831,
+              787,
+              2848,
+              553,
+              260,
+              2470,
+              288,
+              198,
+              21350,
+              42,
+              2,
+              198,
+              1,
+              520,
+              9531,
+              198,
+              2690,
+              1114,
+              30
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 13
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 1,
+            "context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              1,
+              9690,
+              198,
+              2683,
+              359,
+              253,
+              5356,
+              5646,
+              11173,
+              3365,
+              3511,
+              308,
+              34519,
+              28,
+              7018,
+              411,
+              407,
+              19712,
+              8182,
+              2,
+              198,
+              1,
+              4093,
+              198,
+              17872,
+              42,
+              330,
+              1297,
+              338,
+              553,
+              3590,
+              624,
+              14831,
+              787,
+              2848,
+              553,
+              260,
+              2470,
+              288,
+              198,
+              21350,
+              42,
+              2,
+              198,
+              1,
+              520,
+              9531
+            ],
+            "continuation": " pass genetic information.",
+            "continuation_ids": [
+              198,
+              1301,
+              4217,
+              1096,
+              30
+            ],
+            "input_ids": [
+              1,
+              9690,
+              198,
+              2683,
+              359,
+              253,
+              5356,
+              5646,
+              11173,
+              3365,
+              3511,
+              308,
+              34519,
+              28,
+              7018,
+              411,
+              407,
+              19712,
+              8182,
+              2,
+              198,
+              1,
+              4093,
+              198,
+              17872,
+              42,
+              330,
+              1297,
+              338,
+              553,
+              3590,
+              624,
+              14831,
+              787,
+              2848,
+              553,
+              260,
+              2470,
+              288,
+              198,
+              21350,
+              42,
+              2,
+              198,
+              1,
+              520,
+              9531,
+              198,
+              1301,
+              4217,
+              1096,
+              30
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 25
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 2,
+            "context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              1,
+              9690,
+              198,
+              2683,
+              359,
+              253,
+              5356,
+              5646,
+              11173,
+              3365,
+              3511,
+              308,
+              34519,
+              28,
+              7018,
+              411,
+              407,
+              19712,
+              8182,
+              2,
+              198,
+              1,
+              4093,
+              198,
+              17872,
+              42,
+              330,
+              1297,
+              338,
+              553,
+              3590,
+              624,
+              14831,
+              787,
+              2848,
+              553,
+              260,
+              2470,
+              288,
+              198,
+              21350,
+              42,
+              2,
+              198,
+              1,
+              520,
+              9531
+            ],
+            "continuation": " move through the body.",
+            "continuation_ids": [
+              198,
+              1485,
+              738,
+              260,
+              1248,
+              30
+            ],
+            "input_ids": [
+              1,
+              9690,
+              198,
+              2683,
+              359,
+              253,
+              5356,
+              5646,
+              11173,
+              3365,
+              3511,
+              308,
+              34519,
+              28,
+              7018,
+              411,
+              407,
+              19712,
+              8182,
+              2,
+              198,
+              1,
+              4093,
+              198,
+              17872,
+              42,
+              330,
+              1297,
+              338,
+              553,
+              3590,
+              624,
+              14831,
+              787,
+              2848,
+              553,
+              260,
+              2470,
+              288,
+              198,
+              21350,
+              42,
+              2,
+              198,
+              1,
+              520,
+              9531,
+              198,
+              1485,
+              738,
+              260,
+              1248,
+              30
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 22
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 3,
+            "context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              1,
+              9690,
+              198,
+              2683,
+              359,
+              253,
+              5356,
+              5646,
+              11173,
+              3365,
+              3511,
+              308,
+              34519,
+              28,
+              7018,
+              411,
+              407,
+              19712,
+              8182,
+              2,
+              198,
+              1,
+              4093,
+              198,
+              17872,
+              42,
+              330,
+              1297,
+              338,
+              553,
+              3590,
+              624,
+              14831,
+              787,
+              2848,
+              553,
+              260,
+              2470,
+              288,
+              198,
+              21350,
+              42,
+              2,
+              198,
+              1,
+              520,
+              9531
+            ],
+            "continuation": " use energy.",
+            "continuation_ids": [
+              198,
+              722,
+              1439,
+              30
+            ],
+            "input_ids": [
+              1,
+              9690,
+              198,
+              2683,
+              359,
+              253,
+              5356,
+              5646,
+              11173,
+              3365,
+              3511,
+              308,
+              34519,
+              28,
+              7018,
+              411,
+              407,
+              19712,
+              8182,
+              2,
+              198,
+              1,
+              4093,
+              198,
+              17872,
+              42,
+              330,
+              1297,
+              338,
+              553,
+              3590,
+              624,
+              14831,
+              787,
+              2848,
+              553,
+              260,
+              2470,
+              288,
+              198,
+              21350,
+              42,
+              2,
+              198,
+              1,
+              520,
+              9531,
+              198,
+              722,
+              1439,
+              30
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 11
+          }
+        ],
+        "sample_id": "Mercury_7056823",
+        "source_text_hash": "53ce007e44545918c5ec8056ff7cee5f245b94121949cb47d609ce6dd61b655f",
+        "split": "test",
+        "usage_scope": "REGRESSION_REUSE"
+      },
+      "diagnostic": {
+        "attention_mask": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "boundary_crossing_token": false,
+        "correctness_meaning": "External gold teacher-forced reference; separate from prompt-only generation",
+        "dataset_id": "ARC_CHALLENGE_LOCAL_POOL_REUSE",
+        "field_token_coverage": {
+          "gold_choice": {
+            "overlapping_positions": [
+              48,
+              49,
+              50,
+              51
+            ],
+            "selected_positions": [
+              48,
+              49,
+              50,
+              51
+            ]
+          }
+        },
+        "full_text": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n pass genetic information.",
+        "full_text_hash": "58e4ef525609ef07fdc08e1f8b2d404430f130c3d57981eb2726178ebd1496e5",
+        "full_vocab_target_positions": [
+          47,
+          48,
+          50,
+          51
+        ],
+        "generation_input_ids": null,
+        "gold_choice_index": 1,
+        "input_ids": [
+          1,
+          9690,
+          198,
+          2683,
+          359,
+          253,
+          5356,
+          5646,
+          11173,
+          3365,
+          3511,
+          308,
+          34519,
+          28,
+          7018,
+          411,
+          407,
+          19712,
+          8182,
+          2,
+          198,
+          1,
+          4093,
+          198,
+          17872,
+          42,
+          330,
+          1297,
+          338,
+          553,
+          3590,
+          624,
+          14831,
+          787,
+          2848,
+          553,
+          260,
+          2470,
+          288,
+          198,
+          21350,
+          42,
+          2,
+          198,
+          1,
+          520,
+          9531,
+          198,
+          1301,
+          4217,
+          1096,
+          30
+        ],
+        "joint_equals_separate_concat": true,
+        "language": "en",
+        "loss_mask": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "moved_trailing_context_whitespace": "\n",
+        "native_choice_identity": "70a65676cdebc510ebec2b80f43995d46d951a5cb131e06f15c7d0c64bf171a3",
+        "offset_contract": {
+          "nonempty_overlap_policy": "keep whole token; overlapping offsets allowed and recorded",
+          "overlapping_offset_token_positions": [],
+          "unit": "unicode_codepoints",
+          "utf8_bytes_derived_from_codepoint_prefix": true,
+          "zero_length": "special tokens only"
+        },
+        "offset_mapping_status": "AVAILABLE",
+        "offsets_codepoints": [
+          [
+            0,
+            12
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            19,
+            22
+          ],
+          [
+            22,
+            26
+          ],
+          [
+            26,
+            28
+          ],
+          [
+            28,
+            36
+          ],
+          [
+            36,
+            39
+          ],
+          [
+            39,
+            49
+          ],
+          [
+            49,
+            55
+          ],
+          [
+            55,
+            58
+          ],
+          [
+            58,
+            60
+          ],
+          [
+            60,
+            62
+          ],
+          [
+            62,
+            63
+          ],
+          [
+            63,
+            71
+          ],
+          [
+            71,
+            74
+          ],
+          [
+            74,
+            76
+          ],
+          [
+            76,
+            82
+          ],
+          [
+            82,
+            87
+          ],
+          [
+            87,
+            97
+          ],
+          [
+            97,
+            98
+          ],
+          [
+            98,
+            110
+          ],
+          [
+            110,
+            114
+          ],
+          [
+            114,
+            115
+          ],
+          [
+            115,
+            123
+          ],
+          [
+            123,
+            124
+          ],
+          [
+            124,
+            126
+          ],
+          [
+            126,
+            131
+          ],
+          [
+            131,
+            136
+          ],
+          [
+            136,
+            140
+          ],
+          [
+            140,
+            145
+          ],
+          [
+            145,
+            149
+          ],
+          [
+            149,
+            157
+          ],
+          [
+            157,
+            160
+          ],
+          [
+            160,
+            167
+          ],
+          [
+            167,
+            171
+          ],
+          [
+            171,
+            175
+          ],
+          [
+            175,
+            183
+          ],
+          [
+            183,
+            186
+          ],
+          [
+            186,
+            187
+          ],
+          [
+            187,
+            193
+          ],
+          [
+            193,
+            194
+          ],
+          [
+            194,
+            204
+          ],
+          [
+            204,
+            205
+          ],
+          [
+            205,
+            217
+          ],
+          [
+            217,
+            220
+          ],
+          [
+            220,
+            226
+          ],
+          [
+            226,
+            227
+          ],
+          [
+            227,
+            232
+          ],
+          [
+            232,
+            240
+          ],
+          [
+            240,
+            252
+          ],
+          [
+            252,
+            253
+          ]
+        ],
+        "offsets_utf8_bytes": [
+          [
+            0,
+            12
+          ],
+          [
+            12,
+            18
+          ],
+          [
+            18,
+            19
+          ],
+          [
+            19,
+            22
+          ],
+          [
+            22,
+            26
+          ],
+          [
+            26,
+            28
+          ],
+          [
+            28,
+            36
+          ],
+          [
+            36,
+            39
+          ],
+          [
+            39,
+            49
+          ],
+          [
+            49,
+            55
+          ],
+          [
+            55,
+            58
+          ],
+          [
+            58,
+            60
+          ],
+          [
+            60,
+            62
+          ],
+          [
+            62,
+            63
+          ],
+          [
+            63,
+            71
+          ],
+          [
+            71,
+            74
+          ],
+          [
+            74,
+            76
+          ],
+          [
+            76,
+            82
+          ],
+          [
+            82,
+            87
+          ],
+          [
+            87,
+            97
+          ],
+          [
+            97,
+            98
+          ],
+          [
+            98,
+            110
+          ],
+          [
+            110,
+            114
+          ],
+          [
+            114,
+            115
+          ],
+          [
+            115,
+            123
+          ],
+          [
+            123,
+            124
+          ],
+          [
+            124,
+            126
+          ],
+          [
+            126,
+            131
+          ],
+          [
+            131,
+            136
+          ],
+          [
+            136,
+            140
+          ],
+          [
+            140,
+            145
+          ],
+          [
+            145,
+            149
+          ],
+          [
+            149,
+            157
+          ],
+          [
+            157,
+            160
+          ],
+          [
+            160,
+            167
+          ],
+          [
+            167,
+            171
+          ],
+          [
+            171,
+            175
+          ],
+          [
+            175,
+            183
+          ],
+          [
+            183,
+            186
+          ],
+          [
+            186,
+            187
+          ],
+          [
+            187,
+            193
+          ],
+          [
+            193,
+            194
+          ],
+          [
+            194,
+            204
+          ],
+          [
+            204,
+            205
+          ],
+          [
+            205,
+            217
+          ],
+          [
+            217,
+            220
+          ],
+          [
+            220,
+            226
+          ],
+          [
+            226,
+            227
+          ],
+          [
+            227,
+            232
+          ],
+          [
+            232,
+            240
+          ],
+          [
+            240,
+            252
+          ],
+          [
+            252,
+            253
+          ]
+        ],
+        "original_context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+        "original_continuation": " pass genetic information.",
+        "preparation_policy": "existing_tasks_local_tokenizer_v1",
+        "probe_input_identity": "44576ccc42b41c5afe127fc55b990d16af2fde751e12308256bdf1882a140f72",
+        "prompt": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant",
+        "prompt_hash": "24c125d536a4966750cc1a235375b7f2b369f425571003478b05459f5bc16714",
+        "prompt_separate_ids": [
+          1,
+          9690,
+          198,
+          2683,
+          359,
+          253,
+          5356,
+          5646,
+          11173,
+          3365,
+          3511,
+          308,
+          34519,
+          28,
+          7018,
+          411,
+          407,
+          19712,
+          8182,
+          2,
+          198,
+          1,
+          4093,
+          198,
+          17872,
+          42,
+          330,
+          1297,
+          338,
+          553,
+          3590,
+          624,
+          14831,
+          787,
+          2848,
+          553,
+          260,
+          2470,
+          288,
+          198,
+          21350,
+          42,
+          2,
+          198,
+          1,
+          520,
+          9531
+        ],
+        "prompt_token_boundary": 47,
+        "reference_hash": "4738ab3214dcc706478da6c6c870f27dce02cbdf91af725431ed32bd400b35a3",
+        "reference_role": "dataset_gold_choice",
+        "reference_separate_ids": [
+          198,
+          1301,
+          4217,
+          1096,
+          30
+        ],
+        "reference_source": "dataset_answer_key_choice",
+        "reference_text": "\n pass genetic information.",
+        "reference_token_count": 5,
+        "sample_id": "Mercury_7056823",
+        "selection_policy": "field_round_robin_uniform_v1",
+        "selection_receipt": {
+          "eligible_target_count": 5,
+          "full_limit": 4,
+          "full_rule": "deterministic uniform subset of selected targets; Python round ties-to-even",
+          "full_status": "SELECTED",
+          "selected_full_count": 4,
+          "selected_target_count": 5,
+          "selection_rule": "first eligible; literal fields round-robin in renderer order; remaining deterministic uniform using Python round ties-to-even; deduplicate token positions",
+          "target_limit": 16
+        },
+        "sequence_identity": "54b187bc223e059add21dff4fec6438ce4a37a297a00874e434289ca5cee91cc",
+        "source_document_span": {
+          "reason": "source document is not a single model-visible text segment",
+          "status": "NOT_APPLICABLE"
+        },
+        "source_id": "Mercury_7056823",
+        "special_token_ids": [
+          1,
+          2,
+          0
+        ],
+        "special_token_mask": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "split": "test",
+        "targets": [
+          {
+            "logit_position": 46,
+            "prefix_hash": "b956e7a2185bba543533e988522d872bec809b8aec3137e441bcd283e978a493",
+            "target_token_id": 198,
+            "token_position": 47
+          },
+          {
+            "logit_position": 47,
+            "prefix_hash": "42f6f9b8ddd6291d0801bb7e8183a069db18d26887acdeef0f439d5c6d276815",
+            "target_token_id": 1301,
+            "token_position": 48
+          },
+          {
+            "logit_position": 48,
+            "prefix_hash": "d02d6ce597150be6c72fe1852e04102531211859ba50acd077cae487f956ebde",
+            "target_token_id": 4217,
+            "token_position": 49
+          },
+          {
+            "logit_position": 49,
+            "prefix_hash": "afe4c33091cc44e3f124ca4b2273a35e80d8281a59d59f51a761394f952485eb",
+            "target_token_id": 1096,
+            "token_position": 50
+          },
+          {
+            "logit_position": 50,
+            "prefix_hash": "d65fea81d1ebf355eb0b62c911582e57dc934f3f027d504ed9e765023d40c060",
+            "target_token_id": 30,
+            "token_position": 51
+          }
+        ],
+        "task_id": "arc_challenge",
+        "task_prompt_hash": "983248fa71ec46d95bedaf5f46335cd58c13815511643b3270ac7388bb2a6f12",
+        "task_version": "1.0",
+        "token_strings": [
+          "<|im_start|>",
+          "system",
+          "Ċ",
+          "You",
+          "Ġare",
+          "Ġa",
+          "Ġhelpful",
+          "ĠAI",
+          "Ġassistant",
+          "Ġnamed",
+          "ĠSm",
+          "ol",
+          "LM",
+          ",",
+          "Ġtrained",
+          "Ġby",
+          "ĠH",
+          "ugging",
+          "ĠFace",
+          "<|im_end|>",
+          "Ċ",
+          "<|im_start|>",
+          "user",
+          "Ċ",
+          "Question",
+          ":",
+          "ĠA",
+          "Ġcell",
+          "Ġthat",
+          "Ġhas",
+          "Ġlost",
+          "Ġits",
+          "Ġnucleus",
+          "Ġno",
+          "Ġlonger",
+          "Ġhas",
+          "Ġthe",
+          "Ġability",
+          "Ġto",
+          "Ċ",
+          "Answer",
+          ":",
+          "<|im_end|>",
+          "Ċ",
+          "<|im_start|>",
+          "ass",
+          "istant",
+          "Ċ",
+          "Ġpass",
+          "Ġgenetic",
+          "Ġinformation",
+          "."
+        ],
+        "tokenization": {
+          "add_generation_prompt": false,
+          "add_special_tokens": false,
+          "bos_added_by_encoder": false,
+          "boundary_rule": "first joint token with end > prompt codepoint length; whole boundary token",
+          "chat_template_applied": 0,
+          "eos_added_by_encoder": false,
+          "historical_template_already_applied": true,
+          "padding_added": false,
+          "policy": "arc_existing_chat_echo_boundary_v1",
+          "selection_policy": "field_round_robin_uniform_v1",
+          "token_id_space": "7fc3b488e0654b519ba97fb5d30821d8172edb8c67ad24e2afc62de18d89dbc5",
+          "tokenizer_identity": "420c39aaae8d6bcb216797f9459582938b501ac5268f6c36d2d40d983d86a641"
+        },
+        "usage_scope": "REGRESSION_REUSE",
+        "value_spans": {
+          "gold_choice": [
+            1,
+            27
+          ]
+        }
+      },
+      "likelihood": {
+        "choice_labels": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "gold_index": 1,
+        "requests": [
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 0,
+            "context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              1,
+              9690,
+              198,
+              2683,
+              359,
+              253,
+              5356,
+              5646,
+              11173,
+              3365,
+              3511,
+              308,
+              34519,
+              28,
+              7018,
+              411,
+              407,
+              19712,
+              8182,
+              2,
+              198,
+              1,
+              4093,
+              198,
+              17872,
+              42,
+              330,
+              1297,
+              338,
+              553,
+              3590,
+              624,
+              14831,
+              787,
+              2848,
+              553,
+              260,
+              2470,
+              288,
+              198,
+              21350,
+              42,
+              2,
+              198,
+              1,
+              520,
+              9531
+            ],
+            "continuation": " produce food.",
+            "continuation_ids": [
+              198,
+              2690,
+              1114,
+              30
+            ],
+            "input_ids": [
+              1,
+              9690,
+              198,
+              2683,
+              359,
+              253,
+              5356,
+              5646,
+              11173,
+              3365,
+              3511,
+              308,
+              34519,
+              28,
+              7018,
+              411,
+              407,
+              19712,
+              8182,
+              2,
+              198,
+              1,
+              4093,
+              198,
+              17872,
+              42,
+              330,
+              1297,
+              338,
+              553,
+              3590,
+              624,
+              14831,
+              787,
+              2848,
+              553,
+              260,
+              2470,
+              288,
+              198,
+              21350,
+              42,
+              2,
+              198,
+              1,
+              520,
+              9531,
+              198,
+              2690,
+              1114,
+              30
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 13
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 1,
+            "context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              1,
+              9690,
+              198,
+              2683,
+              359,
+              253,
+              5356,
+              5646,
+              11173,
+              3365,
+              3511,
+              308,
+              34519,
+              28,
+              7018,
+              411,
+              407,
+              19712,
+              8182,
+              2,
+              198,
+              1,
+              4093,
+              198,
+              17872,
+              42,
+              330,
+              1297,
+              338,
+              553,
+              3590,
+              624,
+              14831,
+              787,
+              2848,
+              553,
+              260,
+              2470,
+              288,
+              198,
+              21350,
+              42,
+              2,
+              198,
+              1,
+              520,
+              9531
+            ],
+            "continuation": " pass genetic information.",
+            "continuation_ids": [
+              198,
+              1301,
+              4217,
+              1096,
+              30
+            ],
+            "input_ids": [
+              1,
+              9690,
+              198,
+              2683,
+              359,
+              253,
+              5356,
+              5646,
+              11173,
+              3365,
+              3511,
+              308,
+              34519,
+              28,
+              7018,
+              411,
+              407,
+              19712,
+              8182,
+              2,
+              198,
+              1,
+              4093,
+              198,
+              17872,
+              42,
+              330,
+              1297,
+              338,
+              553,
+              3590,
+              624,
+              14831,
+              787,
+              2848,
+              553,
+              260,
+              2470,
+              288,
+              198,
+              21350,
+              42,
+              2,
+              198,
+              1,
+              520,
+              9531,
+              198,
+              1301,
+              4217,
+              1096,
+              30
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 25
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 2,
+            "context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              1,
+              9690,
+              198,
+              2683,
+              359,
+              253,
+              5356,
+              5646,
+              11173,
+              3365,
+              3511,
+              308,
+              34519,
+              28,
+              7018,
+              411,
+              407,
+              19712,
+              8182,
+              2,
+              198,
+              1,
+              4093,
+              198,
+              17872,
+              42,
+              330,
+              1297,
+              338,
+              553,
+              3590,
+              624,
+              14831,
+              787,
+              2848,
+              553,
+              260,
+              2470,
+              288,
+              198,
+              21350,
+              42,
+              2,
+              198,
+              1,
+              520,
+              9531
+            ],
+            "continuation": " move through the body.",
+            "continuation_ids": [
+              198,
+              1485,
+              738,
+              260,
+              1248,
+              30
+            ],
+            "input_ids": [
+              1,
+              9690,
+              198,
+              2683,
+              359,
+              253,
+              5356,
+              5646,
+              11173,
+              3365,
+              3511,
+              308,
+              34519,
+              28,
+              7018,
+              411,
+              407,
+              19712,
+              8182,
+              2,
+              198,
+              1,
+              4093,
+              198,
+              17872,
+              42,
+              330,
+              1297,
+              338,
+              553,
+              3590,
+              624,
+              14831,
+              787,
+              2848,
+              553,
+              260,
+              2470,
+              288,
+              198,
+              21350,
+              42,
+              2,
+              198,
+              1,
+              520,
+              9531,
+              198,
+              1485,
+              738,
+              260,
+              1248,
+              30
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 22
+          },
+          {
+            "boundary_policy": "rstrip context; move original trailing whitespace to continuation",
+            "choice_index": 3,
+            "context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              1,
+              9690,
+              198,
+              2683,
+              359,
+              253,
+              5356,
+              5646,
+              11173,
+              3365,
+              3511,
+              308,
+              34519,
+              28,
+              7018,
+              411,
+              407,
+              19712,
+              8182,
+              2,
+              198,
+              1,
+              4093,
+              198,
+              17872,
+              42,
+              330,
+              1297,
+              338,
+              553,
+              3590,
+              624,
+              14831,
+              787,
+              2848,
+              553,
+              260,
+              2470,
+              288,
+              198,
+              21350,
+              42,
+              2,
+              198,
+              1,
+              520,
+              9531
+            ],
+            "continuation": " use energy.",
+            "continuation_ids": [
+              198,
+              722,
+              1439,
+              30
+            ],
+            "input_ids": [
+              1,
+              9690,
+              198,
+              2683,
+              359,
+              253,
+              5356,
+              5646,
+              11173,
+              3365,
+              3511,
+              308,
+              34519,
+              28,
+              7018,
+              411,
+              407,
+              19712,
+              8182,
+              2,
+              198,
+              1,
+              4093,
+              198,
+              17872,
+              42,
+              330,
+              1297,
+              338,
+              553,
+              3590,
+              624,
+              14831,
+              787,
+              2848,
+              553,
+              260,
+              2470,
+              288,
+              198,
+              21350,
+              42,
+              2,
+              198,
+              1,
+              520,
+              9531,
+              198,
+              722,
+              1439,
+              30
+            ],
+            "moved_trailing_context_whitespace": "\n",
+            "normalization_char_length": 11
+          }
+        ]
+      },
+      "raw_record": {
+        "dataset_id": "ARC_CHALLENGE_LOCAL_POOL_REUSE",
+        "policy_id": "arc_original_completion_v1",
+        "reference_source": "dataset_answer_key_choice",
+        "sample": {
+          "document": {
+            "answerKey": "B",
+            "choices": {
+              "label": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "text": [
+                "produce food.",
+                "pass genetic information.",
+                "move through the body.",
+                "use energy."
+              ]
+            },
+            "id": "Mercury_7056823",
+            "question": "A cell that has lost its nucleus no longer has the ability to"
+          },
+          "original_index": 476,
+          "prompt_context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: A cell that has lost its nucleus no longer has the ability to\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+          "prompt_contract_id": "arc_original_completion_v1"
+        },
+        "sample_id": "Mercury_7056823",
+        "source_id": "Mercury_7056823",
+        "split": "test",
+        "task_id": "arc_challenge",
+        "task_version": "1.0",
+        "usage_scope": "REGRESSION_REUSE"
+      },
+      "sample_id": "Mercury_7056823"
+    }
+  ],
+  "schema_version": 1,
+  "source_id": "prepared-arc_challenge-f0698afd978c79a8",
+  "task_id": "arc_challenge",
+  "task_version": "1.0",
+  "validation_scope": "PREPARED_CONTRACT_VALIDATED_ONLY"
+}

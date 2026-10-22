@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "suite_id": "BENCH05-B3",
+  "task_id": "arc_challenge",
+  "task_version": "1.0",
+  "seed": 909253,
+  "serving": {
+    "context": 2048,
+    "max_num_seqs": 1,
+    "max_num_batched_tokens": 2048,
+    "kv_tokens": 4096,
+    "shutdown_timeout": 10,
+    "cleanup_grace": 25,
+    "chunked_prefill": true,
+    "eager": true,
+    "prefix_caching": false,
+    "async_scheduling": false
+  },
+  "observer": {
+    "off_samples": 0,
+    "off_repeats": 0
+  },
+  "budget": {
+    "task_gpu_wall_seconds": 600,
+    "cleanup_reserve_seconds": 120,
+    "max_gpu_processes": 6,
+    "automatic_retries": 0,
+    "probe_gpu_buffer_bytes": 268435456,
+    "raw_bytes_per_job": 536870912,
+    "minimum_disk_free_bytes": 4294967296,
+    "minimum_cpu_available_bytes": 10737418240
+  },
+  "treatment_axes": [
+    "weight_artifact"
+  ],
+  "serving_job_seconds": 180,
+  "request_kind": "choice_loglikelihood"
+}

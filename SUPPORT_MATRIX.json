@@ -1,0 +1,765 @@
+{
+  "candidate_cpu_receipt_policy": "Each cell records exact candidate checks. Final full acceptance receipt also reports replay/index/structure/publication gates; planning does not certify live.",
+  "candidate_live_acceptance": "NOT_RUN",
+  "candidate_name": "V1-CANDIDATE-01",
+  "cells": [
+    {
+      "candidate_cpu_evidence": {
+        "checked": "Installed API/module/console: real Qwen and Smol closedSLICE replay; prepared3plans; synthetic publication/index/report/pause-resume/noop; separate localfullQwen raw CPUpostprocess current RAW_HASH_VERIFIED.",
+        "receipt": "acceptance/CPU_ACCEPTANCE_RESULT.json",
+        "required_paths": [
+          "Qwen actual response/native scalar replay",
+          "Smol actual token/structure slice replay",
+          "prepared Smol task/token and Qwen serving plans",
+          "publication/index/report/dedup/rebuild/relocation"
+        ],
+        "source_digest": "57dbad3d793cf3519f37105a448d81b88bc179933d7faa12f458cd4114dd8352",
+        "status": "PASS_INSTALLED_CPU_REPLAY_PUBLICATION_INDEX_REPORT_PLANS"
+      },
+      "candidate_live_acceptance": "NOT_RUN",
+      "cell_id": "cpu-common",
+      "current_release_CPU": {
+        "receipt": "CPU_TESTS_RECEIPT.json / DOWNLOAD_ACCEPTANCE_RECEIPT.json",
+        "scope": "Existing actual SLICE/API/module/console/plan/publication tests plus final source/wheel contracts",
+        "status": "PENDING_EXACT_RELEASE_WHEEL_RECEIPT_AT_FREEZE"
+      },
+      "current_release_live": {
+        "no_gate_removal_after_failure": true,
+        "profile": "CPU_CONSUMER",
+        "receipt": "LIVE_ACCEPTANCE_RECEIPT.json / RELEASE_DECISION.json",
+        "status": "NOT_APPLICABLE"
+      },
+      "evidence_ref": "publication",
+      "external_assets_runtime_requirements": [
+        "Python>=3.10",
+        "stdlib-only base wheel for listed CPU paths; optional HTTP/runtime SDK not needed",
+        "closed fixture/slice required; wheel does not contain live model assets"
+      ],
+      "historical_live_evidence": "NOT_APPLICABLE_NEW_GPU",
+      "implementation_capability": {
+        "operations": [
+          "saved raw/schema/hash validation",
+          "existing task score",
+          "compatible C1 target/full token comparison",
+          "stored selected structure comparison",
+          "verified raw evidence publication",
+          "SQLite index add/query/rebuild",
+          "offline HTML/JSON/CSV report",
+          "prepared Suite plan/validate/describe"
+        ],
+        "status": "IMPLEMENTED"
+      },
+      "observation_modes": [
+        "scalar",
+        "available saved full vectors",
+        "available saved selected structure"
+      ],
+      "platform_scope": {
+        "CPU": {
+          "OS": "Linux/WSL observed scope; Windows/macOS not live-validated",
+          "Python": [
+            "3.10",
+            "3.11",
+            "3.12"
+          ],
+          "evidence": "Exact current test matrix/counts in CPU_TESTS_RECEIPT and REMOTE_CI_RECEIPT; no inferred PASS from wheel tag"
+        },
+        "LIVE": {
+          "OS": "Approved local Linux/WSL host only",
+          "Python": "Pinned external model/tokenizer/vLLM runtime and own package-site; exact versions in live receipt"
+        }
+      },
+      "request_kinds": [
+        "saved generate_until",
+        "saved choice_loglikelihood",
+        "saved diagnostic"
+      ]
+    },
+    {
+      "candidate_cpu_evidence": {
+        "checked": "Installed candidate API/module/console plan/validate/describe; preserved 3documents;12POST/520output upper; no serving performed",
+        "receipt": "<output>/plans/PLAN_ACCEPTANCE_RECEIPT.json; summarized in acceptance/CPU_ACCEPTANCE_RESULT.json",
+        "source_digest": "57dbad3d793cf3519f37105a448d81b88bc179933d7faa12f458cd4114dd8352",
+        "status": "CPU_PREPARED_PLAN_PASS_LIVE_NOT_RUN"
+      },
+      "candidate_live_acceptance": "NOT_RUN",
+      "cell_id": "smol-serving",
+      "current_release_CPU": {
+        "receipt": "CPU_TESTS_RECEIPT.json / DOWNLOAD_ACCEPTANCE_RECEIPT.json",
+        "scope": "Existing actual SLICE/API/module/console/plan/publication tests plus final source/wheel contracts",
+        "status": "PENDING_EXACT_RELEASE_WHEEL_RECEIPT_AT_FREEZE"
+      },
+      "current_release_live": {
+        "no_gate_removal_after_failure": true,
+        "profile": "L1",
+        "receipt": "LIVE_ACCEPTANCE_RECEIPT.json / RELEASE_DECISION.json",
+        "status": "PENDING_RELEASE_LIVE_ACCEPTANCE_AT_FREEZE"
+      },
+      "external_assets_runtime_requirements": [
+        "Pinned local artifacts/tokenizer files with compatible embedding ID space",
+        "Explicit own package-site + preserved serving runtime vLLM0.29.0/Torch2.13.0/Transformers5.17.0/compressed-tensors0.17.0",
+        "Current source, artifacts, runtime, GPU/UUID, ownership, socket permissions, RAM/disk/cleanup and ledger gate; all CHECK_NOT_RUN in candidate CPU stage"
+      ],
+      "historical_live_evidence": {
+        "scope": "MAIN9; 36HTTP,620output tokens; historical controller PARTIAL, historical final live no-op NOT_RUN; later CPU revisions corrected field/alias only",
+        "source": "b93de830a529128df99ca490abd629d0369c36e92dadad5ecc48cc2bb55fdac0",
+        "stage": "BENCH05-E4B-LIVE/dev16"
+      },
+      "implementation_capability": {
+        "live_binding_scope": "Current prepared_smol_live_v1 requires combined serving + token diagnostic suite; separate task-only/token-only CPU plans do not certify live binding.",
+        "profiles": [
+          "preserved_smol_v1",
+          "prepared_smol_live_v1"
+        ],
+        "requests": [
+          "generate_until",
+          "choice_loglikelihood_all_choices"
+        ],
+        "serving_methods": [
+          "native BF16",
+          "original RTN compressed-tensors packed INT4/Marlin"
+        ],
+        "status": "IMPLEMENTED_RESTRICTED_PINNED_PROFILE"
+      },
+      "limits": {
+        "arc_audit_generation_tokens": 1,
+        "concurrency": 1,
+        "context_tokens": 2048,
+        "diagnostic_joint_max_tokens": 640,
+        "generation_max_tokens": {
+          "context_evidence_retrieval": 64,
+          "tech_record_extract": 192
+        },
+        "prepared_prompt_max_tokens": 512,
+        "prepared_reference_max_tokens": 128,
+        "resume": "Same frozen source/input/plan/runtime contract only; historical cross-source live migration rejected",
+        "same_sample_id_across_namespaces": "Explicitly rejected in current prepared live binder; not silently merged",
+        "tasks": [
+          "tech_record_extract@0.1",
+          "context_evidence_retrieval@0.1",
+          "arc_challenge@1.0"
+        ],
+        "truncation": "REJECT; no automatic truncation/padding/document exclusion"
+      },
+      "model": {
+        "artifacts": [
+          {
+            "arm_id": "bf16",
+            "artifact_identity": "0c668d5b8e51322d63898007d3d4a4ea488f21168208c3f3fc0d0f9643ac371b",
+            "config_sha256": "994f50b16abb4ae00880baefe03c10260b5bd608d2bf586f7056ca05a534feea",
+            "diagnostic_execution_mode": "INSTRUMENTED_PATH",
+            "method": "bf16",
+            "packing": "native",
+            "recipe_identity": "7139c7ebc95daad8c9f3850cb8d0036a3f0d9a6f53817eb103aa6743d05b3675"
+          },
+          {
+            "arm_id": "rtn",
+            "artifact_identity": "c8debb3188403ab9d332149969e6e0f9b7b689dc06e77e882fde07a9cb8da761",
+            "config_sha256": "e1fd0948c8d4625e4e9fd81776f3e575debd0bd0ae9b6174928e84cd00bba75b",
+            "diagnostic_execution_mode": "DECODED_WEIGHT_DIAGNOSTIC",
+            "method": "rtn",
+            "packing": "compressed-tensors/pack-quantized",
+            "recipe_identity": "45e7e27110de7bbbd5c160fef3423ee8878ea5d3678f37cb3e07325ef99028e2"
+          }
+        ],
+        "base_revision": "31b70e2e869a7173562077fd711b654946d38674",
+        "model_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "runtime_identities": {
+          "diagnostic": "33c7cd42d0c4fd2bec331491685445fb8abff9c9536d9a9f6c496f32d037c595",
+          "serving": "cc88384a71f03de82c3f130c62cfa134b73aa301e8218f17d8c20cf25a54445b"
+        },
+        "token_id_space": "7fc3b488e0654b519ba97fb5d30821d8172edb8c67ad24e2afc62de18d89dbc5",
+        "tokenizer_identity": "420c39aaae8d6bcb216797f9459582938b501ac5268f6c36d2d40d983d86a641"
+      },
+      "observation_modes": [
+        "saved native ARC target likelihood where provided"
+      ],
+      "platform_scope": {
+        "CPU": {
+          "OS": "Linux/WSL observed scope; Windows/macOS not live-validated",
+          "Python": [
+            "3.10",
+            "3.11",
+            "3.12"
+          ],
+          "evidence": "Exact current test matrix/counts in CPU_TESTS_RECEIPT and REMOTE_CI_RECEIPT; no inferred PASS from wheel tag"
+        },
+        "LIVE": {
+          "OS": "Approved local Linux/WSL host only",
+          "Python": "Pinned external model/tokenizer/vLLM runtime and own package-site; exact versions in live receipt"
+        }
+      },
+      "request_kinds": [
+        "generate_until",
+        "choice_loglikelihood"
+      ]
+    },
+    {
+      "candidate_cpu_evidence": {
+        "checked": "Installed API/module/console C1: 246scalar/123pair;6fullvectors/3pair only, plus storedprepared plan37/12pair. Candidate model execution NOT_RUN.",
+        "receipt": "acceptance/CPU_ACCEPTANCE_RESULT.json",
+        "source_digest": "57dbad3d793cf3519f37105a448d81b88bc179933d7faa12f458cd4114dd8352",
+        "status": "PASS_SAVED_SELECTED_CPU_REPLAY"
+      },
+      "candidate_live_acceptance": "NOT_RUN",
+      "cell_id": "smol-selected-token",
+      "current_release_CPU": {
+        "receipt": "CPU_TESTS_RECEIPT.json / DOWNLOAD_ACCEPTANCE_RECEIPT.json",
+        "scope": "Existing actual SLICE/API/module/console/plan/publication tests plus final source/wheel contracts",
+        "status": "PENDING_EXACT_RELEASE_WHEEL_RECEIPT_AT_FREEZE"
+      },
+      "current_release_live": {
+        "no_gate_removal_after_failure": true,
+        "profile": "L1",
+        "receipt": "LIVE_ACCEPTANCE_RECEIPT.json / RELEASE_DECISION.json",
+        "status": "PENDING_RELEASE_LIVE_ACCEPTANCE_AT_FREEZE"
+      },
+      "external_assets_runtime_requirements": [
+        "Pinned local artifacts/tokenizer files with compatible embedding ID space",
+        "Explicit own package-site + preserved serving runtime vLLM0.29.0/Torch2.13.0/Transformers5.17.0/compressed-tensors0.17.0",
+        "Current source, artifacts, runtime, GPU/UUID, ownership, socket permissions, RAM/disk/cleanup and ledger gate; all CHECK_NOT_RUN in candidate CPU stage",
+        "Separate pinned diagnostic runtime Torch2.13.0/Transformers5.14.1/compressed-tensors0.18.0"
+      ],
+      "historical_live_evidence": {
+        "scope": "C2 6 documents110/44pair; separate MAIN9 E4B 123/36pair; exact selected t/t-1, no attention hooks on token-only",
+        "stage": "BENCH05-C2/dev9; BENCH05-E4B-LIVE/dev16"
+      },
+      "implementation_capability": {
+        "entry": "bench tokens plan/run/replay and suite token-only prepared profile",
+        "methods": [
+          "BF16 INSTRUMENTED_PATH",
+          "RTN DECODED_WEIGHT_DIAGNOSTIC/effective BF16"
+        ],
+        "status": "IMPLEMENTED_RESTRICTED_PINNED_PROFILE",
+        "target_policy": "saved selected t and predictor t-1; selected lm_head only; full optional; token-only attention OFF"
+      },
+      "model": {
+        "artifacts": [
+          {
+            "arm_id": "bf16",
+            "artifact_identity": "0c668d5b8e51322d63898007d3d4a4ea488f21168208c3f3fc0d0f9643ac371b",
+            "config_sha256": "994f50b16abb4ae00880baefe03c10260b5bd608d2bf586f7056ca05a534feea",
+            "diagnostic_execution_mode": "INSTRUMENTED_PATH",
+            "method": "bf16",
+            "packing": "native",
+            "recipe_identity": "7139c7ebc95daad8c9f3850cb8d0036a3f0d9a6f53817eb103aa6743d05b3675"
+          },
+          {
+            "arm_id": "rtn",
+            "artifact_identity": "c8debb3188403ab9d332149969e6e0f9b7b689dc06e77e882fde07a9cb8da761",
+            "config_sha256": "e1fd0948c8d4625e4e9fd81776f3e575debd0bd0ae9b6174928e84cd00bba75b",
+            "diagnostic_execution_mode": "DECODED_WEIGHT_DIAGNOSTIC",
+            "method": "rtn",
+            "packing": "compressed-tensors/pack-quantized",
+            "recipe_identity": "45e7e27110de7bbbd5c160fef3423ee8878ea5d3678f37cb3e07325ef99028e2"
+          }
+        ],
+        "base_revision": "31b70e2e869a7173562077fd711b654946d38674",
+        "model_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "runtime_identities": {
+          "diagnostic": "33c7cd42d0c4fd2bec331491685445fb8abff9c9536d9a9f6c496f32d037c595",
+          "serving": "cc88384a71f03de82c3f130c62cfa134b73aa301e8218f17d8c20cf25a54445b"
+        },
+        "token_id_space": "7fc3b488e0654b519ba97fb5d30821d8172edb8c67ad24e2afc62de18d89dbc5",
+        "tokenizer_identity": "420c39aaae8d6bcb216797f9459582938b501ac5268f6c36d2d40d983d86a641"
+      },
+      "observation_modes": [
+        "selected target scalar",
+        "selected complete-vocabulary vector"
+      ],
+      "platform_scope": {
+        "CPU": {
+          "OS": "Linux/WSL observed scope; Windows/macOS not live-validated",
+          "Python": [
+            "3.10",
+            "3.11",
+            "3.12"
+          ],
+          "evidence": "Exact current test matrix/counts in CPU_TESTS_RECEIPT and REMOTE_CI_RECEIPT; no inferred PASS from wheel tag"
+        },
+        "LIVE": {
+          "OS": "Approved local Linux/WSL host only",
+          "Python": "Pinned external model/tokenizer/vLLM runtime and own package-site; exact versions in live receipt"
+        }
+      },
+      "request_kinds": [
+        "collect_token_diagnostic"
+      ],
+      "unsupported": [
+        "native packed kernel equivalence",
+        "arbitrary model/tokenizer",
+        "automatic cross-source live resume"
+      ]
+    },
+    {
+      "candidate_cpu_evidence": {
+        "checked": "Explicit installed metric API helper: separate historicalD1 24observations,12crossarm+6samearm rows. Fullstructure replay/live NOT_RUN.",
+        "receipt": "acceptance/CPU_ACCEPTANCE_RESULT.json",
+        "scope": "stored actual probability/AV/o_proj slice only, no observer or model execution",
+        "status": "PASS_SELECTED_STRUCTURE_METRIC_API_SLICE"
+      },
+      "candidate_live_acceptance": "NOT_RUN",
+      "cell_id": "smol-selected-structure",
+      "current_release_CPU": {
+        "receipt": "CPU_TESTS_RECEIPT.json / DOWNLOAD_ACCEPTANCE_RECEIPT.json",
+        "scope": "Existing actual SLICE/API/module/console/plan/publication tests plus final source/wheel contracts",
+        "status": "PENDING_EXACT_RELEASE_WHEEL_RECEIPT_AT_FREEZE"
+      },
+      "current_release_live": {
+        "no_gate_removal_after_failure": true,
+        "profile": "L3_STANDALONE",
+        "receipt": "LIVE_ACCEPTANCE_RECEIPT.json / RELEASE_DECISION.json",
+        "status": "PENDING_RELEASE_LIVE_ACCEPTANCE_AT_FREEZE"
+      },
+      "external_assets_runtime_requirements": [
+        "Pinned local artifacts/tokenizer files with compatible embedding ID space",
+        "Explicit own package-site + preserved serving runtime vLLM0.29.0/Torch2.13.0/Transformers5.17.0/compressed-tensors0.17.0",
+        "Current source, artifacts, runtime, GPU/UUID, ownership, socket permissions, RAM/disk/cleanup and ledger gate; all CHECK_NOT_RUN in candidate CPU stage",
+        "Separate diagnostic runtime; pinned Smol MHA only; selected coordinates only"
+      ],
+      "historical_live_evidence": {
+        "scope": "Standalone structure worker, six reused prepared inputs; layers0/12/23,query heads0/16,two query roles; OFF1/OFF2/ON; attention/native AV/reconstructed AV/headless o_proj. Diagnostic MHA only.",
+        "stage": "BENCH05-D1/dev10"
+      },
+      "implementation_capability": {
+        "entry": "bench structure plan/run/replay",
+        "methods": [
+          "BF16 INSTRUMENTED_PATH",
+          "RTN DECODED_WEIGHT_DIAGNOSTIC/effective BF16"
+        ],
+        "status": "IMPLEMENTED_STANDALONE_ONLY",
+        "suite_live_handler": "EXECUTION_NOT_IMPLEMENTED; no arbitrary-model structure Suite integration"
+      },
+      "model": {
+        "artifacts": [
+          {
+            "arm_id": "bf16",
+            "artifact_identity": "0c668d5b8e51322d63898007d3d4a4ea488f21168208c3f3fc0d0f9643ac371b",
+            "config_sha256": "994f50b16abb4ae00880baefe03c10260b5bd608d2bf586f7056ca05a534feea",
+            "diagnostic_execution_mode": "INSTRUMENTED_PATH",
+            "method": "bf16",
+            "packing": "native",
+            "recipe_identity": "7139c7ebc95daad8c9f3850cb8d0036a3f0d9a6f53817eb103aa6743d05b3675"
+          },
+          {
+            "arm_id": "rtn",
+            "artifact_identity": "c8debb3188403ab9d332149969e6e0f9b7b689dc06e77e882fde07a9cb8da761",
+            "config_sha256": "e1fd0948c8d4625e4e9fd81776f3e575debd0bd0ae9b6174928e84cd00bba75b",
+            "diagnostic_execution_mode": "DECODED_WEIGHT_DIAGNOSTIC",
+            "method": "rtn",
+            "packing": "compressed-tensors/pack-quantized",
+            "recipe_identity": "45e7e27110de7bbbd5c160fef3423ee8878ea5d3678f37cb3e07325ef99028e2"
+          }
+        ],
+        "base_revision": "31b70e2e869a7173562077fd711b654946d38674",
+        "model_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+        "runtime_identities": {
+          "diagnostic": "33c7cd42d0c4fd2bec331491685445fb8abff9c9536d9a9f6c496f32d037c595",
+          "serving": "cc88384a71f03de82c3f130c62cfa134b73aa301e8218f17d8c20cf25a54445b"
+        },
+        "token_id_space": "7fc3b488e0654b519ba97fb5d30821d8172edb8c67ad24e2afc62de18d89dbc5",
+        "tokenizer_identity": "420c39aaae8d6bcb216797f9459582938b501ac5268f6c36d2d40d983d86a641"
+      },
+      "observation_modes": [
+        "reconstructed attention probability",
+        "native SDPA AV",
+        "reconstructed AV",
+        "headless output projection"
+      ],
+      "platform_scope": {
+        "CPU": {
+          "OS": "Linux/WSL observed scope; Windows/macOS not live-validated",
+          "Python": [
+            "3.10",
+            "3.11",
+            "3.12"
+          ],
+          "evidence": "Exact current test matrix/counts in CPU_TESTS_RECEIPT and REMOTE_CI_RECEIPT; no inferred PASS from wheel tag"
+        },
+        "LIVE": {
+          "OS": "Approved local Linux/WSL host only",
+          "Python": "Pinned external model/tokenizer/vLLM runtime and own package-site; exact versions in live receipt"
+        }
+      },
+      "request_kinds": [
+        "standalone_structure_probe"
+      ],
+      "unsupported": [
+        "Qwen GQA/attention",
+        "generic Suite structure executor",
+        "whole-model/MLP/residual/MoE/state analysis",
+        "observer noninterference certification beyond preserved checked coordinates"
+      ]
+    },
+    {
+      "candidate_cpu_evidence": {
+        "checked": "Installed API/module/console real36HTTP/503output/226native scalar113pair; storedprepared12POST plan; localfullraw CPUpostprocess6historicalacq reanalyzed. Candidate serving NOT_RUN.",
+        "receipt": "acceptance/CPU_ACCEPTANCE_RESULT.json",
+        "source_digest": "57dbad3d793cf3519f37105a448d81b88bc179933d7faa12f458cd4114dd8352",
+        "status": "PASS_SAVED_TASK_NATIVE_REPLAY_AND_PLAN"
+      },
+      "candidate_live_acceptance": "NOT_RUN",
+      "cell_id": "qwen-serving-native",
+      "current_release_CPU": {
+        "receipt": "CPU_TESTS_RECEIPT.json / DOWNLOAD_ACCEPTANCE_RECEIPT.json",
+        "scope": "Existing actual SLICE/API/module/console/plan/publication tests plus final source/wheel contracts",
+        "status": "PENDING_EXACT_RELEASE_WHEEL_RECEIPT_AT_FREEZE"
+      },
+      "current_release_live": {
+        "no_gate_removal_after_failure": true,
+        "profile": "L2",
+        "receipt": "LIVE_ACCEPTANCE_RECEIPT.json / RELEASE_DECISION.json",
+        "status": "PENDING_RELEASE_LIVE_ACCEPTANCE_AT_FREEZE"
+      },
+      "external_assets_runtime_requirements": [
+        "Pinned local artifacts/tokenizer files with compatible embedding ID space",
+        "Explicit own package-site + preserved serving runtime vLLM0.29.0/Torch2.13.0/Transformers5.17.0/compressed-tensors0.17.0",
+        "Current source, artifacts, runtime, GPU/UUID, ownership, socket permissions, RAM/disk/cleanup and ledger gate; all CHECK_NOT_RUN in candidate CPU stage"
+      ],
+      "historical_live_evidence": {
+        "scope": "MAIN9; six serving jobs,36HTTP,503output tokens,226ARC target scalars/113within-pair targets; current controller COMPLETE with boundary resume and final no-op; no TF/full/structure worker",
+        "source": "86c138c88836e6aad89df8a1c4d1eb8be517deaefb55368076d906fc5e48b520",
+        "stage": "BENCH06-A/dev19"
+      },
+      "implementation_capability": {
+        "attention_AV_o_proj": "NOT_REQUESTED",
+        "decoded_weight_probe": "UNSUPPORTED_CAPABILITY",
+        "full_vocabulary": "NOT_COLLECTED",
+        "native_arc_scalar": "Existing C1 TokenView; ALL_CHOICES/GOLD_ONLY/NON_GOLD scopes separately",
+        "profiles": [
+          "qwen3_4b_gptq_serving_v1",
+          "prepared_qwen_serve_v1"
+        ],
+        "requests": [
+          "generate_until",
+          "choice_loglikelihood_all_choices"
+        ],
+        "status": "IMPLEMENTED_RESTRICTED_PINNED_PROFILE"
+      },
+      "known_limitations": [
+        "tokenizer vocab151669 distinct from embedding/logit axis151936",
+        "NFC source-span mapping unavailable for e4a-tech-en-basic and e4a-tech-en-missing; raw/rendered bytes unchanged",
+        "no cross-tokenizer token NLL/PPL/KL alignment with Smol",
+        "kernel selection log is not profiler proof"
+      ],
+      "limits": {
+        "arc_audit_generation_tokens": 1,
+        "concurrency": 1,
+        "context_tokens": 2048,
+        "diagnostic_joint_max_tokens": 640,
+        "generation_max_tokens": {
+          "context_evidence_retrieval": 64,
+          "tech_record_extract": 192
+        },
+        "prepared_prompt_max_tokens": 512,
+        "prepared_reference_max_tokens": 128,
+        "resume": "Same frozen source/input/plan/runtime contract only; historical cross-source live migration rejected",
+        "same_sample_id_across_namespaces": "Explicitly rejected in current prepared live binder; not silently merged",
+        "tasks": [
+          "tech_record_extract@0.1",
+          "context_evidence_retrieval@0.1",
+          "arc_challenge@1.0"
+        ],
+        "truncation": "REJECT; no automatic truncation/padding/document exclusion"
+      },
+      "model": {
+        "artifacts": [
+          {
+            "arm_id": "qwen_bf16",
+            "artifact_identity": "80df9fe761e587e62157895ed06e4811608b93f12c3cd1c2ef4720dfec3711e1",
+            "config_sha256": "5beea1a4a34c62782bfb2f911c606741a3bab8f92d80a118fa053c28af12e8ba",
+            "diagnostic_execution_mode": "NATIVE_SERVING",
+            "method": "bf16",
+            "packing": "native",
+            "recipe_identity": "6cb6c2c7449ae201b2a723e41f1bd0dd81b5847501063903a7d96fcf07eaf170"
+          },
+          {
+            "arm_id": "qwen_gptq_w4",
+            "artifact_identity": "ae127f55c20fcb9fc8aed6f461a1187695ca74c4d3b4e43cfcdbdd83258bfa5f",
+            "config_sha256": "61eb986daf57d8c42420795de1d1a551c39c71786492fbe245867187ae9ce54f",
+            "diagnostic_execution_mode": "NATIVE_SERVING",
+            "method": "gptq_w4",
+            "packing": "compressed-tensors/pack-quantized",
+            "recipe_identity": "9c742b7dc6667d9f3fd30b4543a2a973d078d17d7a3df6be9a3d44625de93a54"
+          }
+        ],
+        "base_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+        "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+        "runtime_identities": {
+          "serving": "cc88384a71f03de82c3f130c62cfa134b73aa301e8218f17d8c20cf25a54445b"
+        },
+        "token_id_space": "f488fa45d324a8bc64c84f0e27b47223872d550f2a6900564f77dfa67ca5ff4d",
+        "tokenizer_identity": "3fb415f03fcb8a59a538bce25028c5b0f618e8a3e96721645c278c7d79674dd8"
+      },
+      "observation_modes": [
+        "native ARC continuation target logprob only"
+      ],
+      "platform_scope": {
+        "CPU": {
+          "OS": "Linux/WSL observed scope; Windows/macOS not live-validated",
+          "Python": [
+            "3.10",
+            "3.11",
+            "3.12"
+          ],
+          "evidence": "Exact current test matrix/counts in CPU_TESTS_RECEIPT and REMOTE_CI_RECEIPT; no inferred PASS from wheel tag"
+        },
+        "LIVE": {
+          "OS": "Approved local Linux/WSL host only",
+          "Python": "Pinned external model/tokenizer/vLLM runtime and own package-site; exact versions in live receipt"
+        }
+      },
+      "request_kinds": [
+        "generate_until",
+        "choice_loglikelihood"
+      ]
+    },
+    {
+      "candidate_cpu_evidence": {
+        "checked": "Byte-pinned SOURCES/member contracts validated through public Suite planner in installed API/module/console; parent full manifest ancestry only; no fresh tokenizer",
+        "source_digest": "57dbad3d793cf3519f37105a448d81b88bc179933d7faa12f458cd4114dd8352",
+        "status": "STORED_PREPARED_VALIDATION_PASS_FRESH_TOKENIZATION_NOT_RUN"
+      },
+      "candidate_live_acceptance": "NOT_RUN",
+      "cell_id": "raw-preparation",
+      "current_release_CPU": {
+        "receipt": "CPU_TESTS_RECEIPT.json / DOWNLOAD_ACCEPTANCE_RECEIPT.json",
+        "scope": "Existing actual SLICE/API/module/console/plan/publication tests plus final source/wheel contracts",
+        "status": "PENDING_EXACT_RELEASE_WHEEL_RECEIPT_AT_FREEZE"
+      },
+      "current_release_live": {
+        "no_gate_removal_after_failure": true,
+        "profile": "L1_L2_FRESH_LOCAL_TOKENIZER",
+        "receipt": "LIVE_ACCEPTANCE_RECEIPT.json / RELEASE_DECISION.json",
+        "status": "PENDING_RELEASE_LIVE_ACCEPTANCE_AT_FREEZE"
+      },
+      "external_assets_runtime_requirements": [
+        "Pinned local Smol or Qwen tokenizer snapshot/revision/template",
+        "Explicit existing tokenizer-runtime Python with candidate worker-site",
+        "local_files_only=True; trust_remote_code=False; offline; GPU hidden/model APIs blocked",
+        "No tokenizer assets/SDK in base wheel or kit"
+      ],
+      "historical_live_evidence": {
+        "scope": "Explicit local-only pinned tokenizer worker; three existing task renderers/external gold. Saved prepared replay in candidate is distinct from fresh tokenization.",
+        "stage": "BENCH05-E4A/dev15; BENCH06-A/dev19"
+      },
+      "implementation_capability": {
+        "entry": [
+          "bench inputs prepare",
+          "bench inputs validate",
+          "bench inputs describe"
+        ],
+        "generation_reference": "Independently rendered/tokenized prompt-only vs teacher-forced reference; ARC all choices preserved",
+        "raw_mode": "UTF-8 JSON/JSONL task schema and externally supplied gold",
+        "status": "IMPLEMENTED_SEPARATE_EXPLICIT_WORKER",
+        "tasks": [
+          "tech_record_extract@0.1",
+          "context_evidence_retrieval@0.1",
+          "arc_challenge@1.0"
+        ]
+      },
+      "limits": {
+        "arc_audit_generation_tokens": 1,
+        "concurrency": 1,
+        "context_tokens": 2048,
+        "diagnostic_joint_max_tokens": 640,
+        "generation_max_tokens": {
+          "context_evidence_retrieval": 64,
+          "tech_record_extract": 192
+        },
+        "prepared_prompt_max_tokens": 512,
+        "prepared_reference_max_tokens": 128,
+        "resume": "Same frozen source/input/plan/runtime contract only; historical cross-source live migration rejected",
+        "same_sample_id_across_namespaces": "Explicitly rejected in current prepared live binder; not silently merged",
+        "tasks": [
+          "tech_record_extract@0.1",
+          "context_evidence_retrieval@0.1",
+          "arc_challenge@1.0"
+        ],
+        "truncation": "REJECT; no automatic truncation/padding/document exclusion"
+      },
+      "observation_modes": [
+        "prepared IDs/offsets/masks/selection metadata"
+      ],
+      "platform_scope": {
+        "CPU": {
+          "OS": "Linux/WSL observed scope; Windows/macOS not live-validated",
+          "Python": [
+            "3.10",
+            "3.11",
+            "3.12"
+          ],
+          "evidence": "Exact current test matrix/counts in CPU_TESTS_RECEIPT and REMOTE_CI_RECEIPT; no inferred PASS from wheel tag"
+        },
+        "LIVE": {
+          "OS": "Approved local Linux/WSL host only",
+          "Python": "Pinned external model/tokenizer/vLLM runtime and own package-site; exact versions in live receipt"
+        }
+      },
+      "request_kinds": [
+        "prepare only, not inference"
+      ]
+    },
+    {
+      "candidate_cpu_evidence": {
+        "scope": "No new performance/KV/clipping/model experiment",
+        "status": "NOT_REPEATED_THIS_CANDIDATE"
+      },
+      "candidate_live_acceptance": "NOT_RUN",
+      "cell_id": "legacy-step02-04",
+      "current_release_CPU": {
+        "receipt": "CPU_TESTS_RECEIPT.json / DOWNLOAD_ACCEPTANCE_RECEIPT.json",
+        "scope": "Existing actual SLICE/API/module/console/plan/publication tests plus final source/wheel contracts",
+        "status": "PENDING_EXACT_RELEASE_WHEEL_RECEIPT_AT_FREEZE"
+      },
+      "current_release_live": {
+        "no_gate_removal_after_failure": true,
+        "profile": "HISTORICAL_RECIPE_ONLY_NOT_CURRENT_LIVE_GATE",
+        "receipt": "LIVE_ACCEPTANCE_RECEIPT.json / RELEASE_DECISION.json",
+        "status": "NOT_RUN_HISTORICAL_ONLY"
+      },
+      "external_assets_runtime_requirements": [
+        "Original recipe schema/raw and matching external runtime/artifacts when requested",
+        "Current Suite support only the explicit Smol/Qwen cells above"
+      ],
+      "historical_live_evidence": "Historical frozen recipes/results/source/runtime in original source manifests; preserve HOLD_CLIPPING_VARIANT/INCONCLUSIVE",
+      "implementation_capability": {
+        "scope": "STEP02/03 Qwen and STEP02/04 Smol performance/KV/clipping recipes; compose code is separate opt-in; no automatic upgrade to current Suite support",
+        "status": "HISTORICAL_RECIPE_REPLAY_AND_EXPLICIT_EXISTING_RUN_CONTRACTS"
+      },
+      "observation_modes": [
+        "historical only"
+      ],
+      "platform_scope": {
+        "CPU": {
+          "OS": "Linux/WSL observed scope; Windows/macOS not live-validated",
+          "Python": [
+            "3.10",
+            "3.11",
+            "3.12"
+          ],
+          "evidence": "Exact current test matrix/counts in CPU_TESTS_RECEIPT and REMOTE_CI_RECEIPT; no inferred PASS from wheel tag"
+        },
+        "LIVE": {
+          "OS": "Approved local Linux/WSL host only",
+          "Python": "Pinned external model/tokenizer/vLLM runtime and own package-site; exact versions in live receipt"
+        }
+      },
+      "request_kinds": [
+        "legacy recipe-specific"
+      ],
+      "unsupported": [
+        "SGLang managed live Suite",
+        "automatic optimization",
+        "new kernel/quantization",
+        "new model/fourth task"
+      ]
+    }
+  ],
+  "current_release_receipt_policy": "Current 0.2.1 CPU/live/remote CI results are external RELEASE_DECISION/receipts tied to exact commit and wheel SHA; frozen matrix does not predeclare test success.",
+  "governing_axes": [
+    "implementation_capability",
+    "historical_live_evidence",
+    "candidate_cpu_evidence",
+    "current_release_CPU",
+    "current_release_live",
+    "external_assets_runtime_requirements",
+    "platform_scope"
+  ],
+  "historical_evidence": {
+    "preparation": {
+      "scope": "Explicit local-only pinned tokenizer worker; three existing task renderers/external gold. Saved prepared replay in candidate is distinct from fresh tokenization.",
+      "stage": "BENCH05-E4A/dev15; BENCH06-A/dev19"
+    },
+    "publication": {
+      "scope": "Mixed acquired root -> verified raw-only evidence, product postprocess/index/report; required current source RAW_HASH_VERIFIED, historical STALE preserved",
+      "source": "97c2edd503f4ee768fcf20aab4c5e309b492fdd08b6df283ce1579fe79000019",
+      "stage": "BENCH06-A-R1/dev20"
+    },
+    "qwen": {
+      "scope": "MAIN9; six serving jobs,36HTTP,503output tokens,226ARC target scalars/113within-pair targets; current controller COMPLETE with boundary resume and final no-op; no TF/full/structure worker",
+      "source": "86c138c88836e6aad89df8a1c4d1eb8be517deaefb55368076d906fc5e48b520",
+      "stage": "BENCH06-A/dev19"
+    },
+    "smol_serving": {
+      "scope": "MAIN9; 36HTTP,620output tokens; historical controller PARTIAL, historical final live no-op NOT_RUN; later CPU revisions corrected field/alias only",
+      "source": "b93de830a529128df99ca490abd629d0369c36e92dadad5ecc48cc2bb55fdac0",
+      "stage": "BENCH05-E4B-LIVE/dev16"
+    },
+    "smol_structure": {
+      "scope": "Standalone structure worker, six reused prepared inputs; layers0/12/23,query heads0/16,two query roles; OFF1/OFF2/ON; attention/native AV/reconstructed AV/headless o_proj. Diagnostic MHA only.",
+      "stage": "BENCH05-D1/dev10"
+    },
+    "smol_token": {
+      "scope": "C2 6 documents110/44pair; separate MAIN9 E4B 123/36pair; exact selected t/t-1, no attention hooks on token-only",
+      "stage": "BENCH05-C2/dev9; BENCH05-E4B-LIVE/dev16"
+    }
+  },
+  "kind": "release_support_matrix_v1",
+  "limits": {
+    "arc_audit_generation_tokens": 1,
+    "concurrency": 1,
+    "context_tokens": 2048,
+    "diagnostic_joint_max_tokens": 640,
+    "generation_max_tokens": {
+      "context_evidence_retrieval": 64,
+      "tech_record_extract": 192
+    },
+    "prepared_prompt_max_tokens": 512,
+    "prepared_reference_max_tokens": 128,
+    "report_packaging": {
+      "bounded_collection_v1": {
+        "collection_bytes": 671088640,
+        "evidence_payload_bytes": 536870912,
+        "max_members": 10000,
+        "max_volumes": 2,
+        "member_bytes": 67108864,
+        "mode": "bounded_collection_v1",
+        "presentation_bytes": 134217728,
+        "schema_version": 1,
+        "volume_payload_bytes": 268435456
+      },
+      "legacy_single_evidence_bytes": 268435456,
+      "movement_unit": "Complete directory including root and every part/member; ZIP must be extracted before offline browsing.",
+      "scope": "Physical packaging only; acquisition/analysis/metric identities and historical STALE/null statuses preserved."
+    },
+    "resume": "Same frozen source/input/plan/runtime contract only; historical cross-source live migration rejected",
+    "same_sample_id_across_namespaces": "Explicitly rejected in current prepared live binder; not silently merged",
+    "tasks": [
+      "tech_record_extract@0.1",
+      "context_evidence_retrieval@0.1",
+      "arc_challenge@1.0"
+    ],
+    "truncation": "REJECT; no automatic truncation/padding/document exclusion"
+  },
+  "matrix_is_not_live_authorization": true,
+  "platform_scope": {
+    "CPU": {
+      "OS": "Linux/WSL observed scope; Windows/macOS not live-validated",
+      "Python": [
+        "3.10",
+        "3.11",
+        "3.12"
+      ],
+      "evidence": "Exact current test matrix/counts in CPU_TESTS_RECEIPT and REMOTE_CI_RECEIPT; no inferred PASS from wheel tag"
+    },
+    "LIVE": {
+      "OS": "Approved local Linux/WSL host only",
+      "Python": "Pinned external model/tokenizer/vLLM runtime and own package-site; exact versions in live receipt"
+    }
+  },
+  "preserved_findings": [
+    "HOLD_CLIPPING_VARIANT",
+    "quality INCONCLUSIVE",
+    "historical synthetic strict0 retained per historical run; new observed scores not forced to zero",
+    "ARC REGRESSION_REUSE",
+    "Smol decoded diagnostic differs from packed serving",
+    "native worker exit UNKNOWN where unobserved",
+    "historical E3 STALE locator retained; valid current locator is separately verified",
+    "Qwen NFC source-span unavailable for two documents"
+  ],
+  "release_stage": "V1-RELEASE-R1",
+  "release_status": "DRAFT_UNTIL_RELEASE_DECISION_G1_G8_PASS",
+  "release_version": "0.2.1",
+  "schema_version": 1
+}

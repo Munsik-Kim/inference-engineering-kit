@@ -1,0 +1,1 @@
+"""Installation candidate regression tests."""

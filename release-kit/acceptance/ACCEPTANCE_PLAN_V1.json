@@ -1,0 +1,140 @@
+{
+  "blocked_parent_distribution": {
+    "reason": "Valid cumulative evidence exceeded legacy single-report256MiB cap; old run and assets immutable.",
+    "source_digest": "ed062389bb93bf8367e6d1c8b8ae52bc488276aefcc81eb2d8d7c9174b4fb66c",
+    "status": "DRAFT_BLOCKED_RETAINED",
+    "version": "0.2.0",
+    "wheel_sha256": "ce781101a61b12f4b00b036f62579c5e80ddb28e29b27eb2f1a5b90de9e74be1"
+  },
+  "documentation": "QUICKSTART_LIVE_KO.md",
+  "final_results": "External RELEASE_DECISION.json and LIVE_ACCEPTANCE_RECEIPT.json; NOT_RUN/PARTIAL cannot publish stable",
+  "helper": "tools/release_live_session.py",
+  "kind": "v1_release_acceptance_plan_v1",
+  "mandatory_invariants": [
+    "nonempty exact coverage and all ARC choices",
+    "gold separate from generation",
+    "same package/source and pinned external asset/runtime",
+    "current loopback/resource/ownership/ledger gate",
+    "raw stored and verified before scoring",
+    "common automatic publication current RAW_HASH_VERIFIED",
+    "no manual raw copy/correction/checkpoint edit",
+    "complete disk/API/CLI state",
+    "completed noop adds zero request/GPU query/load/worker/debit/DB duplicate",
+    "all failed attempts/raw/cost preserved",
+    "gate cannot be deleted after failure",
+    "L1 cumulative historical and current eligible evidence preserved in bounded collection",
+    "root/part/member closure verified on completion and noop",
+    "historical STALE excluded evidence retains original state and reason"
+  ],
+  "not_in_scope": [
+    "new model",
+    "fourth task",
+    "Qwen internal observer",
+    "new quantization",
+    "customer quality certification"
+  ],
+  "release_version": "0.2.1",
+  "report_packaging": {
+    "collection_bytes": 671088640,
+    "evidence_payload_bytes": 536870912,
+    "max_members": 10000,
+    "max_volumes": 2,
+    "member_bytes": 67108864,
+    "mode": "bounded_collection_v1",
+    "presentation_bytes": 134217728,
+    "schema_version": 1,
+    "volume_payload_bytes": 268435456
+  },
+  "required_profiles": [
+    {
+      "artifacts": [
+        "BF16",
+        "existing packed RTN"
+      ],
+      "id": "L1",
+      "input": "same MAIN9 raw/gold freshly prepared with pinned Smol tokenizer",
+      "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "operations": [
+        "three-task SERVE",
+        "selected token-only diagnostic pair",
+        "score",
+        "C1",
+        "publication",
+        "index",
+        "report",
+        "safe-boundary resume",
+        "API/module/console final noop"
+      ],
+      "profile": "prepared_smol_live_v1",
+      "reference_counts_not_production_constants": {
+        "POST": 36,
+        "forward": 18,
+        "full_pair": 36,
+        "target_pair": 123
+      }
+    },
+    {
+      "artifacts": [
+        "BF16",
+        "existing compressed-tensors GPTQ W4A16/Marlin"
+      ],
+      "id": "L2",
+      "input": "same MAIN9 raw/gold freshly prepared with pinned Qwen tokenizer",
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "not_requested": [
+        "separate diagnostic",
+        "full vocabulary",
+        "attention"
+      ],
+      "operations": [
+        "three-task SERVE",
+        "native all-choice ARC scalar C1",
+        "score",
+        "publication",
+        "index",
+        "report",
+        "safe-boundary resume",
+        "API/module/console final noop"
+      ],
+      "profile": "prepared_qwen_serve_v1",
+      "reference_counts_not_production_constants": {
+        "POST": 36,
+        "historical_native_pairs": 113
+      }
+    },
+    {
+      "id": "L3",
+      "input": "preserved six approved C2 inputs and original selection contract",
+      "model": "SmolLM2-1.7B-Instruct pair",
+      "operations": [
+        "OFF1",
+        "OFF2",
+        "ON",
+        "selected attention/native AV/o_proj",
+        "observer integrity",
+        "CPU replay",
+        "owned cleanup"
+      ],
+      "profile": "standalone selected structure",
+      "reference_counts_not_production_constants": {
+        "forward": 36,
+        "workers": 2
+      },
+      "suite_structure_generalization": false
+    }
+  ],
+  "schema_version": 1,
+  "scope_frozen_before_forward": true,
+  "session_bounds": {
+    "automatic_retry": 0,
+    "campaign_cap_seconds": 7200,
+    "integrated_gpu_wall_cap_seconds": 900,
+    "minimum_cleanup_seconds": 120,
+    "new_feature_cutoff": 2700,
+    "no_new_gpu_after": 3000,
+    "profile_cap_seconds": 600,
+    "wall_seconds": 3600
+  },
+  "state_at_source_freeze": "MANDATORY_GATES_PENDING",
+  "wheel_policy": "exact same frozen and authenticated downloaded W for prepare/plan/controller/own worker-site/replay/noop; no source migration"
+}

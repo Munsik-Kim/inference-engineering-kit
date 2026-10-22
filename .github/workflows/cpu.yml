@@ -1,4 +1,4 @@
-name: Manual CPU contracts and wheel consumer
+name: Manual release CPU contracts and wheel consumer
 on:
   workflow_dispatch:
 permissions:
@@ -6,7 +6,7 @@ permissions:
 jobs:
   cpu:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     strategy:
       fail-fast: false
       matrix:
@@ -15,6 +15,7 @@ jobs:
       CUDA_VISIBLE_DEVICES: ''
       HF_HUB_OFFLINE: '1'
       TRANSFORMERS_OFFLINE: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1, official tag verified 2026-10-16; Node24
         with:
@@ -25,10 +26,17 @@ jobs:
       - name: CPU build and HTTP test dependencies
         run: |
           mkdir -p "$RUNNER_TEMP/cpu-evidence"
-          python -m pip install 'setuptools>=77,<85' 'wheel>=0.45,<0.49' 'aiohttp>=3.9,<4'
+          python -m pip install -r tools/ci-requirements.txt
           python -m pip list --format=json > "$RUNNER_TEMP/cpu-evidence/build-dependencies.json"
       - name: Source CPU contracts
-        run: PYTHONPATH=src python -B tools/test_cpu.py --output "$RUNNER_TEMP/cpu-evidence/source-tests.json"
+        run: |
+          PYTHONPATH=src python -B tools/test_cpu.py --output "$RUNNER_TEMP/cpu-evidence/source-tests.json"
+          python - <<'PY'
+          import json,os,pathlib
+          record=json.loads((pathlib.Path(os.environ['RUNNER_TEMP'])/'cpu-evidence/source-tests.json').read_text(encoding='utf-8'))
+          assert record['test_invocations']>0 and record['successful']
+          assert pathlib.Path(record['package_import_origin']).is_relative_to(pathlib.Path.cwd()/'src')
+          PY
       - name: Build wheel and sdist
         run: |
           python -c "import setuptools.build_meta as b;b.build_wheel('dist');b.build_sdist('dist')"
@@ -40,6 +48,26 @@ jobs:
           "$RUNNER_TEMP/consumer-venv/bin/python" -m pip check
           env -u PYTHONPATH -u PYTHONHOME "$RUNNER_TEMP/consumer-venv/bin/python" -I -B tools/consumer_check.py --workspace "$RUNNER_TEMP/consumer-work" --fixture "$GITHUB_WORKSPACE/tests/fixtures/recorded-step04" --example "$GITHUB_WORKSPACE/examples/consumer_project.py" --forbidden-root "$GITHUB_WORKSPACE"
           cp "$RUNNER_TEMP/consumer-work/CONSUMER_RECEIPT.json" "$RUNNER_TEMP/cpu-evidence/"
+      - name: Installed release kit CPU quickstart and relocation
+        run: |
+          cp -a release-kit "$RUNNER_TEMP/release kit 한글"
+          cd "$RUNNER_TEMP"
+          for mode in api module console; do
+            env -u PYTHONPATH -u PYTHONHOME "$RUNNER_TEMP/consumer-venv/bin/python" -I -B \
+              "$RUNNER_TEMP/release kit 한글/acceptance/run_cpu_acceptance.py" \
+              --kit "$RUNNER_TEMP/release kit 한글" --output "$RUNNER_TEMP/release-$mode" --mode "$mode"
+            cp "$RUNNER_TEMP/release-$mode/CPU_ACCEPTANCE_RECEIPT.json" "$RUNNER_TEMP/cpu-evidence/release-$mode.json"
+            cp "$RUNNER_TEMP/release-$mode/publication/PUBLICATION_ACCEPTANCE.json" "$RUNNER_TEMP/cpu-evidence/release-$mode-publication.json"
+          done
+          cp -a "$RUNNER_TEMP/release kit 한글" "$RUNNER_TEMP/relocated kit 한글"
+          env -u PYTHONPATH -u PYTHONHOME "$RUNNER_TEMP/consumer-venv/bin/python" -I -B \
+            "$RUNNER_TEMP/relocated kit 한글/acceptance/replay_saved.py" \
+            --kit "$RUNNER_TEMP/relocated kit 한글" --output "$RUNNER_TEMP/relocated-saved" --mode module
+          env -u PYTHONPATH -u PYTHONHOME "$RUNNER_TEMP/consumer-venv/bin/python" -I -B \
+            "$RUNNER_TEMP/relocated kit 한글/acceptance/replay_plans.py" \
+            --kit "$RUNNER_TEMP/relocated kit 한글" --output "$RUNNER_TEMP/relocated-plans" --mode console
+          cp "$RUNNER_TEMP/relocated-saved/SAVED_REPLAY_RECEIPT.json" "$RUNNER_TEMP/cpu-evidence/relocated-saved.json"
+          cp "$RUNNER_TEMP/relocated-plans/PLAN_ACCEPTANCE_RECEIPT.json" "$RUNNER_TEMP/cpu-evidence/relocated-plans.json"
       - name: CPU contracts against installed wheel with HTTP dependency
         run: |
           python -m venv --system-site-packages "$RUNNER_TEMP/wheel-tests-venv"
@@ -53,17 +81,9 @@ jobs:
           PY
       - name: Compare code and resources from wheel and sdist build
         run: |
-          python - <<'PY'
-          import hashlib,json,os,pathlib,zipfile
-          direct=next(pathlib.Path('dist').glob('*.whl'))
-          rebuilt=next((pathlib.Path(os.environ['RUNNER_TEMP'])/'sdist-wheel').glob('*.whl'))
-          with zipfile.ZipFile(direct) as a,zipfile.ZipFile(rebuilt) as b:
-              left={n:a.read(n) for n in a.namelist() if n.startswith('inference_kit/')}
-              right={n:b.read(n) for n in b.namelist() if n.startswith('inference_kit/')}
-          assert left and left==right
-          value={'status':'SDIST_PACKAGE_BYTES_MATCH','package_members':len(left),'direct_wheel_sha256':hashlib.sha256(direct.read_bytes()).hexdigest(),'sdist_wheel_sha256':hashlib.sha256(rebuilt.read_bytes()).hexdigest(),'archive_metadata_identity':'separate'}
-          (pathlib.Path(os.environ['RUNNER_TEMP'])/'cpu-evidence/sdist-parity.json').write_text(json.dumps(value,indent=2)+'\n',encoding='utf-8')
-          PY
+          python -I -B tools/release_package_check.py --repo "$GITHUB_WORKSPACE" \
+            --wheel dist/*.whl --rebuilt-wheel "$RUNNER_TEMP"/sdist-wheel/*.whl \
+            --kit release-kit --output "$RUNNER_TEMP/cpu-evidence/release-package-bytes.json"
       - name: Retain CPU receipts and built wheel, including failed run receipts
         if: always()
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6, official tag verified 2026-10-15; Node24

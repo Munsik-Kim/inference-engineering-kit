@@ -1,0 +1,13 @@
+{
+  "jobs": {
+    "main-bf16": {
+      "directory": "attempts/main-bf16-attempt1",
+      "status": "COMPLETE"
+    },
+    "main-rtn": {
+      "directory": "attempts/main-rtn-attempt1",
+      "status": "COMPLETE"
+    }
+  },
+  "status": "SYNTHETIC_CONTRACT_ONLY"
+}

@@ -1,0 +1,8 @@
+{
+  "must_not_execute": true,
+  "no_automatic_environment_resolution": true,
+  "no_embedded_credentials": true,
+  "required": "Fill explicit existing assets/receipts and newly created task clock in an authorized next session; validate actual schema via bench suite bind. Metadata templates are not live preflight or authorization.",
+  "status": "UNRESOLVED_TEMPLATE_NOT_EXECUTION_READY",
+  "template": "LOCAL_LIVE_QWEN.template.json"
+}

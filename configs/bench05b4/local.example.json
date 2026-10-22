@@ -1,0 +1,18 @@
+{
+  "roots": {"PROJECT_ROOT": ".", "ARTIFACT_ROOT": "artifacts", "DATA_ROOT": "data", "RUNS_ROOT": "runs"},
+  "authored_data": "${DATA_ROOT}/authored.json",
+  "prepared_samples": "${DATA_ROOT}/prepared.json",
+  "artifact_receipt": "${ARTIFACT_ROOT}/artifact-receipt.json",
+  "runtime_metadata": "${DATA_ROOT}/runtime.json",
+  "runtime_python": "/explicit/existing/diagnostic/bin/python",
+  "server_python": "/explicit/existing/serving/bin/python",
+  "package_site": "${RUNS_ROOT}/worker-site",
+  "prior_ledger": "${RUNS_ROOT}/previous/budget-continuation.json",
+  "campaign_root": "${PROJECT_ROOT}",
+  "task_clock": "${RUNS_ROOT}/START.json",
+  "task_origin_used_seconds": 0,
+  "gpu": 0,
+  "gpu_uuid": "REPLACE_WITH_VERIFIED_UUID",
+  "port": 18188,
+  "serving_runtime_identity": "REPLACE_WITH_VERIFIED_RUNTIME_DIGEST"
+}

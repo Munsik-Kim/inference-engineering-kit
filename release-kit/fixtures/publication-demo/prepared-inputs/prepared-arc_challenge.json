@@ -1,0 +1,605 @@
+{
+  "kind": "prepared_task_source_v1",
+  "model_metadata": {
+    "arms": [
+      {
+        "arm_id": "bf16",
+        "artifact": {
+          "artifact_identity": "0c668d5b8e51322d63898007d3d4a4ea488f21168208c3f3fc0d0f9643ac371b"
+        },
+        "execution_mode": "INSTRUMENTED_PATH",
+        "source_format": "native"
+      },
+      {
+        "arm_id": "rtn",
+        "artifact": {
+          "artifact_identity": "c8debb3188403ab9d332149969e6e0f9b7b689dc06e77e882fde07a9cb8da761"
+        },
+        "execution_mode": "DECODED_WEIGHT_DIAGNOSTIC",
+        "source_format": "compressed-tensors/pack-quantized"
+      }
+    ],
+    "model_config": {
+      "attention_dropout": 0,
+      "hidden_size": 4,
+      "model_type": "llama",
+      "num_attention_heads": 2,
+      "num_hidden_layers": 4,
+      "num_key_value_heads": 2
+    },
+    "pair": {
+      "model_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "revision": "31b70e2e869a7173562077fd711b654946d38674"
+    },
+    "runtime_identities": {
+      "diagnostic": "33c7cd42d0c4fd2bec331491685445fb8abff9c9536d9a9f6c496f32d037c595",
+      "serving": "cc88384a71f03de82c3f130c62cfa134b73aa301e8218f17d8c20cf25a54445b"
+    },
+    "serving_policy": {
+      "max_num_seqs": 1,
+      "scope": "SYNTHETIC_CONTRACT_TEST"
+    },
+    "structure_spec": {
+      "backend": "native_transformers_sdpa_smol_mha_v1",
+      "budget": {
+        "automatic_retries": 0,
+        "cleanup_reserve_seconds": 120,
+        "max_gpu_processes": 4,
+        "minimum_cpu_available_bytes": 10737418240,
+        "minimum_disk_free_bytes": 4294967296,
+        "probe_gpu_buffer_bytes": 268435456,
+        "raw_bytes_total": 268435456,
+        "task_gpu_wall_seconds": 600
+      },
+      "heads": "first_middle",
+      "kind": "structure_probe_spec_v1",
+      "layers": "first_middle_last",
+      "max_sequence_tokens": 640,
+      "numeric": {
+        "dtype": "float32",
+        "endianness": "little"
+      },
+      "observe_attention": true,
+      "observer_consistency_policy": {
+        "absolute_tolerance": 1e-05,
+        "id": "d1_off_repeat_and_on_v1",
+        "passes": [
+          "OFF1",
+          "OFF2",
+          "ON"
+        ]
+      },
+      "profile": "MAIN",
+      "query_roles": [
+        "last_prompt",
+        "before_last_reference"
+      ],
+      "schema_version": 1
+    },
+    "token_id_space": "2222222222222222222222222222222222222222222222222222222222222222",
+    "token_spec": {
+      "budget": {
+        "automatic_retries": 0,
+        "cleanup_reserve_seconds": 120,
+        "max_gpu_processes": 3,
+        "minimum_cpu_available_bytes": 10737418240,
+        "minimum_disk_free_bytes": 4294967296,
+        "probe_gpu_buffer_bytes": 268435456,
+        "raw_bytes_total": 268435456,
+        "task_gpu_wall_seconds": 600
+      },
+      "consistency_policy": {
+        "absolute_tolerance_nat": 2e-05,
+        "id": "same_pass_saved_f32_v1",
+        "scope": "same-pass saved float32 full logits CPU log_softmax[target] vs saved float32 scalar"
+      },
+      "max_full_vocab_positions_per_sample": 4,
+      "max_sequence_tokens": 640,
+      "max_target_positions_per_sample": 16,
+      "normalization": {
+        "dtype": "float32",
+        "log_base": "e",
+        "probability_stage": "raw_pre_sampling"
+      },
+      "observe_attention": false,
+      "reference_role_filter": [
+        "author_gold_json",
+        "dataset_gold_choice",
+        "author_answer_evidence"
+      ],
+      "schema_version": 1,
+      "seed": 1,
+      "selection_policy": "preserved_field_round_robin_uniform_v1",
+      "selection_version": "1"
+    },
+    "tokenizer_files": {
+      "tokenizer.json": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "tokenizer_identity": "044e8c4dcd0206354b1d50f5be27c45d39b9e57fc7a76b7b2ef2a78a7e1e34c9",
+    "vocabulary_size": 128
+  },
+  "preparation": {
+    "limits": {
+      "context_tokens": 2048,
+      "max_joint_tokens": 640,
+      "max_prompt_tokens": 512,
+      "max_reference_tokens": 128
+    },
+    "policy_id": "existing_tasks_local_tokenizer_v1",
+    "preparation_spec_identity": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "raw_manifest_identity": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "schema_version": 1,
+    "scorer_version": "arc_choice_sum_character_norm_v1",
+    "selection": {
+      "max_full": 4,
+      "max_targets": 16,
+      "policy_id": "field_round_robin_uniform_v1"
+    },
+    "source_identity": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "token_id_space": "2222222222222222222222222222222222222222222222222222222222222222",
+    "tokenizer_identity": "044e8c4dcd0206354b1d50f5be27c45d39b9e57fc7a76b7b2ef2a78a7e1e34c9"
+  },
+  "request_kind": "choice_loglikelihood",
+  "samples": [
+    {
+      "authored_sample": {
+        "choice_labels": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "choices": [
+          "one",
+          "two",
+          "six",
+          "ten"
+        ],
+        "document": {
+          "answerKey": "B",
+          "choices": {
+            "label": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "text": [
+              "one",
+              "two",
+              "six",
+              "ten"
+            ]
+          },
+          "id": "new-arc-0",
+          "question": "Which code?"
+        },
+        "gold": 1,
+        "original_index": 0,
+        "prompt": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: Which code?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+        "question": "Which code?",
+        "requests": [
+          {
+            "choice_index": 0,
+            "context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: Which code?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              3
+            ],
+            "continuation": " one",
+            "continuation_ids": [
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "input_ids": [
+              3,
+              4,
+              4,
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "choice_index": 1,
+            "context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: Which code?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              3
+            ],
+            "continuation": " two",
+            "continuation_ids": [
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "input_ids": [
+              3,
+              4,
+              4,
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "choice_index": 2,
+            "context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: Which code?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              3
+            ],
+            "continuation": " six",
+            "continuation_ids": [
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "input_ids": [
+              3,
+              4,
+              4,
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "choice_index": 3,
+            "context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: Which code?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              3
+            ],
+            "continuation": " ten",
+            "continuation_ids": [
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "input_ids": [
+              3,
+              4,
+              4,
+              4,
+              4,
+              4
+            ]
+          }
+        ],
+        "sample_id": "new-arc-0",
+        "source_text_hash": "28705778fd04daf455ff8eb581bd5ee83df9c822535a3b4788ba0840564ecb78",
+        "split": "test",
+        "usage_scope": "REGRESSION_REUSE"
+      },
+      "diagnostic": {
+        "attention_mask": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "field_token_coverage": {
+          "gold_choice": {
+            "overlapping_positions": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "selected_positions": [
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "full_text": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: Which code?\nAnswer:<|im_end|>\n<|im_start|>assistant\n two",
+        "full_text_hash": "d1b40964b46c1257ea0bdc6966550cdaabe64c6c8924a3cf7450395bea1e3800",
+        "full_vocab_target_positions": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "generation_input_ids": [
+          3
+        ],
+        "gold_choice_index": 1,
+        "input_ids": [
+          3,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "loss_mask": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "offsets_codepoints": [
+          [
+            0,
+            176
+          ],
+          [
+            176,
+            177
+          ],
+          [
+            177,
+            178
+          ],
+          [
+            178,
+            179
+          ],
+          [
+            179,
+            180
+          ],
+          [
+            180,
+            181
+          ]
+        ],
+        "offsets_utf8_bytes": [
+          [
+            0,
+            176
+          ],
+          [
+            176,
+            177
+          ],
+          [
+            177,
+            178
+          ],
+          [
+            178,
+            179
+          ],
+          [
+            179,
+            180
+          ],
+          [
+            180,
+            181
+          ]
+        ],
+        "probe_input_identity": "9f2a40f4000bc0a4609aaaba59ffc49ff488a9b17b8ff2f845bcd14babdb555e",
+        "prompt": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: Which code?\nAnswer:<|im_end|>\n<|im_start|>assistant",
+        "prompt_hash": "c335e6b3d3a63fc50d6ea9482ee6a127a26451862b4204763fb8d5351b904c0b",
+        "prompt_token_boundary": 1,
+        "reference_hash": "3a03c5c2373213183d316ce8100375d8233c00266d15c54a3ab4f70de449a252",
+        "reference_role": "dataset_gold_choice",
+        "reference_separate_ids": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "reference_source": "dataset_answer_key_choice",
+        "reference_text": "\n two",
+        "sample_id": "new-arc-0",
+        "sequence_identity": "f731cbfdbdf3b8cb839cae8ac0a8cba5991480a88fcc5784b0956494dda48897",
+        "special_token_ids": [
+          0
+        ],
+        "special_token_mask": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "targets": [
+          {
+            "logit_position": 0,
+            "prefix_hash": "75defe34a21c0a8a3bd07c9cef6e449986f3cae363b00d2b7ebb536091348036",
+            "target_token_id": 4,
+            "token_position": 1
+          },
+          {
+            "logit_position": 1,
+            "prefix_hash": "01acbb50385a032f2faad1808c0c568004a1f76acf35be5e9b8697854a57ec7d",
+            "target_token_id": 4,
+            "token_position": 2
+          },
+          {
+            "logit_position": 2,
+            "prefix_hash": "cb88d34a36d6d2bfb4abfbf0fe26720df61811d31503f5c3f860e7cc53e21107",
+            "target_token_id": 4,
+            "token_position": 3
+          },
+          {
+            "logit_position": 3,
+            "prefix_hash": "73d8f2cf6ebf5dec0468c15dc6d7b383fe5e5106b793a34ea4b6a76d5086dcd5",
+            "target_token_id": 4,
+            "token_position": 4
+          },
+          {
+            "logit_position": 4,
+            "prefix_hash": "186e48ee6c51830fcacf7b4850a776ebc607a60bd74dcec766eac809987acfe7",
+            "target_token_id": 4,
+            "token_position": 5
+          }
+        ],
+        "task_id": "arc_challenge",
+        "task_prompt_hash": "aa9a73855f6d846be7fe0c9c89f955547bf8eb2a9536c63a0529f134c775f1cb",
+        "task_version": "1.0",
+        "tokenization": {
+          "token_id_space": "2222222222222222222222222222222222222222222222222222222222222222",
+          "tokenizer_identity": "044e8c4dcd0206354b1d50f5be27c45d39b9e57fc7a76b7b2ef2a78a7e1e34c9"
+        },
+        "value_spans": {
+          "gold_choice": [
+            1,
+            5
+          ]
+        }
+      },
+      "likelihood": {
+        "choice_labels": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "gold_index": 1,
+        "requests": [
+          {
+            "choice_index": 0,
+            "context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: Which code?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              3
+            ],
+            "continuation": " one",
+            "continuation_ids": [
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "input_ids": [
+              3,
+              4,
+              4,
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "choice_index": 1,
+            "context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: Which code?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              3
+            ],
+            "continuation": " two",
+            "continuation_ids": [
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "input_ids": [
+              3,
+              4,
+              4,
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "choice_index": 2,
+            "context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: Which code?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              3
+            ],
+            "continuation": " six",
+            "continuation_ids": [
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "input_ids": [
+              3,
+              4,
+              4,
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "choice_index": 3,
+            "context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: Which code?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+            "context_ids": [
+              3
+            ],
+            "continuation": " ten",
+            "continuation_ids": [
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "input_ids": [
+              3,
+              4,
+              4,
+              4,
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      "raw_record": {
+        "dataset_id": "new-arc",
+        "policy_id": "arc_original_completion_v1",
+        "reference_source": "dataset_answer_key_choice",
+        "sample": {
+          "document": {
+            "answerKey": "B",
+            "choices": {
+              "label": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ],
+              "text": [
+                "one",
+                "two",
+                "six",
+                "ten"
+              ]
+            },
+            "id": "new-arc-0",
+            "question": "Which code?"
+          },
+          "original_index": 0,
+          "prompt_context": "<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n<|im_start|>user\nQuestion: Which code?\nAnswer:<|im_end|>\n<|im_start|>assistant\n",
+          "prompt_contract_id": "arc_original_completion_v1"
+        },
+        "sample_id": "new-arc-0",
+        "source_id": "new-arc-source",
+        "split": "test",
+        "task_id": "arc_challenge",
+        "task_version": "1.0",
+        "usage_scope": "REGRESSION_REUSE"
+      },
+      "sample_id": "new-arc-0"
+    }
+  ],
+  "schema_version": 1,
+  "source_id": "prepared-arc_challenge",
+  "task_id": "arc_challenge",
+  "task_version": "1.0",
+  "validation_scope": "PREPARED_CONTRACT_VALIDATED_ONLY"
+}

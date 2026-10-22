@@ -1,0 +1,91 @@
+{
+  "package_version": "0.2.0rc1",
+  "plans": [
+    {
+      "counts": {
+        "GPU_jobs": 6,
+        "all_pass_full_observations": 0,
+        "all_pass_target_observations": 0,
+        "arms": 2,
+        "attention_rows": 0,
+        "audit_token_upper": 8,
+        "documents": 3,
+        "forward_calls": 0,
+        "inference_POSTs": 12,
+        "main_full_observations": 0,
+        "main_target_observations": 0,
+        "native_AV": 0,
+        "natural_generation_token_upper": 512,
+        "numeric_bytes": 0,
+        "output_projection_vectors": 0,
+        "output_token_upper": 520,
+        "probe_buffer_upper_bytes": 0,
+        "reconstructed_AV": 0
+      },
+      "data_identity": "bf2935aebe250294bbe51a69724d432f71ca0bcbbcdbd9acc7b78df273466298",
+      "execution_count": 0,
+      "identity": "964c34af3b27677a092afcc67c0904d03228ff6c863040bf7a3e80df96ec63fa",
+      "name": "smol-task",
+      "status": "VALIDATED_NOT_EXECUTED"
+    },
+    {
+      "counts": {
+        "GPU_jobs": 2,
+        "all_pass_full_observations": 24,
+        "all_pass_target_observations": 74,
+        "arms": 2,
+        "attention_rows": 0,
+        "audit_token_upper": 0,
+        "documents": 3,
+        "forward_calls": 6,
+        "inference_POSTs": 0,
+        "main_full_observations": 24,
+        "main_target_observations": 74,
+        "native_AV": 0,
+        "natural_generation_token_upper": 0,
+        "numeric_bytes": 4718888,
+        "output_projection_vectors": 0,
+        "output_token_upper": 0,
+        "probe_buffer_upper_bytes": 12058624,
+        "reconstructed_AV": 0
+      },
+      "data_identity": "bf2935aebe250294bbe51a69724d432f71ca0bcbbcdbd9acc7b78df273466298",
+      "execution_count": 0,
+      "identity": "5ed88865be3dcca432f5411e25b209711c50bcf36084612e027e6c4f28583976",
+      "name": "smol-token",
+      "status": "VALIDATED_NOT_EXECUTED"
+    },
+    {
+      "counts": {
+        "GPU_jobs": 6,
+        "all_pass_full_observations": 0,
+        "all_pass_target_observations": 0,
+        "arms": 2,
+        "attention_rows": 0,
+        "audit_token_upper": 8,
+        "documents": 3,
+        "forward_calls": 0,
+        "inference_POSTs": 12,
+        "main_full_observations": 0,
+        "main_target_observations": 0,
+        "native_AV": 0,
+        "native_continuation_target_observations": 38,
+        "native_gold_choice_target_observations": 10,
+        "natural_generation_token_upper": 512,
+        "numeric_bytes": 0,
+        "output_projection_vectors": 0,
+        "output_token_upper": 520,
+        "probe_buffer_upper_bytes": 0,
+        "reconstructed_AV": 0
+      },
+      "data_identity": "816b19231fd6388f6004d6fd72d5e299ba5d3e73ab84a5704cbeeb31e429bc4e",
+      "execution_count": 0,
+      "identity": "a0ee3c8083cec647dc1b60af3460f4aa30a5641e7953582b818dc3f7bb359082",
+      "name": "qwen-task",
+      "status": "VALIDATED_NOT_EXECUTED"
+    }
+  ],
+  "scope": "Historicalstoredpreparedcounts. Semantic IDs inthisreference belongtorc1 compiler; actualreleaseplanidentity recomputedandverifiedfrom0.2.1source withoutmigration.",
+  "source_digest": "57dbad3d793cf3519f37105a448d81b88bc179933d7faa12f458cd4114dd8352",
+  "status": "FINAL_INSTALLED_CANDIDATE_COUNT_EXPECTATIONS_VERIFIED"
+}

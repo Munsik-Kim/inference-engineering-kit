@@ -1,0 +1,52 @@
+{
+  "artifact_presence": "ARTIFACT_PRESENCE_NOT_CHECKED",
+  "available_documents": 9,
+  "excluded_parent_members": [
+    "PREPARATION_RECEIPT.json",
+    "RUNTIME_RECEIPT.json",
+    "TOKENIZER_OFFSET_RECEIPT.json",
+    "WORKER_STDERR.log",
+    "WORKER_STDOUT.log"
+  ],
+  "exclusion_reason": "Tokenization runtime receipts and worker diagnostics are historical external assets; no fresh tokenizer verification. Active SOURCES.json independently pins every required task source byte. Parent full manifest is not passed to inputs validate.",
+  "included_members": [
+    {
+      "bytes": 725,
+      "path": "SOURCES.json",
+      "sha256": "237e5d98fcb22b4dc55523f8fef1251dbe8b87772cf7f45d3ed87a255085250f"
+    },
+    {
+      "bytes": 21848,
+      "path": "RAW_INPUT.json",
+      "sha256": "dddad5ea49e9e95ca137e016d41473e32ad9896cddd338292982bdf1e4d71b3e"
+    },
+    {
+      "bytes": 385,
+      "path": "PREPARATION_SPEC.json",
+      "sha256": "78a8154b107d67b0a0602619ea186cceda0f0d45444cbda34911a50e0f26f2b0"
+    },
+    {
+      "bytes": 234273,
+      "path": "source-tech_record_extract.json",
+      "sha256": "1af10c4d583cf9550009a27de0f5ec028dfa400bc61ac93c2da2764b0db3cb97"
+    },
+    {
+      "bytes": 304072,
+      "path": "source-context_evidence_retrieval.json",
+      "sha256": "447e6fae523808695bf4c5eb0d7a025e71d931f32108e175a0d6c2541460f21f"
+    },
+    {
+      "bytes": 128178,
+      "path": "source-arc_challenge.json",
+      "sha256": "f819977a8d825fc3bbb8fa86604472785f099d15ab605cf829ed89432ece55f3"
+    }
+  ],
+  "kind": "candidate_prepared_metadata_slice_v1",
+  "parent_data_identity": "816b19231fd6388f6004d6fd72d5e299ba5d3e73ab84a5704cbeeb31e429bc4e",
+  "parent_prepared_manifest": "ancestry/PARENT_PREPARED_MANIFEST.json",
+  "parent_prepared_manifest_sha256": "1223bff69ceb4dd95caca9db700f681de8266a5fbae3087fbbb535792c43ce76",
+  "physical_relocation": "Only locator changed; source/token/raw IDs and bytes unchanged",
+  "schema_version": 1,
+  "scope": "SLICE_PREPARED_SOURCES_CONTRACT_ONLY",
+  "tokenizer_calls": 0
+}

@@ -1,0 +1,19 @@
+{
+  "arm_id": "bf16",
+  "artifact_identity": "0c668d5b8e51322d63898007d3d4a4ea488f21168208c3f3fc0d0f9643ac371b",
+  "attempt_id": "main-bf16-attempt1",
+  "backend": "toy",
+  "effective_weight_dtype": "float32",
+  "evidence_kind": "synthetic_contract",
+  "execution_id": "a54871ecbe335ffe28cab924bebe3e72dfd217a34f3d9485f7b55d3fda7366c6",
+  "execution_mode": "REIMPLEMENTED_OR_SYNTHETIC",
+  "model_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+  "model_revision": "31b70e2e869a7173562077fd711b654946d38674",
+  "phase": "main",
+  "raw_path": "observations.jsonl",
+  "recipe_identity": "synthetic-recipe",
+  "run_id": "synthetic-prepared",
+  "runtime_identity": "synthetic-runtime",
+  "status": "MEASURED",
+  "tokenizer_identity": "044e8c4dcd0206354b1d50f5be27c45d39b9e57fc7a76b7b2ef2a78a7e1e34c9"
+}

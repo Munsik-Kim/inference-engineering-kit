@@ -14,6 +14,9 @@ from ..adapters.vllm import launch,runtime_snapshot,runtime_gate
 from ..adapters.lifecycle_evidence import observed_shutdown
 from .bench05a_plan import source_identity
 
+DIAGNOSTIC_WORKERS=({'module':'inference_kit.probes.token_worker','token_only':True},
+                    {'module':'inference_kit.probes.structure_worker','structure':True})
+
 
 def raw_manifest(root):
     include=[]
@@ -33,7 +36,9 @@ def check_gpu(plan):
     if device['returncode']!=0 or apps['returncode']!=0:return {'status':'BLOCKED_GPU_OBSERVATION','device':device,'applications':apps}
     if apps.get('values'):return {'status':'BLOCKED_SHARED_GPU','device':device,'applications':apps,'meaning':'Foreign/unverified compute PID; nothing terminated'}
     require(device['values'].split(',')[1].strip()==plan['gpu']['uuid'],'GPU UUID mismatch')
-    require(float(device['values'].split(',')[4].strip())>=8192,'Insufficient device free MiB for dense diagnostic plus headroom')
+    minimum_free=plan['suite']['budget'].get('minimum_gpu_free_mib',8192)
+    require(type(minimum_free) is int and minimum_free>=8192,'GPU free-memory floor cannot be relaxed')
+    require(float(device['values'].split(',')[4].strip())>=minimum_free,'Insufficient device free MiB for frozen model profile and headroom')
     return {'status':'READY_WITHIN_OBSERVATION_LIMITS','device':device,'applications':apps,'limitation':'NVML/local /proc cannot exhaustively exclude WSL/graphics/brief work'}
 
 
@@ -60,8 +65,24 @@ async def native_bridge(plan,arm,directory,launch_plan,process,abort):
               'classification':'BRIDGE_MEASURED_NO_EQUIVALENCE_CLAIM','deployed_path':True,'quality_benchmark':'NOT_EVALUATED','full_logits':'UNSUPPORTED_TRANSPORT'})
 
 
-async def launch_job(plan,root,ledger,progress,phase,arm):
-    key=phase+'-'+arm['arm_id'];identifier=key+'-attempt1';directory=root/'attempts'/identifier;directory.mkdir(parents=True,exist_ok=False)
+def diagnostic_launch(plan,root,phase,arm,directory,worker_contract=None):
+    """Explicit built-in worker choice; legacy diagnostic argv remains the default."""
+    if worker_contract is not None:
+        require(worker_contract in DIAGNOSTIC_WORKERS,'Unsupported owned diagnostic worker contract')
+        require(phase=='main','Token-only worker has no smoke/bridge phase')
+    module='inference_kit.probes.local_transformer' if worker_contract is None else worker_contract['module']
+    argv=[plan['paths']['runtime_python'],'-B','-m',module,'--plan',str(root/'PLAN_FROZEN.json'),'--arm',arm['arm_id']]
+    if worker_contract is None:argv+=['--stage',phase]
+    argv+=['--output',str(directory)]
+    return {'argv':argv,'environment':{'PYTHONPATH':plan['paths']['package_site'],'PYTHONDONTWRITEBYTECODE':'1',
+        'CUDA_VISIBLE_DEVICES':str(plan['gpu']['index']),'HF_HUB_OFFLINE':'1','HF_DATASETS_OFFLINE':'1',
+        'TRANSFORMERS_OFFLINE':'1','HF_HUB_DISABLE_TELEMETRY':'1','DO_NOT_TRACK':'1','TOKENIZERS_PARALLELISM':'false'}}
+
+
+async def launch_job(plan,root,ledger,progress,phase,arm,budget_namespace="",*,worker_contract=None):
+    if worker_contract is not None:
+        require(worker_contract in DIAGNOSTIC_WORKERS and phase=='main','Unsupported owned diagnostic worker contract')
+    key=phase+'-'+arm['arm_id'];identifier=budget_namespace+key+'-attempt1';directory=root/'attempts'/identifier;directory.mkdir(parents=True,exist_ok=False)
     require(len(read(ledger)['jobs'])<plan['suite']['budget']['max_gpu_processes'],'GPU launch cap reached')
     pre=check_gpu(plan);write(directory/'pre-gpu.json',pre)
     if pre['status']!='READY_WITHIN_OBSERVATION_LIMITS':
@@ -69,7 +90,9 @@ async def launch_job(plan,root,ledger,progress,phase,arm):
     r=read(ledger);remaining=r['cap_seconds']-r['used_seconds'];reserve=plan['suite']['budget']['cleanup_reserve_seconds']
     if remaining<=reserve+30:
         progress['jobs'][key]={'status':'BUDGET_SKIPPED','directory':str(directory.relative_to(root))};return False
-    timeout=min(240 if phase=='bridge' else 180,remaining-reserve)
+    timeout=min(240 if phase=='bridge' else 180,remaining-reserve,plan.get('clock',{}).get('deadline_monotonic',float('inf'))-time.monotonic()-reserve)
+    if timeout<30:
+        progress['jobs'][key]={'status':'BUDGET_SKIPPED','directory':str(directory.relative_to(root))};return False
     if phase=='bridge':
         snapshot=runtime_snapshot(plan['paths']['server_python']);require(runtime_gate(snapshot) is None,'Existing native bridge runtime unsupported')
         write(directory/'runtime.json',snapshot)
@@ -85,10 +108,7 @@ async def launch_job(plan,root,ledger,progress,phase,arm):
         launch_plan=launch(spec,paths,{'port':plan['port'],'gpu':plan['gpu']['index'],'gpu_uuid':plan['gpu']['uuid']})
         await owned.ensure_port_free(launch_plan['url'])
     else:
-        launch_plan={'argv':[plan['paths']['runtime_python'],'-B','-m','inference_kit.probes.local_transformer','--plan',str(root/'PLAN_FROZEN.json'),
-                        '--arm',arm['arm_id'],'--stage',phase,'--output',str(directory)],
-          'environment':{'PYTHONPATH':plan['paths']['package_site'],'PYTHONDONTWRITEBYTECODE':'1','CUDA_VISIBLE_DEVICES':str(plan['gpu']['index']),
-            'HF_HUB_OFFLINE':'1','HF_DATASETS_OFFLINE':'1','TRANSFORMERS_OFFLINE':'1','HF_HUB_DISABLE_TELEMETRY':'1','DO_NOT_TRACK':'1','TOKENIZERS_PARALLELISM':'false'}}
+        launch_plan=diagnostic_launch(plan,root,phase,arm,directory,worker_contract)
     write(directory/'launch.json',launch_plan);budget=Budget(ledger);budget.begin(identifier,timeout+reserve)
     started=time.monotonic();process=log=None;stop=asyncio.Event();abort=asyncio.Event();owner={};status='FAILED';cleanup=None
     monitor=asyncio.create_task(gpu_monitor(stop,abort,directory,{'runtime':{'gpu':plan['gpu']['index']},'instrumentation':{'ownership_poll_seconds':2,'memory_poll_seconds':1}},owner))

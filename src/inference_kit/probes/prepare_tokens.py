@@ -10,6 +10,16 @@ from ..core.io import read,write,sha,digest,require
 from .contracts import Sample,target_positions,attention_coordinates
 
 
+def joint_encoding(tokenizer,prompt,reference,max_tokens):
+    """Shared offset primitive; each versioned wrapper supplies its own limit/policy."""
+    require(tokenizer.is_fast,'Offset-aware fast tokenizer required; no boundary guess')
+    encoded=tokenizer(prompt+reference,add_special_tokens=False,return_offsets_mapping=True,return_special_tokens_mask=True)
+    ids=encoded['input_ids'];offsets=encoded['offset_mapping']
+    boundary=next(i for i,(a,b) in enumerate(offsets) if b>len(prompt))
+    require(0<boundary<len(ids)<=max_tokens,'Authored text exceeds frozen sequence bounds; revise before any GPU run')
+    return encoded,ids,offsets,boundary
+
+
 def prepare(samples_file,tokenizer_path,config_path,output,runtime_output):
     from transformers import AutoTokenizer
     tokenizer=AutoTokenizer.from_pretrained(str(tokenizer_path),local_files_only=True,trust_remote_code=False)
@@ -19,9 +29,7 @@ def prepare(samples_file,tokenizer_path,config_path,output,runtime_output):
     tokenizer_identity=digest(files);rows=[]
     for authored in read(Path(samples_file)):
         prompt,reference=authored['prompt'],authored['reference_text'];text=prompt+reference
-        encoded=tokenizer(text,add_special_tokens=False,return_offsets_mapping=True,return_special_tokens_mask=True)
-        ids=encoded['input_ids'];offsets=encoded['offset_mapping'];boundary=next(i for i,(a,b) in enumerate(offsets) if b>len(prompt))
-        require(0<boundary<len(ids)<=128,'Authored text exceeds frozen sequence bounds; revise before any GPU run')
+        encoded,ids,offsets,boundary=joint_encoding(tokenizer,prompt,reference,128)
         targets=target_positions(ids,boundary,set(tokenizer.all_special_ids),16)
         all_reference=[i for i in range(boundary,len(ids)) if ids[i] not in tokenizer.all_special_ids]
         coordinates=attention_coordinates(cfg['num_hidden_layers'],cfg['num_attention_heads'],cfg['num_key_value_heads'],boundary,[{'token_position':all_reference[-1]}])

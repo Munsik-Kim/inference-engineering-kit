@@ -1,0 +1,111 @@
+{
+  "budget": {
+    "cleanup_reserve_seconds": 120,
+    "gpu_wall_seconds": 600,
+    "max_gpu_jobs": 2,
+    "max_inference_posts": 0,
+    "max_numeric_bytes": 268435456,
+    "max_output_tokens": 0,
+    "max_probe_buffer_bytes": 268435456
+  },
+  "comparisons": [
+    {
+      "baseline": "baseline",
+      "candidate": "candidate",
+      "mode": "within_recipe"
+    }
+  ],
+  "kind": "suite_spec_v1",
+  "metrics": [
+    "common_tokens_c1_v1"
+  ],
+  "models": [
+    {
+      "arm_id": "baseline",
+      "artifact_ref": "bf16",
+      "profile": "preserved_smol_v1",
+      "role": "baseline"
+    },
+    {
+      "arm_id": "candidate",
+      "artifact_ref": "rtn",
+      "profile": "preserved_smol_v1",
+      "role": "candidate"
+    }
+  ],
+  "observations": {
+    "structure": {
+      "enabled": false,
+      "provides_token_on": false,
+      "required": false,
+      "selection": "preserved_d1_main_v1"
+    },
+    "token": {
+      "enabled": true,
+      "full_vocabulary": true,
+      "required": true,
+      "selection": "prepared_reference_positions_v1"
+    }
+  },
+  "outputs": {
+    "historical_source_ids": [],
+    "index": true,
+    "report": true,
+    "report_packaging": {
+      "collection_bytes": 671088640,
+      "evidence_payload_bytes": 536870912,
+      "max_members": 10000,
+      "max_volumes": 2,
+      "member_bytes": 67108864,
+      "mode": "bounded_collection_v1",
+      "presentation_bytes": 134217728,
+      "schema_version": 1,
+      "volume_payload_bytes": 268435456
+    }
+  },
+  "permissions": {
+    "gpu_execution": "NONE",
+    "network": "NONE",
+    "tokenizer": "NONE"
+  },
+  "purpose": "diagnostic",
+  "schema_version": 1,
+  "seed": 909284,
+  "suite_id": "V1-CANDIDATE-01-smol-token",
+  "tasks": [
+    {
+      "execution_kind": "diagnostic",
+      "input_mode": "prepared_manifest",
+      "required": true,
+      "sample_ids": [
+        "e4a-tech-en-basic"
+      ],
+      "source_id": "prepared-tech_record_extract-09f67fd40fa87df5",
+      "task_id": "tech_record_extract",
+      "task_version": "0.1"
+    },
+    {
+      "execution_kind": "diagnostic",
+      "input_mode": "prepared_manifest",
+      "required": true,
+      "sample_ids": [
+        "Mercury_7056823"
+      ],
+      "source_id": "prepared-arc_challenge-f0698afd978c79a8",
+      "task_id": "arc_challenge",
+      "task_version": "1.0"
+    },
+    {
+      "execution_kind": "diagnostic",
+      "input_mode": "prepared_manifest",
+      "required": true,
+      "sample_ids": [
+        "e4a-retrieval-en-direct"
+      ],
+      "source_id": "prepared-context_evidence_retrieval-37af648fb30cf439",
+      "task_id": "context_evidence_retrieval",
+      "task_version": "0.1"
+    }
+  ],
+  "version": "1"
+}

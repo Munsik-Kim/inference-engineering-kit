@@ -4,7 +4,7 @@
 
 모델을 더 적은 용량으로 표현하는 **양자화**는 로컬 AI를 운영할 때 검토하는 방법 중 하나입니다. 파일이 작아졌다는 사실만으로 중요한 업무의 답까지 같다고 판단할 수는 없습니다. 같은 문서에서 다른 대상의 값을 가져오거나, 내용은 맞아도 정해진 출력 형식을 지키지 못할 수 있습니다.
 
-Inference Engineering Kit는 지원하는 원본 모델과 압축 모델에 같은 과제를 수행하게 하고, 답의 정확성·근거·출력 형식을 같은 규칙으로 비교하는 개발자용 설치형 Python 도구입니다. AI 도입·모델 교체를 검토하는 개발팀, 작은 R&D팀, 로컬 모델을 비교하는 연구자가 사용할 시험 근거를 만듭니다.
+Inference Engineering Kit는 지원하는 원본 모델과 압축 모델에 같은 과제를 수행하게 하고, 답의 정확성·근거·출력 형식을 같은 규칙으로 비교하는 개발자용 설치형 Python 도구입니다. AI 도입·모델 교체를 검토하는 개발팀, 작은 R&D팀, 로컬 모델을 비교하는 연구자가 사용할 시험 근거를 만듭니다. 자료는 지원하는 세 과제의 정해진 입력 형식과 외부 정답 기준에 맞춰 준비합니다.
 
 ## 어떻게 사용하나요?
 
@@ -29,18 +29,20 @@ Inference Engineering Kit는 지원하는 원본 모델과 압축 모델에 같�
 
 ## 이용 형태와 시작 경로
 
-현재 정식 사용판은 **비공개 v0.2.1**입니다. 설치와 자료 준비·운영에는 개발 작업이 필요합니다. 일반 직원이 클릭 한 번으로 쓰는 SaaS나 새 LLM, 자동 압축 최적화 엔진을 제공하는 형태는 아닙니다.
+현재 정식 사용판은 **v0.2.1**입니다. 설치와 자료 준비·운영에는 개발 작업이 필요합니다. 일반 직원이 클릭 한 번으로 쓰는 SaaS나 새 LLM, 자동 압축 최적화 엔진을 제공하는 형태는 아닙니다.
 
-1. 권한 있는 사용자는 [정식 release](https://github.com/Munsik-Kim/inference-engineering-kit/releases/tag/v0.2.1)의 `ACTIVE_RELEASE_ACCEPTANCE_2.json`을 따라 최신 판정을 확인합니다. generic `RELEASE_DECISION.json` 등은 과거 차단 기록일 수 있습니다.
-2. [START_HERE](../START_HERE_KO.md)와 [CPU Quickstart](../QUICKSTART_CPU_KO.md)에서 저장 예제를 먼저 실행합니다. 기본 CPU wheel은 외부 의존성 없이 동작하며 모델을 실행하지 않습니다.
+1. [START_HERE의 다운로드·SHA 확인](../START_HERE_KO.md#배포물-받기와-sha256-확인)에서 [정식 release](https://github.com/Munsik-Kim/inference-engineering-kit/releases/tag/v0.2.1)의 키트를 받습니다. 저장소가 PUBLIC인 경우 웹 다운로드에는 로그인이 필요하지 않습니다. `gh`는 선택 경로입니다.
+2. [ACTIVE_RELEASE_ACCEPTANCE_2.json](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/ACTIVE_RELEASE_ACCEPTANCE_2.json) → [RELEASE_DECISION_ACCEPTANCE_2.json](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/RELEASE_DECISION_ACCEPTANCE_2.json) → [LIVE_ACCEPTANCE_2.json](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/LIVE_ACCEPTANCE_2.json)와 관련 근거를 확인하고, [CPU Quickstart](../QUICKSTART_CPU_KO.md)에서 저장 예제를 먼저 실행합니다. generic `RELEASE_DECISION.json`·`LIVE_ACCEPTANCE_RECEIPT.json`은 과거 BLOCKED/PARTIAL 기록일 수 있습니다. 기본 CPU wheel은 외부 의존성 없이 동작하며 모델을 실행하지 않습니다.
 3. 새 자료를 실제 모델에 처리하려면 [Live Quickstart](../QUICKSTART_LIVE_KO.md)의 외부 자산·현재 권한·예산 조건과 명시적 실행 opt-in을 확인합니다.
 
 모델 weights·tokenizer 전체 자산·ML runtime·개인 local 설정은 별도로 준비해야 합니다. 개발 중인 미게시 로컬 후보 `0.2.2.dev1`은 정식 `v0.2.1`과 별개입니다. 후보의 실행 기록을 정식판의 새 실측이나 정식 `0.2.2` 배포로 옮기지 않습니다.
 
-검증은 개발자 자체 수용시험 범위입니다. 상세 실행 자료와 설치 패키지는 비공개이며, 일반화 성능·배포 동등성·SLA·독립 고객 성과는 별도 미확립 범위입니다. NFC 원문 매핑, namespace ID, 동일-source 재개 등의 [알려진 제한](../KNOWN_LIMITATIONS_KO.md)을 기능과 함께 읽어 주세요.
+**2026-10-23 접근 안내:** `v0.2.1`은 원래 비공개 배포로 검증됐습니다. 저장소의 접근 범위를 바꾸더라도 동결된 키트 안의 PRIVATE·옛 pointer 문구와 기존 자산은 당시 bytes 그대로 보존합니다. 현재 시작 경로는 웹의 START_HERE를 따르며, 이번 접근 변경을 새 모델 실측·새 패키지 출시로 해석하지 않습니다.
+
+검증은 개발자 자체 수용시험 범위입니다. 일반화 성능·배포 동등성·SLA·독립 고객 성과는 별도 미확립 범위이며, 공개된 소스·패키지·저장 fixture의 범위를 전체 모델 자산이나 모든 실행 자료의 공개로 확대하지 않습니다. NFC 원문 매핑, namespace ID, 동일-source 재개 등의 [알려진 제한](../KNOWN_LIMITATIONS_KO.md)을 기능과 함께 읽어 주세요.
 
 ## 공개 사례와의 관계
 
-**DIOVA**는 [공개 포트폴리오](https://munsik-kim.github.io/inference-lab/ko/index.html)의 브랜드이고, **inference-lab**은 [공개 사례 저장소](https://github.com/Munsik-Kim/inference-lab)입니다. **diova-compare**는 그 포트폴리오에서 소개하는 공개된 별도 CPU 결과 비교 도구입니다. **Inference Engineering Kit**는 여기 설명한 비공개 설치형 도구입니다. 각각의 구현과 공개 검증 범위는 다릅니다.
+**DIOVA**는 [공개 포트폴리오](https://munsik-kim.github.io/inference-lab/ko/index.html)의 브랜드이고, **inference-lab**은 [공개 사례 저장소](https://github.com/Munsik-Kim/inference-lab)입니다. **diova-compare**는 그 포트폴리오에서 소개하는 공개된 별도 CPU 결과 비교 도구입니다. **Inference Engineering Kit**는 여기 설명한 설치형 도구입니다. 각각의 구현과 공개 검증 범위는 다릅니다.
 
 [README로 돌아가기](../README.md) · [기술 구조](ARCHITECTURE_KO.md) · [개발·실패 이력](HISTORY_KO.md) · [라이선스·출처](../THIRD_PARTY_NOTICES.md)

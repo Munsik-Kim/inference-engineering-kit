@@ -1,6 +1,6 @@
 # 0.2.1 지원 범위
 
-정본은 [SUPPORT_MATRIX.json](SUPPORT_MATRIX.json)이다. 구현·historical live·이전 rc1 CPU·현재 release CPU·현재 release live·외부 조건·OS/Python 축을 분리한다. 이 동결 문서는 결과를 미리 PASS로 선언하지 않는다. 실제0.2.1 commit/wheel의 통과 여부는 release의 RELEASE_DECISION/CPU_TESTS/REMOTE_CI/LIVE_ACCEPTANCE 영수증을 따른다.
+정본은 [SUPPORT_MATRIX.json](SUPPORT_MATRIX.json)이다. 구현·historical live·이전 rc1 CPU·현재 release CPU·현재 release live·외부 조건·OS/Python 축을 분리한다. 지원 범위의 설명과 실제 통과 판정은 별개다. 실제0.2.1 commit/wheel의 판정은 [START_HERE의 현재 판정](START_HERE_KO.md#현재-판정부터-확인)에 따라 release의 `ACTIVE_RELEASE_ACCEPTANCE_2.json` → `RELEASE_DECISION_ACCEPTANCE_2.json` → `LIVE_ACCEPTANCE_2.json` 및 pointer의 CPU/CI 관련 근거를 확인한다. generic `RELEASE_DECISION.json`·`LIVE_ACCEPTANCE_RECEIPT.json`은 역사적 BLOCKED/PARTIAL일 수 있다. 저장소 공개는 지원 모델·OS·과제나 검증 범위를 늘리지 않는다.
 
 | 기능/모델 | 구현 범위 | 현재 live 수용 gate | 한계 |
 |---|---|---|---|

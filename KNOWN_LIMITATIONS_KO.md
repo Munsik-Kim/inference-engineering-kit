@@ -1,6 +1,6 @@
 # 알려진 제한과 유지하는 이력
 
-- 현재 릴리스의 CPU/live 수용시험 상태는 별도 RELEASE_DECISION/LIVE_ACCEPTANCE_RECEIPT에 따른다. 과거 실측 source/runtime과 0.2.1 analyzer/source를 구분한다. gate 실패가 있으면 정식 게시하지 않는다.
+- 현재 릴리스의 CPU/live 수용시험 상태는 [START_HERE의 현재 판정](START_HERE_KO.md#현재-판정부터-확인)에 따라 `ACTIVE_RELEASE_ACCEPTANCE_2.json` → `RELEASE_DECISION_ACCEPTANCE_2.json` → `LIVE_ACCEPTANCE_2.json` 및 관련 근거를 확인한다. generic `RELEASE_DECISION.json`·`LIVE_ACCEPTANCE_RECEIPT.json`은 역사적 BLOCKED/PARTIAL일 수 있다. 과거 실측 source/runtime과 0.2.1 analyzer/source를 구분하며 기존 실패의 의미를 바꾸지 않는다.
 - Smol RTN diagnostic은 DECODED_WEIGHT_DIAGNOSTIC/effective BF16이다. packed INT4 SERVE의 kernel과 동일하다고 쓰지 않는다.
 - Qwen은 pinned BF16/GPTQ serving-only + native ARC target scalar다. full/KL/JS/entropy/rank·attention/decoded probe는 미수집이다.
 - Qwen NFC normalization 때문에 e4a-tech-en-basic/e4a-tech-en-missing의 전체 source-span 매핑은 unavailable이다. 저장 raw/text/token/offset bytes를 변형하지 않는다.

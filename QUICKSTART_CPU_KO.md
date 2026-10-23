@@ -39,7 +39,7 @@ unset PYTHONPATH PYTHONHOME
 ../inference-kit-cpu/bin/python -I -B acceptance/replay_structure_slice.py --fixture fixtures/smol-structure --output ../smol-structure
 ```
 
-scalar123pair, 전체 어휘3pair만 포함한다. 구조는 별도 D1 획득의24observation/12cross-arm·6same-arm 행이다. `replay_structure_slice.py`는 설치 제품의 blob/Observation/metric API를 호출하는 SLICE helper다. 전체 raw용 `bench structure replay` 명령을 대체하는 통합 기능으로 표시하지 않는다. [상세 명령과 범위](acceptance/SMOL_QUICKSTART_COMMANDS.md)를 따른다.
+scalar123pair, 전체 어휘3pair만 포함한다. 구조는 별도 D1 획득의24observation/12cross-arm·6same-arm 행이다. `replay_structure_slice.py`는 설치 제품의 blob/Observation/metric API를 호출하는 SLICE helper다. 전체 raw용 `bench structure replay` 명령을 대체하는 통합 기능으로 표시하지 않는다. [상세 명령과 범위](release-kit/acceptance/SMOL_QUICKSTART_COMMANDS.md)를 따른다.
 
 ## C. 저장 prepared → 새 계획
 
@@ -49,7 +49,7 @@ scalar123pair, 전체 어휘3pair만 포함한다. 구조는 별도 D1 획득의
 ../inference-kit-cpu/bin/python -I -B -m inference_kit bench suite describe --plan ../qwen-plan/FROZEN_PLAN.json --output ../qwen-description
 ```
 
-모델은 실행되지 않는다. Smol task 12POST/cap520, Smol token6forward/37target12full pair, Qwen task12POST/native19pair를 자료에서 계산한다. [세 계획의 실제 명령](acceptance/PREPARED_QUICKSTART_COMMANDS.md)에 나머지 명령이 있다. 저장 prepared 검사는 fresh tokenization이 아니며 parent FULL manifest를 빠진 파일과 함께 검증하지 않는다. 외부 artifact 존재는 NOT_CHECKED다.
+모델은 실행되지 않는다. Smol task 12POST/cap520, Smol token6forward/37target12full pair, Qwen task12POST/native19pair를 자료에서 계산한다. [세 계획의 실제 명령](release-kit/acceptance/PREPARED_QUICKSTART_COMMANDS.md)에 나머지 명령이 있다. 저장 prepared 검사는 fresh tokenization이 아니며 parent FULL manifest를 빠진 파일과 함께 검증하지 않는다. 외부 artifact 존재는 NOT_CHECKED다.
 
 ## D. 공통 자동 게시·index/report·CPU 재개
 
@@ -67,6 +67,6 @@ scalar123pair, 전체 어휘3pair만 포함한다. 구조는 별도 D1 획득의
 
 EEXIST/ENOSPC/EACCES와 fdopen 실패·정상/빈 파일·hash/길이 거절·public publisher 정리를 검사한다. 키트 전체를 다른 폴더로 복사한 뒤 같은 `--kit` 명령으로 replay/plan을 재실행할 수 있다. ID·bytes는 바꾸지 않고 물리 locator만 이동한다. 원본 fixture를 수정하지 않는다.
 
-작은 report의 정적 상대링크·escape/local-only 검사는 영수증을 따른다. 브라우저가 없으면 시각 검증은 NOT_RUN이며 설치하지 않는다. CPU replay 성공은 과거 GPU cleanup·서버 동작의 재인증이 아니다. 현재 release live 결과는 별도 LIVE_ACCEPTANCE_RECEIPT에서 확인한다.
+작은 report의 정적 상대링크·escape/local-only 검사는 영수증을 따른다. 브라우저가 없으면 시각 검증은 NOT_RUN이며 설치하지 않는다. CPU replay 성공은 과거 GPU cleanup·서버 동작의 재인증이 아니다. 현재 release live 결과는 [START_HERE의 현재 판정](START_HERE_KO.md#현재-판정부터-확인)에 따라 `ACTIVE_RELEASE_ACCEPTANCE_2.json` → `RELEASE_DECISION_ACCEPTANCE_2.json` → `LIVE_ACCEPTANCE_2.json`에서 확인한다. generic `LIVE_ACCEPTANCE_RECEIPT.json`은 역사적 기록일 수 있다.
 
 누적 실제 DB/전체 raw의 공개 CPU 명령과 모든 part의 이동 단위는 [REPORT_PACKAGING_KO.md](REPORT_PACKAGING_KO.md)를 따른다. 작은 키트의 SLICE가 full 누적285MB와 새 GPU를 재현하는 것은 아니다.

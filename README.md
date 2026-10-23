@@ -5,9 +5,11 @@
 
 더 적은 용량으로 압축한 AI로 바꾸면, 우리 업무도 그대로 잘 처리할까요? Inference Engineering Kit는 지원하는 로컬 AI 모델에 같은 과제를 수행하게 하고, 답변의 정확성·근거·출력 형식을 비교하는 설치형 Python 도구입니다. 원본 모델과 압축 모델의 결과를 나란히 확인하고, 어떤 문항의 답이 달라졌는지 원래 입력과 응답까지 연결해 살펴볼 수 있습니다.
 
+지원하는 세 과제의 **정해진 입력 형식과 외부 정답 기준**에 맞춰 자료를 준비합니다. 자유로운 업무 문서를 넣기만 하면 정답과 평가 기준까지 자동으로 만드는 도구는 아닙니다.
+
 점수만 남기지 않습니다. 실행 조건과 원시 결과를 보관해, 저장된 자료를 **모델 재실행 없이** 다시 채점하고 분석할 수 있습니다. AI 도입·모델 교체를 검토하는 개발팀, 작은 R&D팀, 로컬 모델을 비교하는 연구자를 위한 도구이며, 설치·자료 준비·실행에는 개발 작업이 필요합니다.
 
-현재 정식 사용판은 **비공개 배포 v0.2.1**입니다. [제품을 쉬운 말로 살펴보기](docs/PRODUCT_OVERVIEW_KO.md) · [바로 시작하기](START_HERE_KO.md) · [지원 범위](SUPPORT_MATRIX_KO.md)
+현재 정식 사용판은 **v0.2.1**입니다. [제품을 쉬운 말로 살펴보기](docs/PRODUCT_OVERVIEW_KO.md) · [바로 시작하기](START_HERE_KO.md) · [지원 범위](SUPPORT_MATRIX_KO.md)
 
 ## 무엇을 확인할 수 있나요?
 
@@ -28,9 +30,16 @@
 
 검증은 개발자 자체 수용시험 범위입니다. 일반 모델 품질, 양자화 우위, 배포 동등성, SLA, 독립 고객 성과를 보증하지 않습니다. 미게시 로컬 개발 후보 `0.2.2.dev1`의 기록은 정식 `v0.2.1`과 별도이며, 아래 설치 경로는 정식판만 가리킵니다.
 
-## 비공개 배포와 첫 CPU 실행
+<a id="비공개-배포와-첫-cpu-실행"></a>
+## 배포물 받기와 첫 CPU 실행
 
-이 저장소와 release는 **PRIVATE**이며, 기존 `gh` 인증과 저장소 접근권한이 필요합니다. [정식 v0.2.1 release](https://github.com/Munsik-Kim/inference-engineering-kit/releases/tag/v0.2.1)의 최신 판정은 **[ACTIVE_RELEASE_ACCEPTANCE_2.json](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/ACTIVE_RELEASE_ACCEPTANCE_2.json)** → [RELEASE_DECISION_ACCEPTANCE_2.json](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/RELEASE_DECISION_ACCEPTANCE_2.json) / [LIVE_ACCEPTANCE_2.json](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/LIVE_ACCEPTANCE_2.json) 순서로 확인합니다. 일반 이름의 `RELEASE_DECISION.json`·`LIVE_ACCEPTANCE_RECEIPT.json`과 옛 pointer는 보존된 과거 차단·부분 실행 기록일 수 있습니다. 자산 이름만으로 최신 판정을 고르지 마세요. 배포 파일의 hash는 해당 release의 `SHA256SUMS.txt`를 확인합니다.
+**2026-10-23 공개 접근 안내:** 저장소가 PUBLIC인 경우 아래 파일은 로그인 없이 웹에서 내려받을 수 있습니다. `v0.2.1`은 원래 비공개 배포로 검증됐으며, 접근 범위 변경은 새 패키지 출시나 새 모델 실측이 아닙니다. 동결된 키트 안의 PRIVATE·인증 필수·옛 판정 pointer 문구는 당시 안내입니다. 최신 시작 경로는 이 웹 문서와 [START_HERE_KO.md](START_HERE_KO.md)를 따릅니다. 키트·wheel·tag·기존 영수증의 bytes는 바꾸지 않습니다.
+
+1. [정식 v0.2.1 release](https://github.com/Munsik-Kim/inference-engineering-kit/releases/tag/v0.2.1)에서 [사용 키트 ZIP](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/inference-engineering-kit-0.2.1-kit.zip)과 [SHA256SUMS.txt](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/SHA256SUMS.txt)를 같은 새 `downloads` 폴더에 저장합니다.
+2. [START_HERE의 SHA 확인 방법](START_HERE_KO.md#배포물-받기와-sha256-확인)으로 파일을 확인한 뒤 ZIP을 풉니다. 공개 다운로드에는 `gh` 인증이 필수가 아닙니다.
+3. 최신 판정은 **[ACTIVE_RELEASE_ACCEPTANCE_2.json](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/ACTIVE_RELEASE_ACCEPTANCE_2.json)** → [RELEASE_DECISION_ACCEPTANCE_2.json](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/RELEASE_DECISION_ACCEPTANCE_2.json) → [LIVE_ACCEPTANCE_2.json](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/LIVE_ACCEPTANCE_2.json) 및 pointer에 선언된 관련 근거를 따릅니다. 일반 이름의 `RELEASE_DECISION.json`·`LIVE_ACCEPTANCE_RECEIPT.json`과 옛 pointer는 보존된 과거 BLOCKED/PARTIAL 기록일 수 있습니다. 자산 이름만으로 최신 판정을 고르지 마세요.
+
+이미 `gh`를 사용하는 경우의 선택 경로입니다.
 
 ```sh
 gh release view v0.2.1 --repo Munsik-Kim/inference-engineering-kit
@@ -61,8 +70,8 @@ NFC 정규화에 따른 일부 원문 span 매핑 제한, namespace 사이의 �
 
 ## 사용 범위와 문제 보고
 
-문제는 이 PRIVATE 저장소의 Issues에 package version, source digest, 실행 명령, 기술 실패와 모델 오답의 구분, 민감 경로를 제거한 작은 재현 자료를 남겨 주세요. credential·개인 local binding·전체 모델·전체 raw는 첨부하지 않습니다. 원래 raw와 실패 상태를 덮어쓰지 마세요.
+문제는 이 저장소의 Issues에 package version, source digest, 실행 명령, 기술 실패와 모델 오답의 구분, 민감 경로를 제거한 작은 재현 자료를 남겨 주세요. 공개 Issues·댓글·첨부는 누구나 읽을 수 있습니다. credential·개인 local binding·고객/개인 데이터·전체 모델·전체 raw는 첨부하지 않습니다. 원래 raw와 실패 상태를 덮어쓰지 마세요.
 
 소스 검사는 `python -B tools/test_cpu.py --output <새 receipt.json>`으로 실행합니다. HTTP mock 테스트의 선택 HTTP 의존성과 기본 wheel의 CPU 의존성을 구분합니다. 현재 릴리스의 실제 source·wheel·CI·live 결과는 위 active release pointer를 따르며, 과거 테스트 수를 현재 PASS로 쓰지 않습니다.
 
-DIOVA는 [공개 포트폴리오](https://munsik-kim.github.io/inference-lab/ko/index.html)의 브랜드, [inference-lab](https://github.com/Munsik-Kim/inference-lab)은 공개 사례 저장소입니다. 그 안의 diova-compare는 공개된 별도 CPU 결과 비교 도구입니다. 이 비공개 설치형 제품과 동일한 제품·검증 범위로 합치지 않습니다.
+DIOVA는 [공개 포트폴리오](https://munsik-kim.github.io/inference-lab/ko/index.html)의 브랜드, [inference-lab](https://github.com/Munsik-Kim/inference-lab)은 공개 사례 저장소입니다. 그 안의 diova-compare는 공개된 별도 CPU 결과 비교 도구입니다. 이 설치형 제품과 동일한 제품·검증 범위로 합치지 않습니다.

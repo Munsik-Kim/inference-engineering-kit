@@ -33,23 +33,27 @@
 <a id="비공개-배포와-첫-cpu-실행"></a>
 ## 배포물 받기와 첫 CPU 실행
 
-**2026-10-23 공개 접근 안내:** 저장소가 PUBLIC인 경우 아래 파일은 로그인 없이 웹에서 내려받을 수 있습니다. `v0.2.1`은 원래 비공개 배포로 검증됐으며, 접근 범위 변경은 새 패키지 출시나 새 모델 실측이 아닙니다. 동결된 키트 안의 PRIVATE·인증 필수·옛 판정 pointer 문구는 당시 안내입니다. 최신 시작 경로는 이 웹 문서와 [START_HERE_KO.md](START_HERE_KO.md)를 따릅니다. 키트·wheel·tag·기존 영수증의 bytes는 바꾸지 않습니다.
+기존 [공개 v0.2.1 release](https://github.com/Munsik-Kim/inference-engineering-kit/releases/tag/v0.2.1)의 **키트 → SHA256 확인 → 작은 CPU 재계산** 순서로 시작하세요. 모델·tokenizer·ML SDK 없이 저장된 응답을 다시 채점할 수 있습니다.
 
-1. [정식 v0.2.1 release](https://github.com/Munsik-Kim/inference-engineering-kit/releases/tag/v0.2.1)에서 [사용 키트 ZIP](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/inference-engineering-kit-0.2.1-kit.zip)과 [SHA256SUMS.txt](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/SHA256SUMS.txt)를 같은 새 `downloads` 폴더에 저장합니다.
-2. [START_HERE의 SHA 확인 방법](START_HERE_KO.md#배포물-받기와-sha256-확인)으로 파일을 확인한 뒤 ZIP을 풉니다. 공개 다운로드에는 `gh` 인증이 필수가 아닙니다.
-3. 최신 판정은 **[ACTIVE_RELEASE_ACCEPTANCE_2.json](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/ACTIVE_RELEASE_ACCEPTANCE_2.json)** → [RELEASE_DECISION_ACCEPTANCE_2.json](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/RELEASE_DECISION_ACCEPTANCE_2.json) → [LIVE_ACCEPTANCE_2.json](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/LIVE_ACCEPTANCE_2.json) 및 pointer에 선언된 관련 근거를 따릅니다. 일반 이름의 `RELEASE_DECISION.json`·`LIVE_ACCEPTANCE_RECEIPT.json`과 옛 pointer는 보존된 과거 BLOCKED/PARTIAL 기록일 수 있습니다. 자산 이름만으로 최신 판정을 고르지 마세요.
-
-이미 `gh`를 사용하는 경우의 선택 경로입니다.
+1. [사용 키트 ZIP](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/inference-engineering-kit-0.2.1-kit.zip)과 [SHA256SUMS.txt](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/SHA256SUMS.txt)를 새 폴더에 받습니다.
+2. [파일 지문 확인 방법](START_HERE_KO.md#배포물-받기와-sha256-확인)으로 검산하고 새 폴더에 풉니다. `gh` 인증은 공개 다운로드의 필수 조건이 아닙니다.
+3. **풀린 키트 루트에서** 다음을 실행합니다. Python 3.10+와 venv/pip가 준비되어 있어야 하고 환경·출력 경로는 새로 만들어야 합니다.
 
 ```sh
-gh release view v0.2.1 --repo Munsik-Kim/inference-engineering-kit
-gh release download v0.2.1 --repo Munsik-Kim/inference-engineering-kit --pattern 'inference-engineering-kit-0.2.1-kit.zip' --dir ./downloads
-python3 -m zipfile -e ./downloads/inference-engineering-kit-0.2.1-kit.zip ./inference-kit-0.2.1
+python3 -m venv ../inference-kit-cpu
+../inference-kit-cpu/bin/python -m pip install --no-index --no-deps dist/inference_engineering_kit-0.2.1-py3-none-any.whl
+../inference-kit-cpu/bin/python -I -B -m inference_kit bench suite replay --run fixtures/qwen-native --output ../qwen-replay
 ```
 
-풀린 키트의 `START_HERE_KO.md` → `QUICKSTART_CPU_KO.md`를 따릅니다. 저장소에서 읽을 때는 [시작 안내](START_HERE_KO.md) → [CPU Quickstart](QUICKSTART_CPU_KO.md)로 이동하세요. 새 venv에 키트의 `dist/inference_engineering_kit-0.2.1-py3-none-any.whl`만 `--no-index --no-deps`로 설치합니다. 기본 wheel의 CPU 경로에는 모델·tokenizer·ML SDK가 필요 없습니다.
+`../qwen-replay/CPU_REPLAY_RECEIPT.json`에서 `CPU_SLICE_REPLAYED`와 검사 범위를, `score_task/summary.json`에서 재채점 결과를 읽습니다. 이것은 키트에 포함된 작은 Qwen 응답 기록의 CPU 재계산이며 새 모델 요청이 아닙니다. 전체 raw·전체 어휘 분포·과거 서버 종료까지 재현하는 명령은 아닙니다.
 
-CPU 예제는 저장된 실제 Qwen 응답, Smol 진단 slice, 준비 입력 계획과 명시된 합성 근거 게시 예제입니다. 각 예제의 자료 범위와 획득 출처는 다르며, 새 모델 실측을 하지 않습니다. 저장소의 같은 예제 자료는 `release-kit/`에 있습니다.
+[다음 CPU 예제와 정확한 분모](QUICKSTART_CPU_KO.md) · [내 입력과 지원 과제](SUPPORT_MATRIX_KO.md). Kit는 비교 기능에 diova-compare를 재사용하지만, 독립 diova-compare처럼 두 답변 파일만 비교하는 도구와 제품 범위가 같지는 않습니다. 기본 wheel은 표준 라이브러리 CPU 기능이며, HTTP 경로의 `aiohttp`와 모델 runtime은 별도 의존성입니다.
+
+### 현재 안내와 보존된 배포 이력
+
+v0.2.1은 원래 비공개 배포에서 검증된 뒤 공개 접근이 확인된 배포판입니다. 동결된 키트의 PRIVATE·인증 필수·옛 pointer 문구는 당시 기록으로 남겼습니다. 현재 시작 경로는 이 README와 [START_HERE](START_HERE_KO.md)를 따르며, kit·wheel·tag·기존 영수증의 bytes는 바꾸지 않습니다. 최신 source main의 문서 수정과 새 release는 다른 상태입니다.
+
+최신 release 판정은 **[ACTIVE_RELEASE_ACCEPTANCE_2.json](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/ACTIVE_RELEASE_ACCEPTANCE_2.json)** → [RELEASE_DECISION_ACCEPTANCE_2.json](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/RELEASE_DECISION_ACCEPTANCE_2.json) → [LIVE_ACCEPTANCE_2.json](https://github.com/Munsik-Kim/inference-engineering-kit/releases/download/v0.2.1/LIVE_ACCEPTANCE_2.json) 및 pointer에 선언된 관련 근거를 따릅니다. 일반 이름의 `RELEASE_DECISION.json`·`LIVE_ACCEPTANCE_RECEIPT.json`과 옛 pointer는 보존된 과거 BLOCKED/PARTIAL 기록일 수 있습니다. 자산 이름만으로 최신 판정을 고르지 마세요.
 
 ### 새 자료로 모델을 실행하려면
 
@@ -72,6 +76,6 @@ NFC 정규화에 따른 일부 원문 span 매핑 제한, namespace 사이의 �
 
 문제는 이 저장소의 Issues에 package version, source digest, 실행 명령, 기술 실패와 모델 오답의 구분, 민감 경로를 제거한 작은 재현 자료를 남겨 주세요. 공개 Issues·댓글·첨부는 누구나 읽을 수 있습니다. credential·개인 local binding·고객/개인 데이터·전체 모델·전체 raw는 첨부하지 않습니다. 원래 raw와 실패 상태를 덮어쓰지 마세요.
 
-소스 검사는 `python -B tools/test_cpu.py --output <새 receipt.json>`으로 실행합니다. HTTP mock 테스트의 선택 HTTP 의존성과 기본 wheel의 CPU 의존성을 구분합니다. 현재 릴리스의 실제 source·wheel·CI·live 결과는 위 active release pointer를 따르며, 과거 테스트 수를 현재 PASS로 쓰지 않습니다.
+소스 검사는 `python -B tools/test_cpu.py --output <새 receipt.json>`으로 실행합니다. 현재 `.github/workflows/cpu.yml`은 수동 `workflow_dispatch`이며 PR·main push마다 자동 회귀를 실행하지 않습니다. 과거 수동 CI 결과는 최신 main의 자동 통과 표시가 아닙니다. HTTP mock 테스트의 선택 HTTP 의존성과 기본 wheel의 CPU 의존성을 구분합니다. 현재 릴리스의 실제 source·wheel·CI·live 결과는 위 active release pointer를 따르며, 과거 테스트 수를 현재 PASS로 쓰지 않습니다.
 
 DIOVA는 [공개 포트폴리오](https://munsik-kim.github.io/inference-lab/ko/index.html)의 브랜드, [inference-lab](https://github.com/Munsik-Kim/inference-lab)은 공개 사례 저장소입니다. 그 안의 diova-compare는 공개된 별도 CPU 결과 비교 도구입니다. 이 설치형 제품과 동일한 제품·검증 범위로 합치지 않습니다.
